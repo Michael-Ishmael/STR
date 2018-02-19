@@ -1,0 +1,210 @@
+@font-face {
+  font-family: 'Apercu';
+  src: url("../fonts/Apercu/Apercu-Bold.eot");
+  src: url("../fonts/Apercu/Apercu-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Apercu/Apercu-Bold.woff2") format("woff2"), url("../fonts/Apercu/Apercu-Bold.woff") format("woff"), url("../fonts/Apercu/Apercu-Bold.ttf") format("truetype"), url("../fonts/Apercu/Apercu-Bold.svg#Apercu-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+html {
+  font-size: 16px; }
+  @media screen and (min-width: 900px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (min-width: 1200px) {
+    html {
+      font-size: 20px; } }
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #f7f5ef;
+  color: #7f7b6f; }
+
+a {
+  color: inherit; }
+  a:hover {
+    text-decoration: none; }
+
+h1, h2, h3, h4 {
+  color: #1c2541; }
+
+.display-1 {
+  font-size: 4rem; }
+
+.display-2 {
+  font-size: 2.6rem; }
+
+p {
+  font-size: 1em;
+  line-height: 1.6; }
+
+img {
+  height: 100%; }
+
+.str-hero.jumbotron {
+  text-align: center;
+  background-color: inherit; }
+  .str-hero.jumbotron h1 {
+    font-weight: bold;
+    font-size: 4rem; }
+  .str-hero.jumbotron p.lead {
+    font-size: 1.2rem;
+    padding: 0.8rem 4rem;
+    line-height: 1.75; }
+
+.str-card-container {
+  font-size: 0.8rem;
+  margin: 0 4rem; }
+
+.str-card {
+  margin-bottom: 2em; }
+  .str-card .icon-container {
+    height: 6em;
+    margin-bottom: 1.4em; }
+  .str-card .display-4 {
+    font-size: 2.2em;
+    font-weight: bold; }
+  .str-card .heading-number {
+    color: #7f7b6f; }
+
+.str-main {
+  padding: 6rem 0;
+  font-size: 0.9rem;
+  margin: 0 4rem; }
+  .str-main .section-intro {
+    padding: 0 4em;
+    margin: 2em 0 4em; }
+  .str-main.bg-blue {
+    background-color: #2b63ff;
+    color: #fff;
+    padding: 4em; }
+    .str-main.bg-blue h1 {
+      color: #fff; }
+
+.str-pic-hero.jumbotron {
+  padding: 2rem;
+  color: #f2f2f2;
+  background-color: inherit;
+  font-size: .8rem; }
+  .str-pic-hero.jumbotron h2 {
+    color: inherit; }
+  .str-pic-hero.jumbotron p {
+    width: 26em;
+    margin-bottom: 3em; }
+  .str-pic-hero.jumbotron a.btn-lg {
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: .8rem 1.8rem;
+    border-radius: 0.2rem; }
+  .str-pic-hero.jumbotron.discovery {
+    background-image: url("../img/mask.png");
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.str-hex-tile {
+  /*
+  background-color: red;
+
+  &.odd {
+    background-color: blue;
+  }
+  */ }
+
+.str-hex-tile-container {
+  margin: 2em; }
+  .str-hex-tile-container .str-hex-tile {
+    padding: 5px;
+    display: table; }
+    .str-hex-tile-container .str-hex-tile p {
+      display: table-cell;
+      width: 100%;
+      height: 100%;
+      background-image: url("../img/polygon.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      color: #000;
+      font-size: .8rem;
+      line-height: 1rem; }
+      .str-hex-tile-container .str-hex-tile p span {
+        width: 100%;
+        display: inline-block; }
+        .str-hex-tile-container .str-hex-tile p span.em-line {
+          width: 2em;
+          height: 2px;
+          background-color: #ffc72c; }
+
+.str-feature-box {
+  background-color: #ffffff; }
+  .str-feature-box h3.display-3 {
+    font-size: 2rem; }
+  .str-feature-box img.str-feature-image {
+    width: 100%;
+    height: auto; }
+  .str-feature-box .str-feature-text {
+    width: 100%; }
+  .str-feature-box a.btn {
+    width: 100%;
+    margin-bottom: .5rem; }
+
+header {
+  background-image: url("../img/navigation-background@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  color: white;
+  min-height: 8em;
+  font-size: .4rem; }
+  header .logo {
+    width: 100%;
+    height: 4em; }
+  header nav {
+    color: #ffffff;
+    font-size: 1em;
+    text-transform: uppercase; }
+    header nav .nav-item {
+      margin: 0 .8em; }
+    header nav .nav-link {
+      padding: .5em 1em; }
+
+@media (min-width: 576px) {
+  header {
+    font-size: .4rem; } }
+@media (min-width: 768px) {
+  header {
+    font-size: .6rem; } }
+@media (min-width: 992px) {
+  header {
+    font-size: .6rem; } }
+@media (min-width: 1200px) {
+  header {
+    font-size: .8rem; } }
+
+/*# sourceMappingURL=main.css.map */

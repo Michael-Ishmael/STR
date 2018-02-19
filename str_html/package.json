@@ -1,0 +1,17 @@
+{
+  "name": "str-website",
+  "version": "1.0.0",
+  "description": "STR Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "lr-http-server -p 8940"
+  },
+  "author": "Michael Ishmael",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.3.0",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
+  }
+}

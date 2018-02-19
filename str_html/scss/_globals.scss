@@ -1,0 +1,49 @@
+html {
+  font-size: 16px;
+
+  @media screen and (min-width: 900px) {
+    font-size: 18px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: $light-cream;
+  color: $mid-grey-yellow;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+}
+
+h1, h2, h3, h4 {
+  color: $dark-blue;
+}
+
+.display-1 {
+  font-size: 4rem;
+}
+
+.display-2 {
+  font-size: 2.6rem;
+}
+
+p {
+  font-size: 1em;
+
+  line-height: 1.6;
+}
+
+img{
+  height: 100%;
+}
+

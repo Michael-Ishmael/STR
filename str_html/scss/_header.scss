@@ -1,0 +1,55 @@
+
+
+header {
+  background-image: url("../img/navigation-background@2x.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+  color: white;
+  min-height: 8em;
+  font-size: .4rem;
+
+  .logo {
+    width: 100%;
+    height: 4em;
+  }
+
+  nav {
+    color: #ffffff;
+    font-size: 1em;
+    text-transform: uppercase;
+
+    .nav-item{
+      margin: 0 .8em;
+    }
+
+    .nav-link {
+      padding: .5em 1em;
+    }
+  }
+}
+
+
+@include media-breakpoint-up(sm){
+  header{
+    font-size: .4rem;
+  }
+}
+
+@include media-breakpoint-up(md){
+  header{
+    font-size: .6rem;
+  }
+}
+
+@include media-breakpoint-up(lg){
+  header{
+    font-size: .6rem;
+  }
+}
+
+@include media-breakpoint-up(xl){
+  header{
+    font-size: .8rem;
+  }
+}
