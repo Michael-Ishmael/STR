@@ -1,0 +1,39 @@
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+.copyright{
+  background-color: $mid-cream;
+  color: $dark-cream;
+  font-size: .6rem;
+  padding: .6rem;
+  margin: 0 -15px;
+}
+
+.social-media {
+  margin: 2rem -15px;
+}
+
+.footer-menu {
+
+  margin: 0 -15px;
+  padding: 2rem;
+  border: solid 1px $mid-cream;
+
+  ul {
+
+    list-style: none;
+    font-size: .6rem;
+    text-transform: uppercase;
+
+    li {
+      text-align: center;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+
+
+}

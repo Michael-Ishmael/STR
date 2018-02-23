@@ -27,7 +27,14 @@ a {
 
 h1, h2, h3, h4 {
   color: $dark-blue;
+  font-family: Apercu, "Work Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
+
+h2 {
+  font-size: 3.6rem;
+}
+
 
 .display-1 {
   font-size: 4rem;
@@ -46,4 +53,3 @@ p {
 img{
   height: 100%;
 }
-

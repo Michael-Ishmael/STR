@@ -47,27 +47,27 @@
   }
 }
 
+.bg-blue {
+  background-color: $bright-blue;
+  color: $white;
+
+  h1 {
+    color: $white;
+  }
+}
+
 .str-main {
 
-  padding: 6rem 0;
-
-  font-size: 0.9rem;
   margin: 0 4rem;
+  padding: 6rem 0;
+  font-size: 0.9rem;
 
   .section-intro {
     padding: 0 4em;
     margin: 2em 0 4em;
   }
 
-  &.bg-blue {
-    background-color: $bright-blue;
-    color: $white;
-    padding: 4em;
 
-    h1 {
-      color: $white;
-    }
-  }
 
 
 
@@ -82,6 +82,7 @@
 
   h2 {
     color: inherit;
+    margin-bottom: 1.2rem;
   }
 
   p {
@@ -100,6 +101,22 @@
     background-image: url("../img/mask.png");
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  h6 {
+    font-size: .8rem;
+    text-transform: uppercase;
+    color: $white;
+    opacity: .6;
+  }
+
+  &.up-next {
+    background-image: url("../img/mask.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 5rem 0;
+
   }
 }
 
@@ -163,9 +180,7 @@
 
   background-color: #ffffff;
 
-  h3.display-3 {
-    font-size: 2rem;
-  }
+
 
   img.str-feature-image{
     width: 100%;
@@ -173,12 +188,69 @@
   }
 
   .str-feature-text {
+    padding: 1rem 1.8rem;
     width: 100%;
+    color: $dark-gray;
+
+    h3.display-3 {
+      font-size: 1.6rem;
+      font-family: Apercu;
+      font-weight: bold;
+    }
+
+    h6 {
+      font-size: .6rem;
+      text-transform: capitalize;
+      color: $mid-grey-yellow
+    }
+
+    p {
+      font-size: .6rem;
+      font-weight: 500;
+      line-height: 1.71;
+    }
+
   }
 
   a.btn {
     width: 100%;
     margin-bottom: .5rem;
+  }
+
+}
+
+.str-button.btn {
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: .8rem;
+  @include border-radius(3px);
+  color: $white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+
+  &.btn-outline-secondary {
+    color: $dark-gray;
+    border-color: $light-gray;
+
+    &:hover {
+      color: $white;
+    }
+
+    &.lighter {
+      color: $mid-grey-yellow;
+    }
+  }
+
+  &.yellow {
+    background-color: $corn-yellow;
+    color: $very-dark-gray;
+    border-color: $corn-yellow;
+    width: 12rem;
+    font-weight: bold;
+
+
   }
 
 }
