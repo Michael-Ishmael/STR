@@ -5,8 +5,9 @@ html {
     font-size: 18px;
   }
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1260px) {
     font-size: 20px;
+
   }
 }
 
@@ -21,16 +22,24 @@ a {
 
   &:hover {
     text-decoration: none;
+    color: $blue;
   }
 
 }
 
 h1, h2, h3, h4 {
   color: $dark-blue;
+  font-family: Apercu, "Work Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
 }
 
+h2 {
+  font-size: 3.6rem;
+}
+
+
 .display-1 {
-  font-size: 4rem;
+  font-size: 3.4rem;
 }
 
 .display-2 {
@@ -44,9 +53,57 @@ p {
 }
 
 img{
-  height: 100%;
+  //height: 100%;
 }
 
-.bg-dark-blue {
-  background-color: $dark-blue;
+header,
+section,
+footer {
+  margin: 0;
+  padding: 1px; /* tweaked from 0 to 1px */
+
+  & > div {
+    margin: -1px;
+  }
+}
+
+$bg-color-list: (blue: $dark-blue, yellow: $corn-yellow,
+        light-cream: $light-cream,
+        mid-cream: $mid-cream, bright-blue: $bright-blue
+);
+
+// @each($key, $value)
+@each $key, $value in $bg-color-list {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}
+
+$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue);
+
+@each $key, $value in $txt-color-list {
+  .clr-#{$key} {
+    color: $value;
+  }
+}
+
+$blur-amount: 50px;
+
+.blur-image {
+  filter: blur($blur-amount);
+  // Browser Specific
+  -webkit-filter: blur($blur-amount);
+  -moz-filter: blur($blur-amount);
+  -o-filter: blur($blur-amount);
+  -ms-filter: blur($blur-amount);
+
+}
+
+.h-align {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.no-padding {
+  padding: 0;
 }

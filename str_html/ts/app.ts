@@ -17,11 +17,17 @@ let hexData:string[] = [
     "#hexTile_13"
 ];
 
-window.layout = new HexagonLayout(hexData, 180, 140);
+var layout = new HexagonLayout(hexData, 180, 140);
 
 
 $(document).ready(function () {
-    window.layout.layoutHexagons("#hexLayout1");
+        layout.layoutHexagons("#hexLayout1");
+
+        $(window).resize(
+            function () {
+                layout.layoutHexagons("#hexLayout1");
+            }
+        );
     }
 );
 

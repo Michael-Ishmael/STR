@@ -1,0 +1,18 @@
+
+
+header
+     .container-fluid
+         .row.align-items-center.justify-content-center
+             .col-2.logo-container
+                 img.logo(src='img/logo-strategy-to-revenue.svg')
+
+             nav.col-9.text-right
+                 ul.nav.justify-content-end
+
+                     each navItem in navItems
+                         li.nav-item
+                             a.nav-link(href=navItem.link, class=currentPage==navItem.name?'active':'')= navItem.name
+
+
+
+     .block-bottom-border

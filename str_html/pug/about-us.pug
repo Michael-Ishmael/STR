@@ -1,0 +1,145 @@
+include includes/globals
+-
+    var team = [
+        {
+            firstName: 'Mark',
+            fullName: 'Mark Savinson',
+            title: 'Chief Operating Officer',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Garry',
+            fullName: 'Garry Veale',
+            title: 'Chief Executive Officer',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Tony',
+            fullName: 'Tony Wand',
+            title: 'Senior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Michael',
+            fullName: 'Michael Copestake',
+            title: 'Senior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Martin',
+            fullName: 'Martin Dean',
+            title: 'CSenior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Robert',
+            fullName: 'Robert Fox',
+            title: 'Senior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Neil',
+            fullName: 'Neil Whitelock',
+            title: 'Senior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Rachel',
+            fullName: 'Rachel Bibby',
+            title: 'Senior Consultant, Americas',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        },
+        {
+            firstName: 'Phil',
+            fullName: 'Phil Nutt',
+            title: 'Senior Consultant',
+            link: '#',
+            email: 'info@str.com',
+            image: 'img/about-mark-s.jpg'
+        }
+    ]
+
+
+    currentPage = 'About Us'
+
+doctype html
+html(lang="en")
+    include includes/head
+
+    body.str
+        include includes/header
+
+        main
+
+            section.bg-blue
+                .container
+                    .str-hero.jumbotron
+                        h1.display-4= 'A Team of '
+                            span.clr-bright-blue Leaders
+
+                        p.lead.
+                            We’re an experienced group of sales and marketing leaders, and education
+                            and coaching stalwarts who’ve all held senior positions at global corporations,
+                            or rolled up our sleeves to turn table-top start-ups into successful
+                            international businesses; and in many cases, we’ve done both!
+
+            section.bg-blue
+                .container-fluid.no-padding
+                    .row.text-center.wide-picture-grid
+                        each member in team
+                            .col-6.str-grid-pic
+                                .about-us-image-tile
+                                    img.h-align(src='img/about-mark-s.jpg')
+                                    .name-caption-container.text-center
+                                        .buttons
+                                            a.button(href=twitterLink)
+                                                img(src='img/twitter-white.svg')
+                                            a.button(href=linkedInLink)
+                                                img(src='img/linked-in-white.svg')
+                                            a.button(href='mailto:' + member.email)
+                                                img(src='img/email-white.svg')
+                                                |  email
+
+                                        .v-spacer
+                                        h4.display-4.clr-white= member.fullName
+
+                                        .buttons
+                                            .btn.btn-outline-light About #{member.firstName}
+                                        h6= member.title
+
+                        .col-6.str-grid-pic
+                            .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
+                                .v-align
+                                    h4.display-4.
+                                        Unleash Your Potential
+                                    p.
+                                        We’re always on the lookout for like-minded
+                                        individuals who want to make the incredible a reality.
+                                        If you’ve got a track record of driving sales growth
+                                        and delivering sustained commercial improvement,
+                                        winning in new markets or restructuring businesses
+                                        to make them outstanding, get in touch.
+                                    .v-spacer
+                                    a.btn.btn-lg.btn-secondary join us
+
+            include includes/trailer
+            include includes/footer
+
+
+

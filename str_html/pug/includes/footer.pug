@@ -1,0 +1,28 @@
+footer
+    .container
+        .row.justify-content-center.social-media
+            -
+                var smLinks = [
+                    { label: 'Twitter', link: twitterLink, className: 'twitter' },
+                    { label: 'LinkedIn', link: twitterLink, className: 'linked-in' },
+                    { label: 'Medium', link: twitterLink, className: 'medium' }
+                    ];
+
+            each smLink in smLinks
+
+                .col-sm-2.text-center
+                    a.sm-link(href=smLink.link)
+                        i.sm-icon(class=smLink.className)
+                        span #{smLink.label}
+
+    .cream-border
+
+    nav.footer-menu.p-4
+        ul.nav.justify-content-center
+
+            each navItem in fullNavItems
+                li.nav-item
+                    a.nav-link(href=navItem.link)= navItem.name
+
+    .copyright.text-center
+        | Strategy to Revenue. All rights reserved Ⓒ 2018

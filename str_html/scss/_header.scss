@@ -1,13 +1,12 @@
 
 
 header {
-  background-image: url("../img/navigation-background@2x.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
+  padding: 2rem 0 2rem 0 !important;
+  background-color: $dark-blue;
   color: white;
   min-height: 8em;
   font-size: .4rem;
+  position: relative;
 
   .logo {
     width: 100%;
@@ -25,7 +24,21 @@ header {
 
     .nav-link {
       padding: .5em 1em;
+
+      &.active {
+        border-bottom: 2px solid $corn-yellow;
+      }
     }
+  }
+
+  .block-bottom-border {
+    display: block;
+    height: 1px;
+    background-color: $white;
+    opacity: 0.1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 

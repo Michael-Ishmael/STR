@@ -92,7 +92,7 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
 System.register("app", ["hexagon", "jquery"], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    var hexagon_1, jquery_2, hexData;
+    var hexagon_1, jquery_2, hexData, layout;
     return {
         setters: [
             function (hexagon_1_1) {
@@ -118,9 +118,12 @@ System.register("app", ["hexagon", "jquery"], function (exports_2, context_2) {
                 "#hexTile_12",
                 "#hexTile_13"
             ];
-            window.layout = new hexagon_1.HexagonLayout(hexData, 180, 140);
+            layout = new hexagon_1.HexagonLayout(hexData, 180, 140);
             jquery_2.default(document).ready(function () {
-                window.layout.layoutHexagons("#hexLayout1");
+                layout.layoutHexagons("#hexLayout1");
+                jquery_2.default(window).resize(function () {
+                    layout.layoutHexagons("#hexLayout1");
+                });
             });
         }
     };
