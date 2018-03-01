@@ -29,27 +29,16 @@
 
       img {
         height: 100%;
-        transition: all .4s ease-in-out;
       }
 
-      > img:hover {
-        $blur-amount: 50px;
-        filter: blur($blur-amount);
-        // Browser Specific
-        -webkit-filter: blur($blur-amount);
-        -moz-filter: blur($blur-amount);
-        -o-filter: blur($blur-amount);
-        -ms-filter: blur($blur-amount);
-        //transform: scale(1.1) translateX(-50%);
 
-      }
 
       .name-caption-container {
         position: absolute;
         bottom: 0;
         z-index: 1;
         width: 100%;
-        transition: all .4s ease-in-out;
+        //transition: all .4s ease-in-out;
         transform: translateY(0%);
       }
 
@@ -85,7 +74,19 @@
         }
       }
 
-      &:hover {
+
+      &.over {
+
+        > img {
+          $blur-amount: 50px;
+          filter: blur($blur-amount);
+          // Browser Specific
+          -webkit-filter: blur($blur-amount);
+          -moz-filter: blur($blur-amount);
+          -o-filter: blur($blur-amount);
+          -ms-filter: blur($blur-amount);
+        }
+
         .name-caption-container {
           bottom: 50%;
           transform: translateY(50%);
@@ -104,8 +105,13 @@
           }
 
         }
+
       }
+
     }
+
+
+
 
   }
 }

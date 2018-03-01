@@ -89,17 +89,14 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
         }
     };
 });
-System.register("app", ["hexagon", "jquery"], function (exports_2, context_2) {
+System.register("app", ["hexagon"], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    var hexagon_1, jquery_2, hexData, layout;
+    var hexagon_1, hexData, layout;
     return {
         setters: [
             function (hexagon_1_1) {
                 hexagon_1 = hexagon_1_1;
-            },
-            function (jquery_2_1) {
-                jquery_2 = jquery_2_1;
             }
         ],
         execute: function () {
@@ -119,11 +116,29 @@ System.register("app", ["hexagon", "jquery"], function (exports_2, context_2) {
                 "#hexTile_13"
             ];
             layout = new hexagon_1.HexagonLayout(hexData, 180, 140);
-            jquery_2.default(document).ready(function () {
+            $(document).ready(function () {
                 layout.layoutHexagons("#hexLayout1");
-                jquery_2.default(window).resize(function () {
+                $(window).resize(function () {
                     layout.layoutHexagons("#hexLayout1");
                 });
+                $('.about-us-image-tile').hover(function (e) {
+                    var t = e.currentTarget;
+                    var cn = t.className + ' over';
+                    if (t) {
+                        TweenLite.to(t, 2, { css: { opacity: .5 } }); //, ease: Power3.easeInOut})
+                    }
+                }
+                /*        , e => {
+                            let t = e.currentTarget;
+                            let cn = t.className.replace(' over', '');
+                            if(t){
+                                var tw = TweenLite.to(t, 10, {x: 200}); //, ease: Power3.easeInOut})
+                                tw.play()
+                            }
+                
+                
+                        }*/
+                );
             });
         }
     };
