@@ -15,7 +15,7 @@ include includes/globals
             title: 'Chief Executive Officer',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-garry-v.jpg'
         },
         {
             firstName: 'Tony',
@@ -23,7 +23,7 @@ include includes/globals
             title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-tony-w.jpg'
         },
         {
             firstName: 'Michael',
@@ -31,15 +31,15 @@ include includes/globals
             title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-michael-c.jpg'
         },
         {
             firstName: 'Martin',
             fullName: 'Martin Dean',
-            title: 'CSenior Consultant',
+            title: 'Cenior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-martin-d.jpg'
         },
         {
             firstName: 'Robert',
@@ -47,7 +47,7 @@ include includes/globals
             title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-robert-f.jpg'
         },
         {
             firstName: 'Neil',
@@ -55,7 +55,7 @@ include includes/globals
             title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-neil-w.jpg'
         },
         {
             firstName: 'Rachel',
@@ -63,7 +63,7 @@ include includes/globals
             title: 'Senior Consultant, Americas',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-rachel-b.jpg'
         },
         {
             firstName: 'Phil',
@@ -71,7 +71,7 @@ include includes/globals
             title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
+            image: 'img/about-phil-n.jpg'
         }
     ]
 
@@ -105,7 +105,7 @@ html(lang="en")
                         each member in team
                             .col-6.str-grid-pic
                                 .about-us-image-tile
-                                    img.h-align(src='img/about-mark-s.jpg')
+                                    img.h-align(src=member.image)
                                     .name-caption-container.text-center
                                         .buttons
                                             a.button(href=twitterLink)
