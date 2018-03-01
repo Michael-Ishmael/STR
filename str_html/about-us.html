@@ -212,4 +212,23 @@
       </footer>
     </main>
   </body>
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/gsap/TweenLite.js"></script>
+  <script data-main="js/app" src="node_modules/systemjs/dist/system-production.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    SystemJS.config({
+        "paths": {
+            "jquery": "./node_modules/jquery/dist/jquery.min.js",
+            "gsap": "./node_modules/gsap/TweenMax.js",
+        }
+    });
+    
+    SystemJS.import('app')
+        .then(function (m) {
+            console.log(m);
+        })
+  </script>
 </html>

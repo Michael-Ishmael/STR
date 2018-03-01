@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    
+    <style>
+        
+        .blur {
+opacity: .2;
+/*            filter: blur(50px);
+        // Browser Specific
+        -webkit-filter: blur(50px);
+            -moz-filter: blur(50px);
+            -o-filter: blur(50px);
+            -ms-filter: blur(50px);*/
+        }
+        
+    </style>
+    
+</head>
+<body>
+
+    <div id="testDiv">
+
+        Test Div
+        <img class="h-align" src="img/about-mark-s.jpg">
+
+    </div>
+
+    <script src="node_modules/gsap/TweenMax.js"></script>
+    <script>
+
+        TweenLite.to("#testDiv", 5, {css: {className: 'blur'}}); //, ease: Power3
+
+    </script>
+
+</body>
+</html>

@@ -353,20 +353,12 @@ section {
       .wide-picture-grid .str-grid-pic .about-us-image-tile p {
         font-size: .8rem; }
       .wide-picture-grid .str-grid-pic .about-us-image-tile img {
-        height: 100%;
-        transition: all .4s ease-in-out; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile > img:hover {
-        filter: blur(50px);
-        -webkit-filter: blur(50px);
-        -moz-filter: blur(50px);
-        -o-filter: blur(50px);
-        -ms-filter: blur(50px); }
+        height: 100%; }
       .wide-picture-grid .str-grid-pic .about-us-image-tile .name-caption-container {
         position: absolute;
         bottom: 0;
         z-index: 1;
         width: 100%;
-        transition: all .4s ease-in-out;
         transform: translateY(0%); }
       .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons {
         display: none; }
@@ -389,14 +381,20 @@ section {
         .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light {
           margin-top: .5rem;
           border-color: #bbb6a8; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile:hover .name-caption-container {
+      .wide-picture-grid .str-grid-pic .about-us-image-tile.over > img {
+        filter: blur(50px);
+        -webkit-filter: blur(50px);
+        -moz-filter: blur(50px);
+        -o-filter: blur(50px);
+        -ms-filter: blur(50px); }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container {
         bottom: 50%;
         transform: translateY(50%); }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile:hover .name-caption-container h6 {
+        .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container h6 {
           display: none; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile:hover .name-caption-container .buttons {
+        .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container .buttons {
           display: block; }
-          .wide-picture-grid .str-grid-pic .about-us-image-tile:hover .name-caption-container .buttons .btn-outline-light {
+          .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container .buttons .btn-outline-light {
             border-color: #fff; }
 
 header {

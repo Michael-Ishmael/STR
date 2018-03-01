@@ -1,5 +1,5 @@
 import {HexagonLayout} from "./hexagon";
-import $ from 'jquery';
+
 
 let hexData:string[] = [
     "#hexTile_1",
@@ -28,7 +28,29 @@ $(document).ready(function () {
                 layout.layoutHexagons("#hexLayout1");
             }
         );
+
+        $('.about-us-image-tile').hover(e => {
+            let t = e.currentTarget;
+            let cn = t.className + ' over';
+            if(t){
+                TweenLite.to(t, 2, {css: {opacity: .5}}); //, ease: Power3.easeInOut})
+
+            }
+        }
+/*        , e => {
+            let t = e.currentTarget;
+            let cn = t.className.replace(' over', '');
+            if(t){
+                var tw = TweenLite.to(t, 10, {x: 200}); //, ease: Power3.easeInOut})
+                tw.play()
+            }
+
+
+        }*/
+        );
     }
+
+
 );
 
 
