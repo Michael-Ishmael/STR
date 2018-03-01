@@ -106,6 +106,7 @@ html(lang="en")
                             .col-6.str-grid-pic
                                 .about-us-image-tile
                                     img.h-align(src=member.image)
+                                    img.h-align.overlay(src=member.image.replace('.jpg', '_blur.jpg'))
                                     .name-caption-container.text-center
                                         .buttons
                                             a.button(href=twitterLink)
@@ -119,9 +120,9 @@ html(lang="en")
                                         .v-spacer
                                         h4.display-4.clr-white= member.fullName
 
-                                        .buttons
+                                        .buttons.lower
                                             .btn.btn-outline-light About #{member.firstName}
-                                        h6= member.title
+                                            h6= member.title
 
                         .col-6.str-grid-pic
                             .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
