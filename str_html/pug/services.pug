@@ -1,0 +1,143 @@
+include includes/globals
+-
+    var steps = [
+    {
+        index: "1.",
+        title: "Analyse",
+        image: "img/icon-analyse.svg",
+        text: "Before we offer you a solution we take time to understand your problem. Our early stage analysis is delivered with speed and precision in a matter of weeks."
+    },
+    {
+        index: "2.",
+        title: "Identify",
+        image: "img/icon-improve.svg",
+        text: "We identify the inhibitors preventing you achieving your revenue goals; then we build a blueprint for change to help you tackle them."
+    },
+    {
+        index: "3.",
+        title: "Improve",
+        image: "img/icon-sustain.svg",
+        text: "From here we build sales coaching and education programs to arm your teams with the skills and knowledge they need to achieve sustained commercial improvement."
+    },
+    {
+        index: "4.",
+        title: "Sustain",
+        image: "img/icon-sustain.svg",
+        text: "Our goal is your success. Our services concentrate on the 20% change that will deliver 80% of the results, to achieve the cultural business transformation that will accelerate sales performance and sustainable competitive advantage."
+    },
+    {
+        index: "5.",
+        title: "Succeed",
+        image: "img/icon-succeed.svg",
+        text: "Ongoing assessment and training tools give you the power to continue to build your sales team’s competencies, so you continue to hit your targets."
+    }
+    ]
+
+    var services = [
+    {
+        title: "Discovery",
+        className: "discovery",
+        text: "Our rapid impact analysis enables us to identify with speed and precision your mission critical priorities and pinpoint the areas of your business that are misaligned to them...",
+        buttonText: "Continue Reading",
+        image: "",
+        link: "#"
+    },
+    {
+        title: "Mapping",
+        className: "mapping",
+        text: "Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
+        buttonText: "Continue Reading",
+        image: "",
+        link: "#"
+    },
+    {
+        title: "Pathfinder",
+        className: "pathfinder",
+        text: "Pathfinder bridges that gap between your strategy and your sales team’s ability to fulfil it. We translate mission critical objectives into achievable deliverables...",
+        buttonText: "Continue Reading",
+        image: "",
+        link: "#"
+    },
+    {
+        title: "Compass",
+        className: "compass",
+        text: "When we give your teams the tools to achieve your revenue goals, we do it in a way that works best for your business...",
+        buttonText: "Continue Reading",
+        image: "",
+        link: "#"
+    }
+
+
+    ]
+
+    currentPage = 'Services'
+
+doctype html
+html(lang="en")
+    include includes/head
+
+    body.str
+        include includes/header
+
+
+        main
+
+            section
+                .container-fluid.bg-blue
+                    .str-hero.jumbotron
+                        h1.display-4='5 Steps to '
+                            span.clr-bright-blue Incredible
+
+                        p.lead.
+                            Our clients come to us for sales training.
+                            We believe in a different approach.
+                            Like medicine, sales force transformations are only as good as the initial diagnosis.
+                            After an awkward first conversation,
+                            our most sceptical prospects often become our loyalist clients.
+            section
+                .container-fluid
+                    .row.text-center.str-card-container
+                        each step in steps
+                            .col-12.col-sml-6.col-md-4.str-card
+                                .icon-container
+                                    img(src=step.image)
+                                h4.display-4
+                                    span.heading-number= step.index
+                                    = ' ' + step.title
+                                p= step.text
+
+            section
+                .container-fluid.bg-yellow
+                    .container
+                        .row.align-content-center.str-main
+                            .col-12.col-md-6
+                                h1.display-1 Services
+                            .col-12.v-spacer.d-md-none
+                            p.col-12.col-md-6.clr-dark-blue.
+                                Whether you operate in one town or across multiple languages and cultures,
+                                we’ve almost certainly worked with a company like yours before.
+                                We recognize that you need to deliver short term gains along with
+                                longer-term business improvement so we break down our approach into
+                                four distinct but complementary programmes. Each of our award-winning
+                                programmes delivers immediate short-term successes but is also a key
+                                component for cultural change and sustained commercial improvement.
+
+
+            each service in services
+                section.container-fluid(class=service.className)
+                    .container.str-pic-hero
+                        h2.display-2= service.title
+                        p=service.text
+                        p
+                            a.btn.btn-primary.btn-lg(href=service.link, role="button")=service.buttonText
+
+
+
+
+
+
+
+            include includes/trailer
+            include includes/footer
+
+    include includes/scripts
