@@ -40,15 +40,15 @@ include includes/globals
         text: "Our rapid impact analysis enables us to identify with speed and precision your mission critical priorities and pinpoint the areas of your business that are misaligned to them...",
         buttonText: "Continue Reading",
         image: "",
-        link: "#"
+        link: "#overlay-discovery"
     },
     {
         title: "Mapping",
         className: "mapping",
-        text: "Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
+        text: "Using the blueprint from the Discovery phase, our multi-discipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
         buttonText: "Continue Reading",
         image: "",
-        link: "#"
+        link: "#overlay-mapping"
     },
     {
         title: "Pathfinder",
@@ -56,7 +56,7 @@ include includes/globals
         text: "Pathfinder bridges that gap between your strategy and your sales team’s ability to fulfil it. We translate mission critical objectives into achievable deliverables...",
         buttonText: "Continue Reading",
         image: "",
-        link: "#"
+        link: "#overlay-pathfinder"
     },
     {
         title: "Compass",
@@ -64,10 +64,121 @@ include includes/globals
         text: "When we give your teams the tools to achieve your revenue goals, we do it in a way that works best for your business...",
         buttonText: "Continue Reading",
         image: "",
-        link: "#"
+        link: "#overlay-compass"
     }
 
 
+    ]
+
+    var expertise = [
+        {
+            id: "hexTile_1",
+            title: "Messaging",
+            summary: "We work with you to ensure the strategic goals of your company…",
+            link: "#"
+        },
+        {
+        id: "hexTile_2",
+            title: "Customer<br>Segmentation",
+            summary: "We work with you to ensure the strategic goals of your company…",
+            link: "#"
+        },
+        {
+        id: "hexTile_3",
+        title: "Compensation<br>& Incentives",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_4",
+        title: "Sales Force<br>Deployment",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_5",
+        title: "Performance<br>Management",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+            id: "hexTile_6",
+        title: "Sales Tools<br>& Process",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_7",
+        title: "Reporting<br>& Analysis",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_8",
+        title: "Sales Strategy<br>Alignment",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_9",
+        title: "Recruiting,<br>On-boarding<br>& Re-boarding",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_10",
+        title: "Sales<br>Efficiency",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+            id: "hexTile_11",
+        title: "Pricing &<br>Pricing Models",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_12",
+        title: "Customer<br>Segmentation",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        },
+        {
+        id: "hexTile_13",
+        title: "Customer<br>Segmentation",
+        summary: "We work with you to ensure the strategic goals of your company…",
+        link: "#"
+        }
+    ];
+
+    var consultants = [
+        {
+        firstName: 'Tony',
+        fullName: 'Tony Wand',
+        title: 'Senior Consultant',
+        link: '#',
+        email: 'info@str.com',
+        summary: "Sales Tools & Process, Channel Engagement, Sales Efficiency, Winning in New Markets & Territories, Performance Management",
+        image: 'img/about-tony-w.jpg'
+            },
+       {
+        firstName: 'Martin',
+        fullName: 'Martin Dean',
+        title: 'Senior Consultant',
+        link: '#',
+        email: 'info@str.com',
+        summary: "Sales Efficiency, New Product Messaging, Competitor Positioning, Sales Efficiency, Recruiting, On-boarding and Re-boarding",
+        image: 'img/about-martin-d.jpg'
+        },
+        {
+        firstName: 'Neil',
+        fullName: 'Neil Whitelock',
+        title: 'Senior Consultant',
+        link: '#',
+        email: 'info@str.com',
+        summary: "Customer Segmentation, Compensation & Incentives, Sales Tools & Process, Sales Efficiency, Reporting & Analysis",
+        image: 'img/about-neil-w.jpg'
+        }
     ]
 
     currentPage = 'Services'
@@ -77,6 +188,7 @@ html(lang="en")
     include includes/head
 
     body.str
+
         include includes/header
 
 
@@ -129,12 +241,87 @@ html(lang="en")
                         h2.display-2= service.title
                         p=service.text
                         p
-                            a.btn.btn-primary.btn-lg(href=service.link, role="button")=service.buttonText
+                            a.btn.btn-primary.btn-lg.overlay-link(href=service.link, role="button")=service.buttonText
 
 
 
+            section.container-fluid.bg-blue
+                .str-main.container
+                    h1.display-1.text-center.clr-white Our Expertise
+                    #hexLayout1.str-hex-tile-container
+
+                        each skill in expertise
+                            .str-hex-tile(id=skill.id)
+                                p.text-center.align-middle.clr-white
+                                    span!= skill.title
+                                    span.em-line
 
 
+            section.container-fluid.bg-yellow
+                .container
+                    .str-main.row.align-content-center.justify-content-center
+                        .col-12.col-md-6.col-lg-4
+                            h1.display-1 Our Consultants
+                        .col-12.v-spacer.d-md-none
+                        p.col-12.col-md-6.col-lg-4.clr-dark-blue.p-4.
+                            We’re experienced group of sales and marketing leaders,
+                            and education and coaching stalwarts who’ve all held
+                            senior positions at global corporations, or rolled up
+                            our sleeves to turn table-top start-ups into successful
+                            international businesses; and in many cases, we’ve done both!
+
+
+            section.container-fluid
+                .row.str-feature-box-container
+                    each consultant in consultants
+                        .col-12.col-sm-4.str-feature-box.bg-light-cream
+                            img.str-feature-image(src=consultant.image)
+                            .str-feature-text.text-center
+                                h3.display-3= consultant.fullName
+                                h6.text-uppercase= consultant.title
+                                p= consultant.summary
+                                a.str-button.btn.btn-lg.btn-outline-secondary(href=consultant.link)= 'About ' + consultant.firstName
+                                a.str-button.btn.btn-primary.btn-lg(href='mailto:'+consultant.email) Get in Touch
+                .row
+                    .col-12.text-center.bg-mid-cream.p-4
+                        .circles.text-center
+                            .circle.tony
+                            .circle.martin
+                            .circle.neil
+                            a.circle.blue.bg-blue.clr-white(href='#') 9+
+                        .d-inline-block.consult-link-text-container
+                            a.d-inline-block.clr-dark-blue.font-weight-bold(href='#')
+                                | Show All Consultants
+
+            section#overlay-discovery.overlay(aria-hidden="true")
+                .inner-overlay.container-fluid
+                    .row
+                        .col-6.p-0
+                            .overlay-image-container
+                                img(src="img/overlay-discovery.jpg")
+                        .col-6.p-0
+                            .overlay-content
+                                .overlay-main
+                                    h6 Services
+                                    h2.display-2 Discovery
+                                .overlay-footer
+                                    h6 Next Service
+                                    h3.display-3 Mapping
+
+            section#overlay-mapping.overlay(aria-hidden="true")
+                .inner-overlay.container-fluid
+                    .row
+                        .col-6.p-0
+                            .overlay-image-container
+                                img(src="img/overlay-discovery.jpg")
+                        .col-6.p-0
+                            .overlay-content
+                                .overlay-main
+                                    h6 Services
+                                    h2.display-2 Mapping
+                                .overlay-footer
+                                    h6 Next Service
+                                    h3.display-3 Mapping
 
 
             include includes/trailer

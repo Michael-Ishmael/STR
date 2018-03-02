@@ -51,6 +51,40 @@ $(function () {
         }
         initRollovers();
 
+
+        function initOverlays(){
+            $('a.overlay-link').click(function(e){
+                e.preventDefault();
+                let jLink = $(e.currentTarget);
+                if(jLink.length){
+                    let link = jLink.attr('href');
+                    if(link && link.length){
+                        let overlay = $(link);
+                        if(overlay.length){
+
+                            $('body').addClass('noscroll');
+                            overlay.attr('aria-hidden', 'false');
+                            let oBody = overlay.find('.overlay-content');
+                            let oImg = overlay.find('.overlay-image-container');
+                            TweenLite.from(oBody[0], .5, {x: 600 });
+                            TweenLite.from(oImg[0], .5, {x: -600 });
+                            setTimeout(function () {
+                                overlay.scrollTop(0);
+
+                            }, 1000);
+
+/*                            let jWin = $(window);
+                            jLinkTarget.css('top', $(document).scrollTop());
+                            jLinkTarget.width(jLinkTarget.parent().width());
+                            jLinkTarget.height(jWin.height());*/
+
+                            //jLinkTarget.show();
+                        }
+                    }
+                }
+            });
+        }
+        initOverlays();
     }
 );
 

@@ -308,6 +308,35 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
                     auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
                 }
                 initRollovers();
+                function initOverlays() {
+                    $('a.overlay-link').click(function (e) {
+                        e.preventDefault();
+                        var jLink = $(e.currentTarget);
+                        if (jLink.length) {
+                            var link = jLink.attr('href');
+                            if (link && link.length) {
+                                var overlay_1 = $(link);
+                                if (overlay_1.length) {
+                                    $('body').addClass('noscroll');
+                                    overlay_1.attr('aria-hidden', 'false');
+                                    var oBody = overlay_1.find('.overlay-content');
+                                    var oImg = overlay_1.find('.overlay-image-container');
+                                    TweenLite.from(oBody[0], .5, { x: 600 });
+                                    TweenLite.from(oImg[0], .5, { x: -600 });
+                                    setTimeout(function () {
+                                        overlay_1.scrollTop(0);
+                                    }, 1000);
+                                    /*                            let jWin = $(window);
+                                                                jLinkTarget.css('top', $(document).scrollTop());
+                                                                jLinkTarget.width(jLinkTarget.parent().width());
+                                                                jLinkTarget.height(jWin.height());*/
+                                    //jLinkTarget.show();
+                                }
+                            }
+                        }
+                    });
+                }
+                initOverlays();
             });
         }
     };
