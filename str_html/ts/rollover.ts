@@ -115,22 +115,22 @@ export class CssPropertyTween extends RolloverTweenBase implements IRolloverTwee
         cssTransformObj[this.propertyName] = this.toValue;
         if(this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
             if(this.toValue == 0) {
-                tweenContainer.jElement.hide();
+                tweenContainer.jElement.css('visibility', 'hidden');
             } else {
-                tweenContainer.jElement.show();
+                tweenContainer.jElement.css('visibility', 'visible');
             }
         }
         tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, {
             css: cssTransformObj, ease: ease,
             onReverseComplete: () => {
-                if (this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement)
+                if (this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
                     if(this.toValue == 0) {
-                        tweenContainer.jElement.show();
+                        tweenContainer.jElement.css('visibility', 'visible');
                     } else {
-                        tweenContainer.jElement.hide();
+                        tweenContainer.jElement.css('visibility', 'hidden');
                     }
+                }}
 
-            }
         });
     }
 

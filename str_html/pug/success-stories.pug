@@ -2,79 +2,48 @@ include includes/globals
 -
     var stories = [
     {
-    firstName: 'Mark',
-    fullName: 'Mark Savinson',
-    title: 'Chief Operating Officer',
-    link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    id: "skyrocket",
+    title: "Helping DHL Express<br>Skyrocket Their Sales",
+    link: "#",
+    image: "img/success-plane.jpg"
     },
     {
-    firstName: 'Garry',
-    fullName: 'Garry Veale',
-    title: 'Chief Executive Officer',
+    id: 'satisfaction',
+    title: 'Satisfaction Team Drives 20%<br>Increase in Customer Spend',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-garry-v.jpg'
+    image: 'img/success-phone.jpg'
     },
     {
-    firstName: 'Tony',
-    fullName: 'Tony Wand',
-    title: 'Senior Consultant',
+    id: 'global',
+    title: 'Setting Global Standards<br>for Online Learning',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    image: 'img/success-global.jpg'
     },
     {
-    firstName: 'Michael',
-    fullName: 'Michael Copestake',
-    title: 'Senior Consultant',
+    id: 'motorola',
+    title: 'Motorola Onboarding<br>Programme Wins Gold',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    image: 'img/success-motorola.jpg'
     },
     {
-    firstName: 'Martin',
-    fullName: 'Martin Dean',
-    title: 'CSenior Consultant',
+    id: 'behaviours',
+    title: 'Global Operator Rings In<br>Improved Sales Behaviours',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    image: 'img/success-red-lines.jpg'
     },
     {
-    firstName: 'Robert',
-    fullName: 'Robert Fox',
-    title: 'Senior Consultant',
+    id: 'leader',
+    title: 'Enabling DHL Global Forwarding<br>to Become Market Leader',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    image: 'img/success-trucks.jpg'
     },
     {
-    firstName: 'Neil',
-    fullName: 'Neil Whitelock',
-    title: 'Senior Consultant',
+    id: 'pipeline',
+    title: '25 Million Euro Pipeline<br>Delivered in 4 Weeks',
     link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
-    },
-    {
-    firstName: 'Rachel',
-    fullName: 'Rachel Bibby',
-    title: 'Senior Consultant, Americas',
-    link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
-    },
-    {
-    firstName: 'Phil',
-    fullName: 'Phil Nutt',
-    title: 'Senior Consultant',
-    link: '#',
-    email: 'info@str.com',
-    image: 'img/about-mark-s.jpg'
+    image: 'img/success-dhl-vehicles.jpg'
     }
     ]
-
 
     currentPage = 'Success Stories'
 
@@ -85,10 +54,11 @@ html(lang="en")
     body.str
         include includes/header
 
+
         main
 
-            section.bg-blue
-                .container
+            section
+                .container-fluid.bg-blue
                     .str-hero.jumbotron
                         h1.display-4='Success '
                             span.clr-bright-blue Stories
@@ -99,46 +69,21 @@ html(lang="en")
                             vitae pulvinar justo tellus id urna. Nunc eros arcu, rutrum a neque quis,
                              feugiat ultrices metus. Proin at nisi tristique, sodales nunc ut, blandit lorem.
 
-            section.bg-blue
-                .container-fluid.no-padding
+            section
+                .container-fluid.bg-blue
                     .row.text-center.wide-picture-grid
-                        each member in stories
+                        each story in stories
                             .col-6.str-grid-pic
-                                .about-us-image-tile
-                                    img.h-align(src='img/about-mark-s.jpg')
-                                    .name-caption-container.text-center
-                                        .buttons
-                                            a.button(href=twitterLink)
-                                                img(src='img/twitter-white.svg')
-                                            a.button(href=linkedInLink)
-                                                img(src='img/linked-in-white.svg')
-                                            a.button(href='mailto:' + member.email)
-                                                img(src='img/email-white.svg')
-                                                |  email
+                                .success-image-tile
+                                    img.h-align(src=story.image)
+                                    .photo-caption.text-left.p-4
+                                        h5.display-5.clr-white!= story.title
 
-                                        .v-spacer
-                                        h4.display-4.clr-white= member.fullName
+                                        h6
+                                            a(href=story.link) read success story
 
-                                        .buttons
-                                            .btn.btn-outline-light About #{member.firstName}
-                                        h6= member.title
-
-                        .col-6.str-grid-pic
-                            .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
-                                .v-align
-                                    h4.display-4.
-                                        Unleash Your Potential
-                                    p.
-                                        We’re always on the lookout for like-minded
-                                        individuals who want to make the incredible a reality.
-                                        If you’ve got a track record of driving sales growth
-                                        and delivering sustained commercial improvement,
-                                        winning in new markets or restructuring businesses
-                                        to make them outstanding, get in touch.
-                                    .v-spacer
-                                    a.btn.btn-lg.btn-secondary join us
 
             include includes/trailer
             include includes/footer
 
-
+    include includes/scripts

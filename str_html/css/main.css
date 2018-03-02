@@ -121,9 +121,14 @@ footer {
 .no-padding {
   padding: 0; }
 
+.str .container-fluid {
+  max-width: 1400px; }
+
 .str-hero.jumbotron {
   text-align: center;
   background-color: inherit;
+  margin-right: -15px;
+  margin-left: -15px;
   margin-bottom: 0;
   padding: 4rem 2rem 2rem; }
   .str-hero.jumbotron h1 {
@@ -336,108 +341,130 @@ section {
     width: 12rem;
     font-weight: bold; }
 
-.wide-picture-grid {
-  max-width: 1440px;
-  margin: auto; }
-  .wide-picture-grid .str-grid-pic {
-    padding: 0;
-    color: #fff;
-    height: 470px; }
-    .wide-picture-grid .str-grid-pic .about-us-image-tile {
-      overflow: hidden;
-      /*
-            &.over {
-      
-      !*        > img {
-                $blur-amount: 50px;
-                filter: blur($blur-amount);
-                // Browser Specific
-                -webkit-filter: blur($blur-amount);
-                -moz-filter: blur($blur-amount);
-                -o-filter: blur($blur-amount);
-                -ms-filter: blur($blur-amount);
-              }*!
-      
-              .name-caption-container {
-                bottom: 50%;
-                //transform: translateY(50%);
-      
-                h6 {
-                  display: none;
-                }
-      
-                .buttons {
-                  display: block;
-      
-                  .btn-outline-light {
-                    border-color: $white;
-                  }
-      
-                }
-      
+.wide-picture-grid .str-grid-pic {
+  padding: 0;
+  color: #fff;
+  height: 470px; }
+  .wide-picture-grid .str-grid-pic .about-us-image-tile, .wide-picture-grid .str-grid-pic .success-image-tile {
+    overflow: hidden;
+    position: relative;
+    /*
+          &.over {
+    
+    !*        > img {
+              $blur-amount: 50px;
+              filter: blur($blur-amount);
+              // Browser Specific
+              -webkit-filter: blur($blur-amount);
+              -moz-filter: blur($blur-amount);
+              -o-filter: blur($blur-amount);
+              -ms-filter: blur($blur-amount);
+            }*!
+    
+            .name-caption-container {
+              bottom: 50%;
+              //transform: translateY(50%);
+    
+              h6 {
+                display: none;
               }
-      
-            }*/ }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile h4.display-4 {
-        color: #fff;
-        font-size: 2rem;
-        margin: 1rem; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile h6 {
-        color: #fff;
-        font-size: .6rem;
-        opacity: .8; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile p {
-        font-size: .8rem; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile img {
-        height: 100%; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile img.overlay {
-          display: none;
-          opacity: 0;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 1; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .name-caption-container {
+    
+              .buttons {
+                display: block;
+    
+                .btn-outline-light {
+                  border-color: $white;
+                }
+    
+              }
+    
+            }
+    
+          }*/ }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile h4.display-4, .wide-picture-grid .str-grid-pic .success-image-tile h4.display-4 {
+      color: #fff;
+      font-size: 2rem;
+      margin: 1rem; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile h6.title, .wide-picture-grid .str-grid-pic .success-image-tile h6.title {
+      color: #fff;
+      font-size: .6rem;
+      opacity: .8; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile p, .wide-picture-grid .str-grid-pic .success-image-tile p {
+      font-size: .8rem; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile img, .wide-picture-grid .str-grid-pic .success-image-tile img {
+      height: 100%; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile img.overlay, .wide-picture-grid .str-grid-pic .success-image-tile img.overlay {
+        visibility: hidden;
+        opacity: 0;
         position: absolute;
-        bottom: 0;
-        z-index: 2;
-        width: 100%;
-        margin-bottom: 1rem; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile.over {
-        opacity: .5; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container {
-          bottom: 50%; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons a:hover {
-        color: #fff; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower {
-        position: relative;
-        text-align: center;
-        width: 100%;
-        height: 1rem; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower > h6, .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower div {
-          position: absolute;
-          top: 0;
-          display: inline-block; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button {
-        cursor: pointer;
-        height: 1rem;
-        border-radius: 2rem;
-        background-color: rgba(187, 182, 168, 0.5);
-        min-width: 1rem;
-        margin: 0 1rem;
-        padding: 1rem;
-        font-size: .8rem; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button img {
-          height: .8rem;
-          width: .8rem; }
-        .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button:hover {
-          background-color: rgba(187, 182, 168, 0.9); }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light {
-        border-color: #bbb6a8; }
+        top: 0;
+        left: 0;
+        z-index: 1; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .name-caption-container, .wide-picture-grid .str-grid-pic .success-image-tile .name-caption-container {
+      position: absolute;
+      bottom: 0;
+      z-index: 2;
+      width: 100%;
+      margin-bottom: 1rem; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption {
+      position: absolute;
+      z-index: 1;
+      bottom: -2rem;
+      margin-bottom: 1rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h5, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h5 {
+        font-size: 1.2rem;
+        font-family: Apercu, sans-serif;
+        font-weight: bold; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h6, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h6 {
+        margin-top: 1rem;
+        text-transform: uppercase;
+        font-size: .6rem;
+        font-family: Apercu, sans-serif;
+        font-weight: bold;
+        visibility: hidden;
+        opacity: 0; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile.over, .wide-picture-grid .str-grid-pic .success-image-tile.over {
+      opacity: .5; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile.over .name-caption-container, .wide-picture-grid .str-grid-pic .success-image-tile.over .name-caption-container {
+        bottom: 50%; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.upper, .wide-picture-grid .str-grid-pic .success-image-tile .buttons.upper {
+      visibility: hidden;
+      opacity: 0; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons a:hover, .wide-picture-grid .str-grid-pic .success-image-tile .buttons a:hover {
+      color: #fff; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower, .wide-picture-grid .str-grid-pic .success-image-tile .buttons.lower {
+      position: relative;
+      text-align: center;
+      width: 100%;
+      height: 1rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower > h6, .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower div, .wide-picture-grid .str-grid-pic .success-image-tile .buttons.lower > h6, .wide-picture-grid .str-grid-pic .success-image-tile .buttons.lower div {
+        position: absolute;
+        top: 0;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%); }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons.lower .btn, .wide-picture-grid .str-grid-pic .success-image-tile .buttons.lower .btn {
+        visibility: hidden;
+        opacity: 0; }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .button {
+      cursor: pointer;
+      height: 1rem;
+      border-radius: 2rem;
+      background-color: rgba(187, 182, 168, 0.5);
+      min-width: 1rem;
+      margin: 0 1rem;
+      padding: 1rem;
+      font-size: .8rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button img, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .button img {
+        height: .8rem;
+        width: .8rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .button:hover, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .button:hover {
+        background-color: rgba(187, 182, 168, 0.9); }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .btn-outline-light {
+      border-color: #bbb6a8; }
 
 header {
   padding: 2rem 0 2rem 0 !important;
-  background-color: #1c2541;
   color: white;
   min-height: 8em;
   font-size: .4rem;

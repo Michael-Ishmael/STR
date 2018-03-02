@@ -210,22 +210,23 @@ System.register("rollover", ["jquery"], function (exports_2, context_2) {
                     cssTransformObj[this.propertyName] = this.toValue;
                     if (this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
                         if (this.toValue == 0) {
-                            tweenContainer.jElement.hide();
+                            tweenContainer.jElement.css('visibility', 'hidden');
                         }
                         else {
-                            tweenContainer.jElement.show();
+                            tweenContainer.jElement.css('visibility', 'visible');
                         }
                     }
                     tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, {
                         css: cssTransformObj, ease: ease,
                         onReverseComplete: function () {
-                            if (_this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement)
+                            if (_this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
                                 if (_this.toValue == 0) {
-                                    tweenContainer.jElement.show();
+                                    tweenContainer.jElement.css('visibility', 'visible');
                                 }
                                 else {
-                                    tweenContainer.jElement.hide();
+                                    tweenContainer.jElement.css('visibility', 'hidden');
                                 }
+                            }
                         }
                     });
                 };
@@ -285,7 +286,7 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
                 "#hexTile_13"
             ];
             layout = new hexagon_1.HexagonLayout(hexData, 180, 140);
-            $(document).ready(function () {
+            $(function () {
                 layout.layoutHexagons("#hexLayout1");
                 $(window).resize(function () {
                     layout.layoutHexagons("#hexLayout1");
@@ -294,42 +295,19 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
                     var auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
                     var opacityTween = new rollover_1.CssPropertyTween("img.overlay", "opacity", 1);
                     var buttonsTween = new rollover_1.CssPropertyTween(".buttons", "opacity", 1);
-                    var titleTween = new rollover_1.CssPropertyTween("h6", "opacity", 0);
+                    var titleTween = new rollover_1.CssPropertyTween("h6.title", "opacity", 0);
+                    var aboutTween = new rollover_1.CssPropertyTween(".lower .btn", "opacity", 1);
                     var captionTween = new rollover_1.MovePercentageOfParent('.name-caption-container', 'y', -.5);
                     auRoManager.init();
-                    auRoManager.registerTweens([opacityTween, captionTween, titleTween, buttonsTween]);
+                    auRoManager.registerTweens([opacityTween, captionTween, titleTween, aboutTween,
+                        buttonsTween]);
+                    var auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, Back.easeInOut);
+                    var photoCaptionTween = new rollover_1.CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
+                    var readMoreTween = new rollover_1.CssPropertyTween(".photo-caption h6", "opacity", 1);
+                    auRoManager2.init();
+                    auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
                 }
-                /*           $('.about-us-image-tile').hover(e => {
-                            let t = e.currentTarget;
-                            let cn = t.className + ' over';
-                
-                
-                            //
-                
-                            if(t){
-                                let overlay = $(t).find('img.overlay');
-                                if(overlay.length){
-                                    overlay.show();
-                                    //TweenLite.to("#testDiv", 5, {css: {className: 'blur'}}); //, ease: Power3
-                                    TweenLite.to(overlay[0], .5, {css: {opacity: 1}, ease: Power3.easeOut}); //, })
-                                }
-                                let nameCaption = $(t).find('.name-caption-container ')
-                                if(nameCaption.length) {
-                                    let yTo = nameCaption.parent().height() / 2 * -1;
-                                    TweenLite.to(nameCaption[0], .5, {y: yTo, ease: Power3.easeOut});
-                                }
-                
-                            }
-                        }
-                                , e => {
-                            let t = e.currentTarget;
-                            let cn = t.className.replace(' over', '');
-                            if(t){
-                               // TweenLite.to(t, 2, {css: {className: '-=over'}});
-                /!*                var tw = TweenLite.to(t, 10, {x: 200}); //, ease: Power3.easeInOut})
-                                tw.play()*!/
-                            }
-                            });*/
+                initRollovers();
             });
         }
     };

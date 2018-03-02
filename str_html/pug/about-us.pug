@@ -36,7 +36,7 @@ include includes/globals
         {
             firstName: 'Martin',
             fullName: 'Martin Dean',
-            title: 'Cenior Consultant',
+            title: 'Senior Consultant',
             link: '#',
             email: 'info@str.com',
             image: 'img/about-martin-d.jpg'
@@ -87,8 +87,8 @@ html(lang="en")
 
         main
 
-            section.bg-blue
-                .container
+            section
+                .container-fluid.bg-blue
                     .str-hero.jumbotron
                         h1.display-4= 'A Team of '
                             span.clr-bright-blue Leaders
@@ -99,8 +99,8 @@ html(lang="en")
                             or rolled up our sleeves to turn table-top start-ups into successful
                             international businesses; and in many cases, we’ve done both!
 
-            section.bg-blue
-                .container-fluid.no-padding
+            section
+                .container-fluid.bg-blue
                     .row.text-center.wide-picture-grid
                         each member in team
                             .col-6.str-grid-pic
@@ -108,7 +108,7 @@ html(lang="en")
                                     img.h-align(src=member.image)
                                     img.h-align.overlay(src=member.image.replace('.jpg', '_blur.jpg'))
                                     .name-caption-container.text-center
-                                        .buttons
+                                        .buttons.upper
                                             a.button(href=twitterLink)
                                                 img(src='img/twitter-white.svg')
                                             a.button(href=linkedInLink)
@@ -117,12 +117,13 @@ html(lang="en")
                                                 img(src='img/email-white.svg')
                                                 |  email
 
+
                                         .v-spacer
                                         h4.display-4.clr-white= member.fullName
 
                                         .buttons.lower
                                             .btn.btn-outline-light About #{member.firstName}
-                                            h6= member.title
+                                            h6.title= member.title
 
                         .col-6.str-grid-pic
                             .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
