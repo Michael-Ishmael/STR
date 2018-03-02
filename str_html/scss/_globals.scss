@@ -46,6 +46,10 @@ h2 {
   font-size: 2.6rem;
 }
 
+.display-3 {
+  font-size: 1.8rem;
+}
+
 p {
   font-size: 1em;
 
@@ -79,7 +83,7 @@ $bg-color-list: (blue: $dark-blue, yellow: $corn-yellow,
   }
 }
 
-$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue);
+$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue, mid-blue: $mid-blue);
 
 @each $key, $value in $txt-color-list {
   .clr-#{$key} {

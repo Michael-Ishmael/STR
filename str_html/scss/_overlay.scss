@@ -29,6 +29,7 @@
 }
 
 .overlay div {
+  height: 100%;
 /*  margin: 15vh auto;
   width: 80%;
   max-width: 650px;
@@ -45,11 +46,78 @@
   .overlay-image-container {
     overflow: hidden;
   }
+  .overlay-column {
+    //height: 100%;
+  }
 
   .overlay-content {
     height: 100%;
     background-color: rgba(255,255,255, .95);
+
+    .close-button-container {
+      height: 64px;
+
+
+      .close-button{
+        display: inline-block;
+        width: 64px;
+        height: 64px;
+        @include border-radius(32px);
+        margin: 1rem;
+
+        .cross{
+          display: inline-block;
+          margin: 20px;
+          background-image: url("../img/yellow-cross.svg");
+          width: 24px;
+          height: 24px;
+        }
+
+      }
+    }
+
+    .overlay-main {
+      padding: 2rem 3rem;
+
+      h6 {
+        font-size: .9rem;
+      }
+
+
+      h2 {
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: .8rem;
+
+      }
+    }
+
+
+
   }
+
+  .overlay-footer {
+
+    padding: 1.4rem 3rem;
+    border-top: 1px solid $light-gray;
+
+    &:nth-child(3) {
+      border-top: none;
+    }
+
+    h6 {
+      font-size: .6rem;
+    }
+
+    h3 {
+      border-bottom: 4px solid $corn-yellow;
+      display: inline-block;
+      padding-bottom: .6rem;
+    }
+
+  }
+
 }
 
 

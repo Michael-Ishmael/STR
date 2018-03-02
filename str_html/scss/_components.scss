@@ -32,8 +32,9 @@
 .str-card{
 
   padding: 2em;
-  border-right: 1px solid $light-gray;
-  border-bottom: 1px solid $light-gray;
+  border: 1px solid $light-gray;
+  margin-left: -1px;
+  margin-top: -1px;
 
   .icon-container{
     height: 6em;
@@ -166,7 +167,8 @@ section {
 }
 
 .str-hex-tile-container{
-  margin: 2em;
+  margin: 2em auto;
+  max-width: 895px;
 
 
 
@@ -174,6 +176,7 @@ section {
 
     padding: 5px;
     display: table;
+    cursor: pointer;
 
     p {
 
@@ -186,7 +189,7 @@ section {
       font-size: .8rem;
       line-height: 1rem;
 
-      span {
+      span, a {
         width: 100%;
         display: inline-block;
 
