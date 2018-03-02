@@ -276,6 +276,7 @@ section {
     display: inline-block;
     border-radius: 2.1rem;
     height: 4.2rem;
+    line-height: 4.2rem;
     width: 4.2rem;
     background-repeat: no-repeat;
     background-size: cover;
@@ -556,5 +557,63 @@ footer {
       padding-bottom: 7px; }
       .footer-menu ul li a.selected {
         border-bottom: 1px solid #bbb6a8; }
+
+.noscroll {
+  overflow: hidden; }
+
+@media (min-device-width: 1025px) {
+  .noscroll {
+    padding-right: 15px; } }
+.overlay {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+[aria-hidden="true"] {
+  width: 100vw;
+  z-index: -1;
+  opacity: 0; }
+
+[aria-hidden="false"] {
+  width: 100%;
+  z-index: 1;
+  opacity: 1; }
+
+.overlay div {
+  /*  margin: 15vh auto;
+    width: 80%;
+    max-width: 650px;
+    padding: 30px;
+    min-height: 200vh;*/ }
+
+.overlay {
+  background: rgba(40, 40, 40, 0.75); }
+  .overlay .inner-overlay {
+    overflow: hidden; }
+  .overlay .overlay-image-container {
+    overflow: hidden; }
+  .overlay .overlay-content {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95); }
+
+/*
+.overlay {
+  position: absolute; !* Sit on top of the page content *!
+  display: none; !* Hidden by default *!
+  width: 100%; !* Full width (cover the whole page) *!
+  height: 100%; !* Full height (cover the whole page) *!
+  left: 0;
+  right: 0;
+!*  top: 0;
+
+  bottom: 0;*!
+  background-color: red; //rgba(0,0,0,0.5); !* Black background with opacity *!
+  z-index: 10; !* Specify a stack order in case you're using a different order for other elements *!
+  cursor: pointer; !* Add a pointer on hover *!
+
+}*/
 
 /*# sourceMappingURL=main.css.map */
