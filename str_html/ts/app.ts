@@ -1,7 +1,9 @@
 import {HexagonLayout} from "./hexagon";
 import {CssPropertyTween, MovePercentageOfParent, RolloverManager} from "./rollover";
+import {OverlayManager} from "./overlay";
 
 
+/*
 let hexData: string[] = [
     "#hexTile_1",
     "#hexTile_2",
@@ -17,15 +19,17 @@ let hexData: string[] = [
     "#hexTile_12",
     "#hexTile_13"
 ];
+*/
 
-let layout = new HexagonLayout(hexData, 180, 140);
 
 $(function () {
-        layout.layoutHexagons("#hexLayout1");
+    let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 180, 140);
+
+    layout.layoutHexagons();
 
         $(window).resize(
             function () {
-                layout.layoutHexagons("#hexLayout1");
+                layout.layoutHexagons();
             }
         );
 
@@ -91,7 +95,9 @@ $(function () {
             })
         }
 
-        initOverlays();
+        OverlayManager.init('#overlayBg', null, '.overlay-link');
+
+        //initOverlays();
 
         function overlayLinkClicked(jLink): void {
             if (jLink.length) {
@@ -104,8 +110,8 @@ $(function () {
                         overlay.attr('aria-hidden', 'false');
                         let oBody = overlay.find('.overlay-content');
                         let oImg = overlay.find('.overlay-image-container');
-                        TweenLite.from(oBody[0], .5, {x: 600});
-                        TweenLite.from(oImg[0], .5, {x: -600});
+                        TweenLite.from(oBody[0], .5, {x: 1000});
+                        TweenLite.from(oImg[0], .5, {x: -1000});
                         setTimeout(function () {
                             overlay.scrollTop(0);
 

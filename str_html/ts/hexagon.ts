@@ -2,6 +2,7 @@ import $ from 'jquery';
 
 export class HexagonLayout {
 
+    public hexData:string[] = [];
     public hexCount:number = 0;
     public hexWidth:number = 0;
     public hexHeight:number = 0;
@@ -11,8 +12,12 @@ export class HexagonLayout {
     public evenRowColCount:number = 0;
     public reqContainerHeight:number = 0;
 
-    public constructor(public hexData:string[], public maxHexWidth:number, public minHexWidth:number){
-        this.hexCount = hexData.length;
+
+    public constructor(public parentContainerId:string, public hexClass, public maxHexWidth:number, public minHexWidth:number){
+
+        let hexes = $(parentContainerId).children(hexClass);
+        this.hexData = hexes.toArray().map(t => '#' + t.id);
+        this.hexCount = this.hexData.length;
     }
 
     public recalc(width:number):void{
@@ -36,11 +41,12 @@ export class HexagonLayout {
 
     }
 
-    public layoutHexagons(parentContainerId:string):void{
+    public layoutHexagons():void{
 
-        let parent = $(parentContainerId);
+        let parent = $(this.parentContainerId);
         if(parent.length == 0) return;
 
+        parent.css('visibility', "hidden");
         let targetWidth = parent.width();
         if(targetWidth == 0) return;
 
@@ -85,6 +91,8 @@ export class HexagonLayout {
             if(i >= this.hexData.length) break;
             isOdd = !isOdd;
         }
+
+        parent.css('visibility', "visible");
 
     }
 

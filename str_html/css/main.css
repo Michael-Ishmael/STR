@@ -130,6 +130,14 @@ footer {
 .str .container-fluid {
   max-width: 1400px; }
 
+.gradient-mask {
+  background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
 .str-hero.jumbotron {
   text-align: center;
   background-color: inherit;
@@ -156,7 +164,7 @@ footer {
   margin-left: -1px;
   margin-top: -1px; }
   .str-card .icon-container {
-    height: 6em;
+    height: 8em;
     margin-bottom: 1.4em; }
   .str-card .display-4 {
     font-size: 2em;
@@ -182,13 +190,13 @@ section {
   background-repeat: no-repeat;
   background-size: cover; }
   section.discovery {
-    background-image: url("../img/discovery.jpg"); }
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/discovery.jpg"); }
   section.mapping {
-    background-image: url("../img/mapping.jpg"); }
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/mapping.jpg"); }
   section.pathfinder {
-    background-image: url("../img/pathfinder.jpg"); }
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/pathfinder.jpg"); }
   section.compass {
-    background-image: url("../img/compass.jpg"); }
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/compass.jpg"); }
   section.up-next {
     background-image: url("../img/next-holder.jpg"); }
 
@@ -218,7 +226,8 @@ section {
     background-size: cover;
     padding: 5rem 0; }
 
-.str-hex-tile {
+.str-hex-tile-container {
+  visibility: hidden;
   /*
   background-color: red;
 
@@ -403,22 +412,29 @@ section {
       font-size: .8rem; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile img, .wide-picture-grid .str-grid-pic .success-image-tile img {
       height: 100%; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile img.gradient, .wide-picture-grid .str-grid-pic .success-image-tile img.gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; }
       .wide-picture-grid .str-grid-pic .about-us-image-tile img.overlay, .wide-picture-grid .str-grid-pic .success-image-tile img.overlay {
         visibility: hidden;
         opacity: 0;
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 1; }
+        z-index: 2; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile .name-caption-container, .wide-picture-grid .str-grid-pic .success-image-tile .name-caption-container {
       position: absolute;
       bottom: 0;
-      z-index: 2;
+      z-index: 3;
       width: 100%;
       margin-bottom: 1rem; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption {
       position: absolute;
-      z-index: 1;
+      z-index: 3;
       bottom: -2rem;
       margin-bottom: 1rem; }
       .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h5, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h5 {
@@ -570,74 +586,64 @@ footer {
 .noscroll {
   overflow: hidden; }
 
-@media (min-device-width: 1025px) {
-  .noscroll {
-    padding-right: 15px; } }
-.overlay {
+.overlay-background {
   position: fixed;
   overflow-y: scroll;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0; }
-
-[aria-hidden="true"] {
-  width: 100vw;
-  z-index: -1;
+  bottom: 0;
+  background: rgba(40, 40, 40, 0.75);
   opacity: 0; }
-
-[aria-hidden="false"] {
-  width: 100%;
-  z-index: 1;
-  opacity: 1; }
-
-.overlay div {
-  height: 100%;
-  /*  margin: 15vh auto;
-    width: 80%;
-    max-width: 650px;
-    padding: 30px;
-    min-height: 200vh;*/ }
-
-.overlay {
-  background: rgba(40, 40, 40, 0.75); }
-  .overlay .inner-overlay {
+  .overlay-background[aria-hidden="true"] {
+    width: 100vw;
+    z-index: -1; }
+    .overlay-background[aria-hidden="true"] .overlay {
+      display: none; }
+  .overlay-background[aria-hidden="false"] {
+    width: 100%;
+    z-index: 1; }
+  .overlay-background .overlay {
+    display: none;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .overlay-background .overlay-image-container {
     overflow: hidden; }
-  .overlay .overlay-image-container {
-    overflow: hidden; }
-  .overlay .overlay-content {
+  .overlay-background .overlay-content {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.95); }
-    .overlay .overlay-content .close-button-container {
+    .overlay-background .overlay-content .close-button-container {
       height: 64px; }
-      .overlay .overlay-content .close-button-container .close-button {
+      .overlay-background .overlay-content .close-button-container .close-button {
         display: inline-block;
         width: 64px;
         height: 64px;
         border-radius: 32px;
         margin: 1rem; }
-        .overlay .overlay-content .close-button-container .close-button .cross {
+        .overlay-background .overlay-content .close-button-container .close-button .cross {
           display: inline-block;
           margin: 20px;
           background-image: url("../img/yellow-cross.svg");
           width: 24px;
           height: 24px; }
-    .overlay .overlay-content .overlay-main {
+    .overlay-background .overlay-content .overlay-main {
       padding: 2rem 3rem; }
-      .overlay .overlay-content .overlay-main h6 {
+      .overlay-background .overlay-content .overlay-main h6 {
         font-size: .9rem; }
-      .overlay .overlay-content .overlay-main h2 {
+      .overlay-background .overlay-content .overlay-main h2 {
         margin-bottom: 2rem; }
-      .overlay .overlay-content .overlay-main p {
+      .overlay-background .overlay-content .overlay-main p {
         font-size: .8rem; }
-  .overlay .overlay-footer {
+  .overlay-background .overlay-footer {
     padding: 1.4rem 3rem;
     border-top: 1px solid #eae7de; }
-    .overlay .overlay-footer:nth-child(3) {
+    .overlay-background .overlay-footer:nth-child(3) {
       border-top: none; }
-    .overlay .overlay-footer h6 {
+    .overlay-background .overlay-footer h6 {
       font-size: .6rem; }
-    .overlay .overlay-footer h3 {
+    .overlay-background .overlay-footer h3 {
       border-bottom: 4px solid #ffc72c;
       display: inline-block;
       padding-bottom: .6rem; }

@@ -34,19 +34,28 @@
       img {
         height: 100%;
 
+        &.gradient{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+        }
+
         &.overlay {
           visibility: hidden;
           opacity: 0;
           position: absolute;
           top: 0;
           left: 0;
-          z-index: 1;
+          z-index: 2;
         }
       }
       .name-caption-container {
         position: absolute;
         bottom: 0;
-        z-index: 2;
+        z-index: 3;
         width: 100%;
         margin-bottom: 1rem;
         //transition: all .4s ease-in-out;
@@ -55,7 +64,7 @@
 
       .photo-caption {
         position: absolute;
-        z-index: 1;
+        z-index: 3;
         bottom: -2rem;
         margin-bottom: 1rem;
 

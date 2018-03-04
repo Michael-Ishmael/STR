@@ -20,10 +20,12 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
         ],
         execute: function () {
             HexagonLayout = /** @class */ (function () {
-                function HexagonLayout(hexData, maxHexWidth, minHexWidth) {
-                    this.hexData = hexData;
+                function HexagonLayout(parentContainerId, hexClass, maxHexWidth, minHexWidth) {
+                    this.parentContainerId = parentContainerId;
+                    this.hexClass = hexClass;
                     this.maxHexWidth = maxHexWidth;
                     this.minHexWidth = minHexWidth;
+                    this.hexData = [];
                     this.hexCount = 0;
                     this.hexWidth = 0;
                     this.hexHeight = 0;
@@ -32,7 +34,9 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                     this.oddRowColCount = 0;
                     this.evenRowColCount = 0;
                     this.reqContainerHeight = 0;
-                    this.hexCount = hexData.length;
+                    var hexes = jquery_1.default(parentContainerId).children(hexClass);
+                    this.hexData = hexes.toArray().map(function (t) { return '#' + t.id; });
+                    this.hexCount = this.hexData.length;
                 }
                 HexagonLayout.prototype.recalc = function (width) {
                     if (width < 1)
@@ -47,10 +51,11 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                     this.rowHeight = this.hexWidth * .75;
                     this.reqContainerHeight = this.rowHeight * (this.rowCount + 1);
                 };
-                HexagonLayout.prototype.layoutHexagons = function (parentContainerId) {
-                    var parent = jquery_1.default(parentContainerId);
+                HexagonLayout.prototype.layoutHexagons = function () {
+                    var parent = jquery_1.default(this.parentContainerId);
                     if (parent.length == 0)
                         return;
+                    parent.css('visibility', "hidden");
                     var targetWidth = parent.width();
                     if (targetWidth == 0)
                         return;
@@ -89,6 +94,7 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                             break;
                         isOdd = !isOdd;
                     }
+                    parent.css('visibility', "visible");
                 };
                 HexagonLayout.getHexHeightFromWidth = function (hexWidth) {
                     return Math.round((hexWidth * 2) / Math.sqrt(3));
@@ -256,10 +262,444 @@ System.register("rollover", ["jquery"], function (exports_2, context_2) {
         }
     };
 });
-System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) {
+System.register("overlay", ["jquery"], function (exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
-    var hexagon_1, rollover_1, hexData, layout;
+    var jquery_3, OverlayManager;
+    return {
+        setters: [
+            function (jquery_3_1) {
+                jquery_3 = jquery_3_1;
+            }
+        ],
+        execute: function () {
+            OverlayManager = /** @class */ (function () {
+                function OverlayManager() {
+                    //this.tweens = [];
+                }
+                OverlayManager.init = function (overlayBgSelector, overlayClassName, overlayTriggersSelector) {
+                    this._jBody = jquery_3.default('body');
+                    this._jBackGround = jquery_3.default(overlayBgSelector);
+                    var triggers = this.initTriggers(overlayTriggersSelector);
+                    this.initEscapeKey();
+                    this._initialized = (this._jBody && this.isValidJElement(this._jBackGround) && triggers);
+                    //  Store bg element
+                    //  SetUp
+                };
+                Object.defineProperty(OverlayManager, "BgVisible", {
+                    get: function () {
+                        return this._bgVisible;
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                OverlayManager.initEscapeKey = function () {
+                    var _this = this;
+                    if (!this._jBody)
+                        return;
+                    this._jBody.keyup(function (e) {
+                        if (e.keyCode === 27)
+                            _this.hide();
+                    });
+                };
+                OverlayManager.initTriggers = function (overlayTriggersSelector) {
+                    var _this = this;
+                    var jTriggers = jquery_3.default(overlayTriggersSelector);
+                    if (!this.isValidJElement(jTriggers))
+                        return false;
+                    jTriggers.click(function (e) {
+                        e.preventDefault();
+                        var jTrigger = jquery_3.default(e.currentTarget);
+                        var link = _this.getOverlayLinkFromTrigger(jTrigger);
+                        var overlayId = _this.getOverlayIdFromTrigger(jTrigger);
+                        if (link)
+                            window.location.hash = link;
+                        if (overlayId)
+                            _this.showOverlay(overlayId);
+                    });
+                    return true;
+                };
+                OverlayManager.showOverlay = function (overlayId) {
+                    if (!this._initialized)
+                        return;
+                    this._nextOverlay = jquery_3.default('#' + overlayId);
+                    if (!this.isValidJElement(this._nextOverlay))
+                        return;
+                    var closeButton = this._nextOverlay.find('.close-button');
+                    if (!this.isValidJElement(closeButton))
+                        return;
+                    this.registerCloseButton(closeButton);
+                    this.initTimeline();
+                    if (!this.BgVisible) {
+                        this.setNoScroll(true);
+                        this.setBackgroundVisibility(true);
+                    }
+                    this.showOverlayInternal();
+                    this._timeline.play();
+                };
+                OverlayManager.registerCloseButton = function (closeButton) {
+                    var _this = this;
+                    closeButton.click(function (e) {
+                        e.preventDefault();
+                        _this.hide();
+                    });
+                };
+                OverlayManager.showOverlayInternal = function () {
+                    if (this._currentOverlay) {
+                        this._currentOverlay.css('z-index', this.Z_INDEX_1);
+                        //this._currentOverlay.hide();
+                    }
+                    this._nextOverlay.show();
+                    var oBody = this._nextOverlay.find('.overlay-content');
+                    var oImg = this._nextOverlay.find('.overlay-image-container');
+                    var width = oBody.width() + 10;
+                    this._timeline.set(oBody[0], { x: width }, 0);
+                    this._timeline.set(oImg[0], { x: -width }, 0);
+                    this._timeline.addLabel("doors", 0);
+                    //let to = this._currentOverlay ? 50 : 0
+                    //if(this._currentOverlay) this.duration += 5;
+                    this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
+                    this._timeline.to(oImg[0], this.duration, { x: 0 }, "doors");
+                    //}
+                    this._nextOverlay.css('z-index', this.Z_INDEX_2);
+                    setTimeout(function () {
+                    }, 200);
+                };
+                OverlayManager.arrangeLayers = function () {
+                    if (this._currentOverlay) {
+                        this._currentOverlay.hide();
+                        this._currentOverlay.css('z-index', null);
+                    }
+                    this._currentOverlay = this._nextOverlay;
+                    this._nextOverlay = null;
+                };
+                OverlayManager.initTimeline = function () {
+                    var _this = this;
+                    if (this._timeline) {
+                        this._timeline.kill();
+                    }
+                    this._timeline = new TimelineLite({
+                        onComplete: function () { _this.arrangeLayers(); },
+                        onReverseComplete: function () { _this.cleanUpHide(); }
+                    });
+                };
+                OverlayManager.isValidJElement = function (jElement) {
+                    return jElement && jElement.length > 0;
+                };
+                OverlayManager.hide = function () {
+                    if (!this._initialized)
+                        return;
+                    if (this._timeline) {
+                        this._timeline.reverse();
+                    }
+                    else {
+                        if (this._currentOverlay)
+                            this._currentOverlay.hide();
+                        if (this._nextOverlay)
+                            this._nextOverlay.hide();
+                        this.setBackgroundVisibility(false, true);
+                        this.setNoScroll(false);
+                    }
+                };
+                OverlayManager.cleanUpHide = function () {
+                    if (this._currentOverlay) {
+                        this._currentOverlay.hide();
+                        this._currentOverlay = null;
+                    }
+                    if (this._nextOverlay) {
+                        this._nextOverlay.hide();
+                        this._nextOverlay = null;
+                    }
+                    this.setBackgroundVisibility(false, true);
+                    this.setNoScroll(false);
+                };
+                OverlayManager.setBackgroundVisibility = function (on, immediate) {
+                    if (immediate === void 0) { immediate = false; }
+                    var zProp = on ? '10' : '-1';
+                    var oProp = on ? 1 : 0;
+                    var aHiddenProp = on ? 'false' : 'true';
+                    this._jBackGround.css('z-index', zProp);
+                    /*this._timeline .fromTo(this._jBackGround[0], this.duration,
+                        {backgroundColor : 'rgba(40, 40, 40, 0.01)'},
+                        {backgroundColor : 'rgba(40, 40, 40, 0.75)'}, 0);*/
+                    if (immediate) {
+                        this._jBackGround.css('opacity', oProp);
+                    }
+                    else {
+                        this._timeline.to(this._jBackGround[0], this.duration, { autoAlpha: oProp }, 0);
+                    }
+                    this._bgVisible = on;
+                    this._jBackGround.attr('aria-hidden', aHiddenProp);
+                };
+                OverlayManager.setNoScroll = function (on) {
+                    if (on) {
+                        if (!this._jBody.hasClass(this.NO_SCROLL_CLASS)) {
+                            this._jBody.addClass(this.NO_SCROLL_CLASS);
+                        }
+                    }
+                    else {
+                        this._jBody.removeClass(this.NO_SCROLL_CLASS);
+                    }
+                };
+                OverlayManager.getOverlayIdFromTrigger = function (jTrigger) {
+                    if (!(jTrigger && jTrigger.length > 0))
+                        return null;
+                    var overlayId = jTrigger.data('overlay');
+                    return overlayId;
+                };
+                OverlayManager.getOverlayLinkFromTrigger = function (jTrigger) {
+                    if (!(jTrigger && jTrigger.length > 0))
+                        return null;
+                    if (jTrigger[0].localName === 'a') {
+                        return jTrigger.attr('href');
+                    }
+                    else {
+                        var jLink = jTrigger.find('a');
+                        if (jLink.length > 0) {
+                            return jLink.attr('href');
+                        }
+                        else {
+                            return null;
+                        }
+                    }
+                };
+                OverlayManager.NO_SCROLL_CLASS = "noscroll";
+                OverlayManager.Z_INDEX_0 = "-2";
+                OverlayManager.Z_INDEX_1 = "1";
+                OverlayManager.Z_INDEX_2 = "2";
+                OverlayManager.duration = .5;
+                return OverlayManager;
+            }());
+            exports_3("OverlayManager", OverlayManager);
+            /*
+            interface IOverlayBodyState {
+                init(): void;
+                setOverlayOn(): void;
+                setOverlayOff(): void;
+            }
+            
+            export class OverlayBodyState implements IOverlayBodyState {
+            
+                private _body:JQuery<HTMLElement>;
+            
+                init() {
+                    this._body = $("body");
+                }
+            
+                setOverlayOn() {
+                    if (!this._body) return;
+                    if (!this._body.hasClass('noscroll')) {
+                        this._body.addClass('noscroll')
+                    }
+                }
+            
+                setOverlayOff() {
+                    if (!this._body) return;
+                    this._body.removeClass('noscroll');
+                }
+            
+            }
+            
+            export class SplitSwipeOverlay{
+            
+            
+                private _tweens:TweenLite[];
+            
+                public constructor(private duration:number, private bodyState:IOverlayBodyState ){
+            
+                }
+            
+            
+                public registerTweens(){
+                    //Fadebdody
+                    //Swipe from left
+                    //Swipe from right
+                }
+            
+                public show(){
+                    let first:boolean;
+                    for (let tween of this._tweens) {
+            
+                    }
+                    //
+                }
+            
+                public hide(){
+            
+                }
+            }
+            
+            export class OverlayManager {
+            
+                public tweens:IOverlayTween[];
+                public jTriggerEl:JQuery<HTMLElement>;
+            
+                public constructor(private triggerElement:string, private duration:number, private ease:Ease){
+                    this.tweens = [];
+            
+                }
+            
+                public registerTweens(tweens: IOverlayTween[]):void {
+                    if(!this.jTriggerEl) return;
+                    this.tweens = this.tweens.concat(tweens);
+                }
+            
+                public init():void{
+                    if(this.triggerElement){
+                        this.jTriggerEl = $(this.triggerElement);
+                        if(this.jTriggerEl.length){
+                            //find close button
+                            //this.jTriggerEl.hover((e) => this.show(e.currentTarget), (e) => this.out(e.currentTarget))
+                        }
+                    }
+                }
+            
+                private getLink(triggerElement:JQuery<HTMLElement>){
+            
+                }
+            
+                public show(currentTarget:HTMLElement):void {
+                    if(!this.tweens)return;
+                    for (let tween of this.tweens) {
+                        tween.show(currentTarget, this.duration, this.ease);
+                    }
+                }
+            
+                public hide(currentTarget:HTMLElement):void {
+                    if(!this.tweens)return;
+                    for (let tween of this.tweens) {
+                        tween.hide(currentTarget);
+                    }
+                }
+            
+            
+            }
+            
+            
+            export interface IOverlayTween  {
+            
+                show(currentTarget:HTMLElement, duration:number, ease:Ease):void;
+                hide(currentTarget:HTMLElement):void;
+            
+            }
+            
+            class StrOverlayTween {
+            
+                public tween:TweenLite = null;
+                public jElement:JQuery<HTMLElement> = null;
+            
+                public  constructor(public element:HTMLElement){
+            
+                }
+            
+            }
+            
+            abstract class  OverlayTweenBase {
+            
+                protected tweens:StrOverlayTween[] = [];
+            
+            
+                public constructor(protected selector:string){
+            
+                }
+            
+                hide(currentTarget:HTMLElement): void {
+                    if(!this.tweens) return;
+                    let matches = this.getTweensForElement(currentTarget);
+                    matches.forEach( t => t.tween.reverse());
+                    this.removeTweensForElement(currentTarget)
+                }
+            
+                show(currentTarget:HTMLElement, duration: number, ease: Ease): void {
+                    if(this.tweenForElementRunning(currentTarget)) return;
+                    let strTween = new StrOverlayTween(currentTarget);
+                    strTween.jElement = $(currentTarget).find(this.selector);
+                    if(!(strTween.jElement && strTween.jElement.length > 0)) return;
+                    this.overImpl(strTween, duration, ease);
+                    this.tweens.push(strTween);
+                }
+            
+                protected abstract overImpl(tweenContainer:StrOverlayTween, duration: number, ease: Ease);
+            
+                protected tweenForElementRunning(currentTarget:HTMLElement):boolean{
+                    return this.tweens.some(t => {
+                        return t.element === currentTarget;
+                    });
+                }
+            
+                protected getTweensForElement(currentTarget:HTMLElement):StrOverlayTween[]{
+                    return this.tweens.filter(t => {
+                        return t.element === currentTarget;
+                    });
+            
+                }
+            
+                protected removeTweensForElement(currentTarget:HTMLElement):void{
+                    this.tweens = this.tweens.filter( t => t.element !== currentTarget);
+                }
+            }
+            
+            export class SwipeFromOffScreenTween extends OverlayTweenBase implements IOverlayTween {
+            
+                public constructor(protected selector:string, private propertyName:string, private toValue:any){
+                    super(selector);
+                }
+            
+                protected overImpl(tweenContainer:StrOverlayTween, duration: number, ease: Ease): void {
+            
+                    //find close button
+            
+                    let cssTransformObj = {};
+                    cssTransformObj[this.propertyName] = this.toValue;
+                    if(this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
+                        if(this.toValue == 0) {
+                            tweenContainer.jElement.css('visibility', 'hidden');
+                        } else {
+                            tweenContainer.jElement.css('visibility', 'visible');
+                        }
+                    }
+                    tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, {
+                        css: cssTransformObj, ease: ease,
+                        onReverseComplete: () => {
+                            if (this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
+                                if(this.toValue == 0) {
+                                    tweenContainer.jElement.css('visibility', 'visible');
+                                } else {
+                                    tweenContainer.jElement.css('visibility', 'hidden');
+                                }
+                            }}
+            
+                    });
+                }
+            
+            }
+            
+            /!*
+            export class MovePercentageOfParent extends RolloverTweenBase implements IRolloverTween{
+            
+                public constructor(protected selector:string, private direction:string, private percentage:number){
+                    super(selector);
+                }
+            
+                protected overImpl(tweenContainer:StrElementTween, duration: number, ease: Ease): void {
+            
+                    let parentDimension = this.direction.toLowerCase() === 'y' ? 'height' : 'width';
+                    let to = tweenContainer.jElement.parent()[parentDimension]() * this.percentage;
+                    to = to - (tweenContainer.jElement[parentDimension]() * this.percentage);
+                    let vars = { ease: ease};
+                    vars[this.direction] = to;
+                    tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, vars);
+                }
+            
+            }*!/
+            */
+        }
+    };
+});
+System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, context_4) {
+    "use strict";
+    var __moduleName = context_4 && context_4.id;
+    var hexagon_1, rollover_1, overlay_1;
     return {
         setters: [
             function (hexagon_1_1) {
@@ -267,10 +707,14 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
             },
             function (rollover_1_1) {
                 rollover_1 = rollover_1_1;
+            },
+            function (overlay_1_1) {
+                overlay_1 = overlay_1_1;
             }
         ],
         execute: function () {
-            hexData = [
+            /*
+            let hexData: string[] = [
                 "#hexTile_1",
                 "#hexTile_2",
                 "#hexTile_3",
@@ -285,11 +729,12 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
                 "#hexTile_12",
                 "#hexTile_13"
             ];
-            layout = new hexagon_1.HexagonLayout(hexData, 180, 140);
+            */
             $(function () {
-                layout.layoutHexagons("#hexLayout1");
+                var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 180, 140);
+                layout.layoutHexagons();
                 $(window).resize(function () {
-                    layout.layoutHexagons("#hexLayout1");
+                    layout.layoutHexagons();
                 });
                 function initRollovers() {
                     var auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
@@ -340,21 +785,22 @@ System.register("app", ["hexagon", "rollover"], function (exports_3, context_3) 
                         }
                     });
                 }
-                initOverlays();
+                overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
+                //initOverlays();
                 function overlayLinkClicked(jLink) {
                     if (jLink.length) {
                         var link = jLink.attr('href');
                         if (link && link.length) {
-                            var overlay_1 = $(link);
-                            if (overlay_1.length) {
+                            var overlay_2 = $(link);
+                            if (overlay_2.length) {
                                 $('body').addClass('noscroll');
-                                overlay_1.attr('aria-hidden', 'false');
-                                var oBody = overlay_1.find('.overlay-content');
-                                var oImg = overlay_1.find('.overlay-image-container');
-                                TweenLite.from(oBody[0], .5, { x: 600 });
-                                TweenLite.from(oImg[0], .5, { x: -600 });
+                                overlay_2.attr('aria-hidden', 'false');
+                                var oBody = overlay_2.find('.overlay-content');
+                                var oImg = overlay_2.find('.overlay-image-container');
+                                TweenLite.from(oBody[0], .5, { x: 1000 });
+                                TweenLite.from(oImg[0], .5, { x: -1000 });
                                 setTimeout(function () {
-                                    overlay_1.scrollTop(0);
+                                    overlay_2.scrollTop(0);
                                 }, 1000);
                                 /*                            let jWin = $(window);
                                                             jLinkTarget.css('top', $(document).scrollTop());

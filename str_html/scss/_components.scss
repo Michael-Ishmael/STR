@@ -1,4 +1,11 @@
-
+.gradient-mask {
+  background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0));
+  position: absolute;
+  top: 0;
+  left:0;
+  height: 100%;
+  width: 100%;
+}
 
 .str-hero.jumbotron{
 
@@ -37,7 +44,7 @@
   margin-top: -1px;
 
   .icon-container{
-    height: 6em;
+    height: 8em;
     margin-bottom: 1.4em;
 
   }
@@ -85,19 +92,19 @@ section {
   background-size: cover;
 
   &.discovery {
-    background-image: url("../img/discovery.jpg");
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/discovery.jpg");
   }
 
   &.mapping {
-    background-image: url("../img/mapping.jpg");
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/mapping.jpg");
   }
 
   &.pathfinder {
-    background-image: url("../img/pathfinder.jpg");
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/pathfinder.jpg");
   }
 
   &.compass {
-    background-image: url("../img/compass.jpg");
+    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/compass.jpg");
   }
 
   &.up-next {
@@ -150,7 +157,8 @@ section {
   }
 }
 
-.str-hex-tile {
+.str-hex-tile-container {
+  visibility: hidden;
 
   /*
   background-color: red;

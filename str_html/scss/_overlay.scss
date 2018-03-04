@@ -3,45 +3,41 @@
 
 @media (min-device-width: 1025px) {
   .noscroll {
-    padding-right: 15px;
+    //padding-right: 15px;
   }
 }
 
-.overlay {
+.overlay-background {
   position: fixed;
   overflow-y: scroll;
   top: 0; left: 0; right: 0; bottom: 0;
-
-
-
-}
-
-[aria-hidden="true"] {
-  width: 100vw;
-  z-index: -1;
-  opacity: 0;  }
-
-[aria-hidden="false"] {
-  //transition: opacity 1s;
-  width: 100%;
-  z-index: 1;
-  opacity: 1;
-}
-
-.overlay div {
-  height: 100%;
-/*  margin: 15vh auto;
-  width: 80%;
-  max-width: 650px;
-  padding: 30px;
-  min-height: 200vh;*/
-  //background: rgba(255,255,255, .95);
-}
-.overlay {
   background:  rgba(40,40,40, .75);
+  opacity: 0;
 
-  .inner-overlay{
+  &[aria-hidden="true"] {
+    width: 100vw;
+    z-index: -1;
+    //opacity: 0;
+
+    .overlay {
+      display: none;
+    }
+  }
+
+  &[aria-hidden="false"] {
+    width: 100%;
+    z-index: 1;
+
+    //opacity: 1;
+  }
+
+  .overlay{
+    display: none;
     overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    //height: 1400px;
   }
   .overlay-image-container {
     overflow: hidden;
