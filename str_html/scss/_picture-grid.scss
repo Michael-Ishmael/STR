@@ -198,6 +198,14 @@
   padding: 0;
   color: $white;
 
+  &:last-child {
+
+    h4 {
+      font-size: 2rem;
+    }
+
+  }
+
   //max-height: 700px;
 
   .insight-image-tile {
@@ -223,15 +231,99 @@
       img {
         height: 2rem;
         width: 2rem;
+        vertical-align: top;
+        margin-right: .2rem;
+      }
+
+      .author-details {
+        height: 2rem;
+        line-height: 2rem;
+        vertical-align: top;
+
+        h4 {
+          font-size: 1rem;
+          color: white;
+          margin: 0 0 .1rem;
+        }
+        h6 {
+          font-size: .6rem;
+          opacity: .8;
+          margin: 0;
+        }
       }
     }
 
     .insight-info {
       position: absolute;
       bottom: 0;
-      height: 50%;
       z-index: 5;
+      width: 20rem;
+      min-width: 300px;
+
+      .article-title {
+        margin: 1rem 0;
+        min-height: 6rem;
+        h4 {
+          font-size: 1.6rem;
+        }
+
+      }
+
+      a.btn.btn-primary {
+        font-size: .6rem;
+      }
     }
+  }
+
+}
+
+.str-insight-stripe {
+
+  border-bottom: 1px solid $light-gray;
+
+  h6 {
+    color: $dark-cream;
+    font-size: .6rem;
+    margin: 0 0 .3rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+    max-width: 32rem;
+  }
+
+  .insight-info {
+
+    padding: 2rem 0;
+
+    .img-container {
+      height: 4.25rem;
+      line-height: 4.25rem;
+      float: left;
+
+    }
+    img {
+      vertical-align: middle;
+      height: 3.4rem;
+      width:  3.4rem;
+    }
+
+    .insight-details {
+      margin-left: 4.25rem;
+      vertical-align: top;
+    }
+
+  }
+
+
+  &.stripe-article-bg{
+    background-image:  linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/stripe-article.jpg");
+    border: none;
+
+    h4, h6 {
+      color: $white;
+    }
+
   }
 
 }
