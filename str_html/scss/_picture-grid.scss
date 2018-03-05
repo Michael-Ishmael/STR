@@ -11,7 +11,6 @@
 
     .about-us-image-tile, .success-image-tile {
 
-
       overflow: hidden;
       position: relative;
 
@@ -34,7 +33,7 @@
       img {
         height: 100%;
 
-        &.gradient{
+        &.gradient {
           position: absolute;
           top: 0;
           left: 0;
@@ -94,7 +93,6 @@
         }
       }
 
-
       .buttons {
 
         &.upper {
@@ -106,7 +104,7 @@
           color: $white;
         }
 
-        &.lower{
+        &.lower {
 
           position: relative;
           text-align: center;
@@ -147,49 +145,93 @@
         }
 
         .btn-outline-light {
-         // margin-top: .5rem;
+          // margin-top: .5rem;
           border-color: $dark-cream;
         }
       }
 
-/*
-      &.over {
+      /*
+            &.over {
 
-!*        > img {
-          $blur-amount: 50px;
-          filter: blur($blur-amount);
-          // Browser Specific
-          -webkit-filter: blur($blur-amount);
-          -moz-filter: blur($blur-amount);
-          -o-filter: blur($blur-amount);
-          -ms-filter: blur($blur-amount);
-        }*!
+      !*        > img {
+                $blur-amount: 50px;
+                filter: blur($blur-amount);
+                // Browser Specific
+                -webkit-filter: blur($blur-amount);
+                -moz-filter: blur($blur-amount);
+                -o-filter: blur($blur-amount);
+                -ms-filter: blur($blur-amount);
+              }*!
 
-        .name-caption-container {
-          bottom: 50%;
-          //transform: translateY(50%);
+              .name-caption-container {
+                bottom: 50%;
+                //transform: translateY(50%);
 
-          h6 {
-            display: none;
-          }
+                h6 {
+                  display: none;
+                }
 
-          .buttons {
-            display: block;
+                .buttons {
+                  display: block;
 
-            .btn-outline-light {
-              border-color: $white;
-            }
+                  .btn-outline-light {
+                    border-color: $white;
+                  }
 
-          }
+                }
 
-        }
+              }
 
-      }*/
+            }*/
 
     }
 
-
-
+    .insight-image-tile {
+      max-height: 400px;
+    }
 
   }
+}
+
+.str-insight-pic {
+
+  padding: 0;
+  color: $white;
+
+  //max-height: 700px;
+
+  .insight-image-tile {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+
+      &.gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+    }
+
+    .author {
+      img {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .insight-info {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      z-index: 5;
+    }
+  }
+
 }
