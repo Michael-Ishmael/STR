@@ -9,7 +9,7 @@ include includes/globals
             id: "team-garry-v",
             fullName: 'Garry Veale',
             title: 'Chief Executive Officer',
-            image: 'img/oval-garry-v.jpg'
+            image: 'img/oval-garry-v.png'
         }
     },
     {
@@ -20,51 +20,52 @@ include includes/globals
             id: "team-robert-f",
             fullName: 'Robert Fox',
             title: 'Senior Consultant',
-            image: 'img/oval-robert-f.jpg'
+            image: 'img/oval-robert-f.png'
         }
     },
     {
         title: "3 Lessons Brexit Teaches Us About Objections Handling",
         link: "#",
-        image: "img/article-holder-1",
+        image: "img/article-holder-1.jpg",
         author: {
             id: "team-robert-f",
             fullName: 'Robert Fox',
             title: 'Senior Consultant',
-            image: 'img/oval-robert-f.jpg'
+            image: 'img/oval-robert-f.png'
         }
     },
     {
         title: "Bridging The Gap Between Your Strategy And Your Sales Teams’ Ability To Fullfil It",
         link: "#",
-        image: "img/article-holder-1",
+        image: "img/article-holder-1.jpg",
+        bgClass: 'stripe-article-bg',
         author: {
             id: "team-garry-v",
             fullName: 'Garry Veale',
             title: 'Chief Executive Officer',
-            image: 'img/oval-garry-v.jpg'
+            image: 'img/oval-garry-v.png'
         }
     },
     {
         title: "Training & coaching methodologies that can transform your business for sustained growth",
         link: "#",
-        image: "img/article-holder-2",
+        image: "img/article-holder-2.jpg",
         author: {
         id: "team-mark-s",
         fullName: 'Mark Savinson',
         title: 'Chief Operating Officer',
-        image: 'img/oval-mark-s.jpg'
+        image: 'img/oval-mark-s.png'
         }
     },
     {
         title: "Tools to activate your revenue goals",
         link: "#",
-        image: "img/article-holder-2",
+        image: "img/article-holder-2.jpg",
         author: {
         id: "team-garry-v",
         fullName: 'Peter Smith',
         title: 'Operations Director',
-        image: 'img/oval-peter-s.jpg'
+        image: 'img/oval-peter-s.png'
         }
     }
     ];
@@ -105,20 +106,30 @@ html(lang="en")
                             .insight-image-tile.w-100
                                 img.h-align(src=insight.image)
                                 img.h-align.gradient(src="img/shadow.png")
-                                .insight-info.text-left.p-4
+                                .insight-info.text-left.p-5
 
                                     .author
                                         img.d-inline-block(src=insight.author.image)
                                         .author-details.d-inline-block
                                             h4= insight.author.fullName
                                             h6= insight.author.title
+                                    .article-title
+                                        h4.display-5.clr-white!= insight.title
 
-                                    h4.display-5.clr-white!= insight.title
+                                    a.btn.btn-primary.text-uppercase(href=insight.link) Read Article
 
-                                    h6
-                                        a(href=insight.link) read article
-
-
+            section.container-fluid
+                each fInsight in followInsights
+                        .row(class=fInsight.bgClass).str-insight-stripe
+                            .col-1.col-sm-2
+                            .col-10.col-sm-8
+                                .insight-info.text-left
+                                    .img-container
+                                        img.d-inline-block(src=fInsight.author.image)
+                                    .insight-details
+                                        h6= fInsight.author.fullName + ', ' + fInsight.author.title
+                                        h4= fInsight.title
+                            .col-1.col-sm-2
 
 
             //include includes/trailer
