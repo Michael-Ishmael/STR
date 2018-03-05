@@ -367,39 +367,39 @@ section {
   .wide-picture-grid .str-grid-pic .about-us-image-tile, .wide-picture-grid .str-grid-pic .success-image-tile {
     overflow: hidden;
     position: relative;
-    /*
-          &.over {
-    
-    !*        > img {
-              $blur-amount: 50px;
-              filter: blur($blur-amount);
-              // Browser Specific
-              -webkit-filter: blur($blur-amount);
-              -moz-filter: blur($blur-amount);
-              -o-filter: blur($blur-amount);
-              -ms-filter: blur($blur-amount);
-            }*!
-    
-            .name-caption-container {
-              bottom: 50%;
-              //transform: translateY(50%);
-    
-              h6 {
-                display: none;
-              }
-    
-              .buttons {
-                display: block;
-    
-                .btn-outline-light {
-                  border-color: $white;
+      /*
+            &.over {
+
+      !*        > img {
+                $blur-amount: 50px;
+                filter: blur($blur-amount);
+                // Browser Specific
+                -webkit-filter: blur($blur-amount);
+                -moz-filter: blur($blur-amount);
+                -o-filter: blur($blur-amount);
+                -ms-filter: blur($blur-amount);
+              }*!
+
+              .name-caption-container {
+                bottom: 50%;
+                //transform: translateY(50%);
+
+                h6 {
+                  display: none;
                 }
-    
+
+                .buttons {
+                  display: block;
+
+                  .btn-outline-light {
+                    border-color: $white;
+                  }
+
+                }
+
               }
-    
-            }
-    
-          }*/ }
+
+            }*/ }
     .wide-picture-grid .str-grid-pic .about-us-image-tile h4.display-4, .wide-picture-grid .str-grid-pic .success-image-tile h4.display-4 {
       color: #fff;
       font-size: 2rem;
@@ -488,6 +488,34 @@ section {
         background-color: rgba(187, 182, 168, 0.9); }
     .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .btn-outline-light {
       border-color: #bbb6a8; }
+  .wide-picture-grid .str-grid-pic .insight-image-tile {
+    max-height: 400px; }
+
+.str-insight-pic {
+  padding: 0;
+  color: #fff; }
+  .str-insight-pic .insight-image-tile {
+    position: relative;
+    overflow: hidden; }
+    .str-insight-pic .insight-image-tile img {
+      width: 100%; }
+      .str-insight-pic .insight-image-tile img.gradient {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; }
+    .str-insight-pic .insight-image-tile .author img {
+      height: 2rem;
+      width: 2rem; }
+    .str-insight-pic .insight-image-tile .insight-info {
+      position: absolute;
+      bottom: 0;
+      height: 50%;
+      z-index: 5; }
 
 header {
   padding: 2rem 0 2rem 0 !important;
