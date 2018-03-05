@@ -5,7 +5,20 @@ include includes/globals
     id: "skyrocket",
     title: "Helping DHL Express<br>Skyrocket Their Sales",
     link: "#",
-    image: "img/success-plane.jpg"
+    image: "img/success-plane.jpg",
+    overlay: {
+        id: "overlay-dhl-express",
+        image: "img/overlay-success-dhl-express.jpg",
+        title: "DHL Express Skyrockets Sales",
+        challengeText: "Help DHL Express grow market share across its 220 countries and raise EBIT by 20% in two years",
+        approachText: "Strategy to Revenue audited the sales organization and suggested DHL Express support a true coaching culture to deliver sustained sales acceleration. In partnership with DHL we rolled out a global sales enablement curriculum in 13 languages for 6,000 sales staff, with manager-led coaching at its core. The game-like curriculum relied on sales managers and their team members working together to achieve their goals. Two-day workshops were run for Regional Sales Leads to ensure buy-in at the highest level. Train-the-facilitator sessions for the top DHL Express Sales Trainers ensured a consistent delivery of the Sales Manager Programme. Sales Manager diaries facilitated self-learning, self-assessment and access to coaching conversations with senior managers; all were supported by videos and a library of e-learning modules.",
+        results: [
+            "Revenues climbed nearly 10% following the program roll out",
+            "Today DHL Express has 34% global market share",
+            "No 1 in Europe, Middle East, Africa and Asia",
+            "Brandon Hall Excellence Award Winner for Best Program for Sales Training and Performance"
+        ]
+    }
     },
     {
     id: 'satisfaction',
@@ -75,10 +88,41 @@ html(lang="en")
                                         h5.display-5.clr-white!= story.title
 
                                         h6
-                                            a(href=story.link) read success story
-
-
+                                            -
+                                                overlayId = story.overlay ? story.overlay.id : ''
+                                            a.overlay-link(href='#'+overlayId, data-overlay=overlayId) read success story
             include includes/trailer
             include includes/footer
+
+            div.overlay-background(id="overlayBg", aria-hidden="true")
+                .container-fluid.position-relative.h-100.p-0
+                    each story, index in stories
+                        if story.overlay
+                            section.overlay.h-100(id=story.overlay.id)
+                                .row.h-100
+                                    .col-6.p-0.overlay-column.h-100
+                                        .overlay-image-container.h-100
+                                            img(src=story.overlay.image)
+                                    .col-6.p-0.overlay-column.h-100
+                                        .overlay-content.h-100
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue.float-right
+                                                    .cross
+                                            .overlay-main.clearfix
+                                                h6.clr-dark-blue.text-uppercase.clr-mid-blue Success Story
+                                                h2.display-2!= story.overlay.title
+                                                h5.overlay-heading.clr-dark-blue.font-weight-bold Challenge
+                                                p.lead.clr-dark-blue!= story.overlay.challengeText
+                                                h5.overlay-heading.clr-dark-blue.font-weight-bold Approach
+                                                p.body!= story.overlay.approachText
+                                            if story.overlay.results && story.overlay.results.length > 0
+                                                .overlay-footer.bg-light-cream
+                                                    h6 Results
+                                                each result in story.overlay.results
+                                                    .overlay-footer.bg-light-cream
+                                                        img(src="img/result-cup.svg")
+                                                        h3.display-3= result
+
+
 
     include includes/scripts
