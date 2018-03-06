@@ -123,7 +123,7 @@ export class OverlayManager {
         //let to = this._currentOverlay ? 50 : 0
         //if(this._currentOverlay) this.duration += 5;
             this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
-            this._timeline.to(oImg[0], this.duration,{autoAlpha: 1}, "doors");
+            this._timeline.to(oImg[0], this.duration,{autoAlpha: 1, ease: Linear.easeNone}, "doors");
 
         //}
 
@@ -197,7 +197,7 @@ export class OverlayManager {
         if(immediate){
             this._jBackGround.css('opacity', oProp);
         } else {
-            this._timeline.to(this._jBackGround[0], this.duration, {autoAlpha: oProp}, 0);
+            this._timeline.to(this._jBackGround[0], this.duration, {autoAlpha: oProp, ease: Linear.easeNone}, 0);
         }
         this._bgVisible = on;
         this._jBackGround.attr('aria-hidden', aHiddenProp);
