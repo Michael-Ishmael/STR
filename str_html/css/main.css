@@ -78,6 +78,18 @@ h2 {
   font-size: 1.8rem;
   margin-bottom: 0; }
 
+.display-5 {
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.33; }
+
+h6.display-6 {
+  font-size: .7rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  line-height: 1.29;
+  color: #7f7b6f; }
+
 p {
   font-size: .9rem;
   line-height: 1.78; }
@@ -186,6 +198,8 @@ footer {
   padding: 6rem 0; }
 .str-main p {
   padding: 5rem 6rem 5rem 0; }
+  .str-main p.cons {
+    padding: 5rem 6rem 5rem 6rem; }
 
 section {
   background-repeat: no-repeat;
@@ -207,6 +221,10 @@ section {
   color: #fff; }
   .str-pic-hero .heading {
     padding: 4rem 1rem 4rem 6rem; }
+  .str-pic-hero.center-div {
+    padding: 5rem 0; }
+    .str-pic-hero.center-div h5 {
+      opacity: .4; }
   .str-pic-hero h2 {
     color: inherit;
     margin-bottom: 1.2rem; }
@@ -272,43 +290,36 @@ section {
     width: 100%;
     height: auto; }
   .str-feature-box .str-feature-text {
-    margin: 0 auto;
-    padding: 1rem 1.8rem;
+    padding: 2rem 3rem;
     width: 100%;
-    max-width: 20rem;
-    color: #1c2442; }
-    .str-feature-box .str-feature-text h3.display-3 {
-      font-size: 1.6rem;
-      font-family: Apercu;
-      font-weight: bold; }
+    color: #1c2442;
+    position: relative; }
     .str-feature-box .str-feature-text h6 {
-      font-size: .6rem;
-      text-transform: capitalize;
-      color: #7f7b6f; }
-    .str-feature-box .str-feature-text p {
-      font-size: .6rem;
-      font-weight: 500;
-      line-height: 1.71; }
-  .str-feature-box a.btn {
-    width: 100%;
-    margin-bottom: .5rem; }
+      margin-top: .35rem; }
+    .str-feature-box .str-feature-text p.summary {
+      color: #7f7b6f;
+      min-height: 6.4rem;
+      margin-bottom: 1.78rem; }
+    .str-feature-box .str-feature-text a.btn {
+      width: 13rem;
+      margin-bottom: .5rem; }
 
 .circles {
   display: inline-block;
   margin: 0 .5rem; }
   .circles .circle {
     display: inline-block;
-    border-radius: 2.1rem;
-    height: 4.2rem;
-    line-height: 4.2rem;
-    width: 4.2rem;
+    border-radius: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     vertical-align: top;
     position: relative;
     float: left;
-    margin-left: -2.1rem; }
+    margin-left: -1.5rem; }
     .circles .circle.tony {
       background-image: url("../img/tony-oval.png");
       margin-left: 0; }
@@ -320,22 +331,25 @@ section {
       color: #ffc72c; }
 
 .consult-link-text-container {
-  height: 4.2rem;
-  line-height: 4.2rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
   margin: 0 .5rem; }
   .consult-link-text-container a {
     float: left; }
 
 .str .btn-lg {
   font-family: "Work Sans", sans-serif;
-  font-size: .8em;
+  font-size: .9em;
   text-transform: uppercase;
   padding: .8rem 1.8rem;
   border-radius: 0.2rem; }
 .str .btn-secondary {
+  margin-top: .4rem;
   background-color: #ffc72c;
   color: #212121;
-  border-color: #ffc72c; }
+  border-color: #ffc72c;
+  font-weight: 500;
+  width: 13.8rem; }
 .str .v-align {
   position: relative;
   top: 50%;
@@ -345,13 +359,13 @@ section {
 
 .str-button.btn {
   font-family: "Work Sans", sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: .9rem;
   border-radius: 3px;
   color: #fff;
-  padding-top: 1em;
-  padding-bottom: 1em; }
+  padding: 1rem 3.2rem;
+  line-height: 1; }
   .str-button.btn.btn-outline-secondary {
     color: #1c2442;
     border-color: #eae7de; }
@@ -581,18 +595,34 @@ header {
   min-height: 8em;
   font-size: .4rem;
   position: relative; }
+  header .logo-container {
+    margin-left: 2.8rem; }
   header .logo {
     width: 100%;
-    height: 4em; }
+    height: 4rem; }
   header nav {
     color: #ffffff;
-    font-size: 1em;
-    text-transform: uppercase; }
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 1.7;
+    text-transform: uppercase;
+    margin-right: 4.5rem; }
     header nav .nav-item {
-      margin: 0 .8em; }
+      margin: 0 1.6rem; }
+      header nav .nav-item:first-child {
+        margin-left: 0; }
+      header nav .nav-item:last-child {
+        margin-right: 0; }
     header nav .nav-link {
-      padding: .5em 1em; }
+      padding: 0 0 .3rem 0; }
       header nav .nav-link.active {
+        border-bottom: 2px solid #ffc72c; }
+      header nav .nav-link:hover {
+        color: #fff;
+        border-bottom: 2px solid #ffc72c; }
+    header nav:hover .nav-link.active {
+      border-bottom: 2px solid #1c2541; }
+      header nav:hover .nav-link.active:hover {
         border-bottom: 2px solid #ffc72c; }
   header .block-bottom-border {
     display: block;
@@ -628,6 +658,8 @@ footer {
 
 .sm-link {
   display: inline-block; }
+  .sm-link:hover {
+    color: #1c2541; }
   .sm-link i {
     float: left;
     background-size: contain;
@@ -674,12 +706,11 @@ footer {
 
 .overlay-background {
   position: fixed;
-  overflow-y: scroll;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(40, 40, 40, 0.75);
+  background: rgba(0, 0, 0, 0.7);
   opacity: 0; }
   .overlay-background[aria-hidden="true"] {
     width: 100vw;
@@ -692,14 +723,13 @@ footer {
   .overlay-background .overlay {
     display: none;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0; }
+    margin: 0 -15px; }
   .overlay-background .overlay-image-container {
     overflow: hidden; }
   .overlay-background .overlay-content {
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95); }
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow-y: auto; }
     .overlay-background .overlay-content .close-button-bar {
       position: absolute;
       width: 100%;
@@ -708,11 +738,13 @@ footer {
       .overlay-background .overlay-content .close-button-bar .close-button-container {
         width: 6rem;
         float: right;
-        text-align: left; }
+        text-align: left;
+        height: 3.2rem; }
         .overlay-background .overlay-content .close-button-bar .close-button-container .close-button {
           display: inline-block;
           width: 3.2rem;
           height: 3.2rem;
+          float: left;
           border-radius: 1.6rem; }
           .overlay-background .overlay-content .close-button-bar .close-button-container .close-button .cross {
             display: inline-block;
@@ -721,7 +753,7 @@ footer {
             width: 1.2rem;
             height: 1.2rem; }
     .overlay-background .overlay-content .overlay-main {
-      padding: 6.6rem 6rem; }
+      padding: 6.6rem 6rem 3rem; }
       .overlay-background .overlay-content .overlay-main h6 {
         font-size: .9rem;
         margin-bottom: 1rem; }
@@ -740,10 +772,10 @@ footer {
         font-size: .9rem;
         line-height: 1.78; }
   .overlay-background .overlay-footer {
-    padding: 1.4rem 3rem;
-    border-top: 1px solid #eae7de; }
-    .overlay-background .overlay-footer:nth-child(3) {
-      border-top: none; }
+    padding: 2rem 6rem 2.4rem;
+    border-bottom: 1px solid #eae7de; }
+    .overlay-background .overlay-footer:last-child {
+      border-bottom: none; }
     .overlay-background .overlay-footer h6 {
       font-size: .6rem; }
     .overlay-background .overlay-footer h3 {

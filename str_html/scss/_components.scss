@@ -77,6 +77,10 @@
 
   p {
     padding: 5rem 6rem 5rem 0;
+
+    &.cons {
+      padding: 5rem 6rem 5rem 6rem;
+    }
   }
 
 
@@ -113,6 +117,15 @@ section {
 
   .heading {
     padding: 4rem 1rem 4rem 6rem;
+  }
+
+  &.center-div {
+    padding: 5rem 0;
+
+    h5 {
+      opacity: .4;
+    }
+
   }
 
   background-color: inherit;
@@ -231,36 +244,29 @@ section {
   }
 
   .str-feature-text {
-    margin: 0 auto;
-    padding: 1rem 1.8rem;
+    padding: 2rem 3rem;
     width: 100%;
-    max-width: 20rem;
     color: $dark-gray;
-
-    h3.display-3 {
-      font-size: 1.6rem;
-      font-family: Apercu;
-      font-weight: bold;
-    }
+    position: relative;
 
     h6 {
-      font-size: .6rem;
-      text-transform: capitalize;
-      color: $mid-grey-yellow
+      margin-top: .35rem;
     }
 
-    p {
-      font-size: .6rem;
-      font-weight: 500;
-      line-height: 1.71;
+    p.summary {
+      color: $mid-grey-yellow;
+      min-height: 6.4rem;
+      margin-bottom: 1.78rem;
+    }
+
+    a.btn {
+      width: 13rem;
+      margin-bottom: .5rem;
     }
 
   }
 
-  a.btn {
-    width: 100%;
-    margin-bottom: .5rem;
-  }
+
 
 }
 
@@ -272,17 +278,17 @@ section {
   .circle {
 
     display: inline-block;
-    @include border-radius(2.1rem);
-    height: 4.2rem;
-    line-height: 4.2rem;
-    width: 4.2rem;
+    @include border-radius(1.5rem);
+    height: 3rem;
+    line-height: 3rem;
+    width: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     vertical-align: top;
     position: relative;
     float: left;
-    margin-left: -2.1rem;
+    margin-left: -1.5rem;
 
     &.tony {
       background-image: url("../img/tony-oval.png");
@@ -307,8 +313,8 @@ section {
 }
 
 .consult-link-text-container {
-  height: 4.2rem;
-  line-height: 4.2rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
   margin: 0 .5rem;
   a {
     float: left;
@@ -321,16 +327,19 @@ section {
 .str{
   .btn-lg {
     font-family: "Work Sans", sans-serif;
-    font-size: .8em;
+    font-size: .9em;
     text-transform: uppercase;
     padding: .8rem 1.8rem;
     @include border-radius(.2rem);
   }
 
   .btn-secondary {
+    margin-top: .4rem;
     background-color: $corn-yellow;
     color: $very-dark-gray;
     border-color: $corn-yellow;
+    font-weight: 500;
+    width: 13.8rem;
   }
 
   .v-align {
@@ -349,13 +358,14 @@ section {
 
 .str-button.btn {
   font-family: "Work Sans", sans-serif;
-  font-weight: bold;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: .8rem;
+  font-size: .9rem;
   @include border-radius(3px);
   color: $white;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1rem 3.2rem;
+  line-height: 1;
+
 
 
   &.btn-outline-secondary {

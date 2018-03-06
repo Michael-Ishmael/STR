@@ -4,14 +4,14 @@ footer
             -
                 var smLinks = [
                     { label: 'Twitter', link: twitterLink, className: 'twitter' },
-                    { label: 'LinkedIn', link: twitterLink, className: 'linked-in' },
-                    { label: 'Medium', link: twitterLink, className: 'medium' }
+                    { label: 'LinkedIn', link: linkedInLink, className: 'linked-in' },
+                    { label: 'Medium', link: mediumLink, className: 'medium' }
                     ];
 
             each smLink in smLinks
 
                 .col-4.col-sm-3.col-lg-2.text-center
-                    a.sm-link(href=smLink.link)
+                    a.sm-link(href=smLink.link, target="_blank")
                         i.sm-icon(class=smLink.className)
                         span #{smLink.label}
 

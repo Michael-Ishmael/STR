@@ -16,6 +16,10 @@ footer {
   display: inline-block;
   $icon-height: 1.4rem;
 
+  &:hover {
+    color: $dark-blue;
+  }
+
   i {
     float: left;
     background-size: contain;

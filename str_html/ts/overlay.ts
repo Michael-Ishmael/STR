@@ -119,19 +119,13 @@ export class OverlayManager {
         let width = oBody.width() + 10;
         this._timeline.set(oBody[0],  {x: width}, 0);
         this._timeline.set(oImg[0], {autoAlpha: 0}, 0);
-        this._timeline.addLabel("doors", 0)
-        //let to = this._currentOverlay ? 50 : 0
-        //if(this._currentOverlay) this.duration += 5;
-            this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
-            this._timeline.to(oImg[0], this.duration,{autoAlpha: 1, ease: Linear.easeNone}, "doors");
+        this._timeline.addLabel("doors", 0);
 
-        //}
+        this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
+        this._timeline.to(oImg[0], this.duration ,{autoAlpha: 1, ease: Linear.easeNone}, this.duration / 2);
+
 
         this._nextOverlay.css('z-index', this.Z_INDEX_2);
-
-        setTimeout(() =>{
-
-        }, 200)
 
     }
 
@@ -197,7 +191,7 @@ export class OverlayManager {
         if(immediate){
             this._jBackGround.css('opacity', oProp);
         } else {
-            this._timeline.to(this._jBackGround[0], this.duration, {autoAlpha: oProp, ease: Linear.easeNone}, 0);
+            this._timeline.to(this._jBackGround[0], this.duration, {autoAlpha: oProp}, 0);
         }
         this._bgVisible = on;
         this._jBackGround.attr('aria-hidden', aHiddenProp);

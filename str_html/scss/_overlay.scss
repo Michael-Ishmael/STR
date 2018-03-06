@@ -9,9 +9,9 @@
 
 .overlay-background {
   position: fixed;
-  overflow-y: scroll;
+  //overflow-y: scroll;
   top: 0; left: 0; right: 0; bottom: 0;
-  background:  rgba(40,40,40, .75);
+  background:  rgba(0,0,0, .7);
   opacity: 0;
 
   &[aria-hidden="true"] {
@@ -34,21 +34,29 @@
   .overlay{
     display: none;
     overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
+    margin: 0 -15px;
+    //position: absolute;
+    //top: 0;
+    //left: 0;
     //height: 1400px;
   }
   .overlay-image-container {
     overflow: hidden;
   }
   .overlay-column {
-    //height: 100%;
+    &.left{
+
+    }
+
+    &.right {
+
+    }
   }
 
   .overlay-content {
     height: 100%;
     background-color: rgba(255,255,255, .95);
+    overflow-y: auto;
 
     .close-button-bar{
       position: absolute;
@@ -61,11 +69,13 @@
         width: 6rem;
         float: right;
         text-align: left;
+        height: 3.2rem;
 
         .close-button{
           display: inline-block;
           width: 3.2rem;
           height: 3.2rem;
+          float: left;
           @include border-radius(1.6rem);
 
 
@@ -84,7 +94,7 @@
 
 
     .overlay-main {
-      padding: 6.6rem 6rem;
+      padding: 6.6rem 6rem 3rem;
 
       h6 {
         font-size: .9rem;
@@ -117,17 +127,14 @@
       }
     }
 
-
-
   }
 
   .overlay-footer {
+    padding: 2rem 6rem 2.4rem;
+    border-bottom: 1px solid $light-gray;
 
-    padding: 1.4rem 3rem;
-    border-top: 1px solid $light-gray;
-
-    &:nth-child(3) {
-      border-top: none;
+    &:last-child {
+      border-bottom: none;
     }
 
     h6 {
