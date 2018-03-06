@@ -356,14 +356,9 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                     this._timeline.set(oBody[0], { x: width }, 0);
                     this._timeline.set(oImg[0], { autoAlpha: 0 }, 0);
                     this._timeline.addLabel("doors", 0);
-                    //let to = this._currentOverlay ? 50 : 0
-                    //if(this._currentOverlay) this.duration += 5;
                     this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
-                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1 }, "doors");
-                    //}
+                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: Linear.easeNone }, this.duration / 2);
                     this._nextOverlay.css('z-index', this.Z_INDEX_2);
-                    setTimeout(function () {
-                    }, 200);
                 };
                 OverlayManager.arrangeLayers = function () {
                     if (this._currentOverlay) {
@@ -753,64 +748,72 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
                 }
                 initRollovers();
-                function initOverlays() {
-                    $('.overlay-link').click(function (e) {
-                        e.preventDefault();
-                        var jLink;
-                        if (e.currentTarget.localName == 'a') {
-                            jLink = $(e.currentTarget).closest('a');
-                        }
-                        else {
-                            jLink = $(e.currentTarget).find('a');
-                        }
-                        overlayLinkClicked(jLink);
-                    });
-                    /*            $('.str-hex-tile').click(function(e){
-                                    e.preventDefault();
-                                    let jLink = $(e.currentTarget).find('a');
-                                   // overlayLinkClicked(jLink);
-                                });*/
-                    $('a.close-button').click(function (e) {
-                        e.preventDefault();
-                        var overlay = $(e.currentTarget).closest('.overlay');
-                        if (overlay.length) {
-                            var oBody = overlay.find('.overlay-content');
-                            var oImg = overlay.find('.overlay-image-container');
-                            TweenLite.to(oBody[0], .5, { x: 1000 });
-                            TweenLite.to(oImg[0], .5, { x: -1000 });
-                            setTimeout(function () {
-                                $('body').removeClass('noscroll');
-                                overlay.attr('aria-hidden', 'true');
-                            }, 500);
-                        }
-                    });
-                }
+                /*        function initOverlays() {
+                            $('.overlay-link').click(function (e) {
+                                e.preventDefault();
+                                let jLink;
+                                if (e.currentTarget.localName == 'a') {
+                                    jLink = $(e.currentTarget).closest('a');
+                                } else {
+                                    jLink = $(e.currentTarget).find('a');
+                                }
+                
+                                overlayLinkClicked(jLink);
+                            });*/
+                /*            $('.str-hex-tile').click(function(e){
+                                e.preventDefault();
+                                let jLink = $(e.currentTarget).find('a');
+                               // overlayLinkClicked(jLink);
+                            });*/
+                /*            $('a.close-button').click(function (e) {
+                                e.preventDefault();
+                                let overlay = $(e.currentTarget).closest('.overlay');
+                                if (overlay.length) {
+                                    let oBody = overlay.find('.overlay-content');
+                                    let oImg = overlay.find('.overlay-image-container');
+                                    TweenLite.to(oBody[0], .5, {x: 1000});
+                                    TweenLite.to(oImg[0], .5, {x: -1000});
+                                    setTimeout(function () {
+                                        $('body').removeClass('noscroll');
+                                        overlay.attr('aria-hidden', 'true');
+                
+                                    }, 500);
+                
+                                }
+                
+                            })
+                        }*/
                 overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
                 //initOverlays();
-                function overlayLinkClicked(jLink) {
-                    if (jLink.length) {
-                        var link = jLink.attr('href');
-                        if (link && link.length) {
-                            var overlay_2 = $(link);
-                            if (overlay_2.length) {
-                                $('body').addClass('noscroll');
-                                overlay_2.attr('aria-hidden', 'false');
-                                var oBody = overlay_2.find('.overlay-content');
-                                var oImg = overlay_2.find('.overlay-image-container');
-                                TweenLite.from(oBody[0], .5, { x: 1000 });
-                                TweenLite.from(oImg[0], .5, { x: -1000 });
-                                setTimeout(function () {
-                                    overlay_2.scrollTop(0);
-                                }, 1000);
-                                /*                            let jWin = $(window);
-                                                            jLinkTarget.css('top', $(document).scrollTop());
-                                                            jLinkTarget.width(jLinkTarget.parent().width());
-                                                            jLinkTarget.height(jWin.height());*/
-                                //jLinkTarget.show();
+                /*
+                        function overlayLinkClicked(jLink): void {
+                            if (jLink.length) {
+                                let link = jLink.attr('href');
+                                if (link && link.length) {
+                                    let overlay = $(link);
+                                    if (overlay.length) {
+                
+                                        $('body').addClass('noscroll');
+                                        overlay.attr('aria-hidden', 'false');
+                                        let oBody = overlay.find('.overlay-content');
+                                        let oImg = overlay.find('.overlay-image-container');
+                                        TweenLite.from(oBody[0], .5, {x: 1000});
+                                        TweenLite.from(oImg[0], .5, {x: -1000});
+                                        setTimeout(function () {
+                                            overlay.scrollTop(0);
+                
+                                        }, 1000);
+                
+                                        /!*                            let jWin = $(window);
+                                                                    jLinkTarget.css('top', $(document).scrollTop());
+                                                                    jLinkTarget.width(jLinkTarget.parent().width());
+                                                                    jLinkTarget.height(jWin.height());*!/
+                
+                                        //jLinkTarget.show();
+                                    }
+                                }
                             }
-                        }
-                    }
-                }
+                        }*/
             });
         }
     };

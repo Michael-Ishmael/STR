@@ -8,26 +8,62 @@ header {
   font-size: .4rem;
   position: relative;
 
+  .logo-container {
+    margin-left: 2.8rem;
+  }
+
   .logo {
     width: 100%;
-    height: 4em;
+    height: 4rem;
   }
 
   nav {
     color: #ffffff;
-    font-size: 1em;
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 1.7;
     text-transform: uppercase;
+    margin-right: 4.5rem;
 
     .nav-item{
-      margin: 0 .8em;
+
+      margin: 0 1.6rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
     }
 
     .nav-link {
-      padding: .5em 1em;
+
+      padding: 0 0 .3rem 0;
 
       &.active {
         border-bottom: 2px solid $corn-yellow;
       }
+
+      &:hover {
+        color: $white;
+        border-bottom: 2px solid $corn-yellow;
+      }
+
+    }
+
+    &:hover {
+      .nav-link.active {
+        border-bottom: 2px solid $dark-blue;
+
+        &:hover {
+          border-bottom: 2px solid $corn-yellow;
+        }
+      }
+
+
     }
   }
 
