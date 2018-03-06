@@ -4,27 +4,8 @@
     <list default="true" id="d175bb44-b636-4778-b5e6-3f0b7db82939" name="Default" comment="GitIgnore">
       <change beforePath="$PROJECT_DIR$/../copy/Website Text FINAL_010318.docx" afterPath="$PROJECT_DIR$/../copy/Website Text FINAL_010318.docx" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/about-us.html" afterPath="$PROJECT_DIR$/about-us.html" />
       <change beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.map" afterPath="$PROJECT_DIR$/css/main.css.map" />
-      <change beforePath="$PROJECT_DIR$/insights.html" afterPath="$PROJECT_DIR$/insights.html" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/js/app.js.map" afterPath="$PROJECT_DIR$/js/app.js.map" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/footer.pug" afterPath="$PROJECT_DIR$/pug/includes/footer.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/globals.pug" afterPath="$PROJECT_DIR$/pug/includes/globals.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/head.pug" afterPath="$PROJECT_DIR$/pug/includes/head.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/header.pug" afterPath="$PROJECT_DIR$/pug/includes/header.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/trailer.pug" afterPath="$PROJECT_DIR$/pug/includes/trailer.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/services.pug" afterPath="$PROJECT_DIR$/pug/services.pug" />
       <change beforePath="$PROJECT_DIR$/scss/_components.scss" afterPath="$PROJECT_DIR$/scss/_components.scss" />
-      <change beforePath="$PROJECT_DIR$/scss/_footer.scss" afterPath="$PROJECT_DIR$/scss/_footer.scss" />
-      <change beforePath="$PROJECT_DIR$/scss/_globals.scss" afterPath="$PROJECT_DIR$/scss/_globals.scss" />
-      <change beforePath="$PROJECT_DIR$/scss/_header.scss" afterPath="$PROJECT_DIR$/scss/_header.scss" />
-      <change beforePath="$PROJECT_DIR$/scss/_overlay.scss" afterPath="$PROJECT_DIR$/scss/_overlay.scss" />
-      <change beforePath="$PROJECT_DIR$/services.html" afterPath="$PROJECT_DIR$/services.html" />
-      <change beforePath="$PROJECT_DIR$/success-stories.html" afterPath="$PROJECT_DIR$/success-stories.html" />
-      <change beforePath="$PROJECT_DIR$/ts/app.ts" afterPath="$PROJECT_DIR$/ts/app.ts" />
-      <change beforePath="$PROJECT_DIR$/ts/overlay.ts" afterPath="$PROJECT_DIR$/ts/overlay.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -152,8 +133,8 @@
           <file leaf-file-name="_components.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/scss/_components.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="336" column="22" lean-forward="true" selection-start-line="336" selection-start-column="22" selection-end-line="336" selection-end-column="22" />
+                <state relative-caret-position="208">
+                  <caret line="316" column="16" lean-forward="false" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -340,11 +321,6 @@
               <item name="str_html" type="b2602c69:ProjectViewProjectNode" />
               <item name="str_html" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="str_html" type="b2602c69:ProjectViewProjectNode" />
-              <item name="str_html" type="462c0819:PsiDirectoryNode" />
-              <item name="ts" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -424,7 +400,7 @@
       <workItem from="1520257869529" duration="12322000" />
       <workItem from="1520285344754" duration="2075000" />
       <workItem from="1520331849941" duration="337000" />
-      <workItem from="1520333985140" duration="15330000" />
+      <workItem from="1520333985140" duration="16072000" />
     </task>
     <task id="LOCAL-00001" summary="Windows commit">
       <created>1519400449380</created>
@@ -517,11 +493,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520332148447</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Straightening out services page">
+      <created>1520355791813</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1520355791814</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121852000" />
+    <option name="totallyTimeSpent" value="122594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -617,7 +600,9 @@
     <MESSAGE value="Success stories overlays" />
     <MESSAGE value="GitIgnore 2" />
     <MESSAGE value="GitIgnore" />
-    <option name="LAST_COMMIT_MESSAGE" value="GitIgnore" />
+    <MESSAGE value="Straightening out services page" />
+    <MESSAGE value="Minor css fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor css fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -974,8 +959,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scss/_components.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="336" column="22" lean-forward="true" selection-start-line="336" selection-start-column="22" selection-end-line="336" selection-end-column="22" />
+        <state relative-caret-position="208">
+          <caret line="316" column="16" lean-forward="false" selection-start-line="316" selection-start-column="16" selection-end-line="316" selection-end-column="16" />
           <folding />
         </state>
       </provider>
