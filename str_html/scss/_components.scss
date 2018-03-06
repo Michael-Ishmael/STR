@@ -18,15 +18,17 @@
 
   h1 {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 5rem;
     color: $white;
+    margin-bottom: 1.4rem;
   }
 
   p.lead {
     font-size: 1.2rem;
-    padding: 0.8rem 4rem;
-    line-height: 1.75;
+    line-height: 1.67;
     color: $mid-grey-blue;
+    max-width: 40rem;
+    margin: 0 auto 5rem
   }
 
 }
@@ -47,40 +49,34 @@
     height: 8em;
     margin-bottom: 1.4em;
 
+    img {
+      height: 100%;
+    }
+
   }
 
-  .display-4 {
-    font-size: 2em;
-    font-weight: bold;
-  }
 
   .heading-number{
     //color: $mid-grey-yellow;
   }
 
   p {
-    padding: 1em 2em;
+    padding: 1rem 1.5rem;
   }
 }
-
-/*
-.bg-blue {
-  background-color: $bright-blue;
-  color: $white;
-
-  h1 {
-    color: $white;
-  }
-}
-*/
 
 .str-main {
 
-  padding: 6rem 0;
-  font-size: 0.9rem;
+  .heading {
+    padding: 4rem 1rem 4rem 6rem;
+  }
+
+  .content-center {
+    padding: 6rem 0;
+  }
 
   p {
-
+    padding: 5rem 6rem 5rem 0;
   }
 
 
@@ -115,11 +111,13 @@ section {
 
 .str-pic-hero {
 
-  padding: 2rem;
-  color: $very-light-grey;
+  .heading {
+    padding: 4rem 1rem 4rem 6rem;
+  }
+
   background-color: inherit;
   font-size: .8rem;
-
+  color: $white;
 
   h2 {
     color: inherit;
@@ -127,15 +125,23 @@ section {
   }
 
   p {
-    width: 26em;
-    margin-bottom: 3em;
+    line-height: 1.78;
+    font-size: .9rem;
+    width: 23em;
+
+    margin-bottom: 3rem;
   }
 
-  a.btn-lg {
-    font-size: .8em;
+  a.overlay-link {
+    font-size: .9em;
     text-transform: uppercase;
-    padding: .8rem 1.8rem;
-    @include border-radius(.2rem);
+    padding-bottom: .4rem;
+
+    &:hover{
+      color: $white;
+      border-bottom: 2px solid $corn-yellow;
+    }
+
   }
 
 
@@ -186,7 +192,7 @@ section {
     display: table;
     cursor: pointer;
 
-    p {
+    div.hex-inner {
 
       display: table-cell;
       width: 100%;

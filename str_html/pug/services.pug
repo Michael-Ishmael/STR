@@ -3,20 +3,20 @@ include includes/globals
     var steps = [
     {
     index: "1.",
-    title: "Analyse",
+    title: "Analyze",
     image: "img/icon-analyse.svg",
     text: "Before we offer you a solution we take time to understand your problem. Our early stage analysis is delivered with speed and precision in a matter of weeks."
     },
     {
     index: "2.",
     title: "Identify",
-    image: "img/icon-improve.svg",
+    image: "img/icon-identify.svg",
     text: "We identify the inhibitors preventing you achieving your revenue goals; then we build a blueprint for change to help you tackle them."
     },
     {
     index: "3.",
     title: "Improve",
-    image: "img/icon-sustain.svg",
+    image: "img/icon-improve.svg",
     text: "From here we build sales coaching and education programs to arm your teams with the skills and knowledge they need to achieve sustained commercial improvement."
     },
     {
@@ -228,15 +228,14 @@ html(lang="en")
                             .col-12.col-sml-6.col-md-4.str-card
                                 .icon-container
                                     img(src=step.image)
-                                h4.display-4
+                                h3.display-3
                                     span.heading-number= step.index
                                     = ' ' + step.title
                                 p= step.text
 
             section.container-fluid.bg-yellow
-                    .container
-                        .row.align-content-center.str-main
-                            .col-12.col-md-6
+                        .row.str-main
+                            .col-12.col-md-6.heading
                                 h1.display-1 Services
                             .col-12.v-spacer.d-md-none
                             p.col-12.col-md-6.clr-dark-blue.
@@ -251,24 +250,25 @@ html(lang="en")
 
             each service in services
                 section.container-fluid(class=service.className)
-                    .container.str-pic-hero
-                        h2.display-2= service.title
-                        p=service.text
-                        p
-                            a.btn.btn-primary.btn-lg.overlay-link(href='#' + service.overlayId, role="button", data-overlay=service.overlayId)=service.buttonText
+                    .row.str-pic-hero
+                        .col-12.col-md-6.heading
+                            h2.display-2= service.title
+                            p=service.text
+
+                            a.overlay-link(href='#' + service.overlayId, role="button", data-overlay=service.overlayId)=service.buttonText
 
 
 
-            section.container-fluid.bg-blue
-                .str-main.container
-                    h1.display-1.text-center.clr-white Our Expertise
-                    #hexLayout1.str-hex-tile-container
+            section.container-fluid.bg-blue.str-main
+                    .content-center
+                        h2.display-2.text-center.clr-white Our Expertise
+                        #hexLayout1.str-hex-tile-container
 
-                        each skill in expertise
-                            .str-hex-tile.overlay-link(id=skill.id, data-overlay=skill.overlayId)
-                                p.text-center.align-middle.clr-white
-                                    a(href='#'+skill.overlayId, data-overlay=skill.overlayId)!= skill.title
-                                    span.em-line
+                            each skill in expertise
+                                .str-hex-tile.overlay-link(id=skill.id, data-overlay=skill.overlayId)
+                                    .hex-inner.text-center.align-middle.clr-white
+                                        a(href='#'+skill.overlayId, data-overlay=skill.overlayId)!= skill.title
+                                        span.em-line
 
 
             section.container-fluid.bg-yellow

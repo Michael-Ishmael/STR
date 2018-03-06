@@ -1,8 +1,8 @@
 html {
-  font-size: 16px;
+  font-size: 14px;
 
   @media screen and (min-width: 900px) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @media screen and (min-width: 1260px) {
@@ -22,7 +22,7 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $blue;
+    color: $bright-blue;
   }
 
 }
@@ -39,21 +39,28 @@ h2 {
 
 
 .display-1 {
-  font-size: 3.4rem;
+  font-size: 5rem;
+  line-height: 1;
 }
 
 .display-2 {
-  font-size: 2.6rem;
+  font-size: 3.2rem;
+  line-height: 1;
 }
 
 .display-3 {
   font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.display-4 {
+  font-size: 1.8rem;
+  margin-bottom: 0;
 }
 
 p {
-  font-size: 1em;
-
-  line-height: 1.6;
+  font-size: .9rem;
+  line-height: 1.78;
 }
 
 img{
@@ -114,6 +121,6 @@ $blur-amount: 50px;
 
 .str {
   .container-fluid {
-    max-width: 1400px;
+    max-width: 1440px;
   }
 }

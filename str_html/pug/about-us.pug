@@ -101,7 +101,7 @@ html(lang="en")
             section.container-fluid.bg-blue
                     .row.text-center.wide-picture-grid
                         each member in team
-                            .col-6.str-grid-pic
+                            .col-6.col-lg-4.str-grid-pic
                                 .about-us-image-tile
                                     img.h-align(src=member.image)
                                     img.h-align.gradient(src="img/shadow.png")
@@ -124,7 +124,7 @@ html(lang="en")
                                             .btn.btn-outline-light About #{member.firstName}
                                             h6.title= member.title
 
-                        .col-6.str-grid-pic
+                        .col-6.col-lg-12.str-grid-pic
                             .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
                                 .v-align
                                     h4.display-4.

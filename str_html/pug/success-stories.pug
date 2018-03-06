@@ -67,7 +67,6 @@ html(lang="en")
     body.str
         include includes/header
 
-
         main
 
             section.container-fluid.bg-blue
@@ -105,11 +104,12 @@ html(lang="en")
                                             img(src=story.overlay.image)
                                     .col-6.p-0.overlay-column.h-100
                                         .overlay-content.h-100
-                                            .close-button-container
-                                                a.close-button(href="#").bg-blue.float-right
-                                                    .cross
+                                            .close-button-bar
+                                                .close-button-container
+                                                    a.close-button(href="#").bg-blue
+                                                        .cross
                                             .overlay-main.clearfix
-                                                h6.clr-dark-blue.text-uppercase.clr-mid-blue Success Story
+                                                h6.clr-dark-blue.text-uppercase.clr-dark-blue Success Story
                                                 h2.display-2!= story.overlay.title
                                                 h5.overlay-heading.clr-dark-blue.font-weight-bold Challenge
                                                 p.lead.clr-dark-blue!= story.overlay.challengeText

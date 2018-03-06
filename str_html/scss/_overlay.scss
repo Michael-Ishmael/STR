@@ -50,30 +50,41 @@
     height: 100%;
     background-color: rgba(255,255,255, .95);
 
-    .close-button-container {
-      height: 64px;
+    .close-button-bar{
+      position: absolute;
+      width: 100%;
+      top: 2rem;
+      height: 3.2rem;
 
+      .close-button-container {
 
-      .close-button{
-        display: inline-block;
-        width: 64px;
-        height: 64px;
-        @include border-radius(32px);
-        margin: 1rem;
+        width: 6rem;
+        float: right;
+        text-align: left;
 
-        .cross{
+        .close-button{
           display: inline-block;
-          margin: 20px;
-          background-image: url("../img/yellow-cross.svg");
-          width: 24px;
-          height: 24px;
-        }
+          width: 3.2rem;
+          height: 3.2rem;
+          @include border-radius(1.6rem);
 
+
+          .cross{
+            display: inline-block;
+            margin: 1rem;
+            background-image: url("../img/yellow-cross.svg");
+            width: 1.2rem;
+            height: 1.2rem;
+          }
+
+        }
       }
     }
 
+
+
     .overlay-main {
-      padding: 2rem 3.4rem;
+      padding: 6.6rem 6rem;
 
       h6 {
         font-size: .9rem;
@@ -93,12 +104,13 @@
       }
       p {
         &.lead {
-          font-size: 1rem;
+          font-size: 1.2rem;
+          line-height: 1.5;
         }
 
         &.body{
-          font-size: .7rem;
-          line-height: 1.6rem;
+          font-size: .9rem;
+          line-height: 1.78;
         }
 
 

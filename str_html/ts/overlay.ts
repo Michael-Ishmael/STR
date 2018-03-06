@@ -118,12 +118,12 @@ export class OverlayManager {
         let oImg = this._nextOverlay.find('.overlay-image-container');
         let width = oBody.width() + 10;
         this._timeline.set(oBody[0],  {x: width}, 0);
-        this._timeline.set(oImg[0], {x: -width}, 0);
+        this._timeline.set(oImg[0], {autoAlpha: 0}, 0);
         this._timeline.addLabel("doors", 0)
         //let to = this._currentOverlay ? 50 : 0
         //if(this._currentOverlay) this.duration += 5;
             this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
-            this._timeline.to(oImg[0], this.duration,{x: 0}, "doors");
+            this._timeline.to(oImg[0], this.duration,{autoAlpha: 1}, "doors");
 
         //}
 
