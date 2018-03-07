@@ -41,7 +41,10 @@ header {
 
     .nav-link {
 
+      cursor: pointer;
       padding: 0 0 .3rem 0;
+      border-bottom: 2px solid $dark-blue;
+      @include transition();
 
       &.active {
         border-bottom: 2px solid $corn-yellow;

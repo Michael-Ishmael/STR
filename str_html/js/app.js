@@ -337,6 +337,15 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                     this.showOverlayInternal();
                     this._timeline.play();
                 };
+                OverlayManager.keepExisting = function () {
+                    //TODO: Make more generic
+                    if (this._currentOverlay && this._currentOverlay.attr("id").indexOf("overlay-about") > -1) {
+                        if (this._nextOverlay && this._nextOverlay.attr("id").indexOf("overlay-expertise") > -1) {
+                            return true;
+                        }
+                    }
+                    return false;
+                };
                 OverlayManager.registerCloseButton = function (closeButton) {
                     var _this = this;
                     closeButton.click(function (e) {
@@ -361,15 +370,31 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                     this._nextOverlay.css('z-index', this.Z_INDEX_2);
                 };
                 OverlayManager.arrangeLayers = function () {
+                    var keepExisting = this.keepExisting();
                     if (this._currentOverlay) {
-                        this._currentOverlay.hide();
-                        this._currentOverlay.css('z-index', null);
+                        if (keepExisting) {
+                            this._previousOverlay = this._currentOverlay;
+                        }
+                        else {
+                            this._currentOverlay.hide();
+                            this._currentOverlay.css('z-index', null);
+                        }
                     }
                     this._currentOverlay = this._nextOverlay;
                     this._nextOverlay = null;
                 };
-                OverlayManager.initTimeline = function () {
+                OverlayManager.initTimeline = function (useSecond) {
                     var _this = this;
+                    if (useSecond === void 0) { useSecond = false; }
+                    if (useSecond) {
+                        if (this._timeline2) {
+                            this._timeline2.kill();
+                        }
+                        this._timeline2 = new TimelineLite({
+                            onComplete: function () { _this.arrangeLayers(); },
+                            onReverseComplete: function () { _this.cleanUpHide(); }
+                        });
+                    }
                     if (this._timeline) {
                         this._timeline.kill();
                     }
@@ -397,6 +422,11 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                     }
                 };
                 OverlayManager.cleanUpHide = function () {
+                    if (this._previousOverlay) {
+                        this._previousOverlay.hide();
+                        this._previousOverlay.css('z-index', null);
+                        this._previousOverlay = null;
+                    }
                     if (this._currentOverlay) {
                         this._currentOverlay.hide();
                         this._currentOverlay = null;
@@ -708,25 +738,8 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
             }
         ],
         execute: function () {
-            /*
-            let hexData: string[] = [
-                "#hexTile_1",
-                "#hexTile_2",
-                "#hexTile_3",
-                "#hexTile_4",
-                "#hexTile_5",
-                "#hexTile_6",
-                "#hexTile_7",
-                "#hexTile_8",
-                "#hexTile_9",
-                "#hexTile_10",
-                "#hexTile_11",
-                "#hexTile_12",
-                "#hexTile_13"
-            ];
-            */
             $(function () {
-                var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 140);
+                var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
                 layout.layoutHexagons();
                 $(window).resize(function () {
                     layout.layoutHexagons();
@@ -748,6 +761,16 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
                 }
                 initRollovers();
+                $('.box-link').click(function (e) {
+                    e.preventDefault();
+                    var a = $(this).find('a');
+                    if (a.length) {
+                        var href = a.attr('href');
+                        if (href) {
+                            window.location.href = href;
+                        }
+                    }
+                });
                 overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
             });
         }
