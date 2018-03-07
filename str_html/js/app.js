@@ -726,7 +726,7 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
             ];
             */
             $(function () {
-                var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 180, 140);
+                var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 140);
                 layout.layoutHexagons();
                 $(window).resize(function () {
                     layout.layoutHexagons();

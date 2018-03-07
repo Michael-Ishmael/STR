@@ -18,6 +18,24 @@ footer {
 
   &:hover {
     color: $dark-blue;
+
+    i{
+      &.twitter {
+
+        background-image: url("../img/twitter-over.svg");
+
+      }
+
+      &.linked-in {
+        background-image: url("../img/linked-in-over.svg");
+
+      }
+
+      &.medium {
+        background-image: url("../img/medium-over.svg");
+      }
+    }
+
   }
 
   i {
@@ -30,15 +48,27 @@ footer {
     &.twitter {
       background-image: url("../img/twitter.svg");
       background-position-y: .2rem;
+
+      &:hover {
+        background-image: url("../img/twitter-over.svg");
+      }
     }
 
     &.linked-in {
       background-image: url("../img/linked-in.svg");
+
+      &:hover {
+        background-image: url("../img/linked-in-over.svg");
+
+      }
     }
 
 
     &.medium {
       background-image: url("../img/medium.svg");
+      &:hover {
+        background-image: url("../img/medium-over.svg");
+      }
     }
   }
 
@@ -66,7 +96,6 @@ footer {
 
 .footer-menu {
 
-
   ul {
 
     list-style: none;
@@ -88,7 +117,5 @@ footer {
       }
     }
   }
-
-
 
 }

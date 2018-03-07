@@ -23,7 +23,7 @@ let hexData: string[] = [
 
 
 $(function () {
-        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 180, 140);
+        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 140);
 
         layout.layoutHexagons();
 

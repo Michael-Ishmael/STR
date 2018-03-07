@@ -161,33 +161,69 @@ include includes/globals
     }
     ];
 
+    var expertiseDict = {};
+    expertise.forEach(function(e) { expertiseDict[e.id] = e});
+
     var consultants = [
     {
-    firstName: 'Tony',
-    fullName: 'Tony Wand',
-    title: 'Senior Consultant',
-    link: '#',
-    email: 'tony.wand@strategytorevenue.com',
-    summary: "Sales Tools & Process, Channel Engagement, Sales Efficiency, Winning in New Markets & Territories, Performance Management",
-    image: 'img/about-tony-w.jpg'
+        firstName: 'Tony',
+        fullName: 'Tony Wand',
+        title: 'Senior Consultant',
+        twitter: null,
+        linkedIn: 'https://www.linkedin.com/in/tonywand/',
+        email: 'tony.wand@strategytorevenue.com',
+        summary: "Sales Tools & Process, Channel Engagement, Sales Efficiency, Winning in New Markets & Territories, Performance Management",
+        image: 'img/about-tony-w.jpg',
+        overlayId: "overlay-about-tony-w",
+        fullText: '<p class="lead">With an unswerving focus on sales productivity and profitability, Tony is an expert at helping sales teams make a positive impact on their company’s top line number.</p><p>His skills lie in helping sales teams to sell more value-based solutions, driving share of wallet and reducing the sales cycle. Tony frequently works with companies to roll out new routes to market, engage sales teams in new territories, and to drive channel partner revenue.</p><p>Prior to joining Strategy to Revenue, Tony ran his own consultancy firm, and held senior sales leadership positions at Dell, NetApp and Azlan.</p>',
+        overlayImage: "img/overlay-about-tony-w.jpg",
+        skills: [
+            "expertise-tools",
+            "Channel Engagement",
+            "expertise-efficiency",
+            "expertise-performance",
+            "Winning in New Markets & Territories"
+
+        ]
     },
     {
-    firstName: 'Martin',
-    fullName: 'Martin Dean',
-    title: 'Senior Consultant',
-    link: '#',
-    email: 'martin.dean@strategytorevenue.com',
-    summary: "Sales Efficiency, New Product Messaging, Competitor Positioning, Sales Efficiency, Recruiting, On-boarding and Re-boarding",
-    image: 'img/about-martin-d.jpg'
+        firstName: 'Martin',
+        fullName: 'Martin Dean',
+        title: 'Senior Consultant',
+        twitter: null,
+        linkedIn: 'https://www.linkedin.com/in/martin-dean-1498b6/',
+        email: 'martin.dean@strategytorevenue.com',
+        summary: "Sales Efficiency, New Product Messaging, Competitor Positioning, Sales Efficiency, Recruiting, On-boarding and Re-boarding",
+        image: 'img/about-martin-d.jpg',
+        overlayId: "overlay-about-martin-d",
+        fullText: '<p class="lead">Martin is a passionate educator with a pedigree in developing high impact coaching and communications programmes that focus on practical and measurable outcomes. One of the co-founders of Strategy to Revenue, and with over two decades of experience, Martin is a sales enablement veteran with expertize in delivering multi-national projects to large corporates.</p><p>His innovative approach to motivating, equipping and mobilising work teams melds multi-media and more traditional learning environments, and has seen him create some of Strategy to Revenue’s most popular sales enablement programmes.</p>',
+        overlayImage: "img/overlay-about-martin-d.jpg",
+        skills: [
+            "expertise-efficiency",
+            "expertise-messaging",
+            "Competitor Positioning",
+            "expertise-boarding"
+        ]
     },
     {
-    firstName: 'Neil',
-    fullName: 'Neil Whitelock',
-    title: 'Senior Consultant',
-    link: '#',
-    email: 'neil.whitelock@straegytorevenue.com',
-    summary: "Customer Segmentation, Compensation & Incentives, Sales Tools & Process, Sales Efficiency, Reporting & Analysis",
-    image: 'img/about-neil-w.jpg'
+        firstName: 'Neil',
+        fullName: 'Neil Whitelock',
+        title: 'Senior Consultant',
+        twitter: "https://twitter.com/Neil_Whitelock",
+        linkedIn: 'https://www.linkedin.com/in/neilwhitelock/',
+        email: 'neil.whitelock@straegytorevenue.com',
+        summary: "Customer Segmentation, Compensation & Incentives, Sales Tools & Process, Sales Efficiency, Reporting & Analysis",
+        image: 'img/about-neil-w.jpg',
+        overlayId: "overlay-about-neil-w",
+        fullText: '<p class="lead">Neil is a highly successful and competitive business-leader with a proven track-record in building businesses, orchestrating business transformations, and driving sales-growth in technology and finance verticals. He is experienced at re-structuring organizations in response to changing market dynamics and payment models including cloud and SaaS, and running successful alliance and partner programmes globally.</p>',
+        overlayImage: "img/overlay-about-neil-w.jpg",
+        skills: [
+            "expertise-segmentation",
+            "expertise-incentives",
+            "expertise-tools",
+            "expertise-efficiency",
+            "expertise-reporting"
+        ]
     }
     ]
 
@@ -253,7 +289,7 @@ html(lang="en")
 
             section.container-fluid.bg-blue.str-main
                     .content-center
-                        h2.display-2.text-center.clr-white Our Expertise
+                        h1.display-1.text-center.clr-white Our Expertise
                         #hexLayout1.str-hex-tile-container
 
                             each skill in expertise
@@ -286,18 +322,18 @@ html(lang="en")
                                 p.summary= consultant.summary
                                 .links
                                     a.str-button.btn.btn-primary.btn-lg(href='mailto:' + consultant.email) Get in Touch
-                                    a.str-button.btn.btn-lg.btn-outline-secondary(href=consultant.link)= 'About ' + consultant.firstName
+                                    a.str-button.btn.btn-lg.btn-outline-secondary.overlay-link(href='#'+consultant.overlayId, data-overlay=consultant.overlayId)= 'About ' + consultant.firstName
 
-                .row
-                    .col-12.text-center.bg-mid-cream.p-5
+                .row.str-cream-blue-box
+                    .col-12.text-center.p-5
                         .circles.text-center
                             .circle.tony
                             .circle.martin
                             .circle.neil
                             a.circle.blue.bg-blue.clr-white(href='#') 9+
                         .d-inline-block.consult-link-text-container
-                            a.d-inline-block.clr-dark-blue.font-weight-bold(href='#')
-                                | Show All Consultants
+                            a.d-inline-block.font-weight-bold(href='#').f-28
+                                | Show all consultants
 
             div.overlay-background(id="overlayBg", aria-hidden="true")
                 .container-fluid.position-relative.h-100
@@ -334,7 +370,7 @@ html(lang="en")
                         section.overlay.h-100(id=skill.overlayId)
                             .row.h-100.m-0
                                 .col-6.p-0.overlay-column.h-100
-                                    .overlay-image-container.h-100
+                                    .overlay-image-container.h-100.close-button
 
                                 .col-6.p-0.overlay-column.h-100
                                     .overlay-content.h-100
@@ -357,7 +393,30 @@ html(lang="en")
                                                 h3.display-3
                                                     a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
 
-
+                    each consultant in consultants
+                        section.overlay.h-100(id=consultant.overlayId)
+                            .row.h-100.m-0
+                                .col-6.p-0.overlay-column.h-100
+                                    .overlay-image-container.h-100
+                                        img(src=consultant.overlayImage)
+                                .col-6.p-0.overlay-column.h-100
+                                    .overlay-content.h-100
+                                        .close-button-bar
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
+                                        .overlay-main.clearfix
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue= consultant.title
+                                            h2.display-2= consultant.fullName
+                                            p.clr-mid-blue!= consultant.fullText
+                                        .overlay-footer.bg-light-cream
+                                            h4.display-4= 'Speak to ' + consultant.firstName + ' about:'
+                                            .consultant-skill-box
+                                                each skill in consultant.skills
+                                                    if expSkill = expertiseDict[skill]
+                                                        a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
+                                                    else
+                                                        a.skill(href="#")= skill
 
 
             include includes/trailer

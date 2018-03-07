@@ -217,7 +217,7 @@ section {
 }
 
 .str-hex-tile-container{
-  margin: 2em auto;
+  margin: 4.5rem auto 8rem;
   max-width: 895px;
 
 
@@ -241,7 +241,6 @@ section {
 
       &:hover {
         background-image: url("../img/polygon-over.svg");
-
 
         span, a {
           width: 100%;
@@ -295,17 +294,47 @@ section {
     p.summary {
       color: $mid-grey-yellow;
       min-height: 6.4rem;
-      margin-bottom: 1.78rem;
+      margin: 1rem 0 1.78rem;
+      font-weight: 300;
     }
 
     a.btn {
-      width: 13rem;
+      width: 100%;
+      max-width: 13rem;
       margin-bottom: .5rem;
     }
 
   }
 
+  @include media-breakpoint-up(sm) {
+    .str-feature-text {
+      border-right: 1px solid $mid-cream;
+    }
 
+    .str-feature-box:last-child .str-feature-text{
+      border-right: none;
+    }
+  }
+
+}
+
+.str-cream-blue-box {
+
+  background-color: $mid-cream;
+  color: $dark-blue;
+
+  &:hover{
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+  a {
+    font-size: 1.4rem;
+    &:hover {
+      color: $white;
+    }
+
+  }
 
 }
 
@@ -319,7 +348,7 @@ section {
     display: inline-block;
     @include border-radius(1.5rem);
     height: 3rem;
-    line-height: 3rem;
+    line-height: 2.6rem;
     width: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
@@ -343,6 +372,9 @@ section {
     }
 
     &.blue{
+
+      border: 3px solid $mid-cream;
+
       &:hover{
         color: $corn-yellow;
       }
@@ -379,6 +411,12 @@ section {
     border-color: $corn-yellow;
     font-weight: 500;
     width: 13.8rem;
+
+    &:hover {
+      background-color: $bright-blue;
+      border-color: $bright-blue;
+      color: $white;
+    }
   }
 
   .v-align {
@@ -402,9 +440,8 @@ section {
   font-size: .9rem;
   @include border-radius(3px);
   color: $white;
-  padding: 1rem 3.2rem;
+  padding: 1rem 2rem;
   line-height: 1;
-
 
 
   &.btn-outline-secondary {

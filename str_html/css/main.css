@@ -110,6 +110,9 @@ footer {
   footer > div {
     margin: -1px; }
 
+.font-weight-bold {
+  font-weight: 600 !important; }
+
 .bg-blue {
   background-color: #1c2541; }
 
@@ -285,7 +288,7 @@ section {
   */ }
 
 .str-hex-tile-container {
-  margin: 2em auto;
+  margin: 4.5rem auto 8rem;
   max-width: 895px; }
   .str-hex-tile-container .str-hex-tile {
     padding: 5px;
@@ -332,10 +335,28 @@ section {
     .str-feature-box .str-feature-text p.summary {
       color: #7f7b6f;
       min-height: 6.4rem;
-      margin-bottom: 1.78rem; }
+      margin: 1rem 0 1.78rem;
+      font-weight: 300; }
     .str-feature-box .str-feature-text a.btn {
-      width: 13rem;
+      width: 100%;
+      max-width: 13rem;
       margin-bottom: .5rem; }
+  @media (min-width: 576px) {
+    .str-feature-box .str-feature-text {
+      border-right: 1px solid #eae7de; }
+    .str-feature-box .str-feature-box:last-child .str-feature-text {
+      border-right: none; } }
+
+.str-cream-blue-box {
+  background-color: #eae7de;
+  color: #1c2541; }
+  .str-cream-blue-box:hover {
+    background-color: #1c2541;
+    color: #fff; }
+  .str-cream-blue-box a {
+    font-size: 1.4rem; }
+    .str-cream-blue-box a:hover {
+      color: #fff; }
 
 .circles {
   display: inline-block;
@@ -344,7 +365,7 @@ section {
     display: inline-block;
     border-radius: 1.5rem;
     height: 3rem;
-    line-height: 3rem;
+    line-height: 2.6rem;
     width: 3rem;
     background-repeat: no-repeat;
     background-size: cover;
@@ -360,8 +381,10 @@ section {
       background-image: url("../img/oval-martin-d.png"); }
     .circles .circle.neil {
       background-image: url("../img/oval-neil-w.png"); }
-    .circles .circle.blue:hover {
-      color: #ffc72c; }
+    .circles .circle.blue {
+      border: 3px solid #eae7de; }
+      .circles .circle.blue:hover {
+        color: #ffc72c; }
 
 .consult-link-text-container {
   height: 3.2rem;
@@ -383,6 +406,10 @@ section {
   border-color: #ffc72c;
   font-weight: 500;
   width: 13.8rem; }
+  .str .btn-secondary:hover {
+    background-color: #2b63ff;
+    border-color: #2b63ff;
+    color: #fff; }
 .str .v-align {
   position: relative;
   top: 50%;
@@ -397,7 +424,7 @@ section {
   font-size: .9rem;
   border-radius: 3px;
   color: #fff;
-  padding: 1rem 3.2rem;
+  padding: 1rem 2rem;
   line-height: 1; }
   .str-button.btn.btn-outline-secondary {
     color: #1c2442;
@@ -693,6 +720,12 @@ footer {
   display: inline-block; }
   .sm-link:hover {
     color: #1c2541; }
+    .sm-link:hover i.twitter {
+      background-image: url("../img/twitter-over.svg"); }
+    .sm-link:hover i.linked-in {
+      background-image: url("../img/linked-in-over.svg"); }
+    .sm-link:hover i.medium {
+      background-image: url("../img/medium-over.svg"); }
   .sm-link i {
     float: left;
     background-size: contain;
@@ -702,10 +735,16 @@ footer {
     .sm-link i.twitter {
       background-image: url("../img/twitter.svg");
       background-position-y: .2rem; }
+      .sm-link i.twitter:hover {
+        background-image: url("../img/twitter-over.svg"); }
     .sm-link i.linked-in {
       background-image: url("../img/linked-in.svg"); }
+      .sm-link i.linked-in:hover {
+        background-image: url("../img/linked-in-over.svg"); }
     .sm-link i.medium {
       background-image: url("../img/medium.svg"); }
+      .sm-link i.medium:hover {
+        background-image: url("../img/medium-over.svg"); }
   .sm-link > span {
     margin-left: .6rem;
     display: inline-block;
@@ -815,6 +854,28 @@ footer {
       border-bottom: 4px solid #ffc72c;
       display: inline-block;
       padding-bottom: .6rem; }
+    .overlay-background .overlay-footer h4.display-4 {
+      font-size: 1.4rem;
+      line-height: 1.17;
+      border-bottom: 2px solid #ffc72c;
+      display: inline-block;
+      font-weight: 600;
+      padding-bottom: .2rem;
+      margin-bottom: 1.4rem; }
+    .overlay-background .overlay-footer a.skill {
+      font-size: .7rem;
+      line-height: 1;
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid #eae7de;
+      margin-right: .6rem;
+      margin-bottom: .7rem;
+      padding: .8rem 1.6rem;
+      border-radius: 1.2rem; }
+      .overlay-background .overlay-footer a.skill:hover {
+        background-color: #1c2541;
+        border: 1px solid #1c2541;
+        color: #ffc72c; }
 
 /*
 .overlay {

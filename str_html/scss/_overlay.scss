@@ -147,6 +147,34 @@
       padding-bottom: .6rem;
     }
 
+    h4.display-4 {
+      font-size: 1.4rem;
+      line-height: 1.17;
+      border-bottom: 2px solid $corn-yellow;
+      display: inline-block;
+      font-weight: 600;
+      padding-bottom: .2rem;
+      margin-bottom: 1.4rem;
+    }
+
+    a.skill{
+      font-size: .7rem;
+      line-height: 1;
+      font-weight: 500;
+      display: inline-block;
+      border: 1px solid $mid-cream;
+      margin-right: .6rem;
+      margin-bottom: .7rem;
+      padding: .8rem 1.6rem;
+      @include border-radius(1.2rem);
+
+      &:hover {
+        background-color: $dark-blue;
+        border: 1px solid $dark-blue;
+        color: $corn-yellow;
+      }
+    }
+
   }
 
 }
