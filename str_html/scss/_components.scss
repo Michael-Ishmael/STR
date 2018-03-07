@@ -7,6 +7,29 @@
   width: 100%;
 }
 
+.home-hero-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-image:url('../img/hero-kv.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 37rem;
+}
+
+
+.str-home-hero.jumbotron {
+  padding: 2rem 9.3rem;
+  background: none;
+
+  p.lead {
+    font-size: .9rem;
+    line-height: 1.67;
+    color: $light-cream;
+    width: 22.3rem;
+  }
+}
+
 .str-hero.jumbotron{
 
   text-align: center;
@@ -27,7 +50,7 @@
     font-size: 1.2rem;
     line-height: 1.67;
     color: $mid-grey-blue;
-    max-width: 40rem;
+    max-width: 38rem;
     margin: 0 auto 5rem
   }
 
@@ -141,7 +164,7 @@ section {
     line-height: 1.78;
     font-size: .9rem;
     width: 23em;
-
+    font-weight: 300;
     margin-bottom: 3rem;
   }
 
@@ -216,9 +239,25 @@ section {
       font-size: .8rem;
       line-height: 1rem;
 
+      &:hover {
+        background-image: url("../img/polygon-over.svg");
+
+
+        span, a {
+          width: 100%;
+          display: inline-block;
+          color: $dark-blue;
+          font-weight: 400;
+        }
+      }
+
       span, a {
         width: 100%;
         display: inline-block;
+
+        &:hover{
+          color: $dark-blue;
+        }
 
         &.em-line {
           width: 2em;
@@ -291,7 +330,7 @@ section {
     margin-left: -1.5rem;
 
     &.tony {
-      background-image: url("../img/tony-oval.png");
+      background-image: url("../img/oval-tony-w.png");
       margin-left: 0;
     }
 

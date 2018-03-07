@@ -62,6 +62,11 @@ h1, h2, h3, h4 {
 h2 {
   font-size: 3.6rem; }
 
+.display-hero {
+  font-size: 7.5rem;
+  line-height: .93;
+  margin-bottom: 2rem; }
+
 .display-1 {
   font-size: 5rem;
   line-height: 1; }
@@ -157,6 +162,24 @@ footer {
   height: 100%;
   width: 100%; }
 
+.home-hero-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  background-image: url("../img/hero-kv.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 37rem; }
+
+.str-home-hero.jumbotron {
+  padding: 2rem 9.3rem;
+  background: none; }
+  .str-home-hero.jumbotron p.lead {
+    font-size: .9rem;
+    line-height: 1.67;
+    color: #f7f5ef;
+    width: 22.3rem; }
+
 .str-hero.jumbotron {
   text-align: center;
   background-color: inherit;
@@ -173,7 +196,7 @@ footer {
     font-size: 1.2rem;
     line-height: 1.67;
     color: #828aac;
-    max-width: 40rem;
+    max-width: 38rem;
     margin: 0 auto 5rem; }
 
 .str-card-container {
@@ -232,6 +255,7 @@ section {
     line-height: 1.78;
     font-size: .9rem;
     width: 23em;
+    font-weight: 300;
     margin-bottom: 3rem; }
   .str-pic-hero a.overlay-link {
     font-size: .9em;
@@ -276,9 +300,18 @@ section {
       background-repeat: no-repeat;
       font-size: .8rem;
       line-height: 1rem; }
+      .str-hex-tile-container .str-hex-tile div.hex-inner:hover {
+        background-image: url("../img/polygon-over.svg"); }
+        .str-hex-tile-container .str-hex-tile div.hex-inner:hover span, .str-hex-tile-container .str-hex-tile div.hex-inner:hover a {
+          width: 100%;
+          display: inline-block;
+          color: #1c2541;
+          font-weight: 400; }
       .str-hex-tile-container .str-hex-tile div.hex-inner span, .str-hex-tile-container .str-hex-tile div.hex-inner a {
         width: 100%;
         display: inline-block; }
+        .str-hex-tile-container .str-hex-tile div.hex-inner span:hover, .str-hex-tile-container .str-hex-tile div.hex-inner a:hover {
+          color: #1c2541; }
         .str-hex-tile-container .str-hex-tile div.hex-inner span.em-line, .str-hex-tile-container .str-hex-tile div.hex-inner a.em-line {
           width: 2em;
           height: 2px;
@@ -321,7 +354,7 @@ section {
     float: left;
     margin-left: -1.5rem; }
     .circles .circle.tony {
-      background-image: url("../img/tony-oval.png");
+      background-image: url("../img/oval-tony-w.png");
       margin-left: 0; }
     .circles .circle.martin {
       background-image: url("../img/martin-oval.png"); }

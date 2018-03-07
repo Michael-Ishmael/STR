@@ -1,0 +1,33 @@
+include includes/globals
+-
+    currentPage = 'Home'
+
+doctype html
+html(lang="en")
+    include includes/head
+
+    body.str
+
+        include includes/header
+
+        main
+
+            section.container-fluid.position-relative
+                .str-home-hero.jumbotron.row
+                    h1.display-hero.clr-white= 'Potential'
+                        br
+                        span.clr-bright-blue Unleashed
+
+                    p.lead.clr-white.
+                        Performing to your full potential feels incredible. Strategy to Revenue is dedicated to making the incredible a reality.
+
+            section.container-fluid.bg-light-cream
+                .center-div.p-5.m-5.text-center.
+                    Home Page.  Work in Progress...
+                //We help organisations unleash the potential of their sales teams, improving their commercial performance, transforming their businesses, and accelerating the time it takes to turn their strategy to revenue. We typically deliver:
+
+
+            include includes/trailer
+            include includes/footer
+
+    include includes/scripts

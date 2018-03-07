@@ -1,21 +1,19 @@
 
 
 header.container-fluid.bg-blue
-
-     .row.align-items-center.justify-content-center
-         .col-3
+    if currentPage=="Home"
+        .home-hero-bg
+    .row.align-items-center.justify-content-center
+        .col-3
             .logo-container
                 a(href="/")
                     img.logo(src='img/logo-strategy-to-revenue.svg')
+        .col-9
+            nav.text-right
+                ul.nav.justify-content-end
 
-         .col-9
-             nav.text-right
-                 ul.nav.justify-content-end
+                    each navItem in navItems
+                        li.nav-item
+                            a.nav-link(href=navItem.link, class=currentPage==navItem.name?'active':'')= navItem.name
 
-                     each navItem in navItems
-                         li.nav-item
-                             a.nav-link(href=navItem.link, class=currentPage==navItem.name?'active':'')= navItem.name
-
-
-
-     .block-bottom-border
+    .block-bottom-border
