@@ -81,6 +81,7 @@ h6.display-6 {
 p {
   font-size: .9rem;
   line-height: 1.78;
+  font-weight: 300;
 }
 
 img{
@@ -118,7 +119,7 @@ $txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blu
 
 @each $key, $value in $txt-color-list {
   .clr-#{$key} {
-    color: $value;
+    color: $value!important;
   }
 }
 
@@ -147,4 +148,9 @@ $blur-amount: 50px;
   .container-fluid {
     max-width: 1440px;
   }
+
+  .box-link {
+    cursor: pointer;
+  }
 }
+

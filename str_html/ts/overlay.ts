@@ -15,11 +15,13 @@ export class OverlayManager {
 
     private static _jBody:JQuery<HTMLElement>;
     private static _jBackGround:JQuery<HTMLElement>;
+    private static _previousOverlay:JQuery<HTMLElement>;
     private static _currentOverlay:JQuery<HTMLElement>;
     private static _nextOverlay:JQuery<HTMLElement>;
     private static _initialized:boolean;
     private static _bgVisible:boolean;
     private static _timeline:TimelineLite;
+    private static _timeline2:TimelineLite;
 
     private static NO_SCROLL_CLASS:string = "noscroll";
     private static Z_INDEX_0:string = "-2";
@@ -98,6 +100,16 @@ export class OverlayManager {
        this._timeline.play();
     }
 
+    private static keepExisting():boolean{
+        //TODO: Make more generic
+        if(this._currentOverlay && this._currentOverlay.attr("id").indexOf("overlay-about") > -1){
+            if(this._nextOverlay && this._nextOverlay.attr("id").indexOf("overlay-expertise") > -1){
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static registerCloseButton(closeButton:JQuery<HTMLElement>){
         closeButton.click((e) => {
             e.preventDefault();
@@ -130,15 +142,30 @@ export class OverlayManager {
     }
 
     private static arrangeLayers(){
+        let keepExisting = this.keepExisting();
         if(this._currentOverlay) {
-            this._currentOverlay.hide();
-            this._currentOverlay.css('z-index', null);
+            if(keepExisting){
+                this._previousOverlay = this._currentOverlay;
+            } else {
+                this._currentOverlay.hide();
+                this._currentOverlay.css('z-index', null);
+            }
+
         }
         this._currentOverlay = this._nextOverlay;
         this._nextOverlay = null;
     }
 
-    private static initTimeline(){
+    private static initTimeline(useSecond:boolean = false){
+        if(useSecond){
+            if(this._timeline2){
+                this._timeline2.kill()
+            }
+            this._timeline2 = new TimelineLite({
+                onComplete: () =>{ this.arrangeLayers() } ,
+                onReverseComplete: () =>{ this.cleanUpHide() }
+            });
+        }
         if(this._timeline){
             this._timeline.kill()
         }
@@ -167,6 +194,11 @@ export class OverlayManager {
     }
 
     private static cleanUpHide(){
+        if(this._previousOverlay) {
+            this._previousOverlay.hide();
+            this._previousOverlay.css('z-index', null);
+            this._previousOverlay = null;
+        }
         if(this._currentOverlay) {
             this._currentOverlay.hide();
             this._currentOverlay = null;

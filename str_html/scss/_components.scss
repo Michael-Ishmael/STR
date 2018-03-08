@@ -172,6 +172,8 @@ section {
     font-size: .9em;
     text-transform: uppercase;
     padding-bottom: .4rem;
+    @include transition();
+    border-bottom: 2px solid transparent;
 
     &:hover{
       color: $white;
@@ -238,6 +240,7 @@ section {
       background-repeat: no-repeat;
       font-size: .8rem;
       line-height: 1rem;
+      @include transition(all, 1);
 
       &:hover {
         background-image: url("../img/polygon-over.svg");
@@ -322,6 +325,7 @@ section {
 
   background-color: $mid-cream;
   color: $dark-blue;
+  @include transition(all, 1);
 
   &:hover{
     background-color: $dark-blue;
@@ -411,6 +415,7 @@ section {
     border-color: $corn-yellow;
     font-weight: 500;
     width: 13.8rem;
+    @include transition();
 
     &:hover {
       background-color: $bright-blue;
@@ -447,6 +452,7 @@ section {
   &.btn-outline-secondary {
     color: $dark-gray;
     border-color: $light-gray;
+    @include transition();
 
     &:hover {
       color: $white;

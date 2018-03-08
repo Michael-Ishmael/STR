@@ -3,27 +3,8 @@ import {CssPropertyTween, MovePercentageOfParent, RolloverManager} from "./rollo
 import {OverlayManager} from "./overlay";
 
 
-/*
-let hexData: string[] = [
-    "#hexTile_1",
-    "#hexTile_2",
-    "#hexTile_3",
-    "#hexTile_4",
-    "#hexTile_5",
-    "#hexTile_6",
-    "#hexTile_7",
-    "#hexTile_8",
-    "#hexTile_9",
-    "#hexTile_10",
-    "#hexTile_11",
-    "#hexTile_12",
-    "#hexTile_13"
-];
-*/
-
-
 $(function () {
-        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 140);
+        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
 
         layout.layoutHexagons();
 
@@ -56,6 +37,16 @@ $(function () {
 
         initRollovers();
 
+        $('.box-link').click(function (e) {
+           e.preventDefault();
+           let a = $(this).find('a');
+           if(a.length){
+               let href=a.attr('href');
+               if(href){
+                   window.location.href = href;
+               }
+           }
+        });
 
         OverlayManager.init('#overlayBg', null, '.overlay-link');
 

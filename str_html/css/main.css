@@ -97,7 +97,8 @@ h6.display-6 {
 
 p {
   font-size: .9rem;
-  line-height: 1.78; }
+  line-height: 1.78;
+  font-weight: 300; }
 
 header,
 section,
@@ -129,16 +130,16 @@ footer {
   background-color: #2b63ff; }
 
 .clr-dark-blue {
-  color: #1c2541; }
+  color: #1c2541 !important; }
 
 .clr-white {
-  color: #fff; }
+  color: #fff !important; }
 
 .clr-bright-blue {
-  color: #2b63ff; }
+  color: #2b63ff !important; }
 
 .clr-mid-blue {
-  color: #74798b; }
+  color: #74798b !important; }
 
 .blur-image {
   filter: blur(50px);
@@ -156,6 +157,8 @@ footer {
 
 .str .container-fluid {
   max-width: 1440px; }
+.str .box-link {
+  cursor: pointer; }
 
 .gradient-mask {
   background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0));
@@ -263,7 +266,13 @@ section {
   .str-pic-hero a.overlay-link {
     font-size: .9em;
     text-transform: uppercase;
-    padding-bottom: .4rem; }
+    padding-bottom: .4rem;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    border-bottom: 2px solid transparent; }
     .str-pic-hero a.overlay-link:hover {
       color: #fff;
       border-bottom: 2px solid #ffc72c; }
@@ -302,7 +311,12 @@ section {
       background-size: contain;
       background-repeat: no-repeat;
       font-size: .8rem;
-      line-height: 1rem; }
+      line-height: 1rem;
+      -webkit-transition: all 1s;
+      -moz-transition: all 1s;
+      -ms-transition: all 1s;
+      -o-transition: all 1s;
+      transition: all 1s; }
       .str-hex-tile-container .str-hex-tile div.hex-inner:hover {
         background-image: url("../img/polygon-over.svg"); }
         .str-hex-tile-container .str-hex-tile div.hex-inner:hover span, .str-hex-tile-container .str-hex-tile div.hex-inner:hover a {
@@ -349,7 +363,12 @@ section {
 
 .str-cream-blue-box {
   background-color: #eae7de;
-  color: #1c2541; }
+  color: #1c2541;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s; }
   .str-cream-blue-box:hover {
     background-color: #1c2541;
     color: #fff; }
@@ -405,7 +424,12 @@ section {
   color: #212121;
   border-color: #ffc72c;
   font-weight: 500;
-  width: 13.8rem; }
+  width: 13.8rem;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
   .str .btn-secondary:hover {
     background-color: #2b63ff;
     border-color: #2b63ff;
@@ -428,7 +452,12 @@ section {
   line-height: 1; }
   .str-button.btn.btn-outline-secondary {
     color: #1c2442;
-    border-color: #eae7de; }
+    border-color: #eae7de;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
     .str-button.btn.btn-outline-secondary:hover {
       color: #fff; }
     .str-button.btn.btn-outline-secondary.lighter {
@@ -674,7 +703,14 @@ header {
       header nav .nav-item:last-child {
         margin-right: 0; }
     header nav .nav-link {
-      padding: 0 0 .3rem 0; }
+      cursor: pointer;
+      padding: 0 0 .3rem 0;
+      border-bottom: 2px solid #1c2541;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
       header nav .nav-link.active {
         border-bottom: 2px solid #ffc72c; }
       header nav .nav-link:hover {
@@ -795,35 +831,36 @@ footer {
   .overlay-background .overlay {
     display: none;
     overflow: hidden;
-    margin: 0 -15px; }
+    position: absolute; }
   .overlay-background .overlay-image-container {
     overflow: hidden; }
+  .overlay-background .close-button-bar {
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    height: 3.2rem;
+    z-index: 2; }
+    .overlay-background .close-button-bar .close-button-container {
+      width: 6rem;
+      float: right;
+      text-align: left;
+      height: 3.2rem; }
+      .overlay-background .close-button-bar .close-button-container .close-button {
+        display: inline-block;
+        width: 3.2rem;
+        height: 3.2rem;
+        float: left;
+        border-radius: 1.6rem; }
+        .overlay-background .close-button-bar .close-button-container .close-button .cross {
+          display: inline-block;
+          margin: 1rem;
+          background-image: url("../img/yellow-cross.svg");
+          width: 1.2rem;
+          height: 1.2rem; }
   .overlay-background .overlay-content {
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: #fff;
     overflow-y: auto; }
-    .overlay-background .overlay-content .close-button-bar {
-      position: absolute;
-      width: 100%;
-      top: 2rem;
-      height: 3.2rem; }
-      .overlay-background .overlay-content .close-button-bar .close-button-container {
-        width: 6rem;
-        float: right;
-        text-align: left;
-        height: 3.2rem; }
-        .overlay-background .overlay-content .close-button-bar .close-button-container .close-button {
-          display: inline-block;
-          width: 3.2rem;
-          height: 3.2rem;
-          float: left;
-          border-radius: 1.6rem; }
-          .overlay-background .overlay-content .close-button-bar .close-button-container .close-button .cross {
-            display: inline-block;
-            margin: 1rem;
-            background-image: url("../img/yellow-cross.svg");
-            width: 1.2rem;
-            height: 1.2rem; }
     .overlay-background .overlay-content .overlay-main {
       padding: 6.6rem 6rem 3rem; }
       .overlay-background .overlay-content .overlay-main h6 {
@@ -839,7 +876,9 @@ footer {
         margin-bottom: 2rem; }
       .overlay-background .overlay-content .overlay-main p.lead {
         font-size: 1.2rem;
-        line-height: 1.5; }
+        line-height: 1.5;
+        color: #1c2541;
+        margin-bottom: 1.2rem; }
       .overlay-background .overlay-content .overlay-main p.body {
         font-size: .9rem;
         line-height: 1.78; }

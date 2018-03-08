@@ -31,11 +31,12 @@
     //opacity: 1;
   }
 
+
   .overlay{
     display: none;
     overflow: hidden;
-    margin: 0 -15px;
-    //position: absolute;
+    //margin: 0 -15px;
+    position: absolute;
     //top: 0;
     //left: 0;
     //height: 1400px;
@@ -53,43 +54,46 @@
     }
   }
 
-  .overlay-content {
-    height: 100%;
-    background-color: rgba(255,255,255, .95);
-    overflow-y: auto;
+  .close-button-bar{
+    position: absolute;
+    width: 100%;
+    top: 2rem;
+    height: 3.2rem;
+    z-index: 2;
 
-    .close-button-bar{
-      position: absolute;
-      width: 100%;
-      top: 2rem;
+    .close-button-container {
+
+      width: 6rem;
+      float: right;
+      text-align: left;
       height: 3.2rem;
 
-      .close-button-container {
-
-        width: 6rem;
-        float: right;
-        text-align: left;
+      .close-button{
+        display: inline-block;
+        width: 3.2rem;
         height: 3.2rem;
+        float: left;
+        @include border-radius(1.6rem);
 
-        .close-button{
+
+        .cross{
           display: inline-block;
-          width: 3.2rem;
-          height: 3.2rem;
-          float: left;
-          @include border-radius(1.6rem);
-
-
-          .cross{
-            display: inline-block;
-            margin: 1rem;
-            background-image: url("../img/yellow-cross.svg");
-            width: 1.2rem;
-            height: 1.2rem;
-          }
-
+          margin: 1rem;
+          background-image: url("../img/yellow-cross.svg");
+          width: 1.2rem;
+          height: 1.2rem;
         }
       }
     }
+  }
+
+
+  .overlay-content {
+    height: 100%;
+    background-color: $white;
+    overflow-y: auto;
+
+
 
 
 
@@ -116,6 +120,8 @@
         &.lead {
           font-size: 1.2rem;
           line-height: 1.5;
+          color: $dark-blue;
+          margin-bottom: 1.2rem;
         }
 
         &.body{
