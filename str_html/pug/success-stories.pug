@@ -158,11 +158,11 @@ html(lang="en")
                                 -
                                     overlayId = story.overlay ? story.overlay.id : ''
                                 .success-image-tile.overlay-link(data-overlay=overlayId)
-                                    img.h-align(src=story.image)
+                                    img.h-align.pic(src=story.image)
                                     img.h-align.gradient(src="img/shadow.png")
                                     .photo-caption.text-left
-                                        h3.display-3.clr-white!= story.title
-                                        h5.display-5.clr-white
+                                        h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
+                                        h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
                                             a.overlay-link(href='#'+overlayId) read success story
             include includes/trailer
             include includes/footer
