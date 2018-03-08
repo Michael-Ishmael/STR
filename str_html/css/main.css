@@ -52,9 +52,9 @@ a {
   color: inherit; }
   a:hover {
     text-decoration: none;
-    color: #2b63ff; }
+    color: inherit; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: #1c2541;
   font-family: Apercu, "Work Sans", "Helvetica Neue", sans-serif;
   font-weight: bold; }
@@ -160,6 +160,9 @@ footer {
 .str .box-link {
   cursor: pointer; }
 
+.overlay-link {
+  cursor: pointer; }
+
 .gradient-mask {
   background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0));
   position: absolute;
@@ -167,15 +170,6 @@ footer {
   left: 0;
   height: 100%;
   width: 100%; }
-
-.home-hero-bg {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  background-image: url("../img/hero-kv.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 37rem; }
 
 .str-home-hero.jumbotron {
   padding: 2rem 9.3rem;
@@ -203,7 +197,7 @@ footer {
     line-height: 1.67;
     color: #828aac;
     max-width: 38rem;
-    margin: 0 auto 5rem; }
+    margin: 0 auto 3rem; }
 
 .str-card-container {
   font-size: 0.8rem; }
@@ -243,6 +237,8 @@ section {
     background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/compass.jpg"); }
   section.up-next {
     background-image: url("../img/next-holder.jpg"); }
+  section.up-next.services {
+    background-image: url("../img/up-next-services.jpg"); }
 
 .str-pic-hero {
   background-color: inherit;
@@ -297,7 +293,7 @@ section {
   */ }
 
 .str-hex-tile-container {
-  margin: 4.5rem auto 8rem;
+  margin: 4.5rem auto 0rem;
   max-width: 895px; }
   .str-hex-tile-container .str-hex-tile {
     padding: 5px;
@@ -545,17 +541,11 @@ section {
       position: absolute;
       z-index: 3;
       bottom: -2rem;
-      margin-bottom: 1rem; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h5, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h5 {
-        font-size: 1.2rem;
-        font-family: Apercu, sans-serif;
-        font-weight: bold; }
-      .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h6, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h6 {
+      padding: 0 0 2.51rem 3.75rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .photo-caption h5.display-5, .wide-picture-grid .str-grid-pic .success-image-tile .photo-caption h5.display-5 {
         margin-top: 1rem;
         text-transform: uppercase;
-        font-size: .6rem;
-        font-family: Apercu, sans-serif;
-        font-weight: bold;
+        font-size: .8rem;
         visibility: hidden;
         opacity: 0; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile.over, .wide-picture-grid .str-grid-pic .success-image-tile.over {
@@ -679,7 +669,8 @@ section {
       color: #fff; }
 
 header {
-  padding: 2rem 0 2rem 0 !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
   color: white;
   min-height: 8em;
   font-size: .4rem;
@@ -728,6 +719,17 @@ header {
     position: absolute;
     bottom: 0;
     width: 100%; }
+
+.home-hero-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  margin-left: -15px;
+  background-image: url("../img/hero-kv.jpg");
+  background-repeat: no-repeat;
+  /*background-position-x: -15px;*/
+  background-size: cover;
+  height: 37rem; }
 
 @media (min-width: 576px) {
   header {
@@ -855,12 +857,27 @@ footer {
           display: inline-block;
           margin: 1rem;
           background-image: url("../img/yellow-cross.svg");
+          background-size: contain;
           width: 1.2rem;
           height: 1.2rem; }
   .overlay-background .overlay-content {
     height: 100%;
     background-color: #fff;
     overflow-y: auto; }
+    .overlay-background .overlay-content h2.display-2 {
+      margin-bottom: 2rem; }
+    .overlay-background .overlay-content h3.display-3 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem; }
+    .overlay-background .overlay-content h4.display-4 {
+      font-family: "Work Sans", sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.17;
+      border-bottom: 2px solid #ffc72c;
+      display: inline-block;
+      font-weight: 600;
+      padding-bottom: .2rem;
+      margin-bottom: 1.4rem; }
     .overlay-background .overlay-content .overlay-main {
       padding: 6.6rem 6rem 3rem; }
       .overlay-background .overlay-content .overlay-main h6 {
@@ -872,19 +889,55 @@ footer {
         border-bottom: 2px solid #ffc72c;
         display: inline-block;
         margin-bottom: 1rem; }
-      .overlay-background .overlay-content .overlay-main h2 {
-        margin-bottom: 2rem; }
       .overlay-background .overlay-content .overlay-main p.lead {
         font-size: 1.2rem;
         line-height: 1.5;
         color: #1c2541;
-        margin-bottom: 1.2rem; }
+        margin-bottom: 2rem; }
       .overlay-background .overlay-content .overlay-main p.body {
         font-size: .9rem;
         line-height: 1.78; }
+      .overlay-background .overlay-content .overlay-main .contact-links {
+        display: inline-block;
+        height: 1.4rem; }
+        .overlay-background .overlay-content .overlay-main .contact-links a {
+          display: inline-block;
+          height: 3.1rem;
+          min-width: 3.1rem;
+          border-radius: 1.55rem;
+          border: solid 1px #eae7de;
+          padding: 0.9rem;
+          text-align: center;
+          margin-right: .9rem;
+          vertical-align: top;
+          line-height: 1rem;
+          font-size: 1rem; }
+        .overlay-background .overlay-content .overlay-main .contact-links span {
+          margin-left: .5rem;
+          font-size: .9rem;
+          font-weight: 500; }
+        .overlay-background .overlay-content .overlay-main .contact-links i {
+          vertical-align: middle;
+          line-height: 1rem;
+          font-size: 1rem;
+          display: inline-block;
+          width: 1rem;
+          height: 1rem;
+          background-size: contain;
+          background-repeat: no-repeat; }
+          .overlay-background .overlay-content .overlay-main .contact-links i.twitter {
+            background-image: url("../img/twitter-over.svg"); }
+          .overlay-background .overlay-content .overlay-main .contact-links i.linked-in {
+            background-image: url("../img/linked-in-over.svg"); }
+          .overlay-background .overlay-content .overlay-main .contact-links i.email {
+            background-image: url("../img/icon-email.png");
+            margin-top: .1rem; }
   .overlay-background .overlay-footer {
-    padding: 2rem 6rem 2.4rem;
+    padding: 1.6rem 6rem 1.6rem;
     border-bottom: 1px solid #eae7de; }
+    .overlay-background .overlay-footer.lead {
+      border-bottom: none;
+      padding-bottom: 0; }
     .overlay-background .overlay-footer:last-child {
       border-bottom: none; }
     .overlay-background .overlay-footer h6 {
@@ -894,13 +947,18 @@ footer {
       display: inline-block;
       padding-bottom: .6rem; }
     .overlay-background .overlay-footer h4.display-4 {
-      font-size: 1.4rem;
-      line-height: 1.17;
-      border-bottom: 2px solid #ffc72c;
-      display: inline-block;
-      font-weight: 600;
-      padding-bottom: .2rem;
-      margin-bottom: 1.4rem; }
+      margin-bottom: 0; }
+    .overlay-background .overlay-footer p.success-result {
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.6;
+      margin-bottom: 0; }
+    .overlay-background .overlay-footer.result img {
+      float: left;
+      margin-top: .4rem; }
+    .overlay-background .overlay-footer.result p.success-result {
+      margin-left: 4.1rem;
+      width: auto; }
     .overlay-background .overlay-footer a.skill {
       font-size: .7rem;
       line-height: 1;

@@ -3,6 +3,7 @@
   <head>
     <title>Strategy to Revenue - About Us</title>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -29,7 +30,9 @@
           </nav>
         </div>
       </div>
-      <div class="block-bottom-border"></div>
+      <div class="row">
+        <div class="block-bottom-border col-12"></div>
+      </div>
     </header>
     <main>
       <section class="container-fluid bg-blue">
@@ -181,7 +184,7 @@
           </div>
         </div>
       </section>
-      <section class="up-next container-fluid">
+      <section class="up-next container-fluid box-link services">
         <div class="str-pic-hero text-center w-100 d-table center-div">
           <div class="d-table-cell align-middle">
             <h5 class="display-5 text-uppercase">Coming Up Next</h5>
@@ -189,35 +192,36 @@
           </div>
         </div>
       </section>
-      <footer>
-        <div class="container">
-          <div class="row justify-content-center social-media">
-            <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
-            <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
-            <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
-          </div>
-        </div>
-        <div class="cream-border"></div>
-        <nav class="footer-menu p-4">
-          <ul class="nav justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-            <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
-            <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-          </ul>
-        </nav>
-        <div class="copyright text-center">Strategy to Revenue. All rights reserved Ⓒ 2018</div>
-      </footer>
     </main>
+    <footer class="container-fluid">
+      <div class="container">
+        <div class="row justify-content-center social-media">
+          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
+          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
+          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
+        </div>
+      </div>
+      <div class="cream-border"></div>
+      <nav class="footer-menu p-4">
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="copyright text-center">Strategy to Revenue. All rights reserved Ⓒ 2018</div>
+    </footer>
   </body>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="node_modules/gsap/TweenMax.js"></script>
   <script src="node_modules/gsap/CSSPlugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
   <script data-main="js/app" src="node_modules/systemjs/dist/system-production.js"></script>
   <script src="js/app.js"></script>
   <script>

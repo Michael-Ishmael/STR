@@ -29,7 +29,7 @@ $(function () {
 
             let auRoManager2: RolloverManager = new RolloverManager(".success-image-tile", .7, Quint.easeInOut);
             let photoCaptionTween = new CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
-            let readMoreTween = new CssPropertyTween(".photo-caption h6", "opacity", 1);
+            let readMoreTween = new CssPropertyTween(".photo-caption h5", "opacity", 1);
             auRoManager2.init();
             auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
 

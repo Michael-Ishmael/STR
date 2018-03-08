@@ -7,15 +7,7 @@
   width: 100%;
 }
 
-.home-hero-bg {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  background-image:url('../img/hero-kv.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 37rem;
-}
+
 
 
 .str-home-hero.jumbotron {
@@ -51,7 +43,7 @@
     line-height: 1.67;
     color: $mid-grey-blue;
     max-width: 38rem;
-    margin: 0 auto 5rem
+    margin: 0 auto 3rem
   }
 
 }
@@ -132,6 +124,10 @@ section {
 
   &.up-next {
     background-image: url("../img/next-holder.jpg");
+  }
+
+  &.up-next.services {
+    background-image: url("../img/up-next-services.jpg");
   }
 
 }
@@ -219,7 +215,7 @@ section {
 }
 
 .str-hex-tile-container{
-  margin: 4.5rem auto 8rem;
+  margin: 4.5rem auto 0rem;
   max-width: 895px;
 
 

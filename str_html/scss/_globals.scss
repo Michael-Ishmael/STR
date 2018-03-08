@@ -22,12 +22,12 @@ a {
 
   &:hover {
     text-decoration: none;
-    color: $bright-blue;
+    color: inherit;
   }
 
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: $dark-blue;
   font-family: Apercu, "Work Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
@@ -154,3 +154,6 @@ $blur-amount: 50px;
   }
 }
 
+.overlay-link {
+  cursor: pointer;
+}

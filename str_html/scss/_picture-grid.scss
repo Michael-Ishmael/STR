@@ -1,8 +1,5 @@
 .wide-picture-grid {
 
-  //max-width: 1440px;
-  //margin: auto;
-
   .str-grid-pic {
 
     padding: 0;
@@ -65,20 +62,13 @@
         position: absolute;
         z-index: 3;
         bottom: -2rem;
-        margin-bottom: 1rem;
+        padding: 0 0 2.51rem 3.75rem;
+        //margin-bottom: 1rem;
 
-        h5 {
-          font-size: 1.2rem;
-          font-family: Apercu, sans-serif;
-          font-weight: bold;
-        }
-
-        h6 {
+        h5.display-5 {
           margin-top: 1rem;
           text-transform: uppercase;
-          font-size: .6rem;
-          font-family: Apercu, sans-serif;
-          font-weight: bold;
+          font-size: .8rem;
           visibility: hidden;
           opacity: 0;
         }

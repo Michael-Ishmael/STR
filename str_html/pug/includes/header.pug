@@ -15,5 +15,6 @@ header.container-fluid.bg-blue
                     each navItem in navItems
                         li.nav-item
                             a.nav-link(href=navItem.link, class=currentPage==navItem.name?'active':'')= navItem.name
-
-    .block-bottom-border
+    if currentPage!=="Home"
+        .row
+            .block-bottom-border.col-12

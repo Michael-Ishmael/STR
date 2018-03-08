@@ -756,7 +756,7 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                         buttonsTween]);
                     var auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, Quint.easeInOut);
                     var photoCaptionTween = new rollover_1.CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
-                    var readMoreTween = new rollover_1.CssPropertyTween(".photo-caption h6", "opacity", 1);
+                    var readMoreTween = new rollover_1.CssPropertyTween(".photo-caption h5", "opacity", 1);
                     auRoManager2.init();
                     auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
                 }

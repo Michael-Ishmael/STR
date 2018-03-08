@@ -1,7 +1,8 @@
 
 
 header {
-  padding: 2rem 0 2rem 0 !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 
   color: white;
   min-height: 8em;
@@ -81,6 +82,17 @@ header {
   }
 }
 
+.home-hero-bg {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  margin-left: -15px;
+  background-image:url('../img/hero-kv.jpg');
+  background-repeat: no-repeat;
+  /*background-position-x: -15px;*/
+  background-size: cover;
+  height: 37rem;
+}
 
 @include media-breakpoint-up(sm){
   header{

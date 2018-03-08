@@ -282,12 +282,11 @@ html(lang="en")
 
             each service in services
                 section.container-fluid(class=service.className)
-                    .row.str-pic-hero
+                    .row.str-pic-hero.overlay-link(data-overlay=service.overlayId)
                         .col-12.col-md-6.heading
                             h2.display-2= service.title
                             p=service.text
-
-                            a.overlay-link(href='#' + service.overlayId, role="button", data-overlay=service.overlayId)=service.buttonText
+                            a.overlay-link(href='#' + service.overlayId, role="button")=service.buttonText
 
 
 
@@ -319,7 +318,8 @@ html(lang="en")
                 .row.str-feature-box-container
                     each consultant in consultants
                         .col-12.col-sm-4.str-feature-box.bg-light-cream
-                            img.str-feature-image(src=consultant.image)
+                            a.overlay-link(href='#'+consultant.overlayId, data-overlay=consultant.overlayId)
+                                img.str-feature-image(src=consultant.image)
                             .str-feature-text.text-center
                                 h3.display-3= consultant.fullName
                                 h6.display-6.text-uppercase= consultant.title
@@ -417,15 +417,15 @@ html(lang="en")
                                                 != consultant.fullText
                                             .contact-links
                                                 if(consultant.twitter)
-                                                    a(href=consultant.twitter)
+                                                    a(href=consultant.twitter, target="_blank")
                                                         i.twitter
                                                 if(consultant.linkedIn)
-                                                    a(href=consultant.linkedIn)
+                                                    a(href=consultant.linkedIn, target="_blank")
                                                         i.linked-in
                                                 if(consultant.email)
                                                     a(href='mailto:'+consultant.email)
                                                         i.email
-                                                        email
+                                                        span.clr-dark-blue Email
                                         .overlay-footer.bg-light-cream
                                             h4.display-4= 'Speak to ' + consultant.firstName + ' about:'
                                             .consultant-skill-box
@@ -437,6 +437,6 @@ html(lang="en")
 
 
             include includes/trailer
-            include includes/footer
+        include includes/footer
 
     include includes/scripts
