@@ -1,82 +1,8 @@
 include includes/globals
 -
-    var team = [
-        {
-            firstName: 'Mark',
-            fullName: 'Mark Savinson',
-            title: 'Chief Operating Officer',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-mark-s.jpg'
-        },
-        {
-            firstName: 'Garry',
-            fullName: 'Garry Veale',
-            title: 'Chief Executive Officer',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-garry-v.jpg'
-        },
-        {
-            firstName: 'Tony',
-            fullName: 'Tony Wand',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-tony-w.jpg'
-        },
-        {
-            firstName: 'Michael',
-            fullName: 'Michael Copestake',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-michael-c.jpg'
-        },
-        {
-            firstName: 'Martin',
-            fullName: 'Martin Dean',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-martin-d.jpg'
-        },
-        {
-            firstName: 'Robert',
-            fullName: 'Robert Fox',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-robert-f.jpg'
-        },
-        {
-            firstName: 'Neil',
-            fullName: 'Neil Whitelock',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-neil-w.jpg'
-        },
-        {
-            firstName: 'Rachel',
-            fullName: 'Rachel Bibby',
-            title: 'Senior Consultant, Americas',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-rachel-b.jpg'
-        },
-        {
-            firstName: 'Phil',
-            fullName: 'Phil Nutt',
-            title: 'Senior Consultant',
-            link: '#',
-            email: 'info@str.com',
-            image: 'img/about-phil-n.jpg'
-        }
-    ]
-
 
     currentPage = 'About Us'
+    hideSkillFooters = true
 
 doctype html
 html(lang="en")
@@ -89,44 +15,45 @@ html(lang="en")
 
             section.container-fluid.bg-blue
                     .str-hero.jumbotron
-                        h1.display-4= 'A Team of '
+                        h1.display-1= 'A Team of '
                             span.clr-bright-blue Leaders
 
-                        p.lead.
+                        p.lead.wide.
                             We’re an experienced group of sales and marketing leaders, and education
                             and coaching stalwarts who’ve all held senior positions at global corporations,
                             or rolled up our sleeves to turn table-top start-ups into successful
                             international businesses; and in many cases, we’ve done both!
+                            <br><br>
+                            We know how great it feels to be at the top of our game, and to work for an organisation that just keeps getting better, and we’re passionate about enabling others to feel the same.
 
             section.container-fluid.bg-blue
                     .row.text-center.wide-picture-grid
-                        each member in team
-                            .col-6.col-lg-4.str-grid-pic
+                        each consultant in team
+                            .col-6.col-xl-4.str-grid-pic
                                 .about-us-image-tile
-                                    img.h-align(src=member.image)
+                                    img.h-align(src=consultant.image)
                                     img.h-align.gradient(src="img/shadow.png")
-                                    img.h-align.overlay(src=member.image.replace('.jpg', '_blur.jpg'))
+                                    img.h-align.overlay.overlay-link(src=consultant.image.replace('.jpg', '_blur.jpg'), data-overlay=consultant.overlayId)
                                     .name-caption-container.text-center
                                         .buttons.upper
                                             a.button(href=twitterLink)
                                                 img(src='img/twitter-white.svg')
                                             a.button(href=linkedInLink)
                                                 img(src='img/linked-in-white.svg')
-                                            a.button(href='mailto:' + member.email)
+                                            a.button(href='mailto:' + consultant.email)
                                                 img(src='img/email-white.svg')
                                                 |  email
 
 
                                         .v-spacer
-                                        h4.display-4.clr-white= member.fullName
+                                        h4.display-4.clr-white= consultant.fullName
 
                                         .buttons.lower
-                                            .btn.btn-outline-light About #{member.firstName}
-                                            h6.title= member.title
+                                            .btn.btn-outline-light.overlay-link(data-overlay=consultant.overlayId) About #{consultant.firstName}
+                                            h6.title.text-uppercase= consultant.title
 
                         .col-6.col-lg-12.str-grid-pic
-                            .w-100.h-100.bg-bright-blue.clr-white.p-3.p-lg-5.about-us-image-tile
-                                .v-align
+                            .w-100.h-100.bg-bright-blue.clr-white.about-us-image-tile.text-tile
                                     h4.display-4.
                                         Unleash Your Potential
                                     p.
@@ -136,8 +63,76 @@ html(lang="en")
                                         and delivering sustained commercial improvement,
                                         winning in new markets or restructuring businesses
                                         to make them outstanding, get in touch.
-                                    .v-spacer
+
                                     a.btn.btn-lg.btn-secondary join us
+
+            div.overlay-background(id="overlayBg", aria-hidden="true")
+                .container-fluid.position-relative.h-100.p-0
+                    each skill, index in expertise
+                        section.overlay.h-100(id=skill.overlayId)
+                            .row.h-100.m-0
+                                .col-6.p-0.overlay-column.h-100
+                                    .overlay-image-container.h-100.close-button
+                                .col-6.p-0.overlay-column.h-100
+                                    .close-button-bar
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
+                                    .overlay-content.h-100
+
+                                        .overlay-main.clearfix
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue Our Expertise
+                                            h2.display-2!= skill.title.replace("<br>", " ")
+                                            p.clr-mid-blue= skill.fullText
+                                        if !hideSkillFooters
+                                            if index < expertise.length - 1
+                                                .overlay-footer.bg-light-cream
+                                                    h6.text-uppercase Next Field of Expertise
+                                                    h4.display-4
+                                                        a.overlay-link(href='#' + expertise[index + 1].overlayId, data-overlay=expertise[index + 1].overlayId)!= expertise[index + 1].title.replace("<br>", " ")
+                                            if index > 0
+                                                .overlay-footer.bg-light-cream
+                                                    h6.text-uppercase Previous Field of Expertise
+                                                    h4.display-4
+                                                        a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
+
+
+                    each consultant in team
+                        section.overlay.h-100(id=consultant.overlayId)
+                            .row.h-100.m-0
+                                .col-6.p-0.overlay-column.h-100
+                                    .overlay-image-container.h-100
+                                        img(src=consultant.overlayImage)
+                                .col-6.p-0.overlay-column.h-100
+                                    .close-button-bar
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
+                                    .overlay-content.h-100
+                                        .overlay-main.clearfix
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue= consultant.title
+                                            h2.display-2= consultant.fullName
+                                            .clr-mid-blue
+                                                != consultant.fullText
+                                            .contact-links
+                                                if(consultant.twitter)
+                                                    a(href=consultant.twitter, target="_blank")
+                                                        i.twitter
+                                                if(consultant.linkedIn)
+                                                    a(href=consultant.linkedIn, target="_blank")
+                                                        i.linked-in
+                                                if(consultant.email)
+                                                    a(href='mailto:' + consultant.email)
+                                                        i.email
+                                                        span.clr-dark-blue Email
+                                        .overlay-footer.bg-light-cream
+                                            h4.display-4= 'Speak to ' + consultant.firstName + ' about:'
+                                            .consultant-skill-box
+                                                each skill in consultant.skills
+                                                    if expSkill = expertiseDict[skill]
+                                                        a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
+                                                    else
+                                                        a.skill(href="#")= skill
 
             include includes/trailer
         include includes/footer

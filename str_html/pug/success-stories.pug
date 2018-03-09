@@ -22,7 +22,7 @@ include includes/globals
     },
     {
     id: 'dotmailer',
-    title: 'Strategy to Revenue Helps Drive 20% Increase In Customer Spend',
+    title: 'Strategy to Revenue Drives 20% Increase In Customer Spend',
     link: '#',
     image: 'img/success-dotmailer.jpg',
     overlay: {
@@ -143,9 +143,10 @@ html(lang="en")
 
         main
 
+
             section.container-fluid.bg-blue
                     .str-hero.jumbotron
-                        h1.display-4='Success '
+                        h1.display-1='Success '
                             span.clr-bright-blue Stories
 
                         p.lead.
@@ -164,8 +165,13 @@ html(lang="en")
                                         h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
                                         h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
                                             a.overlay-link(href='#'+overlayId) read success story
-            include includes/trailer
-            include includes/footer
+            -
+                var trailerSettings = {
+                    titleWhite: "Our Services and ",
+                    titleBlue: "Expertise",
+                    buttonCaption: "Show Services",
+                    backgroundClass: "services"
+                };
 
             div.overlay-background(id="overlayBg", aria-hidden="true")
                 .container-fluid.position-relative.h-100.p-0
@@ -187,17 +193,24 @@ html(lang="en")
                                                 h3.display-3!= story.overlay.title
                                                 h4.display-4 Challenge
                                                 p.lead.clr-dark-blue!= story.overlay.challengeText
-                                                h4.display-4 Approach
-                                                p.body!= story.overlay.approachText
                                             if story.overlay.results && story.overlay.results.length > 0
                                                 .overlay-footer.bg-light-cream.lead
                                                     h4.display-4= story.overlay.results.length === 1 ? "Result" : "Results"
                                                     if story.overlay.resultsSubHeader
                                                         p.success-result.clr-dark-blue= story.overlay.resultsSubHeader
-                                                each result in story.overlay.results
-                                                    .overlay-footer.bg-light-cream.result
+                                                each result, index in story.overlay.results
+                                                    - var lastClass = index === story.overlay.results.length -1 ? "last" : "";
+                                                    .overlay-footer.bg-light-cream.result(class=lastClass)
                                                         img(src="img/result-cup.svg")
                                                         p.success-result.clr-dark-blue= result
+                                            .overlay-main.after
+                                                h4.display-4 Approach
+                                                p.body!= story.overlay.approachText
+
+            include includes/trailer
+        include includes/footer
+
+
 
 
     include includes/scripts

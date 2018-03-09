@@ -17,7 +17,7 @@ $(function () {
         function initRollovers() {
             let auRoManager: RolloverManager = new RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
             let opacityTween = new CssPropertyTween("img.overlay", "opacity", 1);
-            let buttonsTween = new CssPropertyTween(".buttons", "opacity", 1);
+            let buttonsTween = new CssPropertyTween(".buttons", "opacity", .6);
             let titleTween = new CssPropertyTween("h6.title", "opacity", 0);
             let aboutTween = new CssPropertyTween(".lower .btn", "opacity", 1);
             let captionTween = new MovePercentageOfParent('.name-caption-container', 'y', -.5);

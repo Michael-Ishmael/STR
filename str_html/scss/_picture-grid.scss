@@ -6,26 +6,58 @@
     color: $white;
     height: 470px;
 
+    &.col-lg-12 {
+
+      .about-us-image-tile.text-tile {
+        height: auto!important;
+
+        p {
+          font-size: 1rem;
+          line-height: 1.72;
+          max-width: 40rem;
+          margin: 0 auto 1.4rem;
+        }
+      }
+
+
+
+    }
+
     .about-us-image-tile, .success-image-tile {
 
       overflow: hidden;
       position: relative;
 
+      &.text-tile {
+        padding: 3.5rem;
+
+        .btn-secondary:hover{
+          background-color: $white;
+          color: $dark-blue;
+        }
+
+      }
+
       h4.display-4 {
         color: $white;
-        font-size: 2rem;
+        font-size: 2.4rem;
         margin: 1rem;
       }
 
       h6.title {
         color: $white;
-        font-size: .6rem;
+        font-size: .7rem;
+        line-height: 1.2;
         opacity: .8;
       }
 
       p {
-        font-size: .8rem;
+        font-size: .9rem;
+        line-height: 1.72;
+        max-width: 30rem;
+        margin: 0 auto 1.4rem;
       }
+
 
       img {
         height: 100%;
@@ -138,6 +170,11 @@
         .btn-outline-light {
           // margin-top: .5rem;
           border-color: $dark-cream;
+
+          &:hover {
+            border-color: $white;
+            opacity: .7;
+          }
         }
       }
 

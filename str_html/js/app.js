@@ -747,7 +747,7 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                 function initRollovers() {
                     var auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
                     var opacityTween = new rollover_1.CssPropertyTween("img.overlay", "opacity", 1);
-                    var buttonsTween = new rollover_1.CssPropertyTween(".buttons", "opacity", 1);
+                    var buttonsTween = new rollover_1.CssPropertyTween(".buttons", "opacity", .6);
                     var titleTween = new rollover_1.CssPropertyTween("h6.title", "opacity", 0);
                     var aboutTween = new rollover_1.CssPropertyTween(".lower .btn", "opacity", 1);
                     var captionTween = new rollover_1.MovePercentageOfParent('.name-caption-container', 'y', -.5);

@@ -78,97 +78,9 @@ include includes/globals
 
     ]
 
-    var expertise = [
-    {
-    id: "expertise-alignment",
-    overlayId: "overlay-expertise-alignment",
-    title: "Sales Strategy<br>Alignment",
-    summary: "We work with you to ensure the strategic goals of your company…",
-    fullText: "We work with you to ensure the strategic goals of your company are reflected in a clearly defined sales strategy with clear metrics in place. We look for a comprehensive understanding of the total addressable market, current and potential wallet share, and identify ‘white space’ opportunities you can address to achieve your goal."
-    },
-    {
-    id: "expertise-messaging",
-    overlayId: "overlay-expertise-messaging",
-    title: "Messaging",
-    summary: "Your marketing team has worked hard to create a position for your company, but…",
-    fullText: "Your marketing team has worked hard to create a position for your company, but does it support your mission critical objectives? Is the sales organization and your channel able, and willing, to articulate your corporate messaging and use it as a point of differentiation in the sales cycle? Just as importantly, do your messages resonate with potential buyers? We look at where messaging gets lost in translation and identify the content and tools to enable sales teams to accurately communicate your value proposition."
-    },
-    {
-    id: "expertise-segmentation",
-    overlayId: "overlay-expertise-segmentation",
-    title: "Customer<br>Segmentation",
-    summary: "We work with you to ensure your sales method is aligned to your…",
-    fullText: "We work with you to ensure your sales method is aligned to your customers’ buying behaviors and preferences, and balanced with your company’s profitability and growth goals.  We look at whether the market is correctly segmented, and consider customer buying behaviors and metrics, and how effectively they are being addressed. We also look at segment potential and profitability based on the cost of acquiring and serving the customer base, both directly and via the channel."
-    },
-    {
-    id: "expertise-incentives",
-    overlayId: "overlay-expertise-incentives",
-    title: "Compensation<br>& Incentives",
-    summary: "We assess whether your compensation plans support your mission…",
-    fullText: "We assess whether your compensation plans support your mission critical objectives and if they reward the behavioral changes you need from your sales team. We look at whether they are optimized to recruit and retain top talent and if they adequately address all segments of your sales organization."
-    },
-    {
-    id: "expertise-salesforce",
-    overlayId: "overlay-expertise-salesforce",
-    title: "Sales Force<br>Deployment",
-    summary: "One of the most complex areas of discovery…",
-    fullText: "One of the most complex areas of discovery. When we consider if the sales force is configured correctly we look at its size, structure and capabilities, checking it is effective enough to fulfil the market opportunity. We cover all aspects from sales operations right down to the support functions, looking at the alignment between sales, marketing and operations as a priority."
-    },
-    {
-    id: "expertise-performance",
-    overlayId: "overlay-expertise-performance",
-    title: "Performance<br>Management",
-    summary: "Consistency is key in performance management. We consider…",
-    fullText: "Consistency is key in performance management. We consider how sales force effectiveness is mapped across all stages of the sales process and the most efficient way to improve upon it. We help develop or update formal processes and reporting cadence, and implement methods to ensure standards are enforced across territories."
-    },
-    {
-    id: "expertise-tools",
-    overlayId: "overlay-expertise-tools",
-    title: "Sales Tools<br>& Process",
-    summary: "The scaffolding that supports all high performing sales teams…",
-    fullText: "The scaffolding that supports all high performing sales teams is discipline and rigour. We check whether your team has a disciplined sales process that is consistently applied across regions and job functions. We check that each step in the sales cycle has the correct method of advancement in place, and that the sales process is in line with customers’ buying journeys. We evaluate the tools and job functions used to support your sales team, identifying hurdles and fixes that can help improve sales force effectiveness."
-    },
-    {
-    id: "expertise-reporting",
-    overlayId: "overlay-expertise-reporting",
-    title: "Reporting<br>& Analysis",
-    summary: "Is what you are reporting on aligned to your strategic…",
-    fullText: "Is what you are reporting on aligned to your strategic imperatives? Does your sales team have metrics in place for basics such as customer acquisition and retention, and share of wallet? Do you have effective processes in place to manage discounting, lead generation and channel opportunities? In addition to looking at the process, we also offer better insight into those leading indicators that will transform your business."
-    },
-    {
-    id: "expertise-boarding",
-    overlayId: "overlay-expertise-boarding",
-    title: "Recruiting,<br>On-boarding<br>& Re-boarding",
-    summary: "An often-overlooked area which can have a detrimental impact…",
-    fullText: "An often-overlooked area which can have a detrimental impact on new recruits and the existing sales team. We’re looking at whether your organization has a clear definition of what the required roles, behaviors and competencies are for success in each sales position, and if there is a recruitment and coaching program in place that supports them.  We consider the impact of the existing sales team on new recruits, and focus on manager-led competency training and ongoing assessment. Finally, we look at how organizations build the right environment for staff to develop the skills, knowledge and capabilities they need to achieve the results the business expects."
-    },
-    {
-    id: "expertise-efficiency",
-    overlayId: "overlay-expertise-efficiency",
-    title: "Sales<br>Efficiency",
-    summary: "As you unleash the full potential of your sales team, can you…",
-    fullText: "As you unleash the full potential of your sales team, can you make further improvements? We assess whether you are investing in the right areas for growth and how your sales overheads compare to the market, suggesting areas for change and improvement."
-    },
-    {
-    id: "expertise-pricing",
-    overlayId: "overlay-expertise-pricing",
-    title: "Pricing &<br>Pricing Models",
-    summary: "We look at your pricing strategy and how you manage…",
-    fullText: "We look at your pricing strategy and how you manage discounts and rebates, and the move to new subscription pricing models. We address the commercial life cycle, the true cost to acquire and serve customers, and the pricing tools and analytics used within the business."
-    },
-    {
-    id: "expertise-training",
-    overlayId: "overlay-expertise-training",
-    title: "Training &<br>Coaching",
-    summary: "We look at how you educate your teams on the messages and…",
-    fullText: "We look at how you educate your teams on the messages and behaviors that will enable them to achieve your objectives. Are you addressing all teams within the sales cycle - inside sales, the channel and even the customer services team? Is the training delivering the right results and how can you deliver sustained improvement fast?"
-    }
-    ];
+    var consultants = team.filter(function(t){ return t.fullName === "Tony Wand" || t.fullName === "Martin Dean" || t.fullName === "Neil Whitelock" })
 
-    var expertiseDict = {};
-    expertise.forEach(function(e) { expertiseDict[e.id] = e});
-
-    var consultants = [
+    var abc =[
     {
         firstName: 'Tony',
         fullName: 'Tony Wand',
@@ -183,11 +95,8 @@ include includes/globals
         overlayImage: "img/overlay-about-tony-w.jpg",
         skills: [
             "expertise-tools",
-            "Channel Engagement",
             "expertise-efficiency",
-            "expertise-performance",
-            "Winning in New Markets & Territories"
-
+            "expertise-performance"
         ]
     },
     {
@@ -205,7 +114,6 @@ include includes/globals
         skills: [
             "expertise-efficiency",
             "expertise-messaging",
-            "Competitor Positioning",
             "expertise-boarding"
         ]
     },
@@ -232,6 +140,7 @@ include includes/globals
     ]
 
     currentPage = 'Services'
+
 
 doctype html
 html(lang="en")
@@ -361,13 +270,13 @@ html(lang="en")
                                                 != service.fullText
                                         if index < services.length - 1
                                             .overlay-footer.bg-light-cream
-                                                h6 Next Service
-                                                h3.display-3
+                                                h6.text-uppercase Next Service
+                                                h4.display-4.large
                                                     a.overlay-link(href='#' + services[index + 1].overlayId, data-overlay=services[index + 1].overlayId)= services[index + 1].title
                                         if index > 0
                                             .overlay-footer.bg-light-cream
-                                                h6 Previous Service
-                                                h3.display-3
+                                                h6.text-uppercase Previous Service
+                                                h4.display-4.large
                                                     a.overlay-link(href='#' + services[index - 1].overlayId, data-overlay=services[index - 1].overlayId)= services[index - 1].title
 
 
@@ -389,13 +298,13 @@ html(lang="en")
                                             p.clr-mid-blue= skill.fullText
                                         if index < expertise.length - 1
                                             .overlay-footer.bg-light-cream
-                                                h6 Next Field of Expertise
-                                                h3.display-3
+                                                h6.text-uppercase Next Field of Expertise
+                                                h4.display-4
                                                     a.overlay-link(href='#' + expertise[index + 1].overlayId, data-overlay=expertise[index + 1].overlayId)!= expertise[index + 1].title.replace("<br>", " ")
                                         if index > 0
                                             .overlay-footer.bg-light-cream
-                                                h6 Previous Field of Expertise
-                                                h3.display-3
+                                                h6.text-uppercase Previous Field of Expertise
+                                                h4.display-4
                                                     a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
 
                     each consultant in consultants
@@ -434,7 +343,13 @@ html(lang="en")
                                                         a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
                                                     else
                                                         a.skill(href="#")= skill
-
+            -
+                var trailerSettings = {
+                titleWhite: "Insights from our ",
+                titleBlue: "Experts",
+                buttonCaption: "Show Insights",
+                backgroundClass: ""
+                };
 
             include includes/trailer
         include includes/footer

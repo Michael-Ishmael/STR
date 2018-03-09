@@ -198,6 +198,8 @@ footer {
     color: #828aac;
     max-width: 38rem;
     margin: 0 auto 3rem; }
+    .str-hero.jumbotron p.lead.wide {
+      max-width: 48rem; }
 
 .str-card-container {
   font-size: 0.8rem; }
@@ -236,7 +238,18 @@ section {
   section.compass {
     background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/compass.jpg"); }
   section.up-next {
-    background-image: url("../img/next-holder.jpg"); }
+    background-image: url("../img/next-holder.jpg");
+    background-size: 100% auto;
+    background-position: center center;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
+    section.up-next:hover {
+      background-size: 120% auto; }
+    section.up-next.services {
+      background-image: url("../img/up-next-services.jpg"); }
   section.up-next.services {
     background-image: url("../img/up-next-services.jpg"); }
 
@@ -308,11 +321,11 @@ section {
       background-repeat: no-repeat;
       font-size: .8rem;
       line-height: 1rem;
-      -webkit-transition: all 1s;
-      -moz-transition: all 1s;
-      -ms-transition: all 1s;
-      -o-transition: all 1s;
-      transition: all 1s; }
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
       .str-hex-tile-container .str-hex-tile div.hex-inner:hover {
         background-image: url("../img/polygon-over.svg"); }
         .str-hex-tile-container .str-hex-tile div.hex-inner:hover span, .str-hex-tile-container .str-hex-tile div.hex-inner:hover a {
@@ -360,14 +373,21 @@ section {
 .str-cream-blue-box {
   background-color: #eae7de;
   color: #1c2541;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
-  transition: all 1s; }
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s; }
   .str-cream-blue-box:hover {
     background-color: #1c2541;
     color: #fff; }
+    .str-cream-blue-box:hover .circle.tony {
+      background-image: url("../img/oval-tony-w-over.png");
+      margin-left: 0; }
+    .str-cream-blue-box:hover .circle.martin {
+      background-image: url("../img/oval-martin-d-over.png"); }
+    .str-cream-blue-box:hover .circle.neil {
+      background-image: url("../img/oval-neil-w-over.png"); }
   .str-cream-blue-box a {
     font-size: 1.4rem; }
     .str-cream-blue-box a:hover {
@@ -388,7 +408,12 @@ section {
     vertical-align: top;
     position: relative;
     float: left;
-    margin-left: -1.5rem; }
+    margin-left: -1.5rem;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s; }
     .circles .circle.tony {
       background-image: url("../img/oval-tony-w.png");
       margin-left: 0; }
@@ -469,6 +494,13 @@ section {
   padding: 0;
   color: #fff;
   height: 470px; }
+  .wide-picture-grid .str-grid-pic.col-lg-12 .about-us-image-tile.text-tile {
+    height: auto !important; }
+    .wide-picture-grid .str-grid-pic.col-lg-12 .about-us-image-tile.text-tile p {
+      font-size: 1rem;
+      line-height: 1.72;
+      max-width: 40rem;
+      margin: 0 auto 1.4rem; }
   .wide-picture-grid .str-grid-pic .about-us-image-tile, .wide-picture-grid .str-grid-pic .success-image-tile {
     overflow: hidden;
     position: relative;
@@ -505,16 +537,25 @@ section {
               }
 
             }*/ }
+    .wide-picture-grid .str-grid-pic .about-us-image-tile.text-tile, .wide-picture-grid .str-grid-pic .success-image-tile.text-tile {
+      padding: 3.5rem; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile.text-tile .btn-secondary:hover, .wide-picture-grid .str-grid-pic .success-image-tile.text-tile .btn-secondary:hover {
+        background-color: #fff;
+        color: #1c2541; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile h4.display-4, .wide-picture-grid .str-grid-pic .success-image-tile h4.display-4 {
       color: #fff;
-      font-size: 2rem;
+      font-size: 2.4rem;
       margin: 1rem; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile h6.title, .wide-picture-grid .str-grid-pic .success-image-tile h6.title {
       color: #fff;
-      font-size: .6rem;
+      font-size: .7rem;
+      line-height: 1.2;
       opacity: .8; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile p, .wide-picture-grid .str-grid-pic .success-image-tile p {
-      font-size: .8rem; }
+      font-size: .9rem;
+      line-height: 1.72;
+      max-width: 30rem;
+      margin: 0 auto 1.4rem; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile img, .wide-picture-grid .str-grid-pic .success-image-tile img {
       height: 100%; }
       .wide-picture-grid .str-grid-pic .about-us-image-tile img.gradient, .wide-picture-grid .str-grid-pic .success-image-tile img.gradient {
@@ -587,6 +628,9 @@ section {
         background-color: rgba(187, 182, 168, 0.9); }
     .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .btn-outline-light {
       border-color: #bbb6a8; }
+      .wide-picture-grid .str-grid-pic .about-us-image-tile .buttons .btn-outline-light:hover, .wide-picture-grid .str-grid-pic .success-image-tile .buttons .btn-outline-light:hover {
+        border-color: #fff;
+        opacity: .7; }
   .wide-picture-grid .str-grid-pic .insight-image-tile {
     max-height: 400px; }
 
@@ -865,6 +909,7 @@ footer {
     background-color: #fff;
     overflow-y: auto; }
     .overlay-background .overlay-content h2.display-2 {
+      font-size: 2.8rem;
       margin-bottom: 2rem; }
     .overlay-background .overlay-content h3.display-3 {
       font-size: 2.4rem;
@@ -878,8 +923,12 @@ footer {
       font-weight: 600;
       padding-bottom: .2rem;
       margin-bottom: 1.4rem; }
+      .overlay-background .overlay-content h4.display-4.large {
+        font-size: 1.8rem; }
     .overlay-background .overlay-content .overlay-main {
-      padding: 6.6rem 6rem 3rem; }
+      padding: 6.6rem 6rem 2rem; }
+      .overlay-background .overlay-content .overlay-main.after {
+        padding-top: 3rem; }
       .overlay-background .overlay-content .overlay-main h6 {
         font-size: .9rem;
         margin-bottom: 1rem; }
@@ -889,6 +938,8 @@ footer {
         border-bottom: 2px solid #ffc72c;
         display: inline-block;
         margin-bottom: 1rem; }
+      .overlay-background .overlay-content .overlay-main h2 {
+        margin-bottom: 2rem; }
       .overlay-background .overlay-content .overlay-main p.lead {
         font-size: 1.2rem;
         line-height: 1.5;
@@ -899,7 +950,7 @@ footer {
         line-height: 1.78; }
       .overlay-background .overlay-content .overlay-main .contact-links {
         display: inline-block;
-        height: 1.4rem; }
+        height: 3.1rem; }
         .overlay-background .overlay-content .overlay-main .contact-links a {
           display: inline-block;
           height: 3.1rem;
@@ -938,10 +989,15 @@ footer {
     .overlay-background .overlay-footer.lead {
       border-bottom: none;
       padding-bottom: 0; }
-    .overlay-background .overlay-footer:last-child {
-      border-bottom: none; }
+    .overlay-background .overlay-footer.last {
+      border-bottom: none;
+      padding-bottom: 2.6rem; }
     .overlay-background .overlay-footer h6 {
-      font-size: .6rem; }
+      font-family: "Work Sans", sans-serif;
+      font-size: .7rem;
+      line-height: 2.86;
+      font-weight: 400;
+      margin-bottom: 0; }
     .overlay-background .overlay-footer h3 {
       border-bottom: 4px solid #ffc72c;
       display: inline-block;
@@ -952,13 +1008,17 @@ footer {
       font-size: 1rem;
       font-weight: 500;
       line-height: 1.6;
+      margin-top: 1rem;
       margin-bottom: 0; }
     .overlay-background .overlay-footer.result img {
       float: left;
       margin-top: .4rem; }
     .overlay-background .overlay-footer.result p.success-result {
+      margin-top: 0;
       margin-left: 4.1rem;
       width: auto; }
+    .overlay-background .overlay-footer .consultant-skill-box {
+      margin-top: 1rem; }
     .overlay-background .overlay-footer a.skill {
       font-size: .7rem;
       line-height: 1;
