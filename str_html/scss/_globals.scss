@@ -1,5 +1,9 @@
 html {
-  font-size: 14px;
+  font-size: 12px;
+
+  @media screen and (min-width: 350px) {
+    font-size: 14px;
+  }
 
   @media screen and (min-width: 900px) {
     font-size: 16px;
@@ -44,8 +48,12 @@ h2 {
 }
 
 .display-1 {
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 1;
+
+  @media screen and (min-width: 576px) {
+    font-size: 5rem;
+  }
 }
 
 .display-2 {
@@ -115,7 +123,11 @@ $bg-color-list: (blue: $dark-blue, yellow: $corn-yellow,
   }
 }
 
-$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue, mid-blue: $mid-blue);
+[data-toggle~="collapse"] {
+  cursor: pointer;
+}
+
+$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue, mid-blue: $mid-blue, corn-yellow: $corn-yellow);
 
 @each $key, $value in $txt-color-list {
   .clr-#{$key} {
@@ -142,6 +154,10 @@ $blur-amount: 50px;
 
 .no-padding {
   padding: 0;
+}
+
+.o-hidden {
+  overflow: hidden;
 }
 
 .str {

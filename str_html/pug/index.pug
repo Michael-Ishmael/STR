@@ -1,5 +1,31 @@
 include includes/globals
 -
+    var homeStories = [stories[5], stories[2]];
+    var homeInsight = insights[1];
+
+    var clients = [
+        {
+            name: "Thomson Reuters",
+            logo: ""
+        },
+        {
+            name: "DHL",
+            logo: ""
+        },
+        {
+            name: "Hewlett Packard",
+            logo: ""
+        },
+        {
+            name: "Motorola",
+            logo: ""
+        },
+        {
+            name: "Vodafone",
+            logo: ""
+        }
+    ]
+
     currentPage = 'Home'
 
 doctype html
@@ -8,11 +34,22 @@ html(lang="en")
 
     body.str
 
-        include includes/header
+        header.home.container-fluid.bg-blue.home-hero-bg
+            .row.align-items-center.justify-content-center
+                .col-2.col-lg-3.p-0.pl-3
+                    .logo-container.ml-2.ml-lg-3.pt-2.pt-lg-4.pb-2.pt-lg-4
+                        a(href="/")
+                            img.logo(src='img/logo-strategy-to-revenue.svg')
+                .col-10.col-lg-9.p-0.pr-2
+                    nav.text-right.mr-4.mr-xl-5
+                        ul.nav.justify-content-end.pr-0.pr-xl-2
 
-        main
-            section.container-fluid.position-relative
-                .str-home-hero.jumbotron.row
+                            each navItem in navItems
+                                li.nav-item
+                                    a.nav-link(href=navItem.link, class=currentPage == navItem.name ? 'active' : '')= navItem.name
+
+            .row.str-home-hero
+                .col-12
                     h1.display-hero.clr-white= 'Potential'
                         br
                         span.clr-bright-blue Unleashed
@@ -20,13 +57,128 @@ html(lang="en")
                     p.lead.clr-white.
                         Performing to your full potential feels incredible. Strategy to Revenue is dedicated to making the incredible a reality.
 
+        main
             section.container-fluid.bg-light-cream
-                .center-div.p-5.m-5.text-center.
-                    Home Page.  Work in Progress...
-                //We help organisations unleash the potential of their sales teams, improving their commercial performance, transforming their businesses, and accelerating the time it takes to turn their strategy to revenue. We typically deliver:
+                .row
+                    .col-7.p-0
+                        .mission
+                            h2.display-2 Our Mission
+
+                            p.lead.
+                                We help organisations unleash the potential of their sales teams, improving their commercial performance, transforming their businesses, and accelerating the time it takes to turn their strategy to revenue. We typically deliver:
+                            ul.deliveries
+                                li
+                                    img(src="img/icon-time.svg")
+                                    .delivery
+                                        p.item.clr-dark-blue 20% reduction in time
+                                        p to effectiveness for new recruits
+                                li.last
+                                    img(src="img/icon-succeed.svg")
+                                    .delivery
+                                        p.item.clr-dark-blue 10% minimum growth
+                                        p in recurring revenue
+
+                    .col-5.p-0.o-hidden.mission-pic
+                        //img(src="img/home-mission.jpg")
+            section.container-fluid.help.bg-yellow
+                .row.justify-content-center
+                    .col-12.text-center
+                        p.sub.text-uppercase How can we help
+                        h2.display-2 What best describes you?
+                .horiz-buttons.text-center
+                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team less than 100
+                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team of 100+
+                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white A private equity company
+
+            section.container-fluid
+                .row.wide-picture-grid
+                    .col-12.col-sm-6.p-0
+                        each story in homeStories
+                            .str-grid-pic
+                                -
+                                    overlayId = story.overlay ? story.overlay.id : ''
+                                .success-image-tile.overlay-link(data-overlay=overlayId)
+                                    img.h-align.pic(src=story.image)
+                                    img.h-align.gradient(src="img/shadow.png")
+                                    .photo-caption.text-left
+                                        h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
+                                        h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
+                                            a.overlay-link(href='#'+overlayId) read success story
+
+                    .col-12.col-sm-6.str-insight-pic
+                        .insight-image-tile.w-100
+                            img.h-align(src=homeInsight.image)
+                            img.h-align.gradient(src="img/shadow.png")
+                            .insight-info.text-left.p-5
+
+                                .author
+                                    img.d-inline-block(src=homeInsight.author.image)
+                                    .author-details.d-inline-block
+                                        h4= homeInsight.author.fullName
+                                        h6= homeInsight.author.title
+                                .article-title
+                                    h4.display-5.clr-white!= homeInsight.title
+
+                                a.btn.btn-primary.text-uppercase(href=homeInsight.link) Read Article
+
+            section.container-fluid.clients.bg-mid-cream
+                .row.clients.justify-content-center
+                    each client in clients
+                        .col-2.client-logo-container.text-center
+                            .client= client.name
+
+            section#contact-us.container-fluid.contact.bg-mid-cream
+                .row.justify-content-center
+                    .col-6
+                        h1.display-1.mx-0 Our Offices
+                .row.justify-content-center
+                    .col-6
+                        .contact-map
+                .row.justify-content-center.offices
+                    .col-3
+                        h4.display-4 United States
+                        p.address.
+                            The Atlanta Technology Village
+                            <br>
+                            3423 Piedmont Road Northeast
+                            <br>
+                            Atlanta, GA 30305
+                        p.phone +31 312 493 8639
+                    .col-1
+                    .col-3
+                        h4.display-4 United Kingdom
+                        p.address.
+                            Regal Court Business Centre
+                            <br>
+                            42-44 High Street
+                            <br>
+                            Slough, SL1 1EL
+                        p.phone +31 (0) 1753 245543
+                    .col-1
+                    .col-3
+                        h4.display-4 New Business
+                        p.email hello@strategytorevenue.com
+                        h4.display-4 Support
+                        p.email support@strategytorevenue.com
 
 
-            include includes/trailer
+            section#newsletter.container-fluid.newsletter.bg-mid-cream
+                 .newsletter-content.text-center
+                    h6.sub.text-uppercase Stay up to date
+                    h3.display-3 Newsletter
+                    p.
+                        Stay up to date with the latest insights and tips on sales strategy and business transformation.
+
+                    form.newsletter.form-inline
+
+                            .input-container
+                                label.sr-only email
+                                input.form-control(type="text", placeholder="Enter your email address").w-100
+                            .btn-container
+                                button.btn.btn-primary(type="submit", value="Sign up").w-100.text-uppercase Sign Up
+                        
+   
+            
             include includes/footer
 
     include includes/scripts

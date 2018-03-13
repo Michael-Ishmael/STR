@@ -50,6 +50,21 @@ $(function () {
 
         OverlayManager.init('#overlayBg', null, '.overlay-link');
 
+    $('.carousel').each(function () {
+        let $carousel = $(this);
+        let hammertime = new Hammer(this, {
+            recognizers: [
+                [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }]
+            ]
+        });
+        hammertime.on('swipeleft', function () {
+            $carousel.carousel('next');
+        });
+        hammertime.on('swiperight', function () {
+            $carousel.carousel('prev');
+        });
+    });
+
     }
 );
 

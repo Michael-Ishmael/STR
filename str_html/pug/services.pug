@@ -47,7 +47,7 @@ include includes/globals
     {
     title: "Mapping",
     className: "mapping",
-    text: "UsUsing the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
+    text: "Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
     buttonText: "Continue Reading",
     image: "",
     overlayId: "overlay-mapping",
@@ -141,7 +141,6 @@ include includes/globals
 
     currentPage = 'Services'
 
-
 doctype html
 html(lang="en")
     include includes/head
@@ -150,12 +149,11 @@ html(lang="en")
 
         include includes/header
 
-
         main
 
             section.container-fluid.bg-blue
                     .str-hero.jumbotron
-                        h1.display-4='5 Steps to '
+                        h1.display-1='5 Steps to '
                             span.clr-bright-blue Incredible
 
                         p.lead.
@@ -163,7 +161,7 @@ html(lang="en")
                             approach. Like medicine, sales force transformations are only as good
                             as the initial diagnosis. After an awkward first conversation, our
                             most sceptical prospects often become our loyalist clients.
-            section.container-fluid
+            section.container-fluid.d-none.d-md-block
                     .row.text-center.str-card-container
                         each step in steps
                             .col-12.col-sml-6.col-md-4.str-card
@@ -174,9 +172,26 @@ html(lang="en")
                                     = ' ' + step.title
                                 p= step.text
 
+            section.d-md-none.text-center
+                - var carouselId = '#stepCarousel'
+                #stepCarousel.carousel.slide(data-ride='carousel', data-interval="false").str-card-container
+                    ol.carousel-indicators
+                        each step, index in steps
+                            li(class=index===0?"active":"", data-target=carouselId, data-slide-to=index.toString())
+                    .carousel-inner(role='listbox')
+                        each step, index in steps
+                            .carousel-item.str-card(class=index===0?"active":"").text-center
+                                .icon-container
+                                    img(src=step.image)
+                                h3.display-3
+                                    span.heading-number= step.index
+                                    = ' ' + step.title
+                                p= step.text
+
+
             section.container-fluid.bg-yellow
                         .row.str-main
-                            .col-12.col-md-6.heading
+                            .col-12.col-md-6.heading.text-center.text-md-left
                                 h1.display-1 Services
                             .col-12.v-spacer.d-md-none
                             p.col-12.col-md-6.clr-dark-blue.
@@ -191,6 +206,9 @@ html(lang="en")
 
             each service in services
                 section.container-fluid(class=service.className)
+                    .row.d-sm-none
+                        .col-12.p-0
+                            img(src='img/services-discovery-sml.jpg').w-100
                     .row.str-pic-hero.overlay-link(data-overlay=service.overlayId)
                         .col-12.col-md-6.heading
                             h2.display-2= service.title
@@ -198,22 +216,29 @@ html(lang="en")
                             a.overlay-link(href='#' + service.overlayId, role="button")=service.buttonText
 
 
-
-            section.container-fluid.bg-blue.str-main
-                    .content-center
-                        h1.display-1.text-center.clr-white Our Expertise
-                        #hexLayout1.str-hex-tile-container
-
+            section.container-fluid.bg-blue.str-main.expertise
+                        h1.display-1.text-center.clr-white.d-none.d-md-block Our Expertise
+                        h2.display-2.text-center.clr-white.d-md-none Our Expertise
+                        #hexLayout1.str-hex-tile-container.d-none.d-md-block
                             each skill in expertise
                                 .str-hex-tile.overlay-link(id=skill.id, data-overlay=skill.overlayId)
                                     .hex-inner.text-center.align-middle.clr-white
                                         a(href='#'+skill.overlayId, data-overlay=skill.overlayId)!= skill.title
                                         span.em-line
+                        .expertise-list-container
+                            ul#expertise-list
+                                each skill in expertise
+                                    li.collapsed(data-toggle="collapse", data-target="#m-"+skill.id, aria-expanded="false", aria-controls="collapseOne")
+                                        span.d-flex.justify-content-between.align-items-center.expander!= skill.title.replace("<br>", " ")
+                                            i.plus
+                                        .collapse(id="m-"+skill.id, data-parent="#expertise-list").expertise-content
+                                            p!= skill.fullText
+
 
             section.container-fluid.bg-yellow
                 .row.str-main
                     .col-12.col-md-6.heading
-                        h1.display-1 Our Consultants
+                        h1.display-1.text-center.text-md-left Our Consultants
                     .col-12.v-spacer.d-md-none
                     p.col-12.col-md-6.clr-dark-blue.cons.
                         We’re experienced group of sales and marketing leaders,
@@ -243,7 +268,7 @@ html(lang="en")
                             .circle.tony
                             .circle.martin
                             .circle.neil
-                            a.circle.blue.bg-blue.clr-white(href='/about-us.html') 9+
+                            a.circle.blue.bg-blue.clr-white(href='/about-us.html') +9
                         .d-inline-block.consult-link-text-container
                             a.d-inline-block.font-weight-bold(href='/about-us.html').f-28
                                 | Show all consultants
@@ -312,7 +337,7 @@ html(lang="en")
                             .row.h-100.m-0
                                 .col-6.p-0.overlay-column.h-100
                                     .overlay-image-container.h-100
-                                        img(src=consultant.overlayImage)
+                                        img(src=consultant.overlayImage).w-100
                                 .col-6.p-0.overlay-column.h-100
                                     .close-button-bar
                                         .close-button-container

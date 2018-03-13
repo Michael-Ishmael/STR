@@ -14,11 +14,11 @@
   <body class="str">
     <header class="container-fluid bg-blue">
       <div class="row align-items-center justify-content-center">
-        <div class="col-3">
-          <div class="logo-container"><a href="/"><img class="logo" src="img/logo-strategy-to-revenue.svg"></a></div>
+        <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
+          <div class="logo-container ml-2 ml-lg-3 pt-3 pt-lg-4 pb-3 pt-lg-4"><a href="/"><img class="logo" src="img/logo-strategy-to-revenue.svg"></a></div>
         </div>
-        <div class="col-9">
-          <nav class="text-right">
+        <div class="d-none d-md-block col-md-10 col-lg-9 p-0 pr-2">
+          <nav class="text-right mr-4 mr-xl-5">
             <ul class="nav justify-content-end">
               <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
               <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
@@ -29,6 +29,9 @@
             </ul>
           </nav>
         </div>
+        <div class="col-4 d-md-none text-right">
+          <button class="hamburger hamburger--spin clr-white" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
       </div>
       <div class="row">
         <div class="block-bottom-border col-12"></div>
@@ -37,7 +40,7 @@
     <main>
       <section class="container-fluid bg-blue">
         <div class="str-hero jumbotron">
-          <h1 class="display-4">5 Steps to <span class="clr-bright-blue">Incredible</span></h1>
+          <h1 class="display-1">5 Steps to <span class="clr-bright-blue">Incredible</span></h1>
           <p class="lead">
             Our clients come to us for sales training. We believe in a different
             approach. Like medicine, sales force transformations are only as good
@@ -46,7 +49,7 @@
           </p>
         </div>
       </section>
-      <section class="container-fluid">
+      <section class="container-fluid d-none d-md-block">
         <div class="row text-center str-card-container">
           <div class="col-12 col-sml-6 col-md-4 str-card">
             <div class="icon-container"><img src="img/icon-analyse.svg"></div>
@@ -80,9 +83,52 @@
           </div>
         </div>
       </section>
+      <section class="d-md-none text-center">
+        <div class="carousel slide str-card-container" id="stepCarousel" data-ride="carousel" data-interval="false">
+          <ol class="carousel-indicators">
+            <li class="active" data-target="#stepCarousel" data-slide-to="0"></li>
+            <li data-target="#stepCarousel" data-slide-to="1"></li>
+            <li data-target="#stepCarousel" data-slide-to="2"></li>
+            <li data-target="#stepCarousel" data-slide-to="3"></li>
+            <li data-target="#stepCarousel" data-slide-to="4"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item str-card active text-center">
+              <div class="icon-container"><img src="img/icon-analyse.svg"></div>
+              <h3 class="display-3"><span class="heading-number">1.</span> Analyze
+              </h3>
+              <p>Before we offer you a solution we take time to understand your problem. Our early stage analysis is delivered with speed and precision in a matter of weeks.</p>
+            </div>
+            <div class="carousel-item str-card text-center">
+              <div class="icon-container"><img src="img/icon-identify.svg"></div>
+              <h3 class="display-3"><span class="heading-number">2.</span> Identify
+              </h3>
+              <p>We identify the inhibitors preventing you achieving your revenue goals; then we build a blueprint for change to help you tackle them.</p>
+            </div>
+            <div class="carousel-item str-card text-center">
+              <div class="icon-container"><img src="img/icon-improve.svg"></div>
+              <h3 class="display-3"><span class="heading-number">3.</span> Improve
+              </h3>
+              <p>From here we build sales coaching and education programs to arm your teams with the skills and knowledge they need to achieve sustained commercial improvement.</p>
+            </div>
+            <div class="carousel-item str-card text-center">
+              <div class="icon-container"><img src="img/icon-sustain.svg"></div>
+              <h3 class="display-3"><span class="heading-number">4.</span> Sustain
+              </h3>
+              <p>Ongoing assessment and training tools give you the power to continue to build your sales team’s competencies, so you continue to hit your targets.</p>
+            </div>
+            <div class="carousel-item str-card text-center">
+              <div class="icon-container"><img src="img/icon-succeed.svg"></div>
+              <h3 class="display-3"><span class="heading-number">5.</span> Succeed
+              </h3>
+              <p>Our goal is your success. Our services concentrate on the 20% change that will deliver 80% of the results, to achieve the cultural business transformation that will accelerate sales performance and sustainable competitive advantage.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="container-fluid bg-yellow">
         <div class="row str-main">
-          <div class="col-12 col-md-6 heading">
+          <div class="col-12 col-md-6 heading text-center text-md-left">
             <h1 class="display-1">Services</h1>
           </div>
           <div class="col-12 v-spacer d-md-none"></div>
@@ -100,6 +146,9 @@
         </div>
       </section>
       <section class="container-fluid discovery">
+        <div class="row d-sm-none">
+          <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
+        </div>
         <div class="row str-pic-hero overlay-link" data-overlay="overlay-discovery">
           <div class="col-12 col-md-6 heading">
             <h2 class="display-2">Discovery</h2>
@@ -108,14 +157,20 @@
         </div>
       </section>
       <section class="container-fluid mapping">
+        <div class="row d-sm-none">
+          <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
+        </div>
         <div class="row str-pic-hero overlay-link" data-overlay="overlay-mapping">
           <div class="col-12 col-md-6 heading">
             <h2 class="display-2">Mapping</h2>
-            <p>UsUsing the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...</p><a class="overlay-link" href="#overlay-mapping" role="button">Continue Reading</a>
+            <p>Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...</p><a class="overlay-link" href="#overlay-mapping" role="button">Continue Reading</a>
           </div>
         </div>
       </section>
       <section class="container-fluid pathfinder">
+        <div class="row d-sm-none">
+          <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
+        </div>
         <div class="row str-pic-hero overlay-link" data-overlay="overlay-pathfinder">
           <div class="col-12 col-md-6 heading">
             <h2 class="display-2">Pathfinder</h2>
@@ -124,6 +179,9 @@
         </div>
       </section>
       <section class="container-fluid compass">
+        <div class="row d-sm-none">
+          <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
+        </div>
         <div class="row str-pic-hero overlay-link" data-overlay="overlay-compass">
           <div class="col-12 col-md-6 heading">
             <h2 class="display-2">Compass</h2>
@@ -131,53 +189,116 @@
           </div>
         </div>
       </section>
-      <section class="container-fluid bg-blue str-main">
-        <div class="content-center">
-          <h1 class="display-1 text-center clr-white">Our Expertise</h1>
-          <div class="str-hex-tile-container" id="hexLayout1">
-            <div class="str-hex-tile overlay-link" id="expertise-alignment" data-overlay="overlay-expertise-alignment">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-alignment" data-overlay="overlay-expertise-alignment">Sales Strategy<br>Alignment</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-messaging" data-overlay="overlay-expertise-messaging">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-messaging" data-overlay="overlay-expertise-messaging">Messaging</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-segmentation" data-overlay="overlay-expertise-segmentation">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-segmentation" data-overlay="overlay-expertise-segmentation">Customer<br>Segmentation</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-incentives" data-overlay="overlay-expertise-incentives">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-incentives" data-overlay="overlay-expertise-incentives">Compensation<br>& Incentives</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-salesforce" data-overlay="overlay-expertise-salesforce">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-salesforce" data-overlay="overlay-expertise-salesforce">Sales Force<br>Deployment</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-performance" data-overlay="overlay-expertise-performance">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-performance" data-overlay="overlay-expertise-performance">Performance<br>Management</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-tools" data-overlay="overlay-expertise-tools">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-tools" data-overlay="overlay-expertise-tools">Sales Tools<br>& Process</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-reporting" data-overlay="overlay-expertise-reporting">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-reporting" data-overlay="overlay-expertise-reporting">Reporting<br>& Analysis</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-boarding" data-overlay="overlay-expertise-boarding">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-boarding" data-overlay="overlay-expertise-boarding">Recruiting,<br>On-boarding<br>& Re-boarding</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-efficiency" data-overlay="overlay-expertise-efficiency">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-efficiency" data-overlay="overlay-expertise-efficiency">Sales<br>Efficiency</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-pricing" data-overlay="overlay-expertise-pricing">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-pricing" data-overlay="overlay-expertise-pricing">Pricing &<br>Pricing Models</a><span class="em-line"></span></div>
-            </div>
-            <div class="str-hex-tile overlay-link" id="expertise-training" data-overlay="overlay-expertise-training">
-              <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-training" data-overlay="overlay-expertise-training">Training &<br>Coaching</a><span class="em-line"></span></div>
-            </div>
+      <section class="container-fluid bg-blue str-main expertise">
+        <h1 class="display-1 text-center clr-white d-none d-md-block">Our Expertise</h1>
+        <h2 class="display-2 text-center clr-white d-md-none">Our Expertise</h2>
+        <div class="str-hex-tile-container d-none d-md-block" id="hexLayout1">
+          <div class="str-hex-tile overlay-link" id="expertise-alignment" data-overlay="overlay-expertise-alignment">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-alignment" data-overlay="overlay-expertise-alignment">Sales Strategy<br>Alignment</a><span class="em-line"></span></div>
           </div>
+          <div class="str-hex-tile overlay-link" id="expertise-messaging" data-overlay="overlay-expertise-messaging">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-messaging" data-overlay="overlay-expertise-messaging">Messaging</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-segmentation" data-overlay="overlay-expertise-segmentation">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-segmentation" data-overlay="overlay-expertise-segmentation">Customer<br>Segmentation</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-incentives" data-overlay="overlay-expertise-incentives">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-incentives" data-overlay="overlay-expertise-incentives">Compensation<br>& Incentives</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-salesforce" data-overlay="overlay-expertise-salesforce">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-salesforce" data-overlay="overlay-expertise-salesforce">Sales Force<br>Deployment</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-performance" data-overlay="overlay-expertise-performance">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-performance" data-overlay="overlay-expertise-performance">Performance<br>Management</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-tools" data-overlay="overlay-expertise-tools">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-tools" data-overlay="overlay-expertise-tools">Sales Tools<br>& Process</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-reporting" data-overlay="overlay-expertise-reporting">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-reporting" data-overlay="overlay-expertise-reporting">Reporting<br>& Analysis</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-boarding" data-overlay="overlay-expertise-boarding">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-boarding" data-overlay="overlay-expertise-boarding">Recruiting,<br>On-boarding<br>& Re-boarding</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-efficiency" data-overlay="overlay-expertise-efficiency">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-efficiency" data-overlay="overlay-expertise-efficiency">Sales<br>Efficiency</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-pricing" data-overlay="overlay-expertise-pricing">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-pricing" data-overlay="overlay-expertise-pricing">Pricing &<br>Pricing Models</a><span class="em-line"></span></div>
+          </div>
+          <div class="str-hex-tile overlay-link" id="expertise-training" data-overlay="overlay-expertise-training">
+            <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-training" data-overlay="overlay-expertise-training">Training &<br>Coaching</a><span class="em-line"></span></div>
+          </div>
+        </div>
+        <div class="expertise-list-container">
+          <ul id="expertise-list">
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-alignment" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Sales Strategy Alignment<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-alignment" data-parent="#expertise-list">
+                <p>We work with you to ensure the strategic goals of your company are reflected in a clearly defined sales strategy with clear metrics in place. We look for a comprehensive understanding of the total addressable market, current and potential wallet share, and identify ‘white space’ opportunities you can address to achieve your goal.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-messaging" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Messaging<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-messaging" data-parent="#expertise-list">
+                <p>Your marketing team has worked hard to create a position for your company, but does it support your mission critical objectives? Is the sales organization and your channel able, and willing, to articulate your corporate messaging and use it as a point of differentiation in the sales cycle? Just as importantly, do your messages resonate with potential buyers? We look at where messaging gets lost in translation and identify the content and tools to enable sales teams to accurately communicate your value proposition.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-segmentation" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Customer Segmentation<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-segmentation" data-parent="#expertise-list">
+                <p>We work with you to ensure your sales method is aligned to your customers’ buying behaviors and preferences, and balanced with your company’s profitability and growth goals.  We look at whether the market is correctly segmented, and consider customer buying behaviors and metrics, and how effectively they are being addressed. We also look at segment potential and profitability based on the cost of acquiring and serving the customer base, both directly and via the channel.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-incentives" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Compensation & Incentives<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-incentives" data-parent="#expertise-list">
+                <p>We assess whether your compensation plans support your mission critical objectives and if they reward the behavioral changes you need from your sales team. We look at whether they are optimized to recruit and retain top talent and if they adequately address all segments of your sales organization.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-salesforce" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Sales Force Deployment<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-salesforce" data-parent="#expertise-list">
+                <p>One of the most complex areas of discovery. When we consider if the sales force is configured correctly we look at its size, structure and capabilities, checking it is effective enough to fulfil the market opportunity. We cover all aspects from sales operations right down to the support functions, looking at the alignment between sales, marketing and operations as a priority.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-performance" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Performance Management<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-performance" data-parent="#expertise-list">
+                <p>Consistency is key in performance management. We consider how sales force effectiveness is mapped across all stages of the sales process and the most efficient way to improve upon it. We help develop or update formal processes and reporting cadence, and implement methods to ensure standards are enforced across territories.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-tools" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Sales Tools & Process<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-tools" data-parent="#expertise-list">
+                <p>The scaffolding that supports all high performing sales teams is discipline and rigour. We check whether your team has a disciplined sales process that is consistently applied across regions and job functions. We check that each step in the sales cycle has the correct method of advancement in place, and that the sales process is in line with customers’ buying journeys. We evaluate the tools and job functions used to support your sales team, identifying hurdles and fixes that can help improve sales force effectiveness.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-reporting" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Reporting & Analysis<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-reporting" data-parent="#expertise-list">
+                <p>Is what you are reporting on aligned to your strategic imperatives? Does your sales team have metrics in place for basics such as customer acquisition and retention, and share of wallet? Do you have effective processes in place to manage discounting, lead generation and channel opportunities? In addition to looking at the process, we also offer better insight into those leading indicators that will transform your business.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-boarding" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Recruiting, On-boarding<br>& Re-boarding<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-boarding" data-parent="#expertise-list">
+                <p>An often-overlooked area which can have a detrimental impact on new recruits and the existing sales team. We’re looking at whether your organization has a clear definition of what the required roles, behaviors and competencies are for success in each sales position, and if there is a recruitment and coaching program in place that supports them.  We consider the impact of the existing sales team on new recruits, and focus on manager-led competency training and ongoing assessment. Finally, we look at how organizations build the right environment for staff to develop the skills, knowledge and capabilities they need to achieve the results the business expects.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-efficiency" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Sales Efficiency<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-efficiency" data-parent="#expertise-list">
+                <p>As you unleash the full potential of your sales team, can you make further improvements? We assess whether you are investing in the right areas for growth and how your sales overheads compare to the market, suggesting areas for change and improvement.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-pricing" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Pricing & Pricing Models<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-pricing" data-parent="#expertise-list">
+                <p>We look at your pricing strategy and how you manage discounts and rebates, and the move to new subscription pricing models. We address the commercial life cycle, the true cost to acquire and serve customers, and the pricing tools and analytics used within the business.</p>
+              </div>
+            </li>
+            <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-training" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Training & Coaching<i class="plus"></i></span>
+              <div class="collapse expertise-content" id="m-expertise-training" data-parent="#expertise-list">
+                <p>We look at how you educate your teams on the messages and behaviors that will enable them to achieve your objectives. Are you addressing all teams within the sales cycle - inside sales, the channel and even the customer services team? Is the training delivering the right results and how can you deliver sustained improvement fast?</p>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       <section class="container-fluid bg-yellow">
         <div class="row str-main">
           <div class="col-12 col-md-6 heading">
-            <h1 class="display-1">Our Consultants</h1>
+            <h1 class="display-1 text-center text-md-left">Our Consultants</h1>
           </div>
           <div class="col-12 v-spacer d-md-none"></div>
           <p class="col-12 col-md-6 clr-dark-blue cons">
@@ -223,7 +344,7 @@
             <div class="circles text-center">
               <div class="circle tony"></div>
               <div class="circle martin"></div>
-              <div class="circle neil"></div><a class="circle blue bg-blue clr-white" href="/about-us.html">9+</a>
+              <div class="circle neil"></div><a class="circle blue bg-blue clr-white" href="/about-us.html">+9</a>
             </div>
             <div class="d-inline-block consult-link-text-container"><a class="d-inline-block font-weight-bold f-28" href="/about-us.html">Show all consultants</a></div>
           </div>
@@ -670,7 +791,7 @@
           <section class="overlay h-100" id="overlay-about-tony-w">
             <div class="row h-100 m-0">
               <div class="col-6 p-0 overlay-column h-100">
-                <div class="overlay-image-container h-100"><img src="img/overlay-about-tony-w.jpg"></div>
+                <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-tony-w.jpg"></div>
               </div>
               <div class="col-6 p-0 overlay-column h-100">
                 <div class="close-button-bar">
@@ -698,7 +819,7 @@
           <section class="overlay h-100" id="overlay-about-martin-d">
             <div class="row h-100 m-0">
               <div class="col-6 p-0 overlay-column h-100">
-                <div class="overlay-image-container h-100"><img src="img/overlay-about-martin-d.jpg"></div>
+                <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-martin-d.jpg"></div>
               </div>
               <div class="col-6 p-0 overlay-column h-100">
                 <div class="close-button-bar">
@@ -726,7 +847,7 @@
           <section class="overlay h-100" id="overlay-about-neil-w">
             <div class="row h-100 m-0">
               <div class="col-6 p-0 overlay-column h-100">
-                <div class="overlay-image-container h-100"><img src="img/overlay-about-neil-w.jpg"></div>
+                <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-neil-w.jpg"></div>
               </div>
               <div class="col-6 p-0 overlay-column h-100">
                 <div class="close-button-bar">
@@ -787,9 +908,10 @@
   </body>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
   <script src="node_modules/gsap/TweenMax.js"></script>
   <script src="node_modules/gsap/CSSPlugin.js"></script>
+  <script src="node_modules/hammerjs/hammer.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
   <script data-main="js/app" src="node_modules/systemjs/dist/system-production.js"></script>
   <script src="js/app.js"></script>
