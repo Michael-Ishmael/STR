@@ -39,7 +39,7 @@ include includes/globals
     className: "discovery",
     text: "Our rapid impact analysis enables us to identify with speed and precision your mission critical priorities and pinpoint the areas of your business that can benefit from improved alignment...",
     buttonText: "Continue Reading",
-    image: "",
+    image: "img/services-discovery-sml.jpg",
     overlayId: "overlay-discovery",
     overlayImage: "img/overlay-services-discovery.jpg",
     fullText: "<p>Our rapid impact analysis enables us to identify with speed and precision your mission critical priorities and pinpoint the areas of your business that can benefit from improved alignment. We focus on the key business areas that have the greatest impact on revenue, and where the most impactful changes can be made. From our findings we create a blueprint for change, which will always include short term gains and longer-term business improvement.</p>",
@@ -49,7 +49,7 @@ include includes/globals
     className: "mapping",
     text: "Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage...",
     buttonText: "Continue Reading",
-    image: "",
+    image: "img/services-mapping-sml.jpg",
     overlayId: "overlay-mapping",
     overlayImage: "img/overlay-services-mapping.jpg",
     fullText: "<p>Using the blueprint from the Discovery phase, our multidiscipline team of senior sales and marketing leaders helps you to navigate a course towards sustained competitive advantage; working with you to efficiently build or restructure critical functions to practically support your transformation, and turn your strategy to revenue. The size and complexity of your organization will dictate whether hands-on change management or, a short-term mentoring program, delivered in person or remotely, works best for your business and budget.</p>"
@@ -59,7 +59,7 @@ include includes/globals
     className: "pathfinder",
     text: "Pathfinder bridges that gap between your strategy and your sales team’s ability to fulfil it. We translate mission critical objectives into achievable deliverables...",
     buttonText: "Continue Reading",
-    image: "",
+    image: "img/services-pathfinder-sml.jpg",
     overlayId: "overlay-pathfinder",
     overlayImage: "img/overlay-services-pathfinder.jpg",
     fullText: "<p>Pathfinder bridges that gap between your strategy and your sales team’s ability to fulfil it. We translate mission critical objectives into achievable deliverables. We specialize in building the correct environments for your teams to develop the knowledge, skills, and behaviors they need to achieve your business objectives. We consider the market environment, company culture, team dynamics and your time frames. We combine traditional e-learning and training with self-paced and group modules, workshops, coaching and ongoing assessment. Perhaps most importantly, we promote manager-led competency training. In this way we build the most effective program to deliver the lasting change you need, in the fastest time possible.</p>"
@@ -69,7 +69,7 @@ include includes/globals
     className: "compass",
     text: "When we give your teams the tools to achieve your revenue goals, we do it in a way that works best for your business...",
     buttonText: "Continue Reading",
-    image: "",
+    image: "img/services-compass-sml.jpg",
     overlayId: "overlay-compass",
     overlayImage: "img/overlay-services-compass.jpg",
     fullText: "<p>When we give your teams the tools to achieve your revenue goals, we do it in a way that works best for your business.</p><p>We work with your existing software and learning environments or we offer you <b>SKILLbuild™</b>. Our award winning online assessment and training library includes over 70 e-learning modules covering the essentials of sales training. The self-paced modules can be delivered off-the-shelf or customized to address the specific needs of your business.</p><p>Benchmarking tools enable us to evaluate and coach to a pre-agreed standard across the business, while simultaneously helping individuals to identify their own areas of weakness and to quickly learn, or refresh, key skills to plug the gap.</p><p>This highly pragmatic approach enables us to customize online learning by business type and size, department, or job function; even tailoring it to individual team members’ needs and time constraints. Supporting this online learning with workshops and a continuous coaching environment, we ensure sales teams spend less time in the classroom and more time in the field. All the while ongoing access to learning and assessment tools fosters a continuous coaching culture for sustained cultural and behavioural change.</p>"
@@ -208,7 +208,7 @@ html(lang="en")
                 section.container-fluid(class=service.className)
                     .row.d-sm-none
                         .col-12.p-0
-                            img(src='img/services-discovery-sml.jpg').w-100
+                            img(src=service.image).w-100
                     .row.str-pic-hero.overlay-link(data-overlay=service.overlayId)
                         .col-12.col-md-6.heading
                             h2.display-2= service.title
@@ -251,7 +251,7 @@ html(lang="en")
             section.container-fluid
                 .row.str-feature-box-container
                     each consultant in consultants
-                        .col-12.col-sm-4.str-feature-box.bg-light-cream
+                        .col-12.col-md-4.str-feature-box.bg-light-cream
                             a.overlay-link(href='#'+consultant.overlayId, data-overlay=consultant.overlayId)
                                 img.str-feature-image(src=consultant.image)
                             .str-feature-text.text-center
@@ -279,11 +279,11 @@ html(lang="en")
                     each service, index in services
                         section.overlay.h-100(id=service.overlayId)
                             .row.h-100.m-0
-                                .col-6.p-0.overlay-column.h-100.left
+                                .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100.left
                                     .overlay-image-container.h-100
                                         img(src=service.overlayImage)
-                                .col-6.p-0.overlay-column.h-100.right
-                                    .close-button-bar
+                                .col-12.col-md-6.p-0.overlay-column.h-100.right
+                                    .close-button-bar.d-none.d-md-block
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross
@@ -303,15 +303,19 @@ html(lang="en")
                                                 h6.text-uppercase Previous Service
                                                 h4.display-4.large
                                                     a.overlay-link(href='#' + services[index - 1].overlayId, data-overlay=services[index - 1].overlayId)= services[index - 1].title
+                                        .close-button-bar.bottom.d-md-none
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
 
 
                     each skill, index in expertise
                         section.overlay.h-100(id=skill.overlayId)
                             .row.h-100.m-0
-                                .col-6.p-0.overlay-column.h-100
+                                .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100
                                     .overlay-image-container.h-100.close-button
-                                .col-6.p-0.overlay-column.h-100
-                                    .close-button-bar
+                                .col-12.col-md-6.p-0.overlay-column.h-100
+                                    .close-button-bar.d-none.d-md-block
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross
@@ -335,11 +339,11 @@ html(lang="en")
                     each consultant in consultants
                         section.overlay.h-100(id=consultant.overlayId)
                             .row.h-100.m-0
-                                .col-6.p-0.overlay-column.h-100
+                                .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100
                                     .overlay-image-container.h-100
                                         img(src=consultant.overlayImage).w-100
-                                .col-6.p-0.overlay-column.h-100
-                                    .close-button-bar
+                                .col-12.col-md-6.p-0.overlay-column.h-100
+                                    .close-button-bar.d-none.d-md-block
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross

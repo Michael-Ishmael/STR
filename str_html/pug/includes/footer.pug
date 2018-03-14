@@ -22,7 +22,7 @@ footer.container-fluid
 
             each navItem in fullNavItems
                 li.nav-item
-                    a.nav-link(href=navItem.link)= navItem.name
+                    a.nav-link(href=navItem.link, class=currentPage==navItem.name?'active':'')= navItem.name
 
     .copyright.text-center
         | Strategy to Revenue. All rights reserved Ⓒ 2018

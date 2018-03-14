@@ -1084,16 +1084,29 @@ section {
     section.compass {
       background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/compass.jpg"); } }
   section.up-next {
-    background-image: url("../img/next-holder.jpg");
-    background-size: 100% auto;
+    background-image: linear-gradient(to top, rgba(28, 36, 66, 0.52), rgba(28, 36, 66, 0)), url("../img/services-up-next-sml.jpg");
+    background-size: cover;
     background-position: center center;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s; }
-    section.up-next:hover {
-      background-size: 120% auto; }
+    @media (min-width: 576px) {
+      section.up-next {
+        background-image: url("../img/next-holder.jpg");
+        background-size: auto 100%; }
+        section.up-next:hover {
+          background-size: auto 120%; } }
+    section.up-next h5.display-5 {
+      font-size: 18px;
+      font-weight: 400; }
+    section.up-next h2.display-2 {
+      margin-top: 2rem;
+      margin-bottom: 2rem; }
+    section.up-next .btn-lg.btn-secondary {
+      font-size: 18px;
+      min-width: 275px; }
     section.up-next.services {
       background-image: url("../img/up-next-services.jpg"); }
   section.up-next.services {
@@ -1284,12 +1297,18 @@ section {
     .str-feature-box .str-feature-text p.summary {
       color: #7f7b6f;
       min-height: 6.4rem;
-      margin: 1rem 0 1.78rem;
-      font-weight: 300; }
+      margin: 1rem auto 1.78rem;
+      font-weight: 300;
+      max-width: 30rem;
+      font-size: 18px; }
+      @media (min-width: 768px) {
+        .str-feature-box .str-feature-text p.summary {
+          font-size: .9rem; } }
     .str-feature-box .str-feature-text a.btn {
       width: 100%;
       max-width: 13rem;
-      margin-bottom: .5rem; }
+      margin: 0 auto .5rem;
+      display: block; }
   @media (min-width: 576px) {
     .str-feature-box .str-feature-text {
       border-right: 1px solid #eae7de; }
@@ -1741,8 +1760,43 @@ footer {
   padding: .6rem;
   margin: 0 -15px; }
 
+.social-media {
+  font-size: 2rem; }
+  @media (min-width: 768px) {
+    .social-media {
+      font-size: 1.4rem; } }
+
+footer nav ul.nav {
+  display: block;
+  font-size: 18px; }
+  @media (min-width: 768px) {
+    footer nav ul.nav {
+      display: flex; } }
+  footer nav ul.nav li {
+    padding-top: 7px;
+    padding-bottom: 7px; }
+    footer nav ul.nav li a {
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s; }
+      footer nav ul.nav li a:hover, footer nav ul.nav li a.active {
+        border-bottom: 2px solid #bbb6a8; }
+    @media (min-width: 768px) {
+      footer nav ul.nav li {
+        padding-top: 0;
+        padding-bottom: 0; }
+        footer nav ul.nav li a {
+          font-size: .6rem; } }
+
 .sm-link {
   display: inline-block; }
+  @media (min-width: 768px) {
+    .sm-link {
+      line-height: 1em; } }
   .sm-link:hover {
     color: #1c2541; }
     .sm-link:hover i.twitter {
@@ -1752,30 +1806,45 @@ footer {
     .sm-link:hover i.medium {
       background-image: url("../img/medium-over.svg"); }
   .sm-link i {
-    float: left;
+    display: inline-block;
     background-size: contain;
     background-repeat: no-repeat;
-    width: 1.4rem;
-    height: 1.4rem; }
+    width: 1em;
+    height: 1em; }
     .sm-link i.twitter {
-      background-image: url("../img/twitter.svg");
+      background-image: url("../img/twitter-over.svg");
       background-position-y: .2rem; }
-      .sm-link i.twitter:hover {
-        background-image: url("../img/twitter-over.svg"); }
     .sm-link i.linked-in {
-      background-image: url("../img/linked-in.svg"); }
-      .sm-link i.linked-in:hover {
-        background-image: url("../img/linked-in-over.svg"); }
+      background-image: url("../img/linked-in-over.svg"); }
     .sm-link i.medium {
-      background-image: url("../img/medium.svg"); }
-      .sm-link i.medium:hover {
-        background-image: url("../img/medium-over.svg"); }
+      background-image: url("../img/medium-over.svg"); }
+    @media (min-width: 768px) {
+      .sm-link i {
+        float: left;
+        display: inline; }
+        .sm-link i.twitter {
+          background-image: url("../img/twitter.svg");
+          background-position-y: .2rem; }
+          .sm-link i.twitter:hover {
+            background-image: url("../img/twitter-over.svg"); }
+        .sm-link i.linked-in {
+          background-image: url("../img/linked-in.svg"); }
+          .sm-link i.linked-in:hover {
+            background-image: url("../img/linked-in-over.svg"); }
+        .sm-link i.medium {
+          background-image: url("../img/medium.svg"); }
+          .sm-link i.medium:hover {
+            background-image: url("../img/medium-over.svg"); } }
   .sm-link > span {
-    margin-left: .6rem;
-    display: inline-block;
-    height: 1.4rem;
-    line-height: 1.4rem;
-    vertical-align: center; }
+    display: block;
+    height: 1em;
+    line-height: 1em;
+    vertical-align: center;
+    font-size: 1rem; }
+    @media (min-width: 768px) {
+      .sm-link > span {
+        display: inline-block;
+        margin-left: .6rem; } }
 
 .social-media {
   margin: 2rem -15px; }
@@ -1847,6 +1916,29 @@ footer {
           background-size: contain;
           width: 1.2rem;
           height: 1.2rem; }
+    .overlay-background .close-button-bar.bottom {
+      position: relative;
+      top: 0;
+      height: auto;
+      text-align: center;
+      padding: 2rem; }
+      .overlay-background .close-button-bar.bottom .close-button-container {
+        float: none;
+        height: auto;
+        display: inline-block;
+        text-align: center; }
+        .overlay-background .close-button-bar.bottom .close-button-container .close-button {
+          float: none;
+          width: 4.4rem;
+          height: 4.4rem;
+          border-radius: 2.2rem; }
+          .overlay-background .close-button-bar.bottom .close-button-container .close-button .cross {
+            display: inline-block;
+            margin: 1.32rem;
+            background-image: url("../img/yellow-cross.svg");
+            background-size: contain;
+            width: 1.8rem;
+            height: 1.8rem; }
   .overlay-background .overlay-content {
     height: 100%;
     background-color: #fff;
