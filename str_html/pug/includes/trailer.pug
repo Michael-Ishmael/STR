@@ -6,7 +6,8 @@
             titleWhite: "Insights From ",
             titleBlue: "Our Experts",
             buttonCaption: "Show Insights",
-            backgroundClass: ""
+            backgroundClass: "",
+            link: "insights"
         };
     };
 
@@ -16,4 +17,4 @@ section.up-next.container-fluid.box-link(class=settings.backgroundClass)
             h5.display-5.text-uppercase.clr-white Coming Up Next
             h2.display-2.clr-white= settings.titleWhite
                 span.clr-bright-blue= settings.titleBlue
-            a.btn.btn-secondary.btn-lg(href=navDict['insights'].link)= settings.buttonCaption
+            a.btn.btn-secondary.btn-lg(href=navDict[settings.link].link)= settings.buttonCaption

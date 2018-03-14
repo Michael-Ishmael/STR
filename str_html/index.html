@@ -12,12 +12,25 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   </head>
   <body class="str">
+    <nav id="mobile-menu">
+      <div class="nav-header text-right">
+        <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+      </div>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </nav>
     <header class="home container-fluid bg-blue home-hero-bg">
       <div class="row align-items-center justify-content-center">
-        <div class="col-2 col-lg-3 p-0 pl-3">
+        <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
           <div class="logo-container ml-2 ml-lg-3 pt-2 pt-lg-4 pb-2 pt-lg-4"><a href="/"><img class="logo" src="img/logo-strategy-to-revenue.svg"></a></div>
         </div>
-        <div class="col-10 col-lg-9 p-0 pr-2">
+        <div class="d-none d-md-block col-md-10 col-lg-9 p-0 pr-2">
           <nav class="text-right mr-4 mr-xl-5">
             <ul class="nav justify-content-end pr-0 pr-xl-2">
               <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -28,6 +41,9 @@
               <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
             </ul>
           </nav>
+        </div>
+        <div class="col-4 d-md-none text-right">
+          <button class="hamburger hamburger--spin clr-white" id="mobile-menu-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
         </div>
       </div>
       <div class="row str-home-hero">
@@ -75,7 +91,11 @@
             <h2 class="display-2">What best describes you?</h2>
           </div>
         </div>
-        <div class="horiz-buttons text-center"><a class="btn btn-lg btn-secondary text-uppercase white" href="#">Company with a sales team less than 100</a><a class="btn btn-lg btn-secondary text-uppercase white" href="#">Company with a sales team of 100+</a><a class="btn btn-lg btn-secondary text-uppercase white" href="#">A private equity company</a></div>
+        <div class="row horiz-buttons text-center justify-content-center">
+          <div class="col-10 col-md-4"><a class="btn btn-lg btn-secondary text-uppercase white" href="#">Company with a sales team less than 100</a></div>
+          <div class="col-10 col-md-4"><a class="btn btn-lg btn-secondary text-uppercase white" href="#">Company with a sales team of 100+</a></div>
+          <div class="col-10 col-md-4"><a class="btn btn-lg btn-secondary text-uppercase white" href="#">A private equity company</a></div>
+        </div>
       </section>
       <section class="container-fluid">
         <div class="row wide-picture-grid">
@@ -140,8 +160,8 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-6">
-            <div class="contact-map"></div>
+          <div class="col-12">
+            <div class="contact-map"><img class="w-100" src="img/pins-map.jpg"></div>
           </div>
         </div>
         <div class="row justify-content-center offices">
@@ -207,7 +227,7 @@
         <div class="cream-border"></div>
         <nav class="footer-menu p-4">
           <ul class="nav justify-content-center">
-            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
             <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
@@ -222,18 +242,20 @@
   </body>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/jquery.bcSwipe.js"></script>
   <script src="node_modules/gsap/TweenMax.js"></script>
   <script src="node_modules/gsap/CSSPlugin.js"></script>
+  <!--script(src="node_modules/hammerjs/hammer.min.js")-->
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
   <script data-main="js/app" src="node_modules/systemjs/dist/system-production.js"></script>
   <script src="js/app.js"></script>
   <script>
-    SystemJS.config({
-        "paths": {
-            "jquery": "./node_modules/jquery/dist/jquery.min.js"
-        }
-    });
+    // SystemJS.config({
+    //     "paths": {
+    //         "jquery": "./node_modules/jquery/dist/jquery.min.js"
+    //     }
+    // });
     
     SystemJS.import('app')
         .then(function (m) {

@@ -33,20 +33,25 @@ html(lang="en")
     include includes/head
 
     body.str
-
+        include includes/mobile-nav
         header.home.container-fluid.bg-blue.home-hero-bg
             .row.align-items-center.justify-content-center
-                .col-2.col-lg-3.p-0.pl-3
+                .col-8.col-md-2.col-lg-3.p-0.pl-3
                     .logo-container.ml-2.ml-lg-3.pt-2.pt-lg-4.pb-2.pt-lg-4
                         a(href="/")
                             img.logo(src='img/logo-strategy-to-revenue.svg')
-                .col-10.col-lg-9.p-0.pr-2
+                .d-none.d-md-block.col-md-10.col-lg-9.p-0.pr-2
                     nav.text-right.mr-4.mr-xl-5
                         ul.nav.justify-content-end.pr-0.pr-xl-2
 
                             each navItem in navItems
                                 li.nav-item
                                     a.nav-link(href=navItem.link, class=currentPage == navItem.name ? 'active' : '')= navItem.name
+
+                .col-4.d-md-none.text-right
+                    button#mobile-menu-button.hamburger.hamburger--spin.clr-white(type="button")
+                        span.hamburger-box
+                            span.hamburger-inner
 
             .row.str-home-hero
                 .col-12
@@ -85,10 +90,14 @@ html(lang="en")
                     .col-12.text-center
                         p.sub.text-uppercase How can we help
                         h2.display-2 What best describes you?
-                .horiz-buttons.text-center
+                .row.horiz-buttons.text-center.justify-content-center
+                    .col-10.col-md-4
                         a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team less than 100
+                    .col-10.col-md-4
                         a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team of 100+
+                    .col-10.col-md-4
                         a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white A private equity company
+
 
             section.container-fluid
                 .row.wide-picture-grid
@@ -132,8 +141,9 @@ html(lang="en")
                     .col-6
                         h1.display-1.mx-0 Our Offices
                 .row.justify-content-center
-                    .col-6
+                    .col-12
                         .contact-map
+                            img(src="img/pins-map.jpg").w-100
                 .row.justify-content-center.offices
                     .col-3
                         h4.display-4 United States
@@ -160,7 +170,6 @@ html(lang="en")
                         p.email hello@strategytorevenue.com
                         h4.display-4 Support
                         p.email support@strategytorevenue.com
-
 
             section#newsletter.container-fluid.newsletter.bg-mid-cream
                  .newsletter-content.text-center

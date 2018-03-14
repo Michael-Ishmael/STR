@@ -14,6 +14,26 @@ $(function () {
             }
         );
 
+        $('#mobile-menu-button').click( function(e){
+
+            $('#mobile-menu').fadeIn();
+            setTimeout(function(){
+                $('#mobile-menu-close-button').toggleClass("is-active");
+            }, 50);
+
+        });
+
+        $('#mobile-menu-close-button').click( function(e){
+
+
+            $('#mobile-menu-close-button').toggleClass("is-active");
+            setTimeout(function(){
+                $('#mobile-menu').fadeOut();
+            }, 250);
+
+        //$(this).toggleClass("is-active");
+        });
+
         function initRollovers() {
             let auRoManager: RolloverManager = new RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
             let opacityTween = new CssPropertyTween("img.overlay", "opacity", 1);
@@ -49,7 +69,7 @@ $(function () {
         });
 
         OverlayManager.init('#overlayBg', null, '.overlay-link');
-
+/*
     $('.carousel').each(function () {
         let $carousel = $(this);
         let hammertime = new Hammer(this, {
@@ -63,7 +83,9 @@ $(function () {
         hammertime.on('swiperight', function () {
             $carousel.carousel('prev');
         });
-    });
+    });*/
+
+        $('.carousel').bcSwipe({ threshold: 50});
 
     }
 );

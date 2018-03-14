@@ -8,16 +8,12 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-System.register("hexagon", ["jquery"], function (exports_1, context_1) {
+System.register("hexagon", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var jquery_1, HexagonLayout;
+    var HexagonLayout;
     return {
-        setters: [
-            function (jquery_1_1) {
-                jquery_1 = jquery_1_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             HexagonLayout = /** @class */ (function () {
                 function HexagonLayout(parentContainerId, hexClass, maxHexWidth, minHexWidth) {
@@ -34,7 +30,7 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                     this.oddRowColCount = 0;
                     this.evenRowColCount = 0;
                     this.reqContainerHeight = 0;
-                    var hexes = jquery_1.default(parentContainerId).children(hexClass);
+                    var hexes = $(parentContainerId).children(hexClass);
                     this.hexData = hexes.toArray().map(function (t) { return '#' + t.id; });
                     this.hexCount = this.hexData.length;
                 }
@@ -52,7 +48,7 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                     this.reqContainerHeight = this.rowHeight * (this.rowCount + 1);
                 };
                 HexagonLayout.prototype.layoutHexagons = function () {
-                    var parent = jquery_1.default(this.parentContainerId);
+                    var parent = $(this.parentContainerId);
                     if (parent.length == 0)
                         return;
                     parent.css('visibility', "hidden");
@@ -67,7 +63,7 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
                     for (var r = 0; r < this.rowCount; r++) {
                         var colCount = isOdd ? this.oddRowColCount : this.evenRowColCount;
                         for (var c = 0; c < colCount; c++) {
-                            var hex = jquery_1.default(this.hexData[i]);
+                            var hex = $(this.hexData[i]);
                             if (hex.length == 0)
                                 continue;
                             var offset = isOdd ? this.hexWidth / 2 : 0;
@@ -105,16 +101,12 @@ System.register("hexagon", ["jquery"], function (exports_1, context_1) {
         }
     };
 });
-System.register("rollover", ["jquery"], function (exports_2, context_2) {
+System.register("rollover", [], function (exports_2, context_2) {
     "use strict";
     var __moduleName = context_2 && context_2.id;
-    var jquery_2, RolloverManager, StrElementTween, RolloverTweenBase, CssPropertyTween, MovePercentageOfParent;
+    var RolloverManager, StrElementTween, RolloverTweenBase, CssPropertyTween, MovePercentageOfParent;
     return {
-        setters: [
-            function (jquery_2_1) {
-                jquery_2 = jquery_2_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             RolloverManager = /** @class */ (function () {
                 function RolloverManager(triggerElement, duration, ease) {
@@ -131,7 +123,7 @@ System.register("rollover", ["jquery"], function (exports_2, context_2) {
                 RolloverManager.prototype.init = function () {
                     var _this = this;
                     if (this.triggerElement) {
-                        this.jTriggerEl = jquery_2.default(this.triggerElement);
+                        this.jTriggerEl = $(this.triggerElement);
                         if (this.jTriggerEl.length) {
                             this.jTriggerEl.hover(function (e) { return _this.over(e.currentTarget); }, function (e) { return _this.out(e.currentTarget); });
                         }
@@ -180,7 +172,7 @@ System.register("rollover", ["jquery"], function (exports_2, context_2) {
                     if (this.tweenForElementRunning(currentTarget))
                         return;
                     var strTween = new StrElementTween(currentTarget);
-                    strTween.jElement = jquery_2.default(currentTarget).find(this.selector);
+                    strTween.jElement = $(currentTarget).find(this.selector);
                     if (!(strTween.jElement && strTween.jElement.length > 0))
                         return;
                     this.overImpl(strTween, duration, ease);
@@ -262,24 +254,20 @@ System.register("rollover", ["jquery"], function (exports_2, context_2) {
         }
     };
 });
-System.register("overlay", ["jquery"], function (exports_3, context_3) {
+System.register("overlay", [], function (exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
-    var jquery_3, OverlayManager;
+    var OverlayManager;
     return {
-        setters: [
-            function (jquery_3_1) {
-                jquery_3 = jquery_3_1;
-            }
-        ],
+        setters: [],
         execute: function () {
             OverlayManager = /** @class */ (function () {
                 function OverlayManager() {
                     //this.tweens = [];
                 }
                 OverlayManager.init = function (overlayBgSelector, overlayClassName, overlayTriggersSelector) {
-                    this._jBody = jquery_3.default('body');
-                    this._jBackGround = jquery_3.default(overlayBgSelector);
+                    this._jBody = $('body');
+                    this._jBackGround = $(overlayBgSelector);
                     var triggers = this.initTriggers(overlayTriggersSelector);
                     this.initEscapeKey();
                     this._initialized = (this._jBody && this.isValidJElement(this._jBackGround) && triggers);
@@ -304,12 +292,12 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                 };
                 OverlayManager.initTriggers = function (overlayTriggersSelector) {
                     var _this = this;
-                    var jTriggers = jquery_3.default(overlayTriggersSelector);
+                    var jTriggers = $(overlayTriggersSelector);
                     if (!this.isValidJElement(jTriggers))
                         return false;
                     jTriggers.click(function (e) {
                         e.preventDefault();
-                        var jTrigger = jquery_3.default(e.currentTarget);
+                        var jTrigger = $(e.currentTarget);
                         var link = _this.getOverlayLinkFromTrigger(jTrigger);
                         var overlayId = _this.getOverlayIdFromTrigger(jTrigger);
                         if (link)
@@ -322,7 +310,7 @@ System.register("overlay", ["jquery"], function (exports_3, context_3) {
                 OverlayManager.showOverlay = function (overlayId) {
                     if (!this._initialized)
                         return;
-                    this._nextOverlay = jquery_3.default('#' + overlayId);
+                    this._nextOverlay = $('#' + overlayId);
                     if (!this.isValidJElement(this._nextOverlay))
                         return;
                     var closeButton = this._nextOverlay.find('.close-button');
@@ -744,6 +732,19 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                 $(window).resize(function () {
                     layout.layoutHexagons();
                 });
+                $('#mobile-menu-button').click(function (e) {
+                    $('#mobile-menu').fadeIn();
+                    setTimeout(function () {
+                        $('#mobile-menu-close-button').toggleClass("is-active");
+                    }, 50);
+                });
+                $('#mobile-menu-close-button').click(function (e) {
+                    $('#mobile-menu-close-button').toggleClass("is-active");
+                    setTimeout(function () {
+                        $('#mobile-menu').fadeOut();
+                    }, 250);
+                    //$(this).toggleClass("is-active");
+                });
                 function initRollovers() {
                     var auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
                     var opacityTween = new rollover_1.CssPropertyTween("img.overlay", "opacity", 1);
@@ -772,20 +773,22 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     }
                 });
                 overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
-                $('.carousel').each(function () {
-                    var $carousel = $(this);
-                    var hammertime = new Hammer(this, {
-                        recognizers: [
-                            [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }]
-                        ]
-                    });
-                    hammertime.on('swipeleft', function () {
-                        $carousel.carousel('next');
-                    });
-                    hammertime.on('swiperight', function () {
-                        $carousel.carousel('prev');
-                    });
-                });
+                /*
+                    $('.carousel').each(function () {
+                        let $carousel = $(this);
+                        let hammertime = new Hammer(this, {
+                            recognizers: [
+                                [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }]
+                            ]
+                        });
+                        hammertime.on('swipeleft', function () {
+                            $carousel.carousel('next');
+                        });
+                        hammertime.on('swiperight', function () {
+                            $carousel.carousel('prev');
+                        });
+                    });*/
+                $('.carousel').bcSwipe({ threshold: 50 });
             });
         }
     };

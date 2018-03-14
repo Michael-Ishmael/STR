@@ -12,12 +12,25 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   </head>
   <body class="str">
+    <nav id="mobile-menu">
+      <div class="nav-header text-right">
+        <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+      </div>
+      <ul class="nav">
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about-us.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+      </ul>
+    </nav>
     <header class="container-fluid bg-blue">
       <div class="row align-items-center justify-content-center">
-        <div class="col-2 col-lg-3 p-0 pl-3">
-          <div class="logo-container ml-2 ml-lg-3 pt-2 pt-lg-4 pb-2 pt-lg-4"><a href="/"><img class="logo" src="img/logo-strategy-to-revenue.svg"></a></div>
+        <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
+          <div class="logo-container ml-2 ml-lg-3 pt-3 pt-lg-4 pb-3 pt-lg-4"><a href="/"><img class="logo" src="img/logo-strategy-to-revenue.svg"></a></div>
         </div>
-        <div class="col-10 col-lg-9 p-0 pr-2">
+        <div class="d-none d-md-block col-md-10 col-lg-9 p-0 pr-2">
           <nav class="text-right mr-4 mr-xl-5">
             <ul class="nav justify-content-end">
               <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
@@ -28,6 +41,9 @@
               <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
             </ul>
           </nav>
+        </div>
+        <div class="col-4 d-md-none text-right">
+          <button class="hamburger hamburger--spin clr-white" id="mobile-menu-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
         </div>
       </div>
       <div class="row">
@@ -46,13 +62,12 @@
             <br><br>
             We know how great it feels to be at the top of our game, and to work for an organisation that just keeps getting better, and we’re passionate about enabling others to feel the same.
             
-            
           </p>
         </div>
       </section>
       <section class="container-fluid bg-light-cream">
         <div class="row text-center wide-picture-grid">
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-mark-s.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-mark-s_blur.jpg" data-overlay="overlay-about-mark-s">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:mark.savinson@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -65,7 +80,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-garry-v.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-garry-v_blur.jpg" data-overlay="overlay-about-garry-v">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:garry.veale@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -78,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-tony-w.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-tony-w_blur.jpg" data-overlay="overlay-about-tony-w">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:tony.wand@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -91,7 +106,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-michael-c.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-michael-c_blur.jpg" data-overlay="overlay-about-abc">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:michael.copestake@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -104,7 +119,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-martin-d.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-martin-d_blur.jpg" data-overlay="overlay-about-martin-d">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:martin.dean@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -117,7 +132,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-robert-f.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-robert-f_blur.jpg" data-overlay="overlay-about-robert-f">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:robert.fox@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -130,7 +145,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-neil-w.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-neil-w_blur.jpg" data-overlay="overlay-about-neil-w">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:neil.whitelock@straegytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -143,7 +158,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-rachel-b.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-rachel-b_blur.jpg" data-overlay="overlay-about-rachel-b">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:#"><img src="img/email-white.svg"> email</a></div>
@@ -156,7 +171,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-xl-4 str-grid-pic">
+          <div class="col-12 col-md-6 col-xl-4 str-grid-pic">
             <div class="about-us-image-tile"><img class="h-align" src="img/about-phil-n.jpg"><img class="h-align gradient" src="img/shadow.png"><img class="h-align overlay overlay-link" src="img/about-phil-n_blur.jpg" data-overlay="overlay-about-phil-n">
               <div class="name-caption-container text-center">
                 <div class="buttons upper"><a class="button" href="https://twitter.com/strategyrevenue/"><img src="img/twitter-white.svg"></a><a class="button" href="https://www.linkedin.com/company/strategytorevenue/"><img src="img/linked-in-white.svg"></a><a class="button" href="mailto:phil.nutt@strategytorevenue.com"><img src="img/email-white.svg"> email</a></div>
@@ -169,7 +184,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-lg-12 str-grid-pic bg-bright-blue">
+          <div class="col-12 col-md-6 col-lg-12 str-grid-pic bg-bright-blue">
             <div class="w-100 h-100 clr-white about-us-image-tile text-tile">
               <h4 class="display-4">Unleash Your Potential</h4>
               <p>
@@ -685,7 +700,7 @@
         <div class="str-pic-hero text-center w-100 d-table center-div">
           <div class="d-table-cell align-middle">
             <h5 class="display-5 text-uppercase clr-white">Coming Up Next</h5>
-            <h2 class="display-2">Insights From <span class="clr-bright-blue">Our Experts</span></h2><a class="btn btn-secondary btn-lg" href="insights.html">Show Insights</a>
+            <h2 class="display-2 clr-white">Insights From <span class="clr-bright-blue">Our Experts</span></h2><a class="btn btn-secondary btn-lg" href="insights.html">Show Insights</a>
           </div>
         </div>
       </section>
@@ -704,7 +719,7 @@
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
-          <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about-us.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
@@ -715,18 +730,20 @@
   </body>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="js/jquery.bcSwipe.js"></script>
   <script src="node_modules/gsap/TweenMax.js"></script>
   <script src="node_modules/gsap/CSSPlugin.js"></script>
+  <!--script(src="node_modules/hammerjs/hammer.min.js")-->
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
   <script data-main="js/app" src="node_modules/systemjs/dist/system-production.js"></script>
   <script src="js/app.js"></script>
   <script>
-    SystemJS.config({
-        "paths": {
-            "jquery": "./node_modules/jquery/dist/jquery.min.js"
-        }
-    });
+    // SystemJS.config({
+    //     "paths": {
+    //         "jquery": "./node_modules/jquery/dist/jquery.min.js"
+    //     }
+    // });
     
     SystemJS.import('app')
         .then(function (m) {

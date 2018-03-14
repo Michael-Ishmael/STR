@@ -149,6 +149,7 @@ html(lang="en")
 
         include includes/header
 
+
         main
 
             section.container-fluid.bg-blue
@@ -288,9 +289,11 @@ html(lang="en")
                                             a.close-button(href="#").bg-blue
                                                 .cross
                                     .overlay-content.h-100
+                                        .d-md-none
+                                            img(src=service.image).w-100
                                         .overlay-main.clearfix
-                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue Services
-                                            h2.display-2= service.title
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue.text-center.text-md-left Services
+                                            h2.display-2.text-center.text-md-left= service.title
                                             .clr-mid-blue
                                                 != service.fullText
                                         if index < services.length - 1
@@ -335,6 +338,10 @@ html(lang="en")
                                                 h6.text-uppercase Previous Field of Expertise
                                                 h4.display-4
                                                     a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
+                                        .close-button-bar.bottom.d-md-none
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
 
                     each consultant in consultants
                         section.overlay.h-100(id=consultant.overlayId)
@@ -348,9 +355,12 @@ html(lang="en")
                                             a.close-button(href="#").bg-blue
                                                 .cross
                                     .overlay-content.h-100
+                                        .d-md-none
+                                            img(src=consultant.image).w-100
                                         .overlay-main.clearfix
-                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue= consultant.title
-                                            h2.display-2= consultant.fullName
+
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue.text-center.text-md-left= consultant.title
+                                            h2.display-2.text-center.text-md-left= consultant.fullName
                                             .clr-mid-blue
                                                 != consultant.fullText
                                             .contact-links
@@ -364,7 +374,7 @@ html(lang="en")
                                                     a(href='mailto:'+consultant.email)
                                                         i.email
                                                         span.clr-dark-blue Email
-                                        .overlay-footer.bg-light-cream
+                                        .overlay-footer.bg-light-cream.text-center.text-md-left
                                             h4.display-4= 'Speak to ' + consultant.firstName + ' about:'
                                             .consultant-skill-box
                                                 each skill in consultant.skills
@@ -372,13 +382,19 @@ html(lang="en")
                                                         a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
                                                     else
                                                         a.skill(href="#")= skill
+                                        .close-button-bar.bottom.d-md-none
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
             -
                 var trailerSettings = {
                 titleWhite: "Insights from our ",
                 titleBlue: "Experts",
                 buttonCaption: "Show Insights",
-                backgroundClass: ""
+                backgroundClass: "",
+                link: "insights"
                 };
+
 
             include includes/trailer
         include includes/footer

@@ -1,18 +1,19 @@
 script(src="node_modules/jquery/dist/jquery.min.js")
 script(src="node_modules/popper.js/dist/umd/popper.min.js")
 script(src="node_modules/bootstrap/dist/js/bootstrap.js")
+script(src="js/jquery.bcSwipe.js")
 script(src="node_modules/gsap/TweenMax.js")
 script(src="node_modules/gsap/CSSPlugin.js")
-script(src="node_modules/hammerjs/hammer.min.js")
+//script(src="node_modules/hammerjs/hammer.min.js")
 script(src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js")
 script(data-main="js/app" src="node_modules/systemjs/dist/system-production.js")
 script(src="js/app.js")
 script.
-    SystemJS.config({
-        "paths": {
-            "jquery": "./node_modules/jquery/dist/jquery.min.js"
-        }
-    });
+    // SystemJS.config({
+    //     "paths": {
+    //         "jquery": "./node_modules/jquery/dist/jquery.min.js"
+    //     }
+    // });
 
     SystemJS.import('app')
         .then(function (m) {
