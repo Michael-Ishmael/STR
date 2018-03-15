@@ -1,11 +1,12 @@
-nav#mobile-menu
-    .nav-header.text-right
-        button#mobile-menu-close-button.hamburger.hamburger--spin.clr-white(type="button")
-            span.hamburger-box
-                span.hamburger-inner
-    ul.nav
-        each navItem in navItems
-            li.nav-item
-                a.nav-link(href=navItem.link, class=currentPage == navItem.name ? 'active' : '')= navItem.name
+.nav-container#mobile-menu
+    nav
+        .nav-header.text-right
+            button#mobile-menu-close-button.hamburger.hamburger--spin.clr-white(type="button")
+                span.hamburger-box
+                    span.hamburger-inner
+        ul.nav
+            each navItem in navItems
+                li.nav-item
+                    a.nav-link(href=navItem.link, class=currentPage == navItem.name ? 'active' : '')= navItem.name
 
 

@@ -4,21 +4,46 @@ import {OverlayManager} from "./overlay";
 
 
 $(function () {
-        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
 
+        let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
+        let _jBody = $('body');
+        let _window = $(window);
+        let NO_SCROLL_CLASS = "noscroll";
+        let auRoManager: RolloverManager = null;
+        let auRoManager2: RolloverManager = null;
         layout.layoutHexagons();
 
-        $(window).resize(
+        _window.resize(
             function () {
                 layout.layoutHexagons();
+                let width = _window.width();
+                if(width < 768){
+                    if(auRoManager2){
+                        auRoManager2.clear();
+                    }
+                } else {
+
+                }
             }
         );
+
+        function setNoScroll(on:boolean){
+
+            if(on){
+                if(!_jBody.hasClass(NO_SCROLL_CLASS)){
+                    _jBody.addClass(NO_SCROLL_CLASS)
+                }
+            } else {
+                _jBody.removeClass(NO_SCROLL_CLASS);
+            }
+        }
 
         $('#mobile-menu-button').click( function(e){
 
             $('#mobile-menu').fadeIn();
             setTimeout(function(){
                 $('#mobile-menu-close-button').toggleClass("is-active");
+                setNoScroll(true);
             }, 50);
 
         });
@@ -27,6 +52,7 @@ $(function () {
 
 
             $('#mobile-menu-close-button').toggleClass("is-active");
+            setNoScroll(false);
             setTimeout(function(){
                 $('#mobile-menu').fadeOut();
             }, 250);
@@ -35,7 +61,7 @@ $(function () {
         });
 
         function initRollovers() {
-            let auRoManager: RolloverManager = new RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
+            auRoManager = new RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
             let opacityTween = new CssPropertyTween("img.overlay", "opacity", 1);
             let buttonsTween = new CssPropertyTween(".buttons", "opacity", .6);
             let titleTween = new CssPropertyTween("h6.title", "opacity", 0);
@@ -46,13 +72,22 @@ $(function () {
             auRoManager.registerTweens([opacityTween, captionTween, titleTween, aboutTween,
                 buttonsTween]);
 
+            if(_window && _window.width() > 768){
+                initSuccesRollover()
+            }
+        }
 
-            let auRoManager2: RolloverManager = new RolloverManager(".success-image-tile", .7, Quint.easeInOut);
+        function initSuccesRollover(){
+
+            if(auRoManager2){
+                auRoManager2.init();
+                return;
+            }
+            auRoManager2 = new RolloverManager(".success-image-tile", .7, Quint.easeInOut);
             let photoCaptionTween = new CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
             let readMoreTween = new CssPropertyTween(".photo-caption h5", "opacity", 1);
             auRoManager2.init();
             auRoManager2.registerTweens([photoCaptionTween, readMoreTween]);
-
         }
 
         initRollovers();
@@ -69,21 +104,7 @@ $(function () {
         });
 
         OverlayManager.init('#overlayBg', null, '.overlay-link');
-/*
-    $('.carousel').each(function () {
-        let $carousel = $(this);
-        let hammertime = new Hammer(this, {
-            recognizers: [
-                [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }]
-            ]
-        });
-        hammertime.on('swipeleft', function () {
-            $carousel.carousel('next');
-        });
-        hammertime.on('swiperight', function () {
-            $carousel.carousel('prev');
-        });
-    });*/
+
 
         $('.carousel').bcSwipe({ threshold: 50});
 

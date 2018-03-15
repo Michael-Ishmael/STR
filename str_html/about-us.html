@@ -12,19 +12,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   </head>
   <body class="str">
-    <nav id="mobile-menu">
-      <div class="nav-header text-right">
-        <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
-      </div>
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
-        <li class="nav-item"><a class="nav-link active" href="about-us.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container" id="mobile-menu">
+      <nav>
+        <div class="nav-header text-right">
+          <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
     <header class="container-fluid bg-blue">
       <div class="row align-items-center justify-content-center">
         <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
@@ -184,8 +186,8 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-12 str-grid-pic bg-bright-blue">
-            <div class="w-100 h-100 clr-white about-us-image-tile text-tile">
+          <div class="col-12 col-md-6 col-lg-12 str-grid-pic bg-bright-blue text-tile">
+            <div class="w-100 h-100 clr-white about-us-image-tile">
               <h4 class="display-4">Unleash Your Potential</h4>
               <p>
                 We’re always on the lookout for like-minded
@@ -204,255 +206,304 @@
         <div class="container-fluid position-relative h-100 p-0">
           <section class="overlay h-100" id="overlay-expertise-alignment">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Sales Strategy Alignment</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Sales Strategy Alignment</h2>
                     <p class="clr-mid-blue">We work with you to ensure the strategic goals of your company are reflected in a clearly defined sales strategy with clear metrics in place. We look for a comprehensive understanding of the total addressable market, current and potential wallet share, and identify ‘white space’ opportunities you can address to achieve your goal.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-messaging">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Messaging</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Messaging</h2>
                     <p class="clr-mid-blue">Your marketing team has worked hard to create a position for your company, but does it support your mission critical objectives? Is the sales organization and your channel able, and willing, to articulate your corporate messaging and use it as a point of differentiation in the sales cycle? Just as importantly, do your messages resonate with potential buyers? We look at where messaging gets lost in translation and identify the content and tools to enable sales teams to accurately communicate your value proposition.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-segmentation">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Customer Segmentation</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Customer Segmentation</h2>
                     <p class="clr-mid-blue">We work with you to ensure your sales method is aligned to your customers’ buying behaviors and preferences, and balanced with your company’s profitability and growth goals.  We look at whether the market is correctly segmented, and consider customer buying behaviors and metrics, and how effectively they are being addressed. We also look at segment potential and profitability based on the cost of acquiring and serving the customer base, both directly and via the channel.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-incentives">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Compensation & Incentives</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Compensation & Incentives</h2>
                     <p class="clr-mid-blue">We assess whether your compensation plans support your mission critical objectives and if they reward the behavioral changes you need from your sales team. We look at whether they are optimized to recruit and retain top talent and if they adequately address all segments of your sales organization.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-salesforce">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Sales Force Deployment</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Sales Force Deployment</h2>
                     <p class="clr-mid-blue">One of the most complex areas of discovery. When we consider if the sales force is configured correctly we look at its size, structure and capabilities, checking it is effective enough to fulfil the market opportunity. We cover all aspects from sales operations right down to the support functions, looking at the alignment between sales, marketing and operations as a priority.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-performance">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Performance Management</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Performance Management</h2>
                     <p class="clr-mid-blue">Consistency is key in performance management. We consider how sales force effectiveness is mapped across all stages of the sales process and the most efficient way to improve upon it. We help develop or update formal processes and reporting cadence, and implement methods to ensure standards are enforced across territories.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-tools">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Sales Tools & Process</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Sales Tools & Process</h2>
                     <p class="clr-mid-blue">The scaffolding that supports all high performing sales teams is discipline and rigour. We check whether your team has a disciplined sales process that is consistently applied across regions and job functions. We check that each step in the sales cycle has the correct method of advancement in place, and that the sales process is in line with customers’ buying journeys. We evaluate the tools and job functions used to support your sales team, identifying hurdles and fixes that can help improve sales force effectiveness.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-reporting">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Reporting & Analysis</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Reporting & Analysis</h2>
                     <p class="clr-mid-blue">Is what you are reporting on aligned to your strategic imperatives? Does your sales team have metrics in place for basics such as customer acquisition and retention, and share of wallet? Do you have effective processes in place to manage discounting, lead generation and channel opportunities? In addition to looking at the process, we also offer better insight into those leading indicators that will transform your business.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-boarding">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Recruiting, On-boarding<br>& Re-boarding</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Recruiting, On-boarding<br>& Re-boarding</h2>
                     <p class="clr-mid-blue">An often-overlooked area which can have a detrimental impact on new recruits and the existing sales team. We’re looking at whether your organization has a clear definition of what the required roles, behaviors and competencies are for success in each sales position, and if there is a recruitment and coaching program in place that supports them.  We consider the impact of the existing sales team on new recruits, and focus on manager-led competency training and ongoing assessment. Finally, we look at how organizations build the right environment for staff to develop the skills, knowledge and capabilities they need to achieve the results the business expects.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-efficiency">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Sales Efficiency</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Sales Efficiency</h2>
                     <p class="clr-mid-blue">As you unleash the full potential of your sales team, can you make further improvements? We assess whether you are investing in the right areas for growth and how your sales overheads compare to the market, suggesting areas for change and improvement.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-pricing">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Pricing & Pricing Models</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Pricing & Pricing Models</h2>
                     <p class="clr-mid-blue">We look at your pricing strategy and how you manage discounts and rebates, and the move to new subscription pricing models. We address the commercial life cycle, the true cost to acquire and serve customers, and the pricing tools and analytics used within the business.</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-expertise-training">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100 close-button"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
                   <div class="overlay-main clearfix">
-                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Our Expertise</h6>
-                    <h2 class="display-2">Training & Coaching</h2>
+                    <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue text-center text-md-left">Our Expertise</h6>
+                    <h2 class="display-2 text-center text-md-left">Training & Coaching</h2>
                     <p class="clr-mid-blue">We look at how you educate your teams on the messages and behaviors that will enable them to achieve your objectives. Are you addressing all teams within the sales cycle - inside sales, the channel and even the customer services team? Is the training delivering the right results and how can you deliver sustained improvement fast?</p>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-mark-s">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-mark-s.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-mark-s.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Chief Operating Officer</h6>
                     <h2 class="display-2">Mark Savinson</h2>
@@ -467,20 +518,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-garry-v">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-garry-v.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-garry-v.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Chief Executive Officer</h6>
                     <h2 class="display-2">Garry Veale</h2>
@@ -495,20 +551,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-tony-w">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-tony-w.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-tony-w.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant</h6>
                     <h2 class="display-2">Tony Wand</h2>
@@ -523,20 +584,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-abc">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-michael-c.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-michael-c.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Commercial Sales Director</h6>
                     <h2 class="display-2">Michael Copestake</h2>
@@ -551,20 +617,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-martin-d">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-martin-d.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-martin-d.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant</h6>
                     <h2 class="display-2">Martin Dean</h2>
@@ -579,20 +650,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-robert-f">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-robert-f.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-robert-f.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant, Americas</h6>
                     <h2 class="display-2">Robert Fox</h2>
@@ -607,20 +683,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-neil-w">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-neil-w.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-neil-w.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant</h6>
                     <h2 class="display-2">Neil Whitelock</h2>
@@ -635,20 +716,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-rachel-b">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-rachel-b.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-rachel-b.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant</h6>
                     <h2 class="display-2">Rachel Bibby</h2>
@@ -663,20 +749,25 @@
                     </div>
                   </div>
                 </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="overlay h-100" id="overlay-about-phil-n">
             <div class="row h-100 m-0">
-              <div class="col-6 p-0 overlay-column h-100">
+              <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                 <div class="overlay-image-container h-100"><img class="w-100" src="img/overlay-about-phil-n.jpg"></div>
               </div>
-              <div class="col-6 p-0 overlay-column h-100">
-                <div class="close-button-bar">
+              <div class="col-12 col-md-6 p-0 overlay-column h-100">
+                <div class="close-button-bar d-none d-md-block">
                   <div class="close-button-container"><a class="close-button bg-blue" href="#">
                       <div class="cross"></div></a></div>
                 </div>
                 <div class="overlay-content h-100">
+                  <div class="d-md-none"><img class="w-100" src="img/about-phil-n.jpg"></div>
                   <div class="overlay-main clearfix">
                     <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue">Senior Consultant</h6>
                     <h2 class="display-2">Phil Nutt</h2>
@@ -690,6 +781,10 @@
                     <div class="consultant-skill-box"><a class="skill overlay-link" href="#overlay-expertise-efficiency" data-overlay="overlay-expertise-efficiency">Sales Efficiency</a><a class="skill overlay-link" href="#overlay-expertise-training" data-overlay="overlay-expertise-training">Training & Coaching</a><a class="skill overlay-link" href="#overlay-expertise-performance" data-overlay="overlay-expertise-performance">Performance Management</a>
                     </div>
                   </div>
+                </div>
+                <div class="close-button-bar bottom d-md-none">
+                  <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                      <div class="cross"></div></a></div>
                 </div>
               </div>
             </div>

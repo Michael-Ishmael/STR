@@ -129,6 +129,14 @@ System.register("rollover", [], function (exports_2, context_2) {
                         }
                     }
                 };
+                RolloverManager.prototype.clear = function () {
+                    if (this.triggerElement) {
+                        this.jTriggerEl = $(this.triggerElement);
+                        if (this.jTriggerEl.length) {
+                            this.jTriggerEl.off('hover');
+                        }
+                    }
+                };
                 RolloverManager.prototype.over = function (currentTarget) {
                     if (!this.tweens)
                         return;
@@ -345,6 +353,9 @@ System.register("overlay", [], function (exports_3, context_3) {
                     if (this._currentOverlay) {
                         this._currentOverlay.css('z-index', this.Z_INDEX_1);
                         //this._currentOverlay.hide();
+                        if (this.keepExisting()) {
+                            this._nextOverlay.addClass("second-level");
+                        }
                     }
                     this._nextOverlay.show();
                     var oBody = this._nextOverlay.find('.overlay-content');
@@ -411,15 +422,18 @@ System.register("overlay", [], function (exports_3, context_3) {
                 };
                 OverlayManager.cleanUpHide = function () {
                     if (this._previousOverlay) {
+                        this._previousOverlay.removeClass("second-level");
                         this._previousOverlay.hide();
                         this._previousOverlay.css('z-index', null);
                         this._previousOverlay = null;
                     }
                     if (this._currentOverlay) {
+                        this._currentOverlay.removeClass("second-level");
                         this._currentOverlay.hide();
                         this._currentOverlay = null;
                     }
                     if (this._nextOverlay) {
+                        this._nextOverlay.removeClass("second-level");
                         this._nextOverlay.hide();
                         this._nextOverlay = null;
                     }
@@ -728,25 +742,50 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
         execute: function () {
             $(function () {
                 var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
+                var _jBody = $('body');
+                var _window = $(window);
+                var NO_SCROLL_CLASS = "noscroll";
+                var auRoManager = null;
+                var auRoManager2 = null;
                 layout.layoutHexagons();
-                $(window).resize(function () {
+                _window.resize(function () {
                     layout.layoutHexagons();
+                    var width = _window.width();
+                    if (width < 768) {
+                        if (auRoManager2) {
+                            auRoManager2.clear();
+                        }
+                    }
+                    else {
+                    }
                 });
+                function setNoScroll(on) {
+                    if (on) {
+                        if (!_jBody.hasClass(NO_SCROLL_CLASS)) {
+                            _jBody.addClass(NO_SCROLL_CLASS);
+                        }
+                    }
+                    else {
+                        _jBody.removeClass(NO_SCROLL_CLASS);
+                    }
+                }
                 $('#mobile-menu-button').click(function (e) {
                     $('#mobile-menu').fadeIn();
                     setTimeout(function () {
                         $('#mobile-menu-close-button').toggleClass("is-active");
+                        setNoScroll(true);
                     }, 50);
                 });
                 $('#mobile-menu-close-button').click(function (e) {
                     $('#mobile-menu-close-button').toggleClass("is-active");
+                    setNoScroll(false);
                     setTimeout(function () {
                         $('#mobile-menu').fadeOut();
                     }, 250);
                     //$(this).toggleClass("is-active");
                 });
                 function initRollovers() {
-                    var auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
+                    auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
                     var opacityTween = new rollover_1.CssPropertyTween("img.overlay", "opacity", 1);
                     var buttonsTween = new rollover_1.CssPropertyTween(".buttons", "opacity", .6);
                     var titleTween = new rollover_1.CssPropertyTween("h6.title", "opacity", 0);
@@ -755,7 +794,16 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     auRoManager.init();
                     auRoManager.registerTweens([opacityTween, captionTween, titleTween, aboutTween,
                         buttonsTween]);
-                    var auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, Quint.easeInOut);
+                    if (_window && _window.width() > 768) {
+                        initSuccesRollover();
+                    }
+                }
+                function initSuccesRollover() {
+                    if (auRoManager2) {
+                        auRoManager2.init();
+                        return;
+                    }
+                    auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, Quint.easeInOut);
                     var photoCaptionTween = new rollover_1.CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
                     var readMoreTween = new rollover_1.CssPropertyTween(".photo-caption h5", "opacity", 1);
                     auRoManager2.init();
@@ -773,21 +821,6 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     }
                 });
                 overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
-                /*
-                    $('.carousel').each(function () {
-                        let $carousel = $(this);
-                        let hammertime = new Hammer(this, {
-                            recognizers: [
-                                [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL }]
-                            ]
-                        });
-                        hammertime.on('swipeleft', function () {
-                            $carousel.carousel('next');
-                        });
-                        hammertime.on('swiperight', function () {
-                            $carousel.carousel('prev');
-                        });
-                    });*/
                 $('.carousel').bcSwipe({ threshold: 50 });
             });
         }

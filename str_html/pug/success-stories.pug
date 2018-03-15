@@ -70,10 +70,10 @@ html(lang="en")
                                             .overlay-main.after
                                                 h4.display-4 Approach
                                                 p.body!= story.overlay.approachText
-                                            .close-button-bar.bottom.d-md-none
-                                                .close-button-container
-                                                    a.close-button(href="#").bg-blue
-                                                        .cross
+                                        .close-button-bar.bottom.d-md-none
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
             -
                 var trailerSettings = {
                 titleWhite: "Insights from our ",
@@ -82,8 +82,8 @@ html(lang="en")
                 backgroundClass: "",
                 link: "insights"
                 };
-
-            include includes/trailer
+            .d-none.d-md-block
+                include includes/trailer
         include includes/footer
 
 

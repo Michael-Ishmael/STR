@@ -278,7 +278,7 @@ html(lang="en")
             div.overlay-background(id="overlayBg", aria-hidden="true")
                 .container-fluid.position-relative.h-100.p-0
                     each service, index in services
-                        section.overlay.h-100(id=service.overlayId)
+                        section.overlay.h-100(id=service.overlayId).p-0
                             .row.h-100.m-0
                                 .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100.left
                                     .overlay-image-container.h-100
@@ -306,10 +306,10 @@ html(lang="en")
                                                 h6.text-uppercase Previous Service
                                                 h4.display-4.large
                                                     a.overlay-link(href='#' + services[index - 1].overlayId, data-overlay=services[index - 1].overlayId)= services[index - 1].title
-                                        .close-button-bar.bottom.d-md-none
-                                            .close-button-container
-                                                a.close-button(href="#").bg-blue
-                                                    .cross
+                                    .close-button-bar.bottom.d-md-none
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
 
 
                     each skill, index in expertise
@@ -338,10 +338,10 @@ html(lang="en")
                                                 h6.text-uppercase Previous Field of Expertise
                                                 h4.display-4
                                                     a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
-                                        .close-button-bar.bottom.d-md-none
-                                            .close-button-container
-                                                a.close-button(href="#").bg-blue
-                                                    .cross
+                                    .close-button-bar.bottom.d-md-none
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
 
                     each consultant in consultants
                         section.overlay.h-100(id=consultant.overlayId)
@@ -382,10 +382,11 @@ html(lang="en")
                                                         a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
                                                     else
                                                         a.skill(href="#")= skill
-                                        .close-button-bar.bottom.d-md-none
-                                            .close-button-container
-                                                a.close-button(href="#").bg-blue
-                                                    .cross
+                                    .close-button-bar.bottom.d-md-none
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
+
             -
                 var trailerSettings = {
                 titleWhite: "Insights from our ",

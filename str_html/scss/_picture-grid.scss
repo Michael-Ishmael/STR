@@ -6,15 +6,22 @@
     color: $white;
     height: 470px;
 
-    &.col-lg-12 {
+    &.col-lg-12.text-tile {
 
-      .about-us-image-tile.text-tile {
-        height: auto!important;
+      height: auto!important;
+      padding: 2em 3em;
+      @include media-breakpoint-down(sm){
+        padding: 2em;
+      }
+
+      .about-us-image-tile{
+
 
         p {
           font-size: 1rem;
           line-height: 1.72;
           max-width: 40rem;
+
           margin: 0 auto 1.4rem;
         }
       }
@@ -41,6 +48,11 @@
       h4.display-4 {
         color: $white;
         font-size: 2.4rem;
+
+        @include media-breakpoint-down(sm){
+          font-size: 3.2rem;
+        }
+
         margin: 1rem;
       }
 
@@ -89,6 +101,7 @@
         margin-bottom: 1rem;
         //transition: all .4s ease-in-out;
         //transform: translateY(0%);
+
       }
 
       .photo-caption {
@@ -96,7 +109,7 @@
         z-index: 3;
         bottom: -2rem;
         padding: 0 0 2.51rem 3.75rem;
-        //margin-bottom: 1rem;
+
 
         h5.display-5 {
           margin-top: 1rem;
@@ -104,6 +117,22 @@
           font-size: .8rem;
           visibility: hidden;
           opacity: 0;
+        }
+
+
+        @include media-breakpoint-down(sm){
+          padding: 2rem;
+          bottom: 0;
+
+          h3.display-3 {
+            font-size: 2.2rem;
+          }
+
+          h5.display-5 {
+            font-size: 1rem;
+            visibility: visible;
+            opacity: 1;
+          }
         }
 
       }
@@ -117,6 +146,12 @@
       }
 
       .buttons {
+
+        font-size: 1rem;
+
+        @include media-breakpoint-down(sm){
+          font-size: 1.4rem;
+        }
 
         &.upper {
           visibility: hidden;
@@ -150,17 +185,17 @@
         }
 
         .button {
+          display: inline-block;
           cursor: pointer;
-          height: 1rem;
-          border-radius: 2rem;
+          border-radius: 2em;
           background-color: rgba($dark-cream, .5);
-          min-width: 1rem;
-          margin: 0 1rem;
-          padding: 1rem;
-          font-size: .8rem;
+          margin: 0 1em;
+          padding: 1em;
+          font-size: .8em;
+          line-height: .8em;
           img {
-            height: .8rem;
-            width: .8rem;
+            height: .8em;
+            width: .8em;
           }
           &:hover {
             background-color: rgba($dark-cream, .9);
@@ -170,6 +205,12 @@
         .btn-outline-light {
           // margin-top: .5rem;
           border-color: $dark-cream;
+
+          @include media-breakpoint-down(sm){
+            font-size: 1.4rem;
+            padding: 1rem 4rem;
+            margin-top: .8rem;
+          }
 
           &:hover {
             border-color: $white;
@@ -293,6 +334,15 @@
         min-height: 6rem;
         h4 {
           font-size: 1.6rem;
+
+          &.lge{
+            font-size: 1.6rem;
+            @include media-breakpoint-up(md){
+              font-size: 2.2rem;
+            }
+          }
+
+
         }
 
       }
@@ -343,9 +393,16 @@
 
   }
 
+  $rows: 6;
+  @for $i from 1 through $rows {
+    &.stripe-article-bg-#{$i}:hover {
+      background-image:  linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/stripe-article-#{$i}.jpg");
+    }
+  }
 
-  &.stripe-article-bg{
-    background-image:  linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url("../img/stripe-article.jpg");
+
+  &:hover{
+
     border: none;
 
     h4, h6 {

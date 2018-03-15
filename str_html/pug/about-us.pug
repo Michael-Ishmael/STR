@@ -52,8 +52,8 @@ html(lang="en")
                                             .btn.btn-outline-light.overlay-link(data-overlay=consultant.overlayId) About #{consultant.firstName}
                                             h6.title.text-uppercase= consultant.title
 
-                        .col-12.col-md-6.col-lg-12.str-grid-pic.bg-bright-blue
-                            .w-100.h-100.clr-white.about-us-image-tile.text-tile
+                        .col-12.col-md-6.col-lg-12.str-grid-pic.bg-bright-blue.text-tile
+                            .w-100.h-100.clr-white.about-us-image-tile
                                     h4.display-4.
                                         Unleash Your Potential
                                     p.
@@ -71,18 +71,18 @@ html(lang="en")
                     each skill, index in expertise
                         section.overlay.h-100(id=skill.overlayId)
                             .row.h-100.m-0
-                                .col-6.p-0.overlay-column.h-100
+                                .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100
                                     .overlay-image-container.h-100.close-button
-                                .col-6.p-0.overlay-column.h-100
-                                    .close-button-bar
+                                .col-12.col-md-6.p-0.overlay-column.h-100
+                                    .close-button-bar.d-none.d-md-block
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross
                                     .overlay-content.h-100
 
                                         .overlay-main.clearfix
-                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue Our Expertise
-                                            h2.display-2!= skill.title.replace("<br>", " ")
+                                            h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue.text-center.text-md-left Our Expertise
+                                            h2.display-2.text-center.text-md-left!= skill.title.replace("<br>", " ")
                                             p.clr-mid-blue= skill.fullText
                                         if !hideSkillFooters
                                             if index < expertise.length - 1
@@ -95,20 +95,25 @@ html(lang="en")
                                                     h6.text-uppercase Previous Field of Expertise
                                                     h4.display-4
                                                         a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
-
+                                    .close-button-bar.bottom.d-md-none
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
 
                     each consultant in team
                         section.overlay.h-100(id=consultant.overlayId)
                             .row.h-100.m-0
-                                .col-6.p-0.overlay-column.h-100
+                                .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100
                                     .overlay-image-container.h-100
                                         img(src=consultant.overlayImage).w-100
-                                .col-6.p-0.overlay-column.h-100
-                                    .close-button-bar
+                                .col-12.col-md-6.p-0.overlay-column.h-100
+                                    .close-button-bar.d-none.d-md-block
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross
                                     .overlay-content.h-100
+                                        .d-md-none
+                                            img(src=consultant.image).w-100
                                         .overlay-main.clearfix
                                             h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue= consultant.title
                                             h2.display-2= consultant.fullName
@@ -133,6 +138,10 @@ html(lang="en")
                                                         a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
                                                     else
                                                         a.skill(href="#")= skill
+                                    .close-button-bar.bottom.d-md-none
+                                        .close-button-container
+                                            a.close-button(href="#").bg-blue
+                                                .cross
 
 
             include includes/trailer

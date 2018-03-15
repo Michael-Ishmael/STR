@@ -120,8 +120,11 @@ export class OverlayManager {
     private static showOverlayInternal(){
 
         if(this._currentOverlay){
-            this._currentOverlay.css('z-index', this.Z_INDEX_1)
+            this._currentOverlay.css('z-index', this.Z_INDEX_1);
             //this._currentOverlay.hide();
+            if(this.keepExisting()){
+                this._nextOverlay.addClass("second-level");
+            }
         }
 
         this._nextOverlay.show();
@@ -195,15 +198,18 @@ export class OverlayManager {
 
     private static cleanUpHide(){
         if(this._previousOverlay) {
+            this._previousOverlay.removeClass("second-level");
             this._previousOverlay.hide();
             this._previousOverlay.css('z-index', null);
             this._previousOverlay = null;
         }
         if(this._currentOverlay) {
+            this._currentOverlay.removeClass("second-level");
             this._currentOverlay.hide();
             this._currentOverlay = null;
         }
         if(this._nextOverlay) {
+            this._nextOverlay.removeClass("second-level");
             this._nextOverlay.hide();
             this._nextOverlay = null;
         }

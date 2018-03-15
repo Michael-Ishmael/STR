@@ -22,6 +22,15 @@ export class RolloverManager {
         }
     }
 
+    public clear():void {
+        if(this.triggerElement){
+            this.jTriggerEl = $(this.triggerElement);
+            if(this.jTriggerEl.length){
+                this.jTriggerEl.off('hover')
+            }
+        }
+    }
+
     public over(currentTarget:HTMLElement):void {
         if(!this.tweens)return;
         for (let tween of this.tweens) {
