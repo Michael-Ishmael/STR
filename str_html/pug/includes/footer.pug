@@ -5,13 +5,14 @@ footer.container-fluid
                 var smLinks = [
                     { label: 'Twitter', link: twitterLink, className: 'twitter' },
                     { label: 'LinkedIn', link: linkedInLink, className: 'linked-in' },
-                    { label: 'Medium', link: mediumLink, className: 'medium' }
+                    { label: 'Medium', link: mediumLink, className: 'medium' },
+                    { label: 'Newsletter', link: newsletterLink, className: 'newsletter' }
                     ];
 
             each smLink in smLinks
 
-                .col-4.col-sm-3.col-lg-2.text-center
-                    a.sm-link(href=smLink.link, target="_blank")
+                .col-3.col-sm-3.col-lg-2.text-center.p-0
+                    a.sm-link(href=smLink.link, target= smLink.link.indexOf('http') > -1 ? "_blank" : null)
                         i.sm-icon(class=smLink.className)
                         span #{smLink.label}
 

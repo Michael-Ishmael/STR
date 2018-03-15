@@ -12,19 +12,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
   </head>
   <body class="str">
-    <nav id="mobile-menu">
-      <div class="nav-header text-right">
-        <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
-      </div>
-      <ul class="nav">
-        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
-        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-      </ul>
-    </nav>
+    <div class="nav-container" id="mobile-menu">
+      <nav>
+        <div class="nav-header text-right">
+          <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+          <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+          <li class="nav-item"><a class="nav-link" href="private-equity.html">Private Equity</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact-us">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
     <header class="container-fluid bg-blue">
       <div class="row align-items-center justify-content-center">
         <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
@@ -37,8 +39,8 @@
               <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
               <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
               <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
-              <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="private-equity.html">Private Equity</a></li>
+              <li class="nav-item"><a class="nav-link" href="/#contact-us">Contact Us</a></li>
             </ul>
           </nav>
         </div>
@@ -158,7 +160,7 @@
           </p>
         </div>
       </section>
-      <section class="container-fluid discovery">
+      <section class="container-fluid discovery" id="discovery">
         <div class="row d-sm-none">
           <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
         </div>
@@ -169,7 +171,7 @@
           </div>
         </div>
       </section>
-      <section class="container-fluid mapping">
+      <section class="container-fluid mapping" id="mapping">
         <div class="row d-sm-none">
           <div class="col-12 p-0"><img class="w-100" src="img/services-mapping-sml.jpg"></div>
         </div>
@@ -180,7 +182,7 @@
           </div>
         </div>
       </section>
-      <section class="container-fluid pathfinder">
+      <section class="container-fluid pathfinder" id="pathfinder">
         <div class="row d-sm-none">
           <div class="col-12 p-0"><img class="w-100" src="img/services-pathfinder-sml.jpg"></div>
         </div>
@@ -191,7 +193,7 @@
           </div>
         </div>
       </section>
-      <section class="container-fluid compass">
+      <section class="container-fluid compass" id="compass">
         <div class="row d-sm-none">
           <div class="col-12 p-0"><img class="w-100" src="img/services-compass-sml.jpg"></div>
         </div>
@@ -202,7 +204,7 @@
           </div>
         </div>
       </section>
-      <section class="container-fluid bg-blue str-main expertise">
+      <section class="container-fluid bg-blue str-main expertise" id="expertise">
         <h1 class="display-1 text-center clr-white d-none d-md-block">Our Expertise</h1>
         <h2 class="display-2 text-center clr-white d-md-none">Our Expertise</h2>
         <div class="str-hex-tile-container d-none d-md-block" id="hexLayout1">
@@ -243,7 +245,7 @@
             <div class="hex-inner text-center align-middle clr-white"><a href="#overlay-expertise-training" data-overlay="overlay-expertise-training">Training &<br>Coaching</a><span class="em-line"></span></div>
           </div>
         </div>
-        <div class="expertise-list-container">
+        <div class="expertise-list-container d-md-none">
           <ul id="expertise-list">
             <li class="collapsed" data-toggle="collapse" data-target="#m-expertise-alignment" aria-expanded="false" aria-controls="collapseOne"><span class="d-flex justify-content-between align-items-center expander">Sales Strategy Alignment<i class="plus"></i></span>
               <div class="collapse expertise-content" id="m-expertise-alignment" data-parent="#expertise-list">
@@ -320,7 +322,6 @@
             senior positions at global corporations, or rolled up
             our sleeves to turn table-top start-ups into successful
             international businesses; and in many cases, we’ve done both!
-            
             
           </p>
         </div>
@@ -982,9 +983,10 @@
     <footer class="container-fluid">
       <div class="container">
         <div class="row justify-content-center social-media">
-          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
-          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
-          <div class="col-4 col-sm-3 col-lg-2 text-center"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
+          <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
+          <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
+          <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
+          <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="/#newsletter"><i class="sm-icon newsletter"></i><span>Newsletter</span></a></div>
         </div>
       </div>
       <div class="cream-border"></div>
@@ -995,8 +997,8 @@
           <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
           <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Private Equity</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="private-equity.html">Private Equity</a></li>
+          <li class="nav-item"><a class="nav-link" href="/#contact-us">Contact Us</a></li>
         </ul>
       </nav>
       <div class="copyright text-center">Strategy to Revenue. All rights reserved Ⓒ 2018</div>

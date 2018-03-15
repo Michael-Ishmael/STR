@@ -62,6 +62,39 @@
 
   }
 
+  @include media-breakpoint-down(sm){
+    padding: 3rem 2rem;
+    text-align: center;
+
+    ul.deliveries {
+      li {
+
+        border-bottom: none;
+
+        img{
+          float: initial;
+          width: 7.3rem;
+          height: 7.3rem;
+        }
+
+        .delivery {
+          margin: 0;
+
+          p.item {
+            font-size: 1.7rem;
+          }
+
+          p {
+            font-size: 1.3rem;
+          }
+        }
+
+      }
+    }
+
+  }
+
+
 }
 
 .mission-pic {
@@ -80,17 +113,23 @@
     color: $light-cream;
     width: 22.3rem;
   }
-}
 
-@include media-breakpoint-down(md) {
-  .str-home-hero {
-    padding: 5.6rem 2.86rem;
+  @include media-breakpoint-down(sm){
 
-    @include media-breakpoint-up(md) {
-      padding: 1.4rem 4.2rem;
+    text-align: center;
+    padding: 3rem 2rem;
+
+    p.lead{
+      font-size: 1.143rem;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+      width: initial;
+      max-width: 80%;
     }
+
   }
 }
+
 
 .str-hero.jumbotron {
 
@@ -124,6 +163,8 @@
   }
 
 }
+
+
 
 .str-card-container {
   font-size: 0.8rem;
@@ -245,20 +286,35 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
 
-  &.help {
-    padding: 5rem 0;
+  &.questionnaire {
+
+    padding: 3rem 8rem 5rem;
+
+    p.sub {
+      font-size: .7rem;
+    }
 
     .horiz-buttons {
       margin-top: 2.5rem;
-      padding: 0 8rem;
+    }
 
-      a.btn.btn-lg {
+    .questionnaire-button-container {
+      display: table;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+
+      a.questionnaire-button  {
+        background-color: $bright-blue;
+        color: white;
+        display: table-cell;
+        text-transform: uppercase;
         padding: 1.2rem 2.1rem;
+        cursor: pointer;
         width: 100%;
+        height: 100%;
         vertical-align: middle;
         min-height: 4.2rem;
-        display: table-cell;
-        vertical-align: middle;
         margin-right: .8rem;
         font-size: .8rem;
         font-weight: 400;
@@ -271,12 +327,37 @@ section {
         @include transition();
 
         &:hover {
-          background-color: $bright-blue;
-          color: $white;
+          background-color: $corn-yellow;
+          color: $dark-blue;
         }
       }
 
     }
+
+    @include media-breakpoint-down(sm){
+      padding: 3rem 2rem;
+
+      p.sub {
+        font-size: 1rem;
+      }
+
+      .questionnaire-button-container {
+
+        padding-bottom: 1rem;
+        min-height: 5.6rem;
+        max-width: 20rem;
+        margin: 0 auto;
+
+        a.questionnaire-button {
+          font-size: 1.143rem;
+        }
+      }
+
+
+
+    }
+
+
   }
 
   .mobile-image-spacer {
@@ -284,16 +365,33 @@ section {
   }
 
   &.clients {
-    padding: 4.4rem 0;
+    padding: 4.4rem 2rem 1rem;
     border-bottom: 1px solid $dark-cream-2;
+
+    .client {
+      padding: 2rem;
+
+      @include media-breakpoint-up(md){
+
+        padding: 2rem 0;
+
+        img {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+      }
+
+    }
   }
 
   &.contact {
+
     padding: 5rem;
 
     .contact-map {
       height: 17.1rem;
-      //background-image: url("../img/pins-map.jpg");
     }
 
     h4.display-4 {
@@ -307,14 +405,27 @@ section {
 
     border-bottom: 1px solid $dark-cream-2;
 
+    @include media-breakpoint-down(sm) {
+
+      text-align: center;
+
+      padding: 3rem 2rem;
+
+      .contact-map {
+        height: 17.1rem;
+        margin: 1rem -2rem 0;
+      }
+    }
+
   }
 
   &.newsletter {
 
-    padding: 3.5rem 22.2rem;
+    padding: 3.5rem;
     border-bottom: 1px solid $dark-cream-2;
 
     .newsletter-content {
+      margin: 0 auto;
       max-width: 27.5rem;
 
       h6.sub {
@@ -334,8 +445,27 @@ section {
         margin: .8rem 0 2.2rem;
         font-size: .8rem;
         line-height: 1.63;
+      }
+
+      @include media-breakpoint-down(sm){
+
+        h6.sub {
+          font-size: 1rem;
+        }
+
+        h3.display-3 {
+          font-size: 3.43rem;
+        }
+
+        p {
+          font-size: 16px;
+          margin: .8em 0;
+        }
+
 
       }
+
+
     }
 
     form {
@@ -348,6 +478,25 @@ section {
       .btn-container {
         width: 40%;
         padding-left: .3rem;
+      }
+
+      @include media-breakpoint-down(sm){
+
+        .input-container {
+          width: 100%;
+          padding-right: 0;
+          padding-bottom: 0.5rem;
+
+          @include placeholder-align(center)
+
+        }
+
+        .btn-container {
+          width: 100%;
+          padding-left: 0;
+          padding-top: 0.5rem;
+        }
+
       }
 
       .btn-primary, input[type="text"] {

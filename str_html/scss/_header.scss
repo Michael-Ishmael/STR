@@ -48,7 +48,7 @@ header {
 
       cursor: pointer;
       padding: 0 0 .3rem 0;
-      border-bottom: 2px solid $dark-blue;
+      border-bottom: 2px solid transparent;
       @include transition();
 
       &.active {

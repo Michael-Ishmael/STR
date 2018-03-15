@@ -149,7 +149,6 @@ html(lang="en")
 
         include includes/header
 
-
         main
 
             section.container-fluid.bg-blue
@@ -206,7 +205,7 @@ html(lang="en")
 
 
             each service in services
-                section.container-fluid(class=service.className)
+                section.container-fluid(id=service.className, class=service.className)
                     .row.d-sm-none
                         .col-12.p-0
                             img(src=service.image).w-100
@@ -217,7 +216,7 @@ html(lang="en")
                             a.overlay-link(href='#' + service.overlayId, role="button")=service.buttonText
 
 
-            section.container-fluid.bg-blue.str-main.expertise
+            section#expertise.container-fluid.bg-blue.str-main.expertise
                         h1.display-1.text-center.clr-white.d-none.d-md-block Our Expertise
                         h2.display-2.text-center.clr-white.d-md-none Our Expertise
                         #hexLayout1.str-hex-tile-container.d-none.d-md-block
@@ -226,7 +225,7 @@ html(lang="en")
                                     .hex-inner.text-center.align-middle.clr-white
                                         a(href='#'+skill.overlayId, data-overlay=skill.overlayId)!= skill.title
                                         span.em-line
-                        .expertise-list-container
+                        .expertise-list-container.d-md-none
                             ul#expertise-list
                                 each skill in expertise
                                     li.collapsed(data-toggle="collapse", data-target="#m-"+skill.id, aria-expanded="false", aria-controls="collapseOne")
@@ -247,7 +246,6 @@ html(lang="en")
                         senior positions at global corporations, or rolled up
                         our sleeves to turn table-top start-ups into successful
                         international businesses; and in many cases, we’ve done both!
-
 
             section.container-fluid
                 .row.str-feature-box-container

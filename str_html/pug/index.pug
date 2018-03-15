@@ -6,25 +6,26 @@ include includes/globals
     var clients = [
         {
             name: "Thomson Reuters",
-            logo: ""
+            logo: "img/logo-thomson-reuters.png"
         },
         {
             name: "DHL",
-            logo: ""
+            logo: "img/logo-dhl.png"
         },
         {
             name: "Hewlett Packard",
-            logo: ""
+            logo: "img/logo-hewlett-packard-enterprise.png"
         },
         {
             name: "Motorola",
-            logo: ""
+            logo: "img/logo-motorola.png"
         },
         {
             name: "Vodafone",
-            logo: ""
+            logo: "img/logo-vodafone.png"
         }
     ]
+
 
     currentPage = 'Home'
 
@@ -37,7 +38,7 @@ html(lang="en")
         header.home.container-fluid.bg-blue.home-hero-bg
             .row.align-items-center.justify-content-center
                 .col-8.col-md-2.col-lg-3.p-0.pl-3
-                    .logo-container.ml-2.ml-lg-3.pt-2.pt-lg-4.pb-2.pt-lg-4
+                    .logo-container.ml-2.ml-lg-3.pt-3.pt-lg-4.pb-2.pt-lg-4
                         a(href="/")
                             img.logo(src='img/logo-strategy-to-revenue.svg')
                 .d-none.d-md-block.col-md-10.col-lg-9.p-0.pr-2
@@ -54,7 +55,7 @@ html(lang="en")
                             span.hamburger-inner
 
             .row.str-home-hero
-                .col-12
+                .col-12.p-0
                     h1.display-hero.clr-white= 'Potential'
                         br
                         span.clr-bright-blue Unleashed
@@ -62,10 +63,11 @@ html(lang="en")
                     p.lead.clr-white.
                         Performing to your full potential feels incredible. Strategy to Revenue is dedicated to making the incredible a reality.
 
+
         main
             section.container-fluid.bg-light-cream
                 .row
-                    .col-7.p-0
+                    .col-12.col-md-7.p-0
                         .mission
                             h2.display-2 Our Mission
 
@@ -83,43 +85,48 @@ html(lang="en")
                                         p.item.clr-dark-blue 10% minimum growth
                                         p in recurring revenue
 
-                    .col-5.p-0.o-hidden.mission-pic
+                    .col-12.col-md-5.p-0.o-hidden.mission-pic
                         //img(src="img/home-mission.jpg")
-            section.container-fluid.help.bg-yellow
+            section.container-fluid.questionnaire.bg-blue
                 .row.justify-content-center
                     .col-12.text-center
-                        p.sub.text-uppercase How can we help
-                        h2.display-2 What best describes you?
+                        p.sub.text-uppercase How can we help you
+                        h2.display-2.clr-white Which best describes you?
                 .row.horiz-buttons.text-center.justify-content-center
-                    .col-10.col-md-4
-                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team less than 100
-                    .col-10.col-md-4
-                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white Company with a sales team of 100+
-                    .col-10.col-md-4
-                        a(href="#").btn.btn-lg.btn-secondary.text-uppercase.white A private equity company
+                    .col-12.col-md-4
+                        .questionnaire-button-container
+                            a.questionnaire-button.bg-blue.clr-white Company with a sales team less than 100
+                    .col-12.col-md-4
+                        .questionnaire-button-container
+                            a.questionnaire-button.bg-blue.clr-white  Company with a sales team of 100+
+                    .col-12.col-md-4
+                        .questionnaire-button-container
+                            a.questionnaire-button.bg-blue.clr-white  A private equity company
 
 
             section.container-fluid
                 .row.wide-picture-grid
-                    .col-12.col-sm-6.p-0
-                        each story in homeStories
-                            .str-grid-pic
-                                -
-                                    overlayId = story.overlay ? story.overlay.id : ''
-                                .success-image-tile.overlay-link(data-overlay=overlayId)
-                                    img.h-align.pic(src=story.image)
-                                    img.h-align.gradient(src="img/shadow.png")
-                                    .photo-caption.text-left
-                                        h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
-                                        h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
-                                            a.overlay-link(href='#'+overlayId) read success story
+                    .col-12.col-sm-6.p-0.home-column
+                        img(src="img/ratio-place-holder-1.gif").w-100.d-none.d-sm-block
+                        .column-pic-container
+                            each story in homeStories
+                                .str-grid-pic
+                                    -
+                                        overlayId = story.overlay ? story.overlay.id : ''
+                                    .success-image-tile.overlay-link(data-overlay=overlayId)
+                                        img.h-align.pic(src=story.image).w-100.d-none.d-sm-block
+                                        img.h-align.pic(src=story.imageSml).w-100.d-sm-none
+                                        img.h-align.gradient(src="img/shadow.png").w-100
+                                        .photo-caption.text-left
+                                            h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
+                                            h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
+                                                a.overlay-link(href='#'+overlayId) read success story
 
                     .col-12.col-sm-6.str-insight-pic
                         .insight-image-tile.w-100
-                            img.h-align(src=homeInsight.image)
+                            img(src=homeInsight.image).w-100
                             img.h-align.gradient(src="img/shadow.png")
                             .insight-info.text-left.p-5
-
                                 .author
                                     img.d-inline-block(src=homeInsight.author.image)
                                     .author-details.d-inline-block
@@ -128,24 +135,27 @@ html(lang="en")
                                 .article-title
                                     h4.display-5.clr-white!= homeInsight.title
 
-                                a.btn.btn-primary.text-uppercase(href=homeInsight.link) Read Article
+                                a.btn.btn-primary.text-uppercase(href=homeInsight.link).d-none.d-md-block Read Article
+
 
             section.container-fluid.clients.bg-mid-cream
                 .row.clients.justify-content-center
                     each client in clients
-                        .col-2.client-logo-container.text-center
-                            .client= client.name
+                        .col-12.col-sm-4.col-lg-2.client-logo-container.text-center
+                            .client
+                                img(src=client.logo).w-sm-50
 
             section#contact-us.container-fluid.contact.bg-mid-cream
                 .row.justify-content-center
-                    .col-6
+                     .col-12.col-md-6
                         h1.display-1.mx-0 Our Offices
                 .row.justify-content-center
                     .col-12
                         .contact-map
-                            img(src="img/pins-map.jpg").w-100
+                            img(src="img/pins-map.jpg").w-100.d-none.d-md-block
+                            img(src="img/pins-map-sml.jpg").w-100.d-md-none
                 .row.justify-content-center.offices
-                    .col-3
+                    .col-12.col-sm-7.col-md-3
                         h4.display-4 United States
                         p.address.
                             The Atlanta Technology Village
@@ -154,8 +164,8 @@ html(lang="en")
                             <br>
                             Atlanta, GA 30305
                         p.phone +31 312 493 8639
-                    .col-1
-                    .col-3
+                    .d-none.col-md-1
+                    .col-12.col-sm-7.col-md-3
                         h4.display-4 United Kingdom
                         p.address.
                             Regal Court Business Centre
@@ -164,12 +174,13 @@ html(lang="en")
                             <br>
                             Slough, SL1 1EL
                         p.phone +31 (0) 1753 245543
-                    .col-1
-                    .col-3
+                    .d-none.col-md-1
+                    .col-12.col-sm-7.col-md-3
                         h4.display-4 New Business
                         p.email hello@strategytorevenue.com
                         h4.display-4 Support
                         p.email support@strategytorevenue.com
+
 
             section#newsletter.container-fluid.newsletter.bg-mid-cream
                  .newsletter-content.text-center
@@ -186,8 +197,48 @@ html(lang="en")
                             .btn-container
                                 button.btn.btn-primary(type="submit", value="Sign up").w-100.text-uppercase Sign Up
                         
-   
-            
+
+            div.overlay-background(id="overlayBg", aria-hidden="true")
+                .container-fluid.position-relative.h-100.p-0
+                    each story, index in homeStories
+                        if story.overlay
+                            section.overlay.h-100(id=story.overlay.id)
+                                .row.h-100.m-0
+                                    .d-none.d-md-block.col-md-6.p-0.overlay-column.h-100.left
+                                        .overlay-image-container.h-100
+                                            img(src=story.overlay.image)
+                                    .col-12.col-md-6.p-0.overlay-column.h-100.right
+                                        .close-button-bar.d-none.d-md-block
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
+                                        .overlay-content.h-100
+                                            .d-md-none
+                                                img(src=story.image).w-100
+                                            .overlay-main.clearfix
+                                                h6.clr-dark-blue.text-uppercase.clr-dark-blue Success Story
+                                                h3.display-3!= story.overlay.title
+                                                h4.display-4 Challenge
+                                                p.lead.clr-dark-blue!= story.overlay.challengeText
+                                            if story.overlay.results && story.overlay.results.length > 0
+                                                .overlay-footer.bg-light-cream.lead
+                                                    h4.display-4= story.overlay.results.length === 1 ? "Result" : "Results"
+                                                    if story.overlay.resultsSubHeader
+                                                        p.success-result.clr-dark-blue= story.overlay.resultsSubHeader
+                                                each result, index in story.overlay.results
+                                                    - var lastClass = index === story.overlay.results.length -1 ? "last" : "";
+                                                    .overlay-footer.bg-light-cream.result(class=lastClass)
+                                                        img(src="img/result-cup.svg")
+                                                        p.success-result.clr-dark-blue= result
+                                            .overlay-main.after
+                                                h4.display-4 Approach
+                                                p.body!= story.overlay.approachText
+                                        .close-button-bar.bottom.d-md-none
+                                            .close-button-container
+                                                a.close-button(href="#").bg-blue
+                                                    .cross
+
+
             include includes/footer
 
     include includes/scripts

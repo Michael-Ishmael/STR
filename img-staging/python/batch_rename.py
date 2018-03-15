@@ -4,9 +4,9 @@ import os
 def rename_files(dir, find, rep, target_dir):
 	files = os.listdir(dir)
 	for file in files:
-		if file.endswith("jpg") and find in file:
+		if file.endswith("png"):
 			old_name = os.path.join(dir, file)
-			new_name = os.path.join(target_dir, file.replace(find, rep))
+			new_name = os.path.join(target_dir, file.replace(file, "logo-" + file))
 			os.rename(old_name, new_name)
 
 

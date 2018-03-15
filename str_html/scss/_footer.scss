@@ -89,6 +89,10 @@ footer nav ul.nav {
       &.medium {
         background-image: url("../img/medium-over.svg");
       }
+
+      &.newsletter {
+        background-image: url("../img/envelope.svg");
+      }
     }
 
   }
@@ -114,6 +118,11 @@ footer nav ul.nav {
     &.medium {
       background-image: url("../img/medium-over.svg");
 
+    }
+
+    &.newsletter {
+      background-image: url("../img/envelope-over.svg");
+      background-position-y: .35rem;
     }
 
     @include media-breakpoint-up(md){
@@ -142,6 +151,15 @@ footer nav ul.nav {
         background-image: url("../img/medium.svg");
         &:hover {
           background-image: url("../img/medium-over.svg");
+        }
+      }
+
+      &.newsletter {
+        background-image: url("../img/envelope.svg");
+        background-position-y: .35rem;
+
+        &:hover {
+          background-image: url("../img/envelope-over.svg");
         }
       }
     }

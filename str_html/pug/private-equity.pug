@@ -1,0 +1,64 @@
+include includes/globals
+-
+    var equitySteps = [
+    {
+    index: "1.",
+    title: "Analyze",
+    image: "img/icon-analyse.svg",
+    text: "For Private Equity investors our early phase <a href='/services.html#discovery'>Discovery</a> service provides an in-depth analysis of both the target company and the market, delivered with speed and precision. We report on the viability of an investment, and opportunities for improvement and value creation within the business. Our market analysis includes a level of competitor insight unmatched within the industry, helping us to build ideal client profiles, highlighting areas of risk, and accurately assessing the market opportunity."
+    },
+    {
+    index: "2.",
+    title: "Identify",
+    image: "img/icon-identify.svg",
+    text: "We identify the potential inhibitors to revenue growth and value creation within the target company and build a blueprint for change to help you tackle them. We focus on the 20% of change that delivers 80% of required business improvements, helping you realize the value of your investment in the shortest time possible.<br><br><a href='/services.html#expertise'>Read more about our areas of focus.</a>"
+    },
+    {
+    index: "3.",
+    title: "Improve",
+    image: "img/icon-improve.svg",
+    text: "Having identified areas for improvement, we roll up our sleeves and develop programs and an execution model to give you the RoI your strategy demands. Our value creation plans are focused on short term gains and longer-term business transformations. We combine this with targeted active insights, delivering granular analysis of customers, competitors or prospects right down to key decision makers’ preferences and behaviors. In this way, we commit to arming the teams within your newly acquired asset with the skills, knowledge and insight they need to accelerate sales performance and deliver sustained commercial improvement, making it easier for you to achieve your investment goals.<br><br><a href='/success-stories.html'>Read our success stories.</a>"
+    },
+    {
+    index: "4.",
+    title: "Exit",
+    image: "img/icon-exit.svg",
+    text: "When you achieve your investment goals we are on-hand to help you plan and manage an exit strategy."
+    }
+    ]
+
+    currentPage = 'Private Equity'
+
+doctype html
+html(lang="en")
+    include includes/head
+
+    body.str
+        include includes/header
+        main
+
+            section.container-fluid.bg-blue
+                    .str-hero.jumbotron
+                        h1.display-1.clr-white= 'Private '
+                            span.clr-bright-blue Equity
+
+                        p.lead.
+                            We deliver one of the most robust screening and due diligence Private Equity insight programs in the industry, analyzing the risk and identifying the opportunities for maximum RoI ahead of any merger or acquisition.
+
+            section.container-fluid.d-none.d-md-block
+                .row.str-equity-step-container.justify-content-center
+                    .col-12.col-md-10
+                        each step in equitySteps
+                            .str-equity-step
+                                .icon-container
+                                    img(src=step.image)
+                                .text-container
+                                    h3.display-3
+                                        span.heading-number= step.index
+                                        = ' ' + step.title
+                                    p!= step.text
+
+            include includes/trailer
+        include includes/footer
+
+    include includes/scripts

@@ -10,6 +10,7 @@ html(lang="en")
     body.str
         include includes/header
 
+
         main
 
             section.container-fluid.bg-blue
@@ -33,7 +34,6 @@ html(lang="en")
                                         h3.display-3(class=story.darkTitle ? "clr-dark-blue" : "clr-white")!= story.title
                                         h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
                                             a.overlay-link(href='#'+overlayId) read success story
-
 
             div.overlay-background(id="overlayBg", aria-hidden="true")
                 .container-fluid.position-relative.h-100.p-0
@@ -85,8 +85,6 @@ html(lang="en")
             .d-none.d-md-block
                 include includes/trailer
         include includes/footer
-
-
 
 
     include includes/scripts

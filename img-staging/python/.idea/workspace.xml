@@ -2,29 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36553b73-55f0-4862-afcf-f16f83601c08" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/envelope-over.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/envelope.svg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-dhl.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-dhl@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-dhl@3x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise@3x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-motorola.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-motorola@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-motorola@3x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters@3x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-vodafone.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-vodafone@2x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/img/logo-vodafone@3x.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/pug/private-equity.pug" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../str_html/scss/_equity.scss" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/batch_rename.py" afterPath="$PROJECT_DIR$/batch_rename.py" />
       <change beforePath="$PROJECT_DIR$/../../str_html/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../str_html/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/../../str_html/about-us.html" afterPath="$PROJECT_DIR$/../../str_html/about-us.html" />
       <change beforePath="$PROJECT_DIR$/../../str_html/css/main.css" afterPath="$PROJECT_DIR$/../../str_html/css/main.css" />
       <change beforePath="$PROJECT_DIR$/../../str_html/css/main.css.map" afterPath="$PROJECT_DIR$/../../str_html/css/main.css.map" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-dhl@2x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-dhl@3x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise@2x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-hewlett-packard-enterprise@3x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-motorola.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-motorola@2x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-motorola@3x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters@2x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-thomson-reuters@3x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-vodafone.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-vodafone@2x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/img/logo-vodafone@3x.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/index.html" afterPath="$PROJECT_DIR$/../../str_html/index.html" />
       <change beforePath="$PROJECT_DIR$/../../str_html/insights.html" afterPath="$PROJECT_DIR$/../../str_html/insights.html" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/js/app.js" afterPath="$PROJECT_DIR$/../../str_html/js/app.js" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/js/app.js.map" afterPath="$PROJECT_DIR$/../../str_html/js/app.js.map" />
       <change beforePath="$PROJECT_DIR$/../../str_html/pug/about-us.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/about-us.pug" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/pug/includes/mobile-nav.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/includes/mobile-nav.pug" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/pug/includes/footer.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/includes/footer.pug" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/pug/includes/globals.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/includes/globals.pug" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/pug/index.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/index.pug" />
       <change beforePath="$PROJECT_DIR$/../../str_html/pug/insights.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/insights.pug" />
       <change beforePath="$PROJECT_DIR$/../../str_html/pug/services.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/services.pug" />
       <change beforePath="$PROJECT_DIR$/../../str_html/pug/success-stories.pug" afterPath="$PROJECT_DIR$/../../str_html/pug/success-stories.pug" />
       <change beforePath="$PROJECT_DIR$/../../str_html/scss/_components.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_components.scss" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/scss/_header.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_header.scss" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/scss/_overlay.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_overlay.scss" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/scss/_footer.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_footer.scss" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/scss/_mixins.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_mixins.scss" />
       <change beforePath="$PROJECT_DIR$/../../str_html/scss/_picture-grid.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/_picture-grid.scss" />
+      <change beforePath="$PROJECT_DIR$/../../str_html/scss/main.scss" afterPath="$PROJECT_DIR$/../../str_html/scss/main.scss" />
       <change beforePath="$PROJECT_DIR$/../../str_html/services.html" afterPath="$PROJECT_DIR$/../../str_html/services.html" />
       <change beforePath="$PROJECT_DIR$/../../str_html/success-stories.html" afterPath="$PROJECT_DIR$/../../str_html/success-stories.html" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/ts/app.ts" afterPath="$PROJECT_DIR$/../../str_html/ts/app.ts" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/ts/overlay.ts" afterPath="$PROJECT_DIR$/../../str_html/ts/overlay.ts" />
-      <change beforePath="$PROJECT_DIR$/../../str_html/ts/rollover.ts" afterPath="$PROJECT_DIR$/../../str_html/ts/rollover.ts" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,15 +66,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python$batch_rename.coverage" NAME="batch_rename Coverage Results" MODIFIED="1521069650539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$batch_rename.coverage" NAME="batch_rename Coverage Results" MODIFIED="1521113779450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="batch_rename.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/batch_rename.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,7 +83,7 @@
       <file leaf-file-name="posixpath.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/posixpath.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
+            <state relative-caret-position="1065">
               <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
               <folding />
             </state>
@@ -76,9 +108,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="339" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="30" />
+    <option name="y" value="35" />
     <option name="width" value="1680" />
     <option name="height" value="961" />
   </component>
@@ -109,8 +141,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -173,29 +205,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="339" y="23" width="1680" height="961" extended-state="0" />
+    <frame x="30" y="35" width="1680" height="961" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977462" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33576643" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1947497" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33576643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1996337" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3890866" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -207,14 +239,22 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/batch_rename.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/posixpath.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="1125">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding />
         </state>
@@ -222,8 +262,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/batch_rename.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="46" lean-forward="true" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/posixpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1065">
+          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/batch_rename.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
