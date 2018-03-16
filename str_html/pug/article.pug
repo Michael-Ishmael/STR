@@ -1,0 +1,164 @@
+include includes/globals
+-
+
+    var article = {
+        title: "3 Quick Strategies to Drive Sales Productivity",
+        image: "img/article-feature-img.jpg",
+        bgClass: 'stripe-article-bg-2',
+        author: {
+            id: "team-robert-f",
+            fullName: 'Robert Fox',
+            title: 'Senior Consultant',
+            image: 'img/oval-robert-f.png'
+        },
+        skills: [
+        "expertise-tools",
+        "expertise-performance",
+        "expertise-training"
+        ],
+        body: '<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dolor nunc, ' +
+        'pellentesque at posuere vel, egestas non nulla. Duis tristique risus sit amet posuere placerat.' +
+        ' Vivamus a pretium libero. Fusce mollis sodales diam. Sed mattis dolor vel ultricies.</p>' +
+        '<p>Morbi quis felis at neque venenatis euismod et vel justo. Quisque elit metus, vestibulum ' +
+        'auctor viverra vitae, congue vitae sem. In maximus non dui id mattis. Praesent pretium libero ' +
+        'eget tempus luctus. Morbi sed purus volutpat, vestibulum eros at, commodo sapien. Class aptent ' +
+        'taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tempor ' +
+        'scelerisque ipsum sit amet dapibus. Praesent ullamcorper at diam sit amet eleifend. Donec sit ' +
+        'amet suscipit lorem, non congue nisl.</p>' +
+        '<h4 class="display-4">Sales Tools & Process Application</h3>' +
+        '<p>Quisque nec semper justo, vitae ornare sem. Phasellus nec condimentum metus. Integer nisl ' +
+        'mauris, suscipit quis risus sit amet, tempus mattis lacus. Nullam ut pharetra nisl, non tincidunt ' +
+        'nunc. In faucibus velit tellus, et molestie ante sodales vel. Aliquam congue ex sed tellus eleifend, ' +
+        'in malesuada eros sollicitudin.</p>' +
+        '<img class="article-main" src="img/article-feature-img.jpg">' +
+        '<div class="picture-caption">' +
+        '<span class="caption">Praesent ullamcorper at diam sit amet eleifend.</span>' +
+        '<span class="credit">Credit: <a href="#">GettyImages</a></span>' +
+        '</div>' +
+        '<h4 class="display-4">Recruiting, On-boarding & Re-boarding</h3>' +
+        '<p>Morbi quis felis at neque venenatis euismod et vel justo. Quisque elit metus, vestibulum auctor ' +
+        'viverra vitae, congue vitae sem. In maximus non dui id mattis. Praesent pretium libero eget tempus ' +
+        'luctus. Morbi sed purus volutpat, vestibulum eros at, commodo sapien. Class aptent taciti sociosqu ' +
+        'ad litora torquent per conubia nostra, per inceptos himenaeos. Sed tempor scelerisque ipsum sit amet ' +
+        'dapibus. Praesent ullamcorper at diam sit amet eleifend. Donec sit amet suscipit lorem, non congue ' +
+        'nisl. Quisque nec semper justo, vitae ornare sem. Phasellus nec condimentum metus. Integer nisl ' +
+        'mauris, suscipit quis risus sit amet, tempus mattis lacus. Nullam ut pharetra nisl, non tincidunt ' +
+        'nunc. In faucibus velit tellus, et molestie ante sodales vel. Aliquam congue ex sed tellus eleifend, ' +
+        'in malesuada eros sollicitudin.</p>' +
+        '<div class="quote">' +
+        '<q>Success is walking from failure to failure with no loss of enthusiasm.</q>' +
+        '<p class="quote-author">Winston Churchill</p> ' +
+        '</div>' +
+        '<p>Phasellus nec condimentum metus. Integer nisl mauris, suscipit quis risus sit amet, tempus mattis ' +
+        'lacus. Nullam ut pharetra nisl, non tincidunt nunc. In faucibus velit tellus, et molestie ante sodales ' +
+        'vel. Aliquam congue ex sed tellus eleifend, in malesuada eros sollicitudin.</p>' +
+        '<p>Nullam ut pharetra nisl, non tincidunt nunc:</p>\n'+
+        '<ul>'+
+        '<li>' +
+        '<span class="number">1.</span>' +
+        '<span class="text">Phasellus nec condimentum metus. Integer nisl mauris, suscipit quis risus sit amet, tempus mattis ' +
+        'lacus. Nullam ut pharetra nisl, non tincidunt nunc. In faucibus velit tellus, et molestie ante sodales ' +
+        'vel. Aliquam congue ex sed tellus eleifend, in malesuada eros sollicitudin.</li>'+
+        '<li>' +
+        '<span class="number">2.</span>' +
+        '<span class="text">Phasellus nec condimentum metus. Integer nisl mauris, suscipit quis risus sit amet, tempus mattis ' +
+        'lacus. Nullam ut pharetra nisl, non tincidunt nunc. In faucibus velit tellus, et molestie ante sodales ' +
+        'vel. Aliquam congue ex sed tellus eleifend, in malesuada eros sollicitudin.</span></li>'+
+        '</ul>'+
+        '<p>Phasellus nec condimentum metus. Integer nisl mauris, suscipit quis risus sit amet, tempus mattis ' +
+        'lacus. Nullam ut pharetra nisl, non tincidunt nunc. In foci\'s velit tellus, et molestie ante sodales ' +
+        'vel. Aliquam congue ex sed tellus eleifend, in malesuada eros sollicitudin.</p>'
+    }
+
+    currentPage = 'Insights'
+
+doctype html
+html(lang="en")
+    include includes/head
+
+    body.str.article-template
+        include includes/mobile-nav
+        header.home.bg-blue.container-fluid.p-0
+            img(src="img/article-hero.jpg").d-none.d-md-block
+
+            .article-nav-container
+                .row.align-items-center.justify-content-center
+                    .col-8.col-md-2.col-lg-3.p-0.pl-3
+                        .logo-container.ml-2.ml-lg-3.pt-3.pt-lg-4.pb-2.pt-lg-4
+                            a(href="/")
+                                img.logo(src='img/logo-strategy-to-revenue.svg')
+                    .d-none.d-md-block.col-md-10.col-lg-9.p-0.pr-2
+                        nav.text-right.mr-4.mr-xl-5
+                            ul.nav.justify-content-end.pr-0.pr-xl-2
+
+                                each navItem in navItems
+                                    li.nav-item
+                                        a.nav-link(href=navItem.link, class=currentPage == navItem.name ? 'active' : '')= navItem.name
+
+                    .col-4.d-md-none.text-right
+                        button#mobile-menu-button.hamburger.hamburger--spin.clr-white(type="button")
+                            span.hamburger-box
+                                span.hamburger-inner
+            .mobile-img-container.position-relative.d-md-none
+                img(src="img/article-hero-sml.jpg")
+                img.h-align.gradient(src="img/shadow.png")
+
+        main
+
+            .top-marker
+
+            .container-fluid.p-0
+                article
+                    .tools.d-none.d-md-block
+                        a.tool-item
+                            i.print
+                            span print
+                        a.tool-item
+                            i.share
+                            span share
+                    .top-marker
+                    .article-header.clearfix
+
+                        .author
+                            img(src=article.author.image)
+                            .author-details
+                                h4= article.author.fullName
+                                h6= article.author.title
+                        h2.display-2= article.title
+                        .skills.consultant-skill-box
+                            each skill in article.skills
+                              if expSkill = expertiseDict[skill]
+                                  a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
+                              else
+                                  a.skill(href="#")= skill
+                    .article-body!= article.body
+
+                    .top-marker
+
+            section.more-insights.container-fluid.p-0
+                h3.display-3 Discover More Insights From Our Experts
+                each fInsight in insights
+                    .row(class=fInsight.bgClass, onclick="window.location='/article.html';").str-insight-stripe
+                        .col-1.col-sm-2
+                        .col-10.col-sm-8
+                            .insight-info.text-left
+                                .img-container
+                                    img.d-inline-block(src=fInsight.author.image)
+                                .insight-details
+                                    h6= fInsight.author.fullName + ', ' + fInsight.author.title
+                                    h4= fInsight.title
+                        .col-1.col-sm-2
+
+            -
+                var trailerSettings = {
+                titleWhite: "Our Services and ",
+                titleBlue: "Expertise",
+                buttonCaption: "Show Services",
+                backgroundClass: "services",
+                link: "services"
+                };
+
+            include includes/trailer
+        include includes/footer
+
+    include includes/scripts

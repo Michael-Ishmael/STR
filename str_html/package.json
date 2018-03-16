@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "lr-http-server -p 8940",
-    "buildPugs": "pug pug/index.pug pug/services.pug pug/about-us.pug pug/success-stories.pug pug/insights.pug pug/private-equity.pug --out ."
+    "buildPugs": "pug pug/index.pug pug/services.pug pug/about-us.pug pug/success-stories.pug pug/insights.pug pug/private-equity.pug -P --out ."
   },
   "author": "Michael Ishmael",
   "license": "ISC",

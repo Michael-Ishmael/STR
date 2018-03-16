@@ -31,11 +31,11 @@ html(lang="en")
             section.container-fluid
                 .row.text-center
                     each insight in leadInsights
-                        .col-12.col-md-6.str-insight-pic
+                        .col-12.col-md-6.str-insight-pic(onclick="window.location='/article.html';")
                             .insight-image-tile.w-100
                                 img.h-align(src=insight.image)
                                 img.h-align.gradient(src="img/shadow.png")
-                                .insight-info.text-left.p-5
+                                .insight-info.text-left
 
                                     .author
                                         img.d-inline-block(src=insight.author.image)
@@ -45,11 +45,11 @@ html(lang="en")
                                     .article-title
                                         h4.display-5.clr-white(class=insight.title.length < 80 ? "lge" : "")!= insight.title
 
-                                    a.btn.btn-primary.text-uppercase(href=insight.link) Read Article
+                                    a.btn.btn-primary.text-uppercase(href=insight.link).d-none.d-md-inline-block Read Article
 
             section.container-fluid
                 each fInsight in followInsights
-                        .row(class=fInsight.bgClass).str-insight-stripe
+                        .row(class=fInsight.bgClass, onclick="window.location='/article.html';").str-insight-stripe
                             .col-1.col-sm-2
                             .col-10.col-sm-8
                                 .insight-info.text-left

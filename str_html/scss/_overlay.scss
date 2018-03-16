@@ -337,39 +337,43 @@
 
     }
 
-    .consultant-skill-box {
-      margin-top: 1rem;
+
+
+  }
+
+}
+
+.consultant-skill-box {
+  margin-top: 1rem;
+
+  a.skill{
+
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.5rem;
+    display: inline-block;
+
+    border: 1px solid $mid-cream;
+    margin-right: .6rem;
+    margin-bottom: .7rem;
+    padding: 1.6rem 2.2rem;
+    @include border-radius(5rem);
+
+    @include media-breakpoint-up(md){
+      font-size: .7rem;
+      padding: .8rem 1.6rem;
     }
 
-    a.skill{
-
-      line-height: 1;
-      font-weight: 500;
-      font-size: 1.5rem;
-      display: inline-block;
-
-      border: 1px solid $mid-cream;
-      margin-right: .6rem;
-      margin-bottom: .7rem;
-      padding: 1.6rem 2.2rem;
-      @include border-radius(5rem);
-
-      @include media-breakpoint-up(md){
-        font-size: .7rem;
-        padding: .8rem 1.6rem;
-      }
-
-      &:hover {
-        background-color: $dark-blue;
-        border: 1px solid $dark-blue;
-        color: $corn-yellow;
-      }
-
+    &:hover {
+      background-color: $dark-blue;
+      border: 1px solid $dark-blue;
+      color: $corn-yellow;
     }
 
   }
 
 }
+
 
 
 

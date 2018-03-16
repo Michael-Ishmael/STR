@@ -122,7 +122,7 @@ html(lang="en")
                                             h5.display-5(class=story.darkTitle ? "clr-dark-blue" : "clr-white")
                                                 a.overlay-link(href='#'+overlayId) read success story
 
-                    .col-12.col-sm-6.str-insight-pic
+                    .col-12.col-sm-6.str-insight-pic(onclick="window.location='/article.html';")
                         .insight-image-tile.w-100
                             img(src=homeInsight.image).w-100
                             img.h-align.gradient(src="img/shadow.png")
@@ -132,10 +132,10 @@ html(lang="en")
                                     .author-details.d-inline-block
                                         h4= homeInsight.author.fullName
                                         h6= homeInsight.author.title
-                                .article-title
+                                .article-title.single
                                     h4.display-5.clr-white!= homeInsight.title
 
-                                a.btn.btn-primary.text-uppercase(href=homeInsight.link).d-none.d-md-block Read Article
+                                a.btn.btn-primary.text-uppercase(href=homeInsight.link).d-none.d-md-inline-block Read Article
 
 
             section.container-fluid.clients.bg-mid-cream
