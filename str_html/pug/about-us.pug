@@ -36,15 +36,17 @@ html(lang="en")
                                     img.h-align.overlay.overlay-link(src=consultant.image.replace('.jpg', '_blur.jpg'), data-overlay=consultant.overlayId)
                                     .name-caption-container.text-center
                                         .buttons.upper
-                                            a.button(href=twitterLink)
-                                                img(src='img/twitter-white.svg')
-                                            a.button(href=linkedInLink)
-                                                img(src='img/linked-in-white.svg')
+                                            if(consultant.twitter)
+                                                a.button(href=consultant.twitter, target="_blank")
+                                                    img(src='img/twitter-white.svg')
+                                            if(consultant.linkedIn)
+                                                a.button(href=consultant.linkedIn, target="_blank")
+                                                    img(src='img/linked-in-white.svg')
                                             a.button(href='mailto:' + consultant.email)
                                                 img(src='img/email-white.svg')
                                                 |  email
 
-
+                                            
                                         .v-spacer
                                         h3.display-3.clr-white= consultant.fullName
 
@@ -143,7 +145,6 @@ html(lang="en")
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
                                                 .cross
-
 
             include includes/trailer
         include includes/footer

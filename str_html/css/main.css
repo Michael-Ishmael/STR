@@ -1623,7 +1623,7 @@ section {
         .wide-picture-grid .str-grid-pic .about-us-image-tile h4.display-4, .wide-picture-grid .str-grid-pic .success-image-tile h4.display-4 {
           font-size: 3.2rem; } }
     .wide-picture-grid .str-grid-pic .about-us-image-tile h3.display-3, .wide-picture-grid .str-grid-pic .success-image-tile h3.display-3 {
-      margin: 1rem; }
+      margin: 1rem 1rem 1rem 0; }
     .wide-picture-grid .str-grid-pic .about-us-image-tile h6.title, .wide-picture-grid .str-grid-pic .success-image-tile h6.title {
       color: #fff;
       font-size: .7rem;
@@ -2122,7 +2122,11 @@ footer nav ul.nav {
   .overlay-background .overlay {
     display: none;
     overflow: hidden;
-    position: absolute; }
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
   .overlay-background .overlay-image-container {
     overflow: hidden; }
   .overlay-background .close-button-bar {
