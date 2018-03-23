@@ -2,13 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d175bb44-b636-4778-b5e6-3f0b7db82939" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/about-us.html" afterPath="$PROJECT_DIR$/about-us.html" />
-      <change beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change beforePath="$PROJECT_DIR$/css/main.css.map" afterPath="$PROJECT_DIR$/css/main.css.map" />
-      <change beforePath="$PROJECT_DIR$/pug/about-us.pug" afterPath="$PROJECT_DIR$/pug/about-us.pug" />
-      <change beforePath="$PROJECT_DIR$/pug/includes/globals.pug" afterPath="$PROJECT_DIR$/pug/includes/globals.pug" />
-      <change beforePath="$PROJECT_DIR$/scss/_overlay.scss" afterPath="$PROJECT_DIR$/scss/_overlay.scss" />
-      <change beforePath="$PROJECT_DIR$/scss/_picture-grid.scss" afterPath="$PROJECT_DIR$/scss/_picture-grid.scss" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../str_wordpress/wp-content/plugins/strategy-to-revenue/includes/templates/str_page_inclusion_box.php" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/img/success-motorola.jpg" afterPath="$PROJECT_DIR$/img/success-motorola.jpg" />
+      <change beforePath="$PROJECT_DIR$/img/success-motorola@2x.jpg" afterPath="$PROJECT_DIR$/img/success-motorola@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/img/success-motorola@3x.jpg" afterPath="$PROJECT_DIR$/img/success-motorola@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/../str_wordpress/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../str_wordpress/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../str_wordpress/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-Custom-Page.php" afterPath="$PROJECT_DIR$/../str_wordpress/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-Custom-Page.php" />
+      <change beforePath="$PROJECT_DIR$/../str_wordpress/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php" afterPath="$PROJECT_DIR$/../str_wordpress/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,7 +32,7 @@
             <entry file="file://$PROJECT_DIR$/pug/index.pug">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="420">
-                  <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+                  <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -41,7 +42,7 @@
             <entry file="file://$PROJECT_DIR$/ts/app.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1275">
-                  <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+                  <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
@@ -68,7 +69,7 @@
             <entry file="file://$PROJECT_DIR$/scss/_components.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="146">
-                  <caret line="592" column="0" lean-forward="true" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
+                  <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -78,7 +79,7 @@
             <entry file="file://$PROJECT_DIR$/scss/_article.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="439">
-                  <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+                  <caret line="377" column="9" lean-forward="false" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
                   <folding>
                     <element signature="e#860#1571#0" expanded="false" />
                     <element signature="e#1595#2980#0" expanded="false" />
@@ -102,7 +103,7 @@
             <entry file="file://$PROJECT_DIR$/scss/_picture-grid.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="870">
-                  <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+                  <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
@@ -112,7 +113,7 @@
             <entry file="file://$PROJECT_DIR$/scss/_header.scss">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="150">
-                  <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+                  <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -132,7 +133,7 @@
             <entry file="file://$PROJECT_DIR$/pug/includes/header.pug">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="135">
-                  <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="26" />
+                  <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
@@ -471,7 +472,7 @@
       <workItem from="1521028596249" duration="113000" />
       <workItem from="1521030838999" duration="14000" />
       <workItem from="1521030899884" duration="15201000" />
-      <workItem from="1521143694890" duration="28663000" />
+      <workItem from="1521143694890" duration="28762000" />
     </task>
     <task id="LOCAL-00001" summary="Windows commit">
       <created>1519400449380</created>
@@ -624,7 +625,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303819000" />
+    <option name="totallyTimeSpent" value="303918000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -989,7 +990,7 @@
     <entry file="file://$PROJECT_DIR$/scss/_header.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1007,7 +1008,7 @@
     <entry file="file://$PROJECT_DIR$/scss/_article.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
-          <caret line="377" column="9" lean-forward="true" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
+          <caret line="377" column="9" lean-forward="false" selection-start-line="377" selection-start-column="9" selection-end-line="377" selection-end-column="9" />
           <folding>
             <element signature="e#860#1571#0" expanded="false" />
             <element signature="e#1595#2980#0" expanded="false" />
@@ -1059,7 +1060,7 @@
     <entry file="file://$PROJECT_DIR$/pug/includes/header.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="26" />
+          <caret line="9" column="8" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1067,7 +1068,7 @@
     <entry file="file://$PROJECT_DIR$/scss/_components.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="592" column="0" lean-forward="true" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
+          <caret line="592" column="0" lean-forward="false" selection-start-line="592" selection-start-column="0" selection-end-line="592" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1075,7 +1076,7 @@
     <entry file="file://$PROJECT_DIR$/pug/index.pug">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1083,7 +1084,7 @@
     <entry file="file://$PROJECT_DIR$/scss/_picture-grid.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
-          <caret line="58" column="7" lean-forward="true" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+          <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -1091,7 +1092,7 @@
     <entry file="file://$PROJECT_DIR$/ts/app.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
-          <caret line="87" column="22" lean-forward="true" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
           <folding />
         </state>
       </provider>

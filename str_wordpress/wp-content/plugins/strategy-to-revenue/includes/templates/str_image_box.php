@@ -14,10 +14,11 @@ $your_img_src = wp_get_attachment_image_src( $your_img_id, 'full' );
 $you_have_img = is_array( $your_img_src );
 ?>
 
+
 <!-- Your image container, which can be manipulated with js -->
 <div class="custom-img-container">
 	<?php if ( $you_have_img ) : ?>
-        <img src="<?php echo $your_img_src[0] ?>" alt="" style="max-width:100%;"/>
+        <img src="<?php echo $your_img_src[0] ?>" alt="" style="max-width:50%;"/>
 	<?php endif; ?>
 </div>
 
@@ -29,6 +30,9 @@ $you_have_img = is_array( $your_img_src );
        href="<?php echo $upload_link ?>">
 		<?php _e( 'Choose Image' ) ?>
     </a></h4>
+<p>
+	<?php echo  _e($str_instruction) ?>
+</p>
 <h4>
     <a class="delete-custom-img <?php if ( ! $you_have_img ) {
 		echo 'hidden';
