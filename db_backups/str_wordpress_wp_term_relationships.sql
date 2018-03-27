@@ -1,0 +1,11 @@
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (1, 1, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (18, 2, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (19, 2, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (21, 2, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (22, 3, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (23, 3, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (24, 3, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (25, 3, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (26, 3, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (37, 2, 0);
+INSERT INTO str_wordpress.wp_term_relationships (object_id, term_taxonomy_id, term_order) VALUES (70, 2, 0);

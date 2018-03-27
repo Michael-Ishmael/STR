@@ -1,0 +1,28 @@
+@mixin transition($property: all, $duration: .5) {
+  -webkit-transition: $property $duration + s;
+  -moz-transition: $property $duration + s;
+  -ms-transition: $property $duration + s;
+  -o-transition: $property $duration + s;
+  transition: $property $duration + s;
+
+}
+
+@mixin placeholder-align($value: left){
+
+  ::-webkit-input-placeholder {
+    text-align: $value;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+    text-align: $value;
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: $value;
+  }
+
+  :-ms-input-placeholder {
+    text-align: $value;
+  }
+
+}

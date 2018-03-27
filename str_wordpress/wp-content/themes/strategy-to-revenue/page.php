@@ -17,8 +17,6 @@
 
 				<br class="clear">
 
-
-
 			</article>
 			<!-- /article -->
 

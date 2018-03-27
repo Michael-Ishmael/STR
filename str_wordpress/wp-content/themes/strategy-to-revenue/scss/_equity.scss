@@ -1,0 +1,74 @@
+
+
+.str-equity-step-container {
+
+  margin: 0 auto;
+  padding: 1rem 0 4rem;
+
+  .str-equity-step {
+
+    margin-top: 3rem;
+
+    .icon-container {
+
+      float: left;
+      display: inline-block;
+      width: 6.4rem;
+      height: 6.4rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .text-container {
+      margin-left: 9.9rem;
+      display: block;
+      width: auto;
+
+      p {
+        font-weight: 400;
+        margin-top: 1.4rem;
+
+        br.under-link {
+          line-height: 3;
+        }
+
+        a {
+          color: $bright-blue;
+          font-weight: 400;
+        }
+      }
+
+    }
+
+    @include media-breakpoint-down(sm){
+
+      .icon-container {
+        float: none;
+        display: block;
+        margin: 0 auto 1.4rem;
+        width: 9.14rem;
+        height: 9.14rem;
+      }
+
+      .text-container {
+        margin-left: 0;
+
+        h3 {
+          text-align: center;
+          font-size: 2.57rem;
+        }
+
+        p {
+          font-size: 1.285rem;
+          line-height: 1.67;
+        }
+      }
+
+    }
+
+
+  }
+
+}

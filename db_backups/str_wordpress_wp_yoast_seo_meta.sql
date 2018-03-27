@@ -1,0 +1,9 @@
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (3, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (12, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (27, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (31, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (33, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (34, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (35, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (36, 0, 0);
+INSERT INTO str_wordpress.wp_yoast_seo_meta (object_id, internal_link_count, incoming_link_count) VALUES (39, 0, 0);

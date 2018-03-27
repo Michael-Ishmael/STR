@@ -7,7 +7,7 @@ $meta_field_text = get_post_meta($post->ID, $field_name, true);
 ?>
 
 <p>
-	<label class="mtlabel" for="<?= $field_name ?>">Add text for the challenge section of the success story here</label>
+	<label class="mtlabel" for="<?= $field_name ?>"><?php echo $instruction ?> </label>
 	<!-- Create / Call The TinyMCE Editor -->
 	<?php wp_editor( $meta_field_text, $field_name, array(
 		'wpautop'       => true,

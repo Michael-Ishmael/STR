@@ -87,6 +87,56 @@ function html5blank_nav()
 	);
 }
 
+function str_nav($str_location)
+{
+    $wrap_class_string = 'nav';
+    if($str_location == 'header') $wrap_class_string .= ' justify-content-end';
+    if($str_location == 'footer') $wrap_class_string .= ' justify-content-center';
+
+
+	wp_nav_menu(
+		array(
+			'theme_location'  => 'header-menu',
+			'menu'            => '',
+			'container'       => 'div',
+			'container_class' => 'menu-{menu slug}-container',
+			'container_id'    => '',
+			'menu_class'      => 'nav',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul class="' . $wrap_class_string .'">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+		)
+	);
+}
+
+function str_add_menu_classes($menu_list, $args){
+
+    $home_key = null;
+    foreach ( $menu_list as $key=>$menu_item ) {
+        array_push($menu_item->classes, 'nav-item');
+        if($args->theme_location=='header-menu' && $menu_item->post_name=='home'){
+            $home_key = $key;
+        }
+    }
+    if($home_key !== null) unset($menu_list[$home_key]);
+
+	return $menu_list;
+}
+
+function str_add_menu_link_atts($atts, $item) {
+	$att_class_names = "nav-link";
+	if($item->post_name == get_post()->post_name) $att_class_names .= ' active';
+	$atts['class'] = $att_class_names;
+	return $atts;
+}
+
 // Load HTML5 Blank scripts (header.php)
 function html5blank_header_scripts()
 {
@@ -112,14 +162,70 @@ function html5blank_conditional_scripts()
     }
 }
 
+
+function str_system_js() {
+	?>
+    <script>
+        SystemJS.import('app')
+    </script>
+	<?php
+}
+
+function str_scripts()
+{
+    /*
+
+	script(src="node_modules/gsap/TweenMax.js")
+script(src="node_modules/gsap/CSSPlugin.js")
+//script(src="node_modules/hammerjs/hammer.min.js")
+script(src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js")
+script(data-main="js/app" src="node_modules/systemjs/dist/system-production.js")
+*/
+
+
+	wp_enqueue_script('bc-swipe', get_template_directory_uri() . '/js/lib/jquery.bcSwipe.js', array('jquery'), '1.0.0');
+
+	wp_enqueue_script('gsap-tween', get_template_directory_uri() . '/node_modules/gsap/TweenMax.js', array(), '1.0.0');
+	wp_enqueue_script('gsap-css', get_template_directory_uri() . '/node_modules/gsap/CSSPlugin.js', array(), '1.0.0');
+	wp_enqueue_script('promise-fix', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js', array(), '1.0.0');
+	wp_enqueue_script('system-js', get_template_directory_uri() . '/node_modules/systemjs/dist/system-production.js', array(), '1.0.0');
+
+
+	wp_register_script('str-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0');
+	wp_enqueue_script('str-app');
+
+	wp_add_inline_script('str-app','SystemJS.import(\'app\')');
+
+}
+
+function str_styles()
+{
+    //link(href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700", rel="stylesheet")
+
+	wp_register_style('work_sans', 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700', array(), '1.0', 'all');
+
+	wp_register_style('str_main', get_template_directory_uri() . '/css/main.css', array('work_sans'), '1.0', 'all');
+	wp_enqueue_style('str_main'); // Enqueue it!
+}
+
+function str_body_class($classes){
+
+	return array_merge( $classes, array( 'str' ) );
+
+}
+
 // Load HTML5 Blank styles
 function html5blank_styles()
 {
-    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
+/*    wp_register_style('normalize', get_template_directory_uri() . '/normalize.css', array(), '1.0', 'all');
     wp_enqueue_style('normalize'); // Enqueue it!
 
     wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('html5blank'); // Enqueue it!
+
+	wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
+	wp_enqueue_style('html5blank'); // Enqueue it!*/
+
 }
 
 // bootstrap
@@ -366,6 +472,8 @@ add_action('init', 'html5blank_header_scripts'); // Add Custom Scripts to wp_hea
 add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditional Page Scripts
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
+add_action('wp_enqueue_scripts', 'str_styles'); // Add STR Stylesheets
+add_action('wp_enqueue_scripts', 'str_scripts'); // Add STR Scripts
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
 //add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
@@ -387,7 +495,11 @@ remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 
 // Add Filters
 add_filter('avatar_defaults', 'html5blankgravatar'); // Custom Gravatar in Settings > Discussion
+add_filter('wp_nav_menu_objects', 'str_add_menu_classes', 10, 2);
+add_filter('nav_menu_link_attributes', 'str_add_menu_link_atts', 10, 2);
+
 add_filter('body_class', 'add_slug_to_body_class'); // Add slug to body class (Starkers build)
+add_filter('body_class', 'str_body_class'); // Add slug to body class (Starkers build)
 add_filter('widget_text', 'do_shortcode'); // Allow shortcodes in Dynamic Sidebar
 add_filter('widget_text', 'shortcode_unautop'); // Remove <p> tags in Dynamic Sidebars (better!)
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
@@ -405,7 +517,7 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
-
+remove_filter( 'the_content', 'wpautop' );
 // Shortcodes
 add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
 add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.

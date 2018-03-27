@@ -1,18 +1,21 @@
 			<!-- footer -->
-			<footer class="footer" role="contentinfo">
-
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
-
-			</footer>
+            <footer class="container-fluid">
+                <div class="container">
+                    <div class="row justify-content-center social-media">
+                        <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
+                        <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
+                        <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
+                        <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="/#newsletter"><i class="sm-icon newsletter"></i><span>Newsletter</span></a></div>
+                    </div>
+                </div>
+                <div class="cream-border"></div>
+                <nav class="footer-menu p-4">
+	                <?php str_nav('footer'); ?>
+                </nav>
+                <div class="copyright text-center">Strategy to Revenue. All rights reserved Ⓒ 2018</div>
+            </footer>
 			<!-- /footer -->
 
-		</div>
-		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
 

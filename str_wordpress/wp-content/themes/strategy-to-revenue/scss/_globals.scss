@@ -1,0 +1,192 @@
+html {
+  font-size: 12px;
+
+  @media screen and (min-width: 350px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 900px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1260px) {
+    font-size: 20px;
+
+  }
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: $light-cream;
+  color: $mid-grey-yellow;
+}
+
+a {
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+}
+
+button:focus {outline:0;}
+
+h1, h2, h3, h4, h5 {
+  color: $dark-blue;
+  font-family: Apercu, "Work Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3.6rem;
+}
+
+.display-hero {
+  font-size: 4.286rem;
+  line-height: .93;
+  margin-bottom: 2rem;
+
+  @media screen and (min-width: 576px) {
+    font-size: 7.5rem;
+  }
+}
+
+.display-1 {
+  font-size: 4rem;
+  line-height: 1;
+
+  @media screen and (min-width: 576px) {
+    font-size: 5rem;
+  }
+}
+
+.display-2 {
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.display-3 {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+.display-4 {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+}
+
+
+.display-5 {
+  font-size: .9rem;
+  font-weight: 400;
+  line-height: 1.33;
+
+}
+
+h6.display-6 {
+  font-size: .7rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 500;
+  line-height: 1.29;
+  color: $mid-grey-yellow
+}
+
+p {
+
+  font-size: 16px;
+
+  @include media-breakpoint-up(sm){
+    font-size: 18px;
+  }
+
+  @include media-breakpoint-up(md){
+    font-size: .9rem;
+  }
+
+  line-height: 1.78;
+  font-weight: 300;
+}
+
+img{
+  //height: 100%;
+}
+
+header,
+section,
+footer {
+  margin: 0;
+  padding: 1px; /* tweaked from 0 to 1px */
+
+  & > div {
+    margin: -1px;
+  }
+}
+
+.font-weight-bold {
+  font-weight: 600!important;
+}
+
+$bg-color-list: (blue: $dark-blue, yellow: $corn-yellow,
+        light-cream: $light-cream,
+        mid-cream: $mid-cream, bright-blue: $bright-blue
+);
+
+// @each($key, $value)
+@each $key, $value in $bg-color-list {
+  .bg-#{$key} {
+    background-color: $value;
+  }
+}
+
+[data-toggle~="collapse"] {
+  cursor: pointer;
+}
+
+$txt-color-list: (dark-blue: $dark-blue, white: $white, bright-blue: $bright-blue, mid-blue: $mid-blue, corn-yellow: $corn-yellow);
+
+@each $key, $value in $txt-color-list {
+  .clr-#{$key} {
+    color: $value!important;
+  }
+}
+
+$blur-amount: 50px;
+
+.blur-image {
+  filter: blur($blur-amount);
+  // Browser Specific
+  -webkit-filter: blur($blur-amount);
+  -moz-filter: blur($blur-amount);
+  -o-filter: blur($blur-amount);
+  -ms-filter: blur($blur-amount);
+
+}
+
+.h-align {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.o-hidden {
+  overflow: hidden;
+}
+
+.str {
+  .container-fluid {
+    max-width: 1440px;
+  }
+
+  .box-link {
+    cursor: pointer;
+  }
+}
+
+.overlay-link {
+  cursor: pointer;
+}

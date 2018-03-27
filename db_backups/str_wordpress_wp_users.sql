@@ -1,0 +1,1 @@
+INSERT INTO str_wordpress.wp_users (ID, user_login, user_pass, user_nicename, user_email, user_url, user_registered, user_activation_key, user_status, display_name) VALUES (1, 'michaeli', '$P$Bfb9hE1z6ZjL0.VPg7HGZRBi/Pilne0', 'michaeli', 'mail@michaelishmael.com', '', '2018-02-09 15:31:04', '', 0, 'michaeli');

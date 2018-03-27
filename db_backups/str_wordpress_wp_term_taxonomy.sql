@@ -1,0 +1,3 @@
+INSERT INTO str_wordpress.wp_term_taxonomy (term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (1, 1, 'category', '', 0, 1);
+INSERT INTO str_wordpress.wp_term_taxonomy (term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (2, 2, 'nav_menu', '', 0, 5);
+INSERT INTO str_wordpress.wp_term_taxonomy (term_taxonomy_id, term_id, taxonomy, description, parent, count) VALUES (3, 3, 'nav_menu', '', 0, 5);
