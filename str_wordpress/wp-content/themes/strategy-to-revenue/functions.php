@@ -102,7 +102,7 @@ function str_nav($str_location)
 			'container_class' => 'menu-{menu slug}-container',
 			'container_id'    => '',
 			'menu_class'      => 'nav',
-			'menu_id'         => '',
+			'menu_id'         => $str_location,
 			'echo'            => true,
 			'fallback_cb'     => 'wp_page_menu',
 			'before'          => '',
@@ -125,7 +125,7 @@ function str_add_menu_classes($menu_list, $args){
             $home_key = $key;
         }
     }
-    if($home_key !== null) unset($menu_list[$home_key]);
+    if($args->menu_id == 'header' && $home_key !== null) unset($menu_list[$home_key]);
 
 	return $menu_list;
 }

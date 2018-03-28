@@ -203,8 +203,6 @@ class STR_Success_Story_Page extends STR_Custom_Admin_Page {
 
 	function add_meta_boxes() {
 
-		// TODO: Implement add_meta_boxes() method.
-
 		add_meta_box(
 			'str_page_inclusion_meta',
 			"Page Inclusion",
@@ -310,21 +308,6 @@ class STR_Success_Story_Page extends STR_Custom_Admin_Page {
 
 	}
 
-/*	function str_inclusion_metabox($post) {
-
-		try{
-
-			$str_template_path = STR_PLUGIN_PATH . 'includes/templates/str_page_inclusion_box.php';
-
-			include( $str_template_path );
-
-		} catch (\Exception $e){
-
-			echo '<div id="str_inclusion_widget"><p>There has been an error generating this widget</p><p>'. $e->getMessage() .'</p></div>';
-
-		}
-
-	}*/
 
 	function str_challenge_metabox($post, $box) {
 
@@ -593,5 +576,218 @@ class STR_Services_Page extends STR_Custom_Admin_Page {
 		}
 
 	}
+
+}
+
+class STR_Team_Member_Page extends STR_Custom_Admin_Page {
+
+	private $nonce_id = "str_team_nonce";
+
+	public function __construct( $post_type, $post_type_name, $post_type_singular_name = null, $slug = null ) {
+		parent::__construct( $post_type, $post_type_name, $post_type_singular_name, $slug );
+		$this->image_boxes = $this->get_image_boxes();
+	}
+
+	private function get_image_boxes(){
+		return array(
+			array(
+				'image_box_id' => 'str_team_tile_img',
+				'field_name' => 'meta_team_tile_img',
+				'label' => 'Page Tile Image',
+				'instruction' => 'Image should be 1440px X 940px to maintain multi-resolution support'
+			),
+			array(
+				'image_box_id' => 'str_team_tile_blur_img',
+				'field_name' => 'meta_team_tile_blur_img',
+				'label' => 'Page Tile Blur Image',
+				'instruction' => 'Image should be 720px X 470px to maintain multi-resolution support'
+			),
+			array(
+				'image_box_id' => 'str_team_overlay_img',
+				'field_name' => 'meta_team_overlay_img',
+				'label' => 'Overlay  Image',
+				'instruction' => 'Image should be 1440px X 1920px to maintain multi-resolution support'
+			)
+		);
+	}
+
+	private function get_member_fields(){
+		return array(
+			array(
+				"field_name" => 'meta_member_job_title',
+				"label" => "Job Title",
+				"value" => ""
+			),
+			array(
+				"field_name" => 'meta_member_first_name',
+				"label" => "First Name",
+				"value" => ""
+			),
+			array(
+				"field_name" => 'meta_member_email',
+				"label" => "Email Address",
+				"value" => ""
+			),
+			array(
+				"field_name" => 'meta_member_linkedIn',
+				"label" => "LinkedIn Address",
+				"value" => ""
+			),
+			array(
+				"field_name" => 'meta_member_job_twitter',
+				"label" => "Twitter URL (full URL not just handle)",
+				"value" => ""
+			),
+
+
+		);
+	}
+
+	function add_meta_boxes() {
+
+
+		add_meta_box(
+			'str_page_inclusion_meta',
+			"Page Inclusion",
+			array($this, 'str_inclusion_metabox'),
+			$this->post_type,
+			'before',
+			'high' );
+
+		add_meta_box(
+			'str_field_set_meta',
+			"Team Member Details",
+			array($this, 'str_field_set_metabox'),
+			$this->post_type,
+			'before',
+			'low'
+			);
+
+		add_meta_box(
+			'str_expertise_areas_meta',
+			"Areas of Expertise",
+			array($this, 'str_expertise_metabox'),
+			$this->post_type,
+			'normal',
+			'high');
+
+		foreach ($this->image_boxes as $box){
+
+			add_meta_box(
+				$box['image_box_id'],
+				$box['label'],
+				array($this, 'str_image_metabox'),
+				$this->post_type,
+				'normal',
+				'high',
+				array($box)
+			);
+
+		}
+
+	}
+
+
+	function save_post( $post_id) {
+
+		if(get_post_type($post_id) !== 'str_team_member') return;
+
+
+		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+
+		// if our nonce isn't there, or we can't verify it, bail
+		//if( !isset( $_POST[$this->nonce_id ] ) || !wp_verify_nonce( $_POST[$this->nonce_id ], $this->nonce_id ) ) return;
+
+		// if our current user can't edit this post, bail
+		if( !current_user_can( 'edit_post', $post_id ) ) return;
+
+
+		if(isset($_POST['meta_include_in_page']) && $_POST['meta_include_in_page'] != '')
+			update_post_meta($post_id, 'meta_include_in_page', $_POST['meta_include_in_page']);
+		else
+			update_post_meta($post_id, 'meta_include_in_page', false);
+
+		if(isset($_POST['meta_item_index']) && $_POST['meta_item_index'] != '')
+			update_post_meta($post_id, 'meta_item_index', $_POST['meta_item_index']);
+		else
+			update_post_meta($post_id, 'meta_item_index', 0);
+
+
+		foreach ($this->get_member_fields() as $field){
+
+			$field_name = $field["field_name"];
+			if(isset($_POST[$field_name]) && $_POST[$field_name] != '')
+				update_post_meta($post_id, $field_name, $_POST[$field_name]);
+			else
+				delete_post_meta($post_id, $field_name);
+		}
+
+		if(isset($_POST['meta_area_of_expertise']) && $_POST['meta_area_of_expertise'] != '')
+			update_post_meta($post_id, 'meta_area_of_expertise', $_POST['meta_area_of_expertise']);
+		else
+			delete_post_meta($post_id, 'meta_area_of_expertise');
+
+
+		foreach ($this->image_boxes as $box) {
+
+			$box_name = $box['field_name'];
+
+			if(isset($_POST[$box_name]) && $_POST[$box_name] != '')
+				update_post_meta($post_id, $box_name, $_POST[$box_name]);
+			else
+				delete_post_meta($post_id, $box_name);
+
+		}
+
+	}
+
+	function str_expertise_metabox($post) {
+
+		try{
+
+			$str_template_path = STR_PLUGIN_PATH . 'includes/templates/str_expertise_check_list_box.php';
+
+			include( $str_template_path );
+
+		} catch (\Exception $e){
+
+			echo '<div id="str_inclusion_widget"><p>There has been an error generating this widget</p><p>'. $e->getMessage() .'</p></div>';
+
+		}
+
+	}
+
+	function str_field_set_metabox($post, $box) {
+
+		try{
+			$field_set = $this->get_member_fields();
+
+			$str_template_path = STR_PLUGIN_PATH . 'includes/templates/str_field_set_box.php';
+
+			include( $str_template_path );
+
+		} catch (\Exception $e){
+
+			echo '<div id="str_challenge_widget"><p>There has been an error generating this widget</p><p>'. $e->getMessage() .'</p></div>';
+
+		}
+
+	}
+
+	function str_results_metabox( $post, $box) {
+
+		try{
+			$str_template_path = STR_PLUGIN_PATH . 'includes/templates/str_results_box.php';
+
+			include( $str_template_path );
+
+		} catch (\Exception $e){
+
+			echo '<div id="str_results_widget"><p>There has been an error generating this widget</p><p>'. $e->getMessage() .'</p></div>';
+
+		}
+	}
+
+
 
 }

@@ -8,6 +8,26 @@ get_header(); ?>
 
 	<main role="main">
 
+        <section class="container-fluid bg-blue">
+            <div class="str-hero jumbotron">
+                <h1 class="display-1">5 Steps to <span class="clr-bright-blue">Incredible</span></h1>
+
+				<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+                    <!-- article -->
+                    <p id="post-<?php the_ID(); ?>" class="lead" <?php post_class(); ?>>
+
+						<?php the_content(); ?>
+
+                    </p>
+                    <!-- /article -->
+
+				<?php endwhile; ?>
+
+				<?php endif; ?>
+
+        </section>
+
         <section class="container-fluid d-none d-md-block">
             <div class="row text-center str-card-container">
                 <div class="col-12 col-sml-6 col-md-4 str-card">
@@ -103,6 +123,16 @@ get_header(); ?>
                 </p>
             </div>
         </section>
+
+		<?php
+
+		$service_template_path = get_template_directory() . '/inc/str-service-stripes.php';
+		load_template($service_template_path, true);
+
+		?>
+
+        <!--
+
         <section class="container-fluid discovery" id="discovery">
             <div class="row d-sm-none">
                 <div class="col-12 p-0"><img class="w-100" src="img/services-discovery-sml.jpg"></div>
@@ -147,6 +177,8 @@ get_header(); ?>
                 </div>
             </div>
         </section>
+
+        -->
         <section class="container-fluid bg-blue str-main expertise" id="expertise">
             <h1 class="display-1 text-center clr-white d-none d-md-block">Our Expertise</h1>
             <h2 class="display-2 text-center clr-white d-md-none">Our Expertise</h2>
@@ -183,20 +215,18 @@ get_header(); ?>
                 </p>
             </div>
         </section>
-        <section class="container-fluid">
+
 
         <div class="overlay-background" id="overlayBg" aria-hidden="true">
             <div class="container-fluid position-relative h-100 p-0">
 
 	            <?php
 
-
+	            $services_overlay_template_path = get_template_directory() . '/inc/str-service-overlays.php';
+	            load_template($services_overlay_template_path, true);
 
 	            $expertise_overlay_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
 	            load_template($expertise_overlay_template_path, true);
-
-
-
 
                 ?>
 

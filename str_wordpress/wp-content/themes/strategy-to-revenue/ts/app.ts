@@ -27,6 +27,15 @@ jQuery(function ($) {
             }
         );
 
+        $('img').each(function(i){
+
+            let src = $(this).attr('src');
+            if(src){
+                $("<img />").attr("src", src);
+            }
+
+        });
+
         function setNoScroll(on:boolean){
 
             if(on){

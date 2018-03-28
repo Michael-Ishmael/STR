@@ -22,7 +22,6 @@ define( 'STR_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 function str_init() {
 
-
 	$success_story_page = new STR_Success_Story_Page('str_success_story', 'STR Success Stories', 'STR Success Story', 'success-stories');
 	$success_story_page->init();
 
@@ -31,6 +30,10 @@ function str_init() {
 
 	$services_page = new STR_Services_Page( 'str_service', 'STR Services', 'STR Service', 'services' );
 	$services_page->init();
+
+	$team_members_page = new STR_Team_Member_Page( 'str_team_member', 'STR Team Members', 'STR Team Member', 'team-members' );
+	$team_members_page->init();
+
 
 }
 

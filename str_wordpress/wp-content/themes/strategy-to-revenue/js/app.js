@@ -762,6 +762,12 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                     else {
                     }
                 });
+                $('img').each(function (i) {
+                    var src = $(this).attr('src');
+                    if (src) {
+                        $("<img />").attr("src", src);
+                    }
+                });
                 function setNoScroll(on) {
                     if (on) {
                         if (!_jBody.hasClass(NO_SCROLL_CLASS)) {
