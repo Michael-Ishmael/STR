@@ -4,59 +4,353 @@ Template Name: STR Home Page
 Template Post Type: page, str_success_story
 */
 
-get_header(); ?>
+ ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Strategy to Revenue - Home</title>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
-	<main role="main">
+    <link href="//www.google-analytics.com" rel="dns-prefetch">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
+    <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
-			<section class="container-fluid bg-blue">
-				<div class="str-hero jumbotron">
-					<h1 class="display-1">Success <span class="clr-bright-blue">Stories</span></h1>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
 
-					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+	<?php wp_head(); ?>
+    <!-- Start of 66bytes Zendesk Widget script-->
+    <script>
+        /*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="66bytes.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
+        /*]]>*/
+    </script>
+    <!-- End of 66bytes Zendesk Widget script-->
+</head>
+<body class="str">
+<div class="nav-container" id="mobile-menu">
+    <nav>
+        <div class="nav-header text-right">
+            <button class="hamburger hamburger--spin clr-white" id="mobile-menu-close-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
+	    <?php str_nav('mobile'); ?>
+    </nav>
+</div>
+<header class="home container-fluid bg-blue home-hero-bg">
+    <div class="row align-items-center justify-content-center">
+        <div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
+            <div class="logo-container ml-2 ml-lg-3 pt-3 pt-lg-4 pb-2 pt-lg-4"><a href="/"><img class="logo" src="<?php echo get_template_directory_uri() ?>/img/logo-strategy-to-revenue.svg"></a></div>
+        </div>
+        <div class="d-none d-md-block col-md-10 col-lg-9 p-0 pr-2">
+            <nav class="text-right mr-4 mr-xl-5">
+	            <?php str_nav('header'); ?>
+            </nav>
+        </div>
+        <div class="col-4 d-md-none text-right">
+            <button class="hamburger hamburger--spin clr-white" id="mobile-menu-button" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+        </div>
+    </div>
+    <div class="row str-home-hero">
+        <div class="col-12 p-0">
+            <h1 class="display-hero clr-white">Potential<br><span class="clr-bright-blue">Unleashed</span></h1>
+            <p class="lead clr-white">
+                Performing to your full potential feels incredible. Strategy to Revenue is dedicated to making the incredible a reality.
 
-						<!-- article -->
-						<p id="post-<?php the_ID(); ?>" class="lead" <?php post_class(); ?>>
 
-							<?php the_content(); ?>
-
-						</p>
-						<!-- /article -->
-
-						<?php endwhile; ?>
-
-					<?php endif; ?>
-
-			</section>
-		<section class="container-fluid bg-blue">
-			<?php
-
-				$grid_template_path = get_template_directory() . '/inc/str-success-story-grid.php';
-				load_template($grid_template_path, true);
-
-			?>
-
-		</section>
-
-        <div class="overlay-background" id="overlayBg" aria-hidden="true">
-            <div class="container-fluid position-relative h-100 p-0">
-
-	            <?php
-
-                    $overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
-                    load_template($overlay_template_path, true);
-
-	            ?>
-
+            </p>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="container-fluid bg-light-cream">
+        <div class="row">
+            <div class="col-12 col-md-7 p-0">
+                <div class="mission">
+                    <h2 class="display-2">Our Mission</h2>
+                    <p class="lead">We help organisations unleash the potential of their sales teams, improving their commercial performance, transforming their businesses, and accelerating the time it takes to turn their strategy to revenue. We typically deliver:</p>
+                    <ul class="deliveries">
+                        <li><img src="<?php echo get_template_directory_uri() ?>/img/icon-time.svg">
+                            <div class="delivery">
+                                <p class="item clr-dark-blue">20% reduction in time</p>
+                                <p>to effectiveness for new recruits</p>
+                            </div>
+                        </li>
+                        <li class="last"><img src="<?php echo get_template_directory_uri() ?>/img/icon-succeed.svg">
+                            <div class="delivery">
+                                <p class="item clr-dark-blue">10% minimum growth</p>
+                                <p>in recurring revenue</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 p-0 o-hidden mission-pic">
+                <!--img(src="<?php echo get_template_directory_uri() ?>/img/home-mission.jpg")-->
             </div>
         </div>
+    </section>
+    <section class="container-fluid questionnaire bg-blue">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <p class="sub text-uppercase">How can we help you</p>
+                <h2 class="display-2 clr-white">Which best describes you?</h2>
+            </div>
+        </div>
+        <div class="row horiz-buttons text-center justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="questionnaire-button-container"><a class="questionnaire-button bg-blue clr-white">Company with a sales team less than 100</a></div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="questionnaire-button-container"><a class="questionnaire-button bg-blue clr-white"> Company with a sales team of 100+</a></div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="questionnaire-button-container"><a class="questionnaire-button bg-blue clr-white"> A private equity company</a></div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid">
+        <div class="row wide-picture-grid">
+            <div class="col-12 col-sm-6 p-0 home-column"><img class="w-100 d-none d-sm-block" src="<?php echo get_template_directory_uri() ?>/img/ratio-place-holder-1.gif">
+                <div class="column-pic-container">
+                    <div class="str-grid-pic">
+                        <div class="success-image-tile overlay-link" data-overlay="overlay-dhl-global"><img class="h-align pic w-100 d-none d-sm-block" src="<?php echo get_template_directory_uri() ?>/img/success-trucks.jpg"><img class="h-align pic w-100 d-sm-none" src="<?php echo get_template_directory_uri() ?>/img/success-dhl-global-sml.jpg"><img class="h-align gradient w-100" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
+                            <div class="photo-caption text-left">
+                                <h3 class="display-3 clr-white">DHL Delivers 20%+ Pipeline Increase</h3>
+                                <h5 class="display-5 clr-white"><a class="overlay-link" href="#overlay-dhl-global">read success story</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="str-grid-pic">
+                        <div class="success-image-tile overlay-link" data-overlay="overlay-thomson"><img class="h-align pic w-100 d-none d-sm-block" src="<?php echo get_template_directory_uri() ?>/img/success-global.jpg"><img class="h-align pic w-100 d-sm-none" src="<?php echo get_template_directory_uri() ?>/img/success-thomson-sml.jpg"><img class="h-align gradient w-100" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
+                            <div class="photo-caption text-left">
+                                <h3 class="display-3 clr-dark-blue">Setting Global Standard<br>for Online Learning </h3>
+                                <h5 class="display-5 clr-dark-blue"><a class="overlay-link" href="#overlay-thomson">read success story</a></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 str-insight-pic" onclick="window.location='/article.html';">
+                <div class="insight-image-tile w-100"><img class="w-100" src="<?php echo get_template_directory_uri() ?>/img/article-holder-2.jpg"><img class="h-align gradient" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
+                    <div class="insight-info text-left p-5">
+                        <div class="author"><img class="d-inline-block" src="<?php echo get_template_directory_uri() ?>/img/oval-robert-f.png">
+                            <div class="author-details d-inline-block">
+                                <h4>Robert Fox</h4>
+                                <h6>Senior Consultant</h6>
+                            </div>
+                        </div>
+                        <div class="article-title single">
+                            <h4 class="display-5 clr-white">3 Quick Strategies to Drive Sales Productivity</h4>
+                        </div><a class="btn btn-primary text-uppercase d-none d-md-inline-block" href="article.html">Read Article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid clients bg-mid-cream">
+        <div class="row clients justify-content-center">
+            <div class="col-12 col-sm-4 col-lg-2 client-logo-container text-center">
+                <div class="client"><img class="w-sm-50" src="<?php echo get_template_directory_uri() ?>/img/logo-thomson-reuters.png"></div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-2 client-logo-container text-center">
+                <div class="client"><img class="w-sm-50" src="<?php echo get_template_directory_uri() ?>/img/logo-dhl.png"></div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-2 client-logo-container text-center">
+                <div class="client"><img class="w-sm-50" src="<?php echo get_template_directory_uri() ?>/img/logo-hewlett-packard-enterprise.png"></div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-2 client-logo-container text-center">
+                <div class="client"><img class="w-sm-50" src="<?php echo get_template_directory_uri() ?>/img/logo-motorola.png"></div>
+            </div>
+            <div class="col-12 col-sm-4 col-lg-2 client-logo-container text-center">
+                <div class="client"><img class="w-sm-50" src="<?php echo get_template_directory_uri() ?>/img/logo-vodafone.png"></div>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid contact bg-mid-cream" id="contact-us">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <h1 class="display-1 mx-0">Our Offices</h1>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="contact-map"><img class="w-100 d-none d-md-block" src="<?php echo get_template_directory_uri() ?>/img/pins-map.jpg"><img class="w-100 d-md-none" src="<?php echo get_template_directory_uri() ?>/img/pins-map-sml.jpg"></div>
+            </div>
+        </div>
+        <div class="row justify-content-center offices">
+            <div class="col-12 col-sm-7 col-md-3">
+                <h4 class="display-4">United States</h4>
+                <p class="address">
+                    The Atlanta Technology Village
+                    <br>
+                    3423 Piedmont Road Northeast
+                    <br>
+                    Atlanta, GA 30305
+                </p>
+                <p class="phone">+31 312 493 8639</p>
+            </div>
+            <div class="d-none col-md-1"></div>
+            <div class="col-12 col-sm-7 col-md-3">
+                <h4 class="display-4">United Kingdom</h4>
+                <p class="address">
+                    Regal Court Business Centre
+                    <br>
+                    42-44 High Street
+                    <br>
+                    Slough, SL1 1EL
+                </p>
+                <p class="phone">+31 (0) 1753 245543</p>
+            </div>
+            <div class="d-none col-md-1"></div>
+            <div class="col-12 col-sm-7 col-md-3">
+                <h4 class="display-4">New Business</h4>
+                <p class="email">hello@strategytorevenue.com</p>
+                <h4 class="display-4">Support</h4>
+                <p class="email">support@strategytorevenue.com</p>
+            </div>
+        </div>
+    </section>
+    <section class="container-fluid newsletter bg-mid-cream" id="newsletter">
+        <div class="newsletter-content text-center">
+            <h6 class="sub text-uppercase">Stay up to date</h6>
+            <h3 class="display-3">Newsletter</h3>
+            <p>
+                Stay up to date with the latest insights and tips on sales strategy and business transformation.
 
-        <?php
+            </p>
+            <form class="newsletter form-inline">
+                <div class="input-container">
+                    <label class="sr-only">email</label>
+                    <input class="form-control w-100" type="text" placeholder="Enter your email address">
+                </div>
+                <div class="btn-container">
+                    <button class="btn btn-primary w-100 text-uppercase" type="submit" value="Sign up">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="overlay-background" id="overlayBg" aria-hidden="true">
+        <div class="container-fluid position-relative h-100 p-0">
+            <section class="overlay h-100" id="overlay-dhl-global">
+                <div class="row h-100 m-0">
+                    <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
+                        <div class="overlay-image-container h-100"><img src="<?php echo get_template_directory_uri() ?>/img/overlay-success-dhl-global.jpg"></div>
+                    </div>
+                    <div class="col-12 col-md-6 p-0 overlay-column h-100 right">
+                        <div class="close-button-bar d-none d-md-block">
+                            <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                                    <div class="cross"></div></a></div>
+                        </div>
+                        <div class="overlay-content h-100">
+                            <div class="d-md-none"><img class="w-100" src="<?php echo get_template_directory_uri() ?>/img/success-trucks.jpg"></div>
+                            <div class="overlay-main clearfix">
+                                <h6 class="clr-dark-blue text-uppercase clr-dark-blue">Success Story</h6>
+                                <h3 class="display-3">DHL Delivers 20%+ Pipeline Increase</h3>
+                                <h4 class="display-4">Challenge</h4>
+                                <p class="lead clr-dark-blue">Help DHL Global Forwarding become the market leader in Global Freight by 2015</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream lead">
+                                <h4 class="display-4">Results</h4>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">24.5% increase in Ocean Freight sales pipeline</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">6.1% YoY market-leading growth</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">98% sales force engagement</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">212% increase in registration and sales activity on campaign site</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result last"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">Brandon Hall Winner for Best Marketing Impact</p>
+                            </div>
+                            <div class="overlay-main after">
+                                <h4 class="display-4">Approach</h4>
+                                <p class="body">To enable DHL Global Forwarding’s sales team to cross sell Ocean Freight products to new and existing customers, Strategy to Revenue initiated a short but intense consultation followed by a brainstorm with 20 DHL Global Forwarding DGF subject matter experts; this provided insight into target customers’ decision-making issues. Strategy to Revenue created a value proposition mapping and messaging strategy along with supporting sales tools. In a market where differentiation is difficult the DHL Global Forwarding DGF campaign armed the sales team with the tools to demonstrate the strength of their proposition and improve their product knowledge to sell more. Coaching sessions in multiple languages, including Chinese, were rolled out to 3,400 sales people and supported with online sales tools. Global alignment and consistency of message were ensured through webinars, and weekly communications and inter-country leagues kept the campaign top-of-mind.</p>
+                            </div>
+                        </div>
+                        <div class="close-button-bar bottom d-md-none">
+                            <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                                    <div class="cross"></div></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="overlay h-100" id="overlay-thomson">
+                <div class="row h-100 m-0">
+                    <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
+                        <div class="overlay-image-container h-100"><img src="<?php echo get_template_directory_uri() ?>/img/overlay-success-thomson.jpg"></div>
+                    </div>
+                    <div class="col-12 col-md-6 p-0 overlay-column h-100 right">
+                        <div class="close-button-bar d-none d-md-block">
+                            <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                                    <div class="cross"></div></a></div>
+                        </div>
+                        <div class="overlay-content h-100">
+                            <div class="d-md-none"><img class="w-100" src="<?php echo get_template_directory_uri() ?>/img/success-global.jpg"></div>
+                            <div class="overlay-main clearfix">
+                                <h6 class="clr-dark-blue text-uppercase clr-dark-blue">Success Story</h6>
+                                <h3 class="display-3">Setting Global Standard for Online Learning</h3>
+                                <h4 class="display-4">Challenge</h4>
+                                <p class="lead clr-dark-blue">Ensure the sales and inside sales teams of a global financial news and analytics firm have the product understanding and skills set necessary to sell its complicated and nuanced financial services products globally.</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream lead">
+                                <h4 class="display-4">Results</h4>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">3-month delivery timeframe</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">Successful roll out to 5,000 sales and inside sales staff</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">Expansion to other areas of the business, including non-sales functions</p>
+                            </div>
+                            <div class="overlay-footer bg-light-cream result last"><img src="<?php echo get_template_directory_uri() ?>/img/result-cup.svg">
+                                <p class="success-result clr-dark-blue">Rolling program of expansion and updated course content</p>
+                            </div>
+                            <div class="overlay-main after">
+                                <h4 class="display-4">Approach</h4>
+                                <p class="body">Strategy to Revenue’s Compass SKILLBuild™ platform was used to assess each sales person’s competencies; the answers provided an opportunity for the sales person to discuss and agree desired final results with their line manager. Based on an agreed competency score, a self-paced, personalized learning pathway was developed, thereby enabling people to demonstrate their understanding of key competencies before undertaking the module. This reduced the time spent by salespeople on unnecessary training and ensured their maximum engagement in the modules. The customizable nature of the Compass SKILLBuild™ platform reflected the language, terminology and market requirements of this very specific field of business.</p>
+                            </div>
+                        </div>
+                        <div class="close-button-bar bottom d-md-none">
+                            <div class="close-button-container"><a class="close-button bg-blue" href="#">
+                                    <div class="cross"></div></a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row justify-content-center social-media">
+                <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://twitter.com/strategyrevenue/" target="_blank"><i class="sm-icon twitter"></i><span>Twitter</span></a></div>
+                <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://www.linkedin.com/company/strategytorevenue/" target="_blank"><i class="sm-icon linked-in"></i><span>LinkedIn</span></a></div>
+                <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="https://medium.com/strategy-to-revenue" target="_blank"><i class="sm-icon medium"></i><span>Medium</span></a></div>
+                <div class="col-3 col-sm-3 col-lg-2 text-center p-0"><a class="sm-link" href="/#newsletter"><i class="sm-icon newsletter"></i><span>Newsletter</span></a></div>
+            </div>
+        </div>
+        <div class="cream-border"></div>
+        <nav class="footer-menu p-4">
+            <ul class="nav justify-content-center">
+                <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="success-stories.html">Success Stories</a></li>
+                <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="insights.html">Insights</a></li>
+                <li class="nav-item"><a class="nav-link" href="private-equity.html">Private Equity</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#contact-us">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="copyright text-center">Strategy to Revenue. All rights reserved Ⓒ 2018</div>
+    </footer>
+</main>
+</body>
 
-        $trailer_template_path = get_template_directory() . '/inc/str-services-trailer.php';
-        load_template($trailer_template_path, true);
-        ?>
-
-
-	</main>
-
-<?php get_footer(); ?>
+</html>

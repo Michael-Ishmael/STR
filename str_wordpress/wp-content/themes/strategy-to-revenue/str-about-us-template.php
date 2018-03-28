@@ -30,7 +30,7 @@ get_header(); ?>
 		<section class="container-fluid bg-blue">
 			<?php
 
-				$grid_template_path = get_template_directory() . '/inc/str-success-story-grid.php';
+				$grid_template_path = get_template_directory() . '/inc/str-team-member-grid.php';
 				load_template($grid_template_path, true);
 
 			?>
@@ -42,7 +42,10 @@ get_header(); ?>
 
 	            <?php
 
-                    $overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
+                    $overlay_expertise_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
+                    load_template($overlay_expertise_template_path, true);
+
+                    $overlay_template_path = get_template_directory() . '/inc/str-team-member-overlays.php';
                     load_template($overlay_template_path, true);
 
 	            ?>
@@ -52,7 +55,7 @@ get_header(); ?>
 
         <?php
 
-        $trailer_template_path = get_template_directory() . '/inc/str-services-trailer.php';
+        $trailer_template_path = get_template_directory() . '/inc/str-insights-trailer.php';
         load_template($trailer_template_path, true);
         ?>
 
