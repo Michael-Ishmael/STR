@@ -2,10 +2,10 @@
 
     if($this_post !== null) {
 
-	    $item_overlay_img_id  = get_post_meta( $post->ID, "meta_service_overlay_img", true );
+	    $item_overlay_img_id  = get_post_meta( $this_post->ID, "meta_service_overlay_img", true );
 	    $item_overlay_img_src = wp_get_attachment_image_src( $item_overlay_img_id, 'full' )[0];
 
-	    $item_mobile_img_id  = get_post_meta( $post->ID, "meta_service_mobile_img", true );
+	    $item_mobile_img_id  = get_post_meta( $this_post->ID, "meta_service_mobile_img", true );
 	    $item_mobile_img_src = wp_get_attachment_image_src( $item_mobile_img_id, 'full' )[0];
 
 
@@ -19,7 +19,8 @@
         <section class="overlay h-100 p-0" id="overlay-<?php echo $this_post->ID ?>">
             <div class="row h-100 m-0">
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
-                    <div class="overlay-image-container h-100"><img src="<?php echo $item_overlay_img_src ?>"></div>
+                    <div class="overlay-image-container h-100">
+                        <img class="w-100" src="<?php echo $item_overlay_img_src ?>"></div>
                 </div>
                 <div class="col-12 col-md-6 p-0 overlay-column h-100 right">
                     <div class="close-button-bar d-none d-md-block">

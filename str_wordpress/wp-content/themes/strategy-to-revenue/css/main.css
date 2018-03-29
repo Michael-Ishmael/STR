@@ -1412,6 +1412,8 @@ section {
       @media (min-width: 768px) {
         .str-feature-box .str-feature-text p.summary {
           font-size: .9rem; } }
+      .str-feature-box .str-feature-text p.summary a:hover {
+        text-decoration: underline; }
     .str-feature-box .str-feature-text a.btn {
       width: 100%;
       max-width: 18rem;
@@ -1830,7 +1832,7 @@ section {
       line-height: 4.25em;
       float: left; }
     .str-insight-stripe .insight-info img {
-      vertical-align: middle;
+      vertical-align: top;
       height: 3.4em;
       width: 3.4em; }
     .str-insight-stripe .insight-info .insight-details {
@@ -2511,7 +2513,7 @@ footer nav ul.nav {
           margin-left: 2.9rem;
           display: block;
           width: auto; }
-      .str.article-template main article .article-body h4.display-4 {
+      .str.article-template main article .article-body h4 {
         font-family: "Work Sans", sans-serif;
         font-size: 1.2rem;
         line-height: 1.17;
@@ -2521,7 +2523,7 @@ footer nav ul.nav {
         padding-bottom: .2rem;
         margin-bottom: 1.2rem; }
         @media (max-width: 767.98px) {
-          .str.article-template main article .article-body h4.display-4 {
+          .str.article-template main article .article-body h4 {
             font-size: 1.71rem;
             border-bottom: none;
             text-decoration: underline #ffc72c; } }
@@ -2593,7 +2595,7 @@ footer nav ul.nav {
           text-decoration: underline #ffc72c;
           margin: 4rem 2rem;
           font-size: 2.57rem; } }
-    .str.article-template main section.more-insights > :nth-child(2) {
+    .str.article-template main section.more-insights > :nth-child(3) {
       border-top: 1px solid #eae7de; }
     .str.article-template main section.more-insights .str-insight-stripe {
       font-size: 1.4rem; }

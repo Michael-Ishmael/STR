@@ -132,7 +132,7 @@ function str_add_menu_classes($menu_list, $args){
 
 function str_add_menu_link_atts($atts, $item) {
 	$att_class_names = "nav-link";
-	if($item->post_name == get_post()->post_name) $att_class_names .= ' active';
+	if($item->title == get_post()->post_title) $att_class_names .= ' active';
 	$atts['class'] = $att_class_names;
 	return $atts;
 }
@@ -210,7 +210,12 @@ function str_styles()
 
 function str_body_class($classes){
 
-	return array_merge( $classes, array( 'str' ) );
+    $body_class_names = 'str';
+    $post = get_queried_object();
+    if($post->post_type == "post"){
+        $body_class_names .= ' article-template';
+    }
+	return array_merge( $classes, array( $body_class_names ) );
 
 }
 

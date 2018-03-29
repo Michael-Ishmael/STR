@@ -31,7 +31,7 @@ $you_have_img = is_array( $your_img_src );
 		<?php _e( 'Choose Image' ) ?>
     </a></h4>
 <p>
-	<?php echo  _e($str_instruction) ?>
+	<?php  _e($str_instruction) ?>
 </p>
 <h4>
     <a class="delete-custom-img <?php if ( ! $you_have_img ) {

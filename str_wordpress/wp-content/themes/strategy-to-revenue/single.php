@@ -1,47 +1,77 @@
-<?php get_header(); ?>
+<?php
+
+get_header("article");
+
+if (have_posts()): while (have_posts()) : the_post();
+
+    $article_head_img_id  = get_post_meta( $post->ID, "meta_article_header_img", true );
+    $article_head_img_src = wp_get_attachment_image_src( $article_head_img_id, 'full' )[0];
+    $consultant_author_id = get_post_meta( $post->ID, "meta_consultant_author", true );
+
+    $cons_oval_img_id  = get_post_meta( $consultant_author_id, "meta_team_oval_img", true );
+    $consultant_oval_src = wp_get_attachment_image_src( $cons_oval_img_id, 'full' )[0];
+
+    $cons_job_title = get_post_meta( $consultant_author_id, "meta_member_job_title", true );
+    $consultant_name = get_the_title($consultant_author_id);
+
+    $expertise_areas     = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
+
+?>
+
 
 	<main role="main">
-	<!-- section -->
-	<section>
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+        <div class="top-marker"></div>
+        <div class="container-fluid p-0">
 
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
-			<?php endif; ?>
-			<!-- /post thumbnail -->
+            <div class="tools d-none d-md-block"><a class="tool-item"><i class="print"></i><span>print</span></a><a class="tool-item"><i class="share"></i><span>share</span></a></div>
+            <div class="top-marker"></div>
+            <div class="article-header clearfix">
+                <div class="author overlay-link" data-overlay="overlay-about-<?php echo $consultant_author_id ?>" >
+                    <img src="<?php echo $consultant_oval_src ?>">
+                    <div class="author-details">
+                        <h4><?php echo $consultant_name ?></h4>
+                        <h6><?php echo $cons_job_title ?></h6>
+                    </div>
+                </div>
+                <h2 class="display-2"><?php echo the_title() ?></h2>
+                <div class="skills consultant-skill-box">
+	                <?php
+	                foreach ($expertise_areas as $area_post_id){
 
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
+		                $area_post = get_post($area_post_id);
 
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
+		                if($area_post !== null){
 
-			<?php the_content(); // Dynamic Content ?>
+			                ?>
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+                            <a class="skill overlay-link"
+                               href="#overlay-expertise-<?php echo $area_post->ID ?>"
+                               data-overlay="overlay-expertise-<?php echo $area_post->ID ?>">
+				                <?php echo get_the_title($area_post) ?>
+                            </a>
 
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
+			                <?php
+		                }
 
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
+	                }
 
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+	                ?>
 
-			<?php comments_template(); ?>
+                </div>
+            </div>
 
-		</article>
+
+            <div class="article-body">
+
+	            <?php the_content(); // Dynamic Content ?>
+
+            </div>
+
+        </article>
 		<!-- /article -->
 
 	<?php endwhile; ?>
@@ -58,10 +88,39 @@
 
 	<?php endif; ?>
 
-	</section>
-	<!-- /section -->
-	</main>
 
-<?php get_sidebar(); ?>
+
+        </div>
+
+
+		<?php
+
+		$trailer_template_path = get_template_directory() . '/inc/str-insights-stripes.php';
+		load_template($trailer_template_path, true);
+
+
+		$trailer_template_path = get_template_directory() . '/inc/str-services-trailer.php';
+		load_template($trailer_template_path, true);
+		?>
+
+        <div class="overlay-background" id="overlayBg" aria-hidden="true">
+            <div class="container-fluid position-relative h-100 p-0">
+
+				<?php
+
+				$overlay_template_path = get_template_directory() . '/inc/str-team-member-overlays.php';
+				load_template($overlay_template_path, true);
+
+				$expertise_overlay_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
+				load_template($expertise_overlay_template_path, true);
+
+				?>
+
+            </div>
+        </div>
+
+    </main>
+
+
 
 <?php get_footer(); ?>

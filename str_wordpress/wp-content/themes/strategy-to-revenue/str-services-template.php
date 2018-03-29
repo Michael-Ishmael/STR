@@ -216,6 +216,54 @@ get_header(); ?>
             </div>
         </section>
 
+        <section class="container-fluid">
+
+	        <?php
+
+	        $grid_template_path_mobile = get_template_directory() . '/inc/str-consultant-trio.php';
+	        load_template($grid_template_path_mobile, true);
+
+	        ?>
+
+
+<!--            <div class="row str-feature-box-container">
+                <div class="col-12 col-md-4 str-feature-box bg-light-cream"><a class="overlay-link" href="#overlay-about-tony-w" data-overlay="overlay-about-tony-w"><img class="str-feature-image" src="img/about-tony-w.jpg"></a>
+                    <div class="str-feature-text text-center">
+                        <h3 class="display-3">Tony Wand</h3>
+                        <h6 class="display-6 text-uppercase">Senior Consultant</h6>
+                        <p class="summary">Sales Tools &amp; Process, Channel Engagement, Sales Efficiency, Winning in New Markets &amp; Territories, Performance Management</p>
+                        <div class="links"><a class="str-button btn btn-primary btn-lg" href="mailto:tony.wand@strategytorevenue.com">Get in Touch</a><a class="str-button btn btn-lg btn-outline-secondary overlay-link" href="#overlay-about-tony-w" data-overlay="overlay-about-tony-w">About Tony</a></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 str-feature-box bg-light-cream"><a class="overlay-link" href="#overlay-about-martin-d" data-overlay="overlay-about-martin-d"><img class="str-feature-image" src="img/about-martin-d.jpg"></a>
+                    <div class="str-feature-text text-center">
+                        <h3 class="display-3">Martin Dean</h3>
+                        <h6 class="display-6 text-uppercase">Senior Consultant</h6>
+                        <p class="summary">Sales Efficiency, New Product Messaging, Competitor Positioning, Recruiting, On-boarding and Re-boarding</p>
+                        <div class="links"><a class="str-button btn btn-primary btn-lg" href="mailto:martin.dean@strategytorevenue.com">Get in Touch</a><a class="str-button btn btn-lg btn-outline-secondary overlay-link" href="#overlay-about-martin-d" data-overlay="overlay-about-martin-d">About Martin</a></div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 str-feature-box bg-light-cream"><a class="overlay-link" href="#overlay-about-neil-w" data-overlay="overlay-about-neil-w"><img class="str-feature-image" src="img/about-neil-w.jpg"></a>
+                    <div class="str-feature-text text-center">
+                        <h3 class="display-3">Neil Whitelock</h3>
+                        <h6 class="display-6 text-uppercase">Senior Consultant</h6>
+                        <p class="summary">Customer Segmentation, Compensation &amp; Incentives, Sales Tools &amp; Process, Sales Efficiency, Reporting &amp; Analysis</p>
+                        <div class="links"><a class="str-button btn btn-primary btn-lg" href="mailto:neil.whitelock@straegytorevenue.com">Get in Touch</a><a class="str-button btn btn-lg btn-outline-secondary overlay-link" href="#overlay-about-neil-w" data-overlay="overlay-about-neil-w">About Neil</a></div>
+                    </div>
+                </div>
+            </div>-->
+
+            <div class="row str-cream-blue-box box-link">
+                <div class="col-12 text-center p-5">
+                    <div class="circles text-center">
+                        <div class="circle tony"></div>
+                        <div class="circle martin"></div>
+                        <div class="circle neil"></div><a class="circle blue bg-blue clr-white" href="/about-us.html">+9</a>
+                    </div>
+                    <div class="d-inline-block consult-link-text-container"><a class="d-inline-block font-weight-bold f-28" href="/about-us.html">Show all consultants</a></div>
+                </div>
+            </div>
+        </section>
 
         <div class="overlay-background" id="overlayBg" aria-hidden="true">
             <div class="container-fluid position-relative h-100 p-0">
@@ -227,6 +275,9 @@ get_header(); ?>
 
 	            $expertise_overlay_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
 	            load_template($expertise_overlay_template_path, true);
+
+	            $team_overlay_template_path = get_template_directory() . '/inc/str-team-member-overlays.php';
+	            load_template($team_overlay_template_path, true);
 
                 ?>
 

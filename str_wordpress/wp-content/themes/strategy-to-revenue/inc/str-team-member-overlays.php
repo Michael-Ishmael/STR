@@ -3,6 +3,7 @@
 $args = array(
 	'post_type'  => 'str_team_member',
 	'meta_key'   => 'meta_item_index',
+	'posts_per_page' => -1,
 	'orderby'    => array( 'meta_value_num' => 'ASC', 'date' => 'DESC' ),
 	'meta_query' => array(
 		'relation' => 'AND',
@@ -47,7 +48,7 @@ if ( $loop_query->have_posts() ) :
             <div class="row h-100 m-0">
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                     <div class="overlay-image-container h-100">
-                        <img src="<?php echo $item_overlay_img_src ?>">
+                        <img class="w-100" src="<?php echo $item_overlay_img_src ?>">
                     </div>
                 </div>
                 <div class="col-12 col-md-6 p-0 overlay-column h-100">

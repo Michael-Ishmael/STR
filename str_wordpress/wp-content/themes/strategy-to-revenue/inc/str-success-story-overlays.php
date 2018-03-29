@@ -38,7 +38,7 @@ if ( $loop_query->have_posts() ) :
 
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
                     <div class="overlay-image-container h-100">
-                        <img src="<?php echo $item_overlay_img_src ?>">
+                        <img class="w-100" src="<?php echo $item_overlay_img_src ?>">
                     </div>
                 </div>
 

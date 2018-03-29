@@ -895,6 +895,12 @@ section {
         font-size: .9rem;
       }
 
+      a {
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+
     }
 
     a.btn {

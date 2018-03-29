@@ -27,28 +27,15 @@ get_header(); ?>
 					<?php endif; ?>
 
 			</section>
-		<section class="container-fluid bg-blue">
+
 			<?php
 
-				$grid_template_path = get_template_directory() . '/inc/str-success-story-grid.php';
+				$grid_template_path = get_template_directory() . '/inc/str-insights-grid.php';
 				load_template($grid_template_path, true);
 
 			?>
 
-		</section>
 
-        <div class="overlay-background" id="overlayBg" aria-hidden="true">
-            <div class="container-fluid position-relative h-100 p-0">
-
-	            <?php
-
-                    $overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
-                    load_template($overlay_template_path, true);
-
-	            ?>
-
-            </div>
-        </div>
 
         <?php
 
