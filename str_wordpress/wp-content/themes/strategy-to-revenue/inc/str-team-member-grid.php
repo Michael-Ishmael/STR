@@ -33,10 +33,10 @@ if ( $loop_query->have_posts() ) : ?>
 	                <?php
 
 	                $item_tile_img_id = get_post_meta( $post->ID, "meta_team_tile_img", true );
-	                $item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+	                $item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'picture-grid-tile-low-res' )[0];
 
 	                $item_tile_img_blur_id = get_post_meta( $post->ID, "meta_team_tile_blur_img", true );
-	                $item_tile_img_blur_src = wp_get_attachment_image_src( $item_tile_img_blur_id, 'full' )[0];
+	                $item_tile_img_blur_src = wp_get_attachment_image_src( $item_tile_img_blur_id, 'picture-grid-tile-low-res' )[0];
 
 	                $email = get_post_meta( $post->ID, "meta_member_email", true );
 	                $linked_in = get_post_meta( $post->ID, "meta_member_linkedIn", true );
@@ -80,12 +80,9 @@ if ( $loop_query->have_posts() ) : ?>
             <div class="w-100 h-100 clr-white about-us-image-tile">
                 <h3 class="display-3">Unleash Your Potential</h3>
                 <p>
-                    We’re always on the lookout for like-minded
-                    individuals who want to make the incredible a reality.
-                    If you’ve got a track record of driving sales growth
-                    and delivering sustained commercial improvement,
-                    winning in new markets or restructuring businesses
-                    to make them outstanding, get in touch.
+                    We’re always on the lookout for like-minded individuals who want to make the incredible a reality.
+                    If you’ve got a track record of driving sales growth and delivering sustained commercial improvement,
+                    winning in new markets or restructuring businesses to make them outstanding, get in touch.
 
                 </p><a class="btn btn-lg btn-secondary" href="mailto:hello@strategytorevenue.com">join us</a>
             </div>

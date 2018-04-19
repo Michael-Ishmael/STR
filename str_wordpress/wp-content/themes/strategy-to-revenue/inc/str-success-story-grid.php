@@ -33,7 +33,7 @@ if ( $loop_query->have_posts() ) : ?>
 					<?php
 
 					$item_tile_img_id = get_post_meta( $post->ID, "meta_success_tile_img", true );
-					$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' );
+					$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'picture-grid-tile-low-res' );
 
 					$caption_colour_class = get_post_meta( $post->ID, "meta_caption_color", true );
 					if ( $caption_colour_class == null ) {

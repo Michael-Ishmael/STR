@@ -30,6 +30,9 @@ function str_init() {
 	$post_meta_setup = new STR_Home_Page_Meta();
 	$post_meta_setup->init();
 
+	$post_meta_setup = new STR_Service_Page_Meta();
+	$post_meta_setup->init();
+
 	$success_story_page = new STR_Success_Story_PagePostType('str_success_story', 'STR Success Stories', 'STR Success Story', 'success-stories');
 	$success_story_page->init();
 
@@ -48,7 +51,7 @@ function str_init() {
 add_action( 'init', 'str_init' );
 
 
-function get_attachment_src_by_slug( $slug ) {
+function get_attachment_src_by_slug( $slug , $size = 'full') {
 	$args = array(
 		'post_type' => 'attachment',
 		'name' => sanitize_title($slug),
@@ -56,7 +59,7 @@ function get_attachment_src_by_slug( $slug ) {
 	);
 	$_header = get_posts( $args );
 	$header = $_header ? array_pop($_header) : null;
-	return $header ? wp_get_attachment_url($header->ID) : '';
+	return $header ? wp_get_attachment_image_src($header->ID, $size)[0] : '';
 }
 
 function mytheme_tinymce_settings( $tinymce_init_settings ) {

@@ -9,12 +9,14 @@
 
 .mission {
 
-  padding: 6rem 6rem 4rem 9rem;
+
+
+  padding: 5rem 6rem 0 9rem;
 
   p.lead {
 
-    font-size: 1.2rem;
-    line-height: 1.67;
+    font-size: 1rem;
+    line-height: 1.5;
     margin: 2rem 0 .8rem;
 
   }
@@ -26,7 +28,7 @@
     list-style: none;
 
     li {
-      padding: 2rem 0 2.2rem;
+      padding: 2rem 0 2.16rem;
       list-style: none;
       border-bottom: 1px solid $mid-cream;
 
@@ -97,10 +99,12 @@
 
 }
 
+.mission-pic-container {
+  max-height: 912px;
+}
+
 .mission-pic {
-  background-size: cover;
-  background-image: url('../img/home-mission.jpg');
-  background-repeat: no-repeat;
+  height: 100%;
 }
 
 .str-home-hero {
@@ -288,7 +292,7 @@ section {
 
   &.questionnaire {
 
-    padding: 3rem 8rem 5rem;
+    padding: 4rem 8rem 4rem;
 
     p.sub {
       font-size: .7rem;
@@ -371,6 +375,11 @@ section {
     .client {
       padding: 2rem;
 
+      img {
+        max-width: 12rem;
+        max-height: 7rem;
+      }
+
       @include media-breakpoint-up(md){
 
         padding: 2rem 0;
@@ -379,6 +388,8 @@ section {
           position: relative;
           top: 50%;
           transform: translateY(-50%);
+          max-width: 8rem;
+          max-height: 3rem;
         }
 
       }
@@ -495,11 +506,12 @@ section {
           width: 100%;
           padding-left: 0;
           padding-top: 0.5rem;
+          cursor: pointer;
         }
 
       }
 
-      .btn-primary, input[type="text"] {
+      .btn-primary, input[type="email"] {
         font-family: "Work Sans", sans-serif;
         font-size: .9rem;
         line-height: 1.67;
@@ -507,7 +519,32 @@ section {
         padding: .8rem 1.5rem;
       }
 
-      input[type="text"].form-control {
+      #mce-responses {
+        margin-top: .2rem;
+        font-size: .8rem;
+        font-weight: 300;
+        text-align: left;
+        padding: .4rem;
+        width: 100%;
+
+        #mcd-success-response {
+          text-align: center;
+        }
+
+        #mce-error-response {
+
+          color: red;
+
+
+          a:hover {
+            text-decoration: underline;
+          }
+
+        }
+
+      }
+
+      input[type="email"].form-control {
         border: 1px solid $dark-cream;
         background-color: $light-cream;
 
@@ -559,14 +596,13 @@ section {
     }
   }
 
-  &.up-next {
+  > div.up-next {
 
-    background-image: linear-gradient(to top, rgba(28, 36, 66, 0.52), rgba(28, 36, 66, 0)), url("../img/services-up-next-sml.jpg");
 
     background-size: cover;
 
     @include media-breakpoint-up(sm){
-      background-image: url("../img/next-holder.jpg");
+
       background-size: auto 100%;
 
       &:hover {
@@ -596,15 +632,9 @@ section {
 
 
 
-    &.services {
-      background-image: url("../img/up-next-services.jpg");
-    }
-
   }
 
-  &.up-next.services {
-    background-image: url("../img/up-next-services.jpg");
-  }
+
 
 }
 
@@ -633,6 +663,7 @@ section {
 
   background-color: inherit;
   font-size: .8rem;
+  overflow: hidden;
 
   @include media-breakpoint-up(sm) {
     color: $white;
@@ -867,6 +898,7 @@ section {
 .str-feature-box {
 
   padding: 0;
+  overflow: hidden;
 
   img.str-feature-image {
     width: 100%;
@@ -937,18 +969,7 @@ section {
 
     .circle {
 
-      &.tony {
-        background-image: url("../img/oval-tony-w-over.png");
-        margin-left: 0;
-      }
-
-      &.martin {
-        background-image: url("../img/oval-martin-d-over.png");
-      }
-
-      &.neil {
-        background-image: url("../img/oval-neil-w-over.png");
-      }
+      border: 3px solid $dark-blue;
 
     }
 
@@ -989,23 +1010,15 @@ section {
     float: left;
     margin-left: -1.5em;
     @include transition(all, .5);
+    border: 3px solid $mid-cream;
 
-    &.tony {
-      background-image: url("../img/oval-tony-w.png");
+    &.bg-1 {
       margin-left: 0;
-    }
-
-    &.martin {
-      background-image: url("../img/oval-martin-d.png");
-    }
-
-    &.neil {
-      background-image: url("../img/oval-neil-w.png");
     }
 
     &.blue {
 
-      border: 3px solid $mid-cream;
+
 
       &:hover {
         color: $corn-yellow;
@@ -1054,6 +1067,12 @@ section {
     &.white {
       background-color: $white;
     }
+  }
+
+  .bg-bright-blue .btn-secondary:hover{
+    background-color: $white;
+    border-color: $white;
+    color: $dark-blue;
   }
 
   .v-align {

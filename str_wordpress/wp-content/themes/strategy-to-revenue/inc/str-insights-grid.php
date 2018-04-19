@@ -43,7 +43,7 @@ if ( $loop_query->have_posts() ) :
 		if ( $loop_index < 2 ):
 
 			$item_tile_img_id = get_post_meta( $post->ID, "meta_article_large_insights_page_img", true );
-			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'overlay-image-column-low-res' )[0];
 
 			?>
 
@@ -89,7 +89,7 @@ if ( $loop_query->have_posts() ) :
 				<?php if ( $loop_index >= 2 ):
 
 					$item_tile_img_id = get_post_meta( $post->ID, "meta_article_stripe_insights_page_img", true );
-					$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+					$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'overlay-image-column-low-res' )[0];
 
 					?>
 
@@ -105,6 +105,7 @@ if ( $loop_query->have_posts() ) :
 
                     <div class="row str-insight-stripe stripe-article-bg-<?php echo $loop_index ?>"
                          onclick="window.location='<?php the_permalink() ?>;'">
+                        <img src="<?php echo $item_tile_img_src ?>" class="d-none">
                         <div class="col-1 col-sm-2"></div>
                         <div class="col-10 col-sm-8">
                             <div class="insight-info text-left">

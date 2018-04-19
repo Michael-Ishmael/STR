@@ -23,11 +23,15 @@ $loop_query = new WP_Query( $args );
 if ( $loop_query->have_posts() ) :
 
     ?>
-    <section class="more-insights container-fluid">
+    <section class="more-insights container-fluid o-hidden">
     <h3 class="display-3">Discover More Insights From Our Experts</h3>
 <?php
 
+    $loop_index=1;
+
 	while ( $loop_query->have_posts() ) : $loop_query->the_post();
+
+
 
         if($post->ID == $outer_page_post_id) continue;
 
@@ -40,7 +44,7 @@ if ( $loop_query->have_posts() ) :
 		$consultant_name = get_the_title( $consultant_author_id );
 
 		$item_tile_img_id  = get_post_meta( $post->ID, "meta_article_stripe_insights_page_img", true );
-		$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+		$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'picture-grid-tile-low-res' )[0];
 
 		?>
 
@@ -52,6 +56,7 @@ if ( $loop_query->have_posts() ) :
                     background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url(<?php echo $item_tile_img_src ?>);
                     -webkit-background-size: 100%;
                     background-size: 100%;
+
                 }
 
             </style>
@@ -59,6 +64,7 @@ if ( $loop_query->have_posts() ) :
 
             <div class="row str-insight-stripe stripe-article-bg-<?php echo $loop_index ?>"
                  onclick="window.location='<?php the_permalink() ?>;'">
+                <img src="<?php echo $item_tile_img_src ?>" class="d-none">
                 <div class="col-1 col-sm-2"></div>
                 <div class="col-10 col-sm-8">
                     <div class="insight-info text-left">
@@ -74,6 +80,8 @@ if ( $loop_query->have_posts() ) :
             </div>
 
 	<?php
+
+		$loop_index++;
 
 	endwhile;
 

@@ -27,10 +27,10 @@ if ( $loop_query->have_posts() ) : ?>
 		<?php
 
 		$item_stripe_img_id  = get_post_meta( $post->ID, "meta_service_stripe_img", true );
-		$item_stripe_img_src = wp_get_attachment_image_src( $item_stripe_img_id, 'full' );
+		$item_stripe_img_src = wp_get_attachment_image_src( $item_stripe_img_id, 'picture-grid-tile-hi-res' );
 
 		$item_mobile_img_id  = get_post_meta( $post->ID, "meta_service_mobile_img", true );
-		$item_mobile_img_src = wp_get_attachment_image_src( $item_mobile_img_id, 'full' );
+		$item_mobile_img_src = wp_get_attachment_image_src( $item_mobile_img_id, 'picture-grid-tile-low-res' );
 
 		$item_intro = get_post_meta( $post->ID, "meta_service_intro_text", true );
 
@@ -41,11 +41,14 @@ if ( $loop_query->have_posts() ) : ?>
         <!-- theme generated styles -->
         <style>
             @media (min-width: 576px) {
-                section.<?php echo $class_and_id_name ?> {
-                    background-image: linear-gradient(to right, rgba(17, 22, 40, 0.8), rgba(28, 36, 66, 0)), url(<?php echo $item_stripe_img_src[0] ?>); } }
+
+
+                .<?php echo $class_and_id_name ?> {
+                    background-image: url(<?php echo $item_stripe_img_src[0] ?>); } }
         </style>
 
-        <section class="container-fluid <?php echo $class_and_id_name ?>" id="<?php echo $class_and_id_name ?>">
+        <section class="container-fluid o-hidden p-0"  >
+            <div class="<?php echo $class_and_id_name ?>" id="<?php echo $class_and_id_name ?>">
 
             <div class="row d-sm-none">
                 <div class="col-12 p-0"><img class="w-100" src="<?php echo $item_mobile_img_src[0] ?>"></div>
@@ -56,6 +59,7 @@ if ( $loop_query->have_posts() ) : ?>
                     <p><?php echo $item_intro ?></p>
                     <a class="overlay-link" href="#overlay-<?php echo $post->ID ?>" role="button">Continue Reading</a>
                 </div>
+            </div>
             </div>
         </section>
 

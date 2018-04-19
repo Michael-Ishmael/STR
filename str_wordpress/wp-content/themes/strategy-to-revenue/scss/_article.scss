@@ -31,6 +31,11 @@
 
   }
 
+  .article-header-image {
+    max-height: 30rem;
+    overflow: hidden;
+  }
+
 }
 
 
@@ -191,6 +196,15 @@
 
         }
 
+        a {
+          color: $dark-blue;
+          font-weight: 400;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
         @include media-breakpoint-down(sm) {
 
           margin-top: 1rem;
@@ -292,6 +306,15 @@
         .quote {
 
           text-align: center;
+          padding: 1.5rem 0;
+          margin-bottom: .5rem;
+
+          p {
+            font-size: 2.1rem;
+            text-align: center;
+            font-weight: 300;
+            line-height: 1.25;
+          }
 
           q {
             font-size: 3.2rem;

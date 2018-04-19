@@ -17,10 +17,50 @@ header {
     height: 4rem;
   }
 
-  nav {
+
+
+
+
+  .block-bottom-border {
+    display: block;
+    height: 1px;
+    background-color: $white;
+    opacity: 0.1;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+#sticky-nav {
+  background: $dark-blue;
+  color: $white;
+  height: 2.6rem;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  max-width: 1440px;
+  z-index: 50;
+  padding: .8rem 0;
+  box-shadow: 0 5px 10px -3px #1d1d1d;
+
+  @media screen and (min-width: 1440px) {
+    left: 50%;
+    margin-left: -720px;
+  }
+
+  &.nav-up {
+    top: -3.1rem;
+  }
+}
+
+
+
+header nav, #sticky-nav .nav  {
     color: #ffffff;
     font-size: .7rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.7;
     text-transform: uppercase;
 
@@ -74,20 +114,14 @@ header {
 
     }
 
-}
-
-
-
-  .block-bottom-border {
-    display: block;
-    height: 1px;
-    background-color: $white;
-    opacity: 0.1;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
   }
+
+#sticky-nav .nav .nav-link {
+  padding-bottom: .2rem;
 }
+
+
+
 
 #mobile-menu {
   display: none;
@@ -143,13 +177,17 @@ header {
   }
 }
 
+.mobile-img-container{
+  position: relative;
+}
+
 .home-hero-bg {
-  background-image:url('../img/hero-kv.jpg');
+  //background-image:url('../img/hero-kv.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 
   @include media-breakpoint-down(sm){
-    background-image:url('../img/hero-kv-sml.jpg');
+    //background-image:url('../img/hero-kv-sml.jpg');
   }
 
 /*  position: absolute;

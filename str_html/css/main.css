@@ -841,11 +841,10 @@ footer {
 .no-padding {
   padding: 0; }
 
+v
 .o-hidden {
   overflow: hidden; }
 
-.str .container-fluid {
-  max-width: 1440px; }
 .str .box-link {
   cursor: pointer; }
 
@@ -2304,6 +2303,9 @@ footer nav ul.nav {
       margin-top: 0;
       margin-left: 4.1rem;
       width: auto; }
+
+.overlay.hide-footers .overlay-footer {
+  display: none; }
 
 .consultant-skill-box {
   margin-top: 1rem; }

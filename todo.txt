@@ -1,0 +1,4 @@
+Fav icons
+Pre-load images
+Fix overlay overlays
+Zoom image on all stripes

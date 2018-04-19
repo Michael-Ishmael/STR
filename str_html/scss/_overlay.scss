@@ -270,6 +270,8 @@
 
   }
 
+
+
   .overlay-footer {
 
     padding: 1.6rem 2rem 1.6rem;
@@ -343,6 +345,12 @@
 
   }
 
+}
+
+.overlay.hide-footers{
+  .overlay-footer {
+    display: none;
+  }
 }
 
 .consultant-skill-box {

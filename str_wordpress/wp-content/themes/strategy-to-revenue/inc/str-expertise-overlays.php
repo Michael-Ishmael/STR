@@ -55,7 +55,7 @@ if ( $loop_query->have_posts() ) : ?>
 
 	$previous_post = $this_post;
 	$this_post     = $next_post;
-	$next_post     = null;
+	$next_post     = $first_post;
 	if($this_post !== null){
 		include($expertise_overlay_single_template_path);
 	}

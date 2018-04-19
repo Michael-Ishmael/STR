@@ -2,7 +2,7 @@
     <div class="col-12 col-sm-6 p-0 home-column">
         <img class="w-100 d-none d-sm-block"
              src="<?php echo get_template_directory_uri() ?>/img/ratio-place-holder-1.gif">
-        <div class="column-pic-container">
+        <div class="column-pic-container w-100">
 			<?php
 
 			$args = array(
@@ -22,14 +22,13 @@
 
 			$loop_query = new WP_Query( $args );
 
-
 			if ( $loop_query->have_posts() ) :
 
 			while ( $loop_query->have_posts() ) :
 			$loop_query->the_post();
 
 			$item_tile_img_id  = get_post_meta( $post->ID, "meta_success_tile_img", true );
-			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' );
+			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'picture-grid-tile-low-res' );
 
 			$caption_colour_class = get_post_meta( $post->ID, "meta_caption_color", true );
 			if ( $caption_colour_class == null ) {
@@ -61,7 +60,7 @@
 
         </div>
     </div>
-    <div class="col-12 col-sm-6 str-insight-pic" onclick="window.location='/article.html';">
+    <div class="col-12 col-sm-6 str-insight-pic">
 
 		<?php
 
@@ -95,11 +94,12 @@
 				$consultant_name = get_the_title( $consultant_author_id );
 
 				$item_tile_img_id  = get_post_meta( $post->ID, "meta_article_large_insights_page_img", true );
-				$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+				$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'overlay-image-column-low-res' )[0];
 
 				?>
 
-                <div class="insight-image-tile w-100"><img class="w-100" src="<?php echo $item_tile_img_src ?>"><img
+                <div class="insight-image-tile w-100 o-hidden" onclick="window.location='<?php the_permalink() ?>';">
+                    <img class="w-100" src="<?php echo $item_tile_img_src ?>"><img
                             class="h-align gradient" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
                     <div class="insight-info text-left p-5">
                         <div class="author"><img class="d-inline-block" src="<?php echo $consultant_oval_src ?>">

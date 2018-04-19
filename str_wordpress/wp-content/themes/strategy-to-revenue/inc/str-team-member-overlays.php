@@ -23,11 +23,14 @@ if ( $loop_query->have_posts() ) :
 
 		$item_overlay_img_id   = get_post_meta( $post->ID, "meta_team_overlay_img", true );
 		$item_overlay_img_src  = '';
-		$item_overlay_img_srcs = wp_get_attachment_image_src( $item_overlay_img_id, 'full' );
+		$item_overlay_img_srcs = wp_get_attachment_image_src( $item_overlay_img_id, 'overlay-image-column-low-res' );
 
 		if ( $item_overlay_img_srcs !== null ) {
 			$item_overlay_img_src = $item_overlay_img_srcs[0];
 		}
+
+		$item_tile_img_id = get_post_meta( $post->ID, "meta_team_tile_img", true );
+		$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'str-super-low-res' )[0];
 
 		$challenge_meta = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
 
@@ -58,7 +61,7 @@ if ( $loop_query->have_posts() ) :
                             </a></div>
                     </div>
                     <div class="overlay-content h-100">
-                        <div class="d-md-none"><img src="<?php echo $item_overlay_img_src ?>"></div>
+                        <div class="d-md-none"><img class="img-pre-load w-100" src="<?php echo $item_tile_img_src ?>"></div>
                         <div class="overlay-main clearfix">
                             <h6 class="clr-dark-blue text-uppercase font-weight-bold clr-mid-blue"><?php echo $job_title ?></h6>
                             <h2 class="display-2"><?php echo the_title() ?></h2>
@@ -106,7 +109,10 @@ if ( $loop_query->have_posts() ) :
 
                                             <a class="skill overlay-link"
                                                href="#overlay-expertise-<?php echo $area_post->ID ?>"
-                                               data-overlay="overlay-expertise-<?php echo $area_post->ID ?>">
+                                               data-overlay="overlay-expertise-<?php echo $area_post->ID ?>"
+                                               data-overlay-sticky="true"
+                                               data-overlay-classes="hide-footers"
+                                            >
                                                 <?php echo get_the_title($area_post) ?>
                                             </a>
 

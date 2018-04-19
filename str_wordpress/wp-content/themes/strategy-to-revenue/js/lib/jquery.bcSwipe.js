@@ -7,7 +7,7 @@
  * Licensed under the MIT license.
  */
 
-console.log(jQuery);
+
 
 (function($) {
   $.fn.bcSwipe = function(settings) {

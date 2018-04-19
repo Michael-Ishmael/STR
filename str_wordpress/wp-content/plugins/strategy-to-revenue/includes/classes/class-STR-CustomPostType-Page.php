@@ -45,7 +45,13 @@ abstract class STR_Custom_Metabox_Page {
 		wp_register_script( 'str_admin_js', STR_PLUGIN_URL . '/js/str_admin.js', false, '1.0.0' );
 		if($this->image_boxes !== null && count($this->image_boxes) > 0){
 			$image_box_manager = array(
-				'imageBoxIds' => array_map(function($b){ return $b['image_box_id']; },  $this->image_boxes)
+				'imageBoxes' => array_map(function($b){
+					return array(
+						"imageBoxId" => $b['image_box_id'],
+						"multi" => array_key_exists("count", $b) && $b['count'] > 1,
+				);
+
+				},  $this->image_boxes)
 			);
 
 			wp_localize_script('str_admin_js', 'imageBoxManager', $image_box_manager);
@@ -307,6 +313,8 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 
 	function add_meta_boxes() {
 
+		global $post;
+		if (isset($post) && $post->post_type == "page" && $post->post_name !== $this->page_name) return;
 
 		add_meta_box(
 			'str_mission_text_metabox',
@@ -316,13 +324,6 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 			'normal',
 			'high',
 			array("meta_mission_text" ,"Add mission text here")
-		);
-
-		$multi_image_box = array(
-			"image_box_id" => "str_client_logos",
-			"field_name" => "meta_client_logos",
-			"instruction" => "Choose up to 5 client logos to display on the home page. Images should fit inside a 450px x 450px square for multi-resolution support.",
-			"count" => 5
 		);
 
 		add_meta_box(
@@ -337,9 +338,10 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 	}
 
 	function save_post( $post_id ) {
+		global $post;
 
-
-		if(get_post_type($post_id) !== 'post') return;
+		if(get_post_type($post_id) !== 'page') return;
+		if($post->post_name !== 'home') return;
 
 
 		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
@@ -349,18 +351,6 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 
 		// if our current user can't edit this post, bail
 		if( !current_user_can( 'edit_post', $post_id ) ) return;
-
-
-		if(isset($_POST['meta_include_in_page']) && $_POST['meta_include_in_page'] != '')
-			update_post_meta($post_id, 'meta_include_in_page', $_POST['meta_include_in_page']);
-		else
-			update_post_meta($post_id, 'meta_include_in_page', false);
-
-		if(isset($_POST['meta_item_index']) && $_POST['meta_item_index'] != '')
-			update_post_meta($post_id, 'meta_item_index', $_POST['meta_item_index']);
-		else
-			update_post_meta($post_id, 'meta_item_index', 0);
-
 
 		if(isset($_POST['meta_mission_text']) && $_POST['meta_mission_text'] != '')
 			update_post_meta($post_id, 'meta_mission_text', $_POST['meta_mission_text']);
@@ -390,6 +380,7 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 			$str_template_path = STR_PLUGIN_PATH . 'includes/templates/str_image_box.php';
 
 			for ($i = 0; $i < $str_count; $i++){
+				$multi_index = $i ;
 				include( $str_template_path );
 			}
 
@@ -408,7 +399,7 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 		global $post, $wp_meta_boxes;
 
 		# Output the "advanced" meta boxes:
-		if($post->post_type == "page" && $post->post_name="home"){
+		if($post->post_type == "page" && $post->post_name=$this->page_name){
 			do_meta_boxes( "page", 'before', $post );
 		}
 
@@ -418,10 +409,93 @@ class STR_Home_Page_Meta extends STR_Custom_Metabox_Page {
 
 	function action_matches_str_page_type() {
 		global $post;
-		return (isset($post) && $post->post_type == "page" && $post->post_name == "home");
+		return (isset($post) && $post->post_type == "page" && $post->post_name == $this->page_name);
 	}
 }
 
+class STR_Service_Page_Meta extends STR_Custom_Metabox_Page {
+
+	protected $page_name ;
+
+	public function __construct( $page_name = 'services') {
+		$this->page_name = $page_name;
+	}
+
+
+	function add_meta_boxes() {
+
+		global $post;
+		if (isset($post) && $post->post_type == "page" && $post->post_name !== $this->page_name) return;
+
+		add_meta_box(
+			'str_service_text_metabox',
+			"Services Text",
+			array($this, 'str_general_editor_metabox'),
+			"page",
+			'normal',
+			'high',
+			array("meta_services_text" ,"Add Services text here")
+		);
+
+		add_meta_box(
+			'str_consultant_text_metabox',
+			"Consultants Text",
+			array($this, 'str_general_editor_metabox'),
+			"page",
+			'normal',
+			'high',
+			array("meta_consultants_text" ,"Add Consultants text here")
+		);
+
+	}
+
+	function save_post( $post_id ) {
+		global $post;
+
+		if(get_post_type($post_id) !== 'page') return;
+		if($post->post_name !== $this->page_name) return;
+
+
+		if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+
+		// if our nonce isn't there, or we can't verify it, bail
+		//if( !isset( $_POST[$this->nonce_id ] ) || !wp_verify_nonce( $_POST[$this->nonce_id ], $this->nonce_id ) ) return;
+
+		// if our current user can't edit this post, bail
+		if( !current_user_can( 'edit_post', $post_id ) ) return;
+
+
+		if(isset($_POST['meta_services_text']) && $_POST['meta_services_text'] != '')
+			update_post_meta($post_id, 'meta_services_text', $_POST['meta_services_text']);
+		else
+			delete_post_meta($post_id, 'meta_services_text');
+
+		if(isset($_POST['meta_consultants_text']) && $_POST['meta_consultants_text'] != '')
+			update_post_meta($post_id, 'meta_consultants_text', $_POST['meta_consultants_text']);
+		else
+			delete_post_meta($post_id, 'meta_consultants_text');
+
+
+	}
+
+	function move_before_meta() {
+		# Get the globals:
+		global $post, $wp_meta_boxes;
+
+		# Output the "advanced" meta boxes:
+		if($post->post_type == "page" && $post->post_name=$this->page_name){
+			do_meta_boxes( "page", 'before', $post );
+		}
+
+		# Remove the initial "advanced" meta boxes:
+		unset( $wp_meta_boxes["post"]['before'] );
+	}
+
+	function action_matches_str_page_type() {
+		global $post;
+		return (isset($post) && $post->post_type == "page" && $post->post_name == $this->page_name);
+	}
+}
 
 abstract class STR_Custom_Post_Type_Admin_Page extends STR_Custom_Metabox_Page {
 
@@ -482,11 +556,14 @@ abstract class STR_Custom_Post_Type_Admin_Page extends STR_Custom_Metabox_Page {
 	protected function add_image_sizes(){
 		add_theme_support( 'post-thumbnails' );
 
+		add_image_size( 'str-super-low-res', 64, 0 );
+
 		add_image_size( 'picture-grid-tile-low-res', 720, 470 );
 		add_image_size( 'overlay-image-column-low-res', 720, 1024 );
 
 		add_image_size( 'picture-grid-tile-hi-res', 1440, 940 );
 		add_image_size( 'overlay-image-column-hi-res', 1440, 1920 );
+
 	}
 
 	function modify_query( $query ) {

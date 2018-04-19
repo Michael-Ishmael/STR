@@ -19,7 +19,7 @@ if ( $loop_query->have_posts() ) :
 
 		$item_overlay_img_id   = get_post_meta( $post->ID, "meta_success_overlay_img", true );
 		$item_overlay_img_src  = '';
-		$item_overlay_img_srcs = wp_get_attachment_image_src( $item_overlay_img_id, 'full' );
+		$item_overlay_img_srcs = wp_get_attachment_image_src( $item_overlay_img_id, 'overlay-image-column-low-res' );
 
 		if ( $item_overlay_img_srcs !== null ) {
 			$item_overlay_img_src = $item_overlay_img_srcs[0];

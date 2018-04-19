@@ -1,8 +1,8 @@
 <?php
 
 $insights_link = get_permalink( get_page_by_path( 'insights' ) );
-$bg_img_src = get_attachment_src_by_slug( 'up-next-insights' );
-$bg_img_src_sml = get_attachment_src_by_slug( 'insights-up-next-sml' );
+$bg_img_src = get_attachment_src_by_slug( 'up-next-insights', 'picture-grid-tile-low-res' );
+$bg_img_src_sml = get_attachment_src_by_slug( 'insights-up-next-sml', 'picture-grid-tile-low-res' );
 
 ?>
 

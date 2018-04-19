@@ -3,10 +3,10 @@
     if($this_post !== null) {
 
 	    $item_overlay_img_id  = get_post_meta( $this_post->ID, "meta_service_overlay_img", true );
-	    $item_overlay_img_src = wp_get_attachment_image_src( $item_overlay_img_id, 'full' )[0];
+	    $item_overlay_img_src = wp_get_attachment_image_src( $item_overlay_img_id, 'overlay-image-column-low-res' )[0];
 
 	    $item_mobile_img_id  = get_post_meta( $this_post->ID, "meta_service_mobile_img", true );
-	    $item_mobile_img_src = wp_get_attachment_image_src( $item_mobile_img_id, 'full' )[0];
+	    $item_mobile_img_src = wp_get_attachment_image_src( $item_mobile_img_id, 'picture-grid-tile-low-res' )[0];
 
 
 	    $content = $this_post->post_content;

@@ -5,7 +5,7 @@ get_header("article");
 if (have_posts()): while (have_posts()) : the_post();
 
     $article_head_img_id  = get_post_meta( $post->ID, "meta_article_header_img", true );
-    $article_head_img_src = wp_get_attachment_image_src( $article_head_img_id, 'full' )[0];
+    $article_head_img_src = wp_get_attachment_image_src( $article_head_img_id, 'picture-grid-tile-hi-res' )[0];
     $consultant_author_id = get_post_meta( $post->ID, "meta_consultant_author", true );
 
     $cons_oval_img_id  = get_post_meta( $consultant_author_id, "meta_team_oval_img", true );
@@ -14,7 +14,7 @@ if (have_posts()): while (have_posts()) : the_post();
     $cons_job_title = get_post_meta( $consultant_author_id, "meta_member_job_title", true );
     $consultant_name = get_the_title($consultant_author_id);
 
-    $expertise_areas     = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
+    $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
 
 ?>
 
@@ -27,7 +27,10 @@ if (have_posts()): while (have_posts()) : the_post();
 		<!-- article -->
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-            <div class="tools d-none d-md-block"><a class="tool-item"><i class="print"></i><span>print</span></a><a class="tool-item"><i class="share"></i><span>share</span></a></div>
+            <div class="tools d-none d-md-block">
+<!--                <a class="tool-item"><i class="print"></i><span>print</span></a>
+                <a class="tool-item"><i class="share"></i><span>share</span></a>-->
+            </div>
             <div class="top-marker"></div>
             <div class="article-header clearfix">
                 <div class="author overlay-link" data-overlay="overlay-about-<?php echo $consultant_author_id ?>" >
@@ -113,6 +116,9 @@ if (have_posts()): while (have_posts()) : the_post();
 
 				$expertise_overlay_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
 				load_template($expertise_overlay_template_path, true);
+
+				$success_overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
+				load_template($success_overlay_template_path, true);
 
 				?>
 

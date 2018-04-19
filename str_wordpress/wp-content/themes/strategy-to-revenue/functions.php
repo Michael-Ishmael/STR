@@ -92,6 +92,7 @@ function str_nav($str_location)
     $wrap_class_string = 'nav';
     if($str_location == 'header') $wrap_class_string .= ' justify-content-end';
     if($str_location == 'footer') $wrap_class_string .= ' justify-content-center';
+    if($str_location == 'sticky') $wrap_class_string .= ' justify-content-center';
 
 
 	wp_nav_menu(
@@ -184,6 +185,10 @@ script(data-main="js/app" src="node_modules/systemjs/dist/system-production.js")
 
 
 	wp_enqueue_script('bc-swipe', get_template_directory_uri() . '/js/lib/jquery.bcSwipe.js', array('jquery'), '1.0.0');
+
+/*    if ( is_page_template( 'str-home-page-template.php' ) ) {
+        wp_enqueue_script('mailchimp', '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js', array('jquery'), '1.0.0', true);
+    }*/
 
 	wp_enqueue_script('gsap-tween', get_template_directory_uri() . '/node_modules/gsap/TweenMax.js', array(), '1.0.0');
 	wp_enqueue_script('gsap-css', get_template_directory_uri() . '/node_modules/gsap/CSSPlugin.js', array(), '1.0.0');

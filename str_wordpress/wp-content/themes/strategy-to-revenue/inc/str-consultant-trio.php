@@ -9,6 +9,8 @@ $args = array(
 
 $loop_query = new \WP_Query( $args );
 
+$circle_images = array();
+
 if ( $loop_query->have_posts() ) : ?>
 
 
@@ -19,10 +21,12 @@ if ( $loop_query->have_posts() ) : ?>
 		while ( $loop_query->have_posts() ) : $loop_query->the_post();
 
 			$item_tile_img_id = get_post_meta( $post->ID, "meta_team_tile_img", true );
-			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'full' )[0];
+			$item_tile_img_src = wp_get_attachment_image_src( $item_tile_img_id, 'picture-grid-tile-low-res' )[0];
 
-			$item_tile_img_blur_id = get_post_meta( $post->ID, "meta_team_tile_blur_img", true );
-			$item_tile_img_blur_src = wp_get_attachment_image_src( $item_tile_img_blur_id, 'full' )[0];
+			$item_tile_oval_id = get_post_meta( $post->ID, "meta_team_oval_img", true );
+			$item_tile_oval_src = wp_get_attachment_image_src( $item_tile_oval_id, 'full' )[0];
+
+			$circle_images[] = $item_tile_oval_src;
 
 			$email = get_post_meta( $post->ID, "meta_member_email", true );
 			$linked_in = get_post_meta( $post->ID, "meta_member_linkedIn", true );
@@ -36,7 +40,7 @@ if ( $loop_query->have_posts() ) : ?>
 
     <div class="col-12 col-md-4 str-feature-box bg-light-cream">
         <a class="overlay-link" href="#overlay-about-<?php echo $post->ID ?>" data-overlay="overlay-about-<?php echo $post->ID ?>">
-            <img class="str-feature-image" src="<?php echo $item_tile_img_src ?>"></a>
+            <img class="str-feature-image img-pre-load" src="<?php echo $item_tile_img_src ?>"></a>
         <div class="str-feature-text text-center">
             <h3 class="display-3"><?php echo the_title() ?></h3>
             <h6 class="display-6 text-uppercase"><?php echo $job_title ?></h6>
@@ -51,17 +55,22 @@ if ( $loop_query->have_posts() ) : ?>
 		            $area_post = get_post($area_post_id);
 
 		            if($area_post !== null){
-
+			            $comma =  ($area_index < $area_count - 1) ? ", " : "";
 			            ?>
 
                         <a class="overlay-link"
                            href="#overlay-expertise-<?php echo $area_post->ID ?>"
-                           data-overlay="overlay-expertise-<?php echo $area_post->ID ?>">
-				            <?php echo get_the_title($area_post) ?>
+                           data-overlay="overlay-expertise-<?php echo $area_post->ID ?>"
+                           data-overlay-classes="hide-footers"
+                        >
+				            <?php echo
+
+	                             get_the_title($area_post) . $comma
+
+                            ?>
                         </a>
 
 			            <?php
-                        if($area_index < $area_count - 1) echo ", ";
 		            }
 		            $area_index++;
 	            }
@@ -80,6 +89,47 @@ if ( $loop_query->have_posts() ) : ?>
 		<?php endwhile; ?>
 
 </div>
+
+    <style>
+
+        <?php
+            $loop_index = 1;
+            foreach ($circle_images as $image):
+         ?>
+
+                .circles .circle.bg-<?php echo $loop_index ?> {
+
+                    background-image: url(<?php echo $image ?>);
+
+                }
+
+        <?php
+            $loop_index++;
+            endforeach;
+         ?>
+
+    </style>
+
+    <div class="row str-cream-blue-box box-link">
+        <div class="col-12 text-center p-5">
+            <div class="circles text-center">
+	            <?php
+	            $loop_index = 1;
+	            foreach ($circle_images as $image):
+		            ?>
+
+                    <div class="circle bg-<?php echo $loop_index ?>"></div>
+
+		            <?php
+		            $loop_index++;
+	            endforeach;
+	            ?>
+
+                <a class="circle blue bg-blue clr-white" href="<?php echo home_url('about-us') ?>">+9</a>
+            </div>
+            <div class="d-inline-block consult-link-text-container"><a class="d-inline-block font-weight-bold f-28" href="<?php echo home_url('about-us') ?>">Show all consultants</a></div>
+        </div>
+    </div>
 
 <?php
 

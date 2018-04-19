@@ -5,13 +5,20 @@ global $post;
 $upload_link = esc_url( get_upload_iframe_src( 'image', $post->ID ) );
 
 // See if there's a media id already saved as post meta
-$your_img_id = get_post_meta( $post->ID, $str_custom_image_key, true );
+$img_ids = get_post_meta( $post->ID, $str_custom_image_key, true );
+if(isset($multi_index)){
+	$your_img_id = $img_ids[$multi_index];
+} else {
+    $your_img_id = $img_ids;
+}
 
 // Get the image src
 $your_img_src = wp_get_attachment_image_src( $your_img_id, 'full' );
 
 // For convenience, see if the array is valid
 $you_have_img = is_array( $your_img_src );
+
+$field_name = isset($multi_index) ? $str_custom_image_key . "[]" : $str_custom_image_key;
 ?>
 
 
@@ -28,7 +35,16 @@ $you_have_img = is_array( $your_img_src );
 		echo 'hidden';
 	} ?>"
        href="<?php echo $upload_link ?>">
-		<?php _e( 'Choose Image' ) ?>
+		<?php
+
+        if(isset($multi_index) ){
+	        _e( 'Choose Image '. ($multi_index + 1) );
+        } else {
+	        _e( 'Choose Image' );
+        }
+
+
+        ?>
     </a></h4>
 <p>
 	<?php  _e($str_instruction) ?>
@@ -38,10 +54,18 @@ $you_have_img = is_array( $your_img_src );
 		echo 'hidden';
 	} ?>"
        href="#">
-		<?php _e( 'Remove this image' ) ?>
+		<?php
+
+		if(isset($multi_index) ){
+			_e( 'Remove Image '. ($multi_index + 1) );
+		} else {
+			_e( 'Remove this image' );
+		}
+
+        ?>
     </a>
 </h4>
 </p>
 
 <!-- A hidden input to set and post the chosen image id -->
-<input class="custom-img-id" name="<?php echo esc_attr($str_custom_image_key); ?>" type="hidden" value="<?php echo esc_attr( $your_img_id ); ?>"/>
+<input class="custom-img-id" name="<?php echo esc_attr($field_name); ?>" type="hidden" value="<?php echo esc_attr( $your_img_id ); ?>"/>

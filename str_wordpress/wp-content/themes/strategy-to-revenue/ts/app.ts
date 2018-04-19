@@ -27,6 +27,64 @@ jQuery(function ($) {
             }
         );
 
+    $(window).on("load", function() {
+
+        const remSizeRegex = /-\d+[Xx]\d+\./;
+
+        $('.img-pre-load-class').each(function (i) {
+
+            let jImg = $(this);
+            let dStyle = window.getComputedStyle(this);
+            let bgImage = dStyle.backgroundImage;
+            if(bgImage){
+                let rexMatches  = bgImage.match(/url\((.*?)\)/);
+                if(!rexMatches || rexMatches.length < 2) return;
+                let imageUrl  =rexMatches[1].replace(/('|")/g,'');
+                let srcReplace =  imageUrl.replace(remSizeRegex, ".");
+                let newBgStyle = null;
+                if(bgImage.indexOf('"' + imageUrl + '"') > -1)
+                    newBgStyle = bgImage.replace('"' + imageUrl + '"',  srcReplace );
+                else if(bgImage.indexOf('\'' + imageUrl + '\'') > -1)
+                    newBgStyle = bgImage.replace('\'' + imageUrl + '\'', srcReplace );
+                else
+                    newBgStyle = bgImage.replace( imageUrl ,  srcReplace);
+
+                if(newBgStyle){
+                    let imgLarge = new Image();
+                    imgLarge.src = srcReplace;
+                    imgLarge.onload = function () {
+                        //jImg.css('backgroundImage', newBgStyle);
+                        jImg.addClass('complete')
+                    };
+                }
+
+            }
+
+        });
+
+
+        $('.img-pre-load').each(function(i){
+
+            let jImg = $(this);
+            let src =jImg.attr('src');
+            if(!src) return;
+            let srcReplace =  src.replace(remSizeRegex, ".");
+
+            let imgLarge = new Image();
+            imgLarge.src = srcReplace;
+            imgLarge.onload = function () {
+                jImg.attr('src', srcReplace);
+                jImg.addClass('complete')
+            };
+
+
+
+        });
+    });
+
+
+
+
         $('img').each(function(i){
 
             let src = $(this).attr('src');
@@ -116,6 +174,72 @@ jQuery(function ($) {
 
 
         $('.carousel').bcSwipe({ threshold: 50});
+
+
+        //Sticky nav
+
+        function setupStickyNav(){
+
+            const stickyNavBarId = "#sticky-nav";
+
+            // Hide Header on on scroll down
+            let didScroll;
+            let lastScrollTop = 0;
+            let delta = 5;
+            let navbarHeight = $(stickyNavBarId).outerHeight();
+
+
+            $(window).scroll(function(event){
+                didScroll = true;
+            });
+
+            setInterval(function() {
+                if (didScroll) {
+                    hasScrolled();
+                    didScroll = false;
+                }
+            }, 250);
+
+            function hasScrolled() {
+                let st = $(window).scrollTop();
+
+                if(st < 160){
+                    st=0;
+                }
+
+
+
+                if(st == 0){
+                    lastScrollTop = st;
+                    $(stickyNavBarId).removeClass('nav-down').addClass('nav-up');
+                    return;
+                }
+
+                // Make sure they scroll more than delta
+                if(Math.abs(lastScrollTop - st) <= delta)
+                    return;
+
+                // If they scrolled down and are past the navbar, add class .nav-up.
+                // This is necessary so you never see what is "behind" the navbar.
+                if (st > lastScrollTop && st > navbarHeight){
+
+                    // Scroll Down
+                    if(!$(stickyNavBarId).hasClass('nav-up'))
+                        $(stickyNavBarId).removeClass('nav-down').addClass('nav-up');
+                } else {
+                    // Scroll Up
+                    if(st + $(window).height() < $(document).height()) {
+                        $(stickyNavBarId).removeClass('nav-up').addClass('nav-down');
+                    }
+                }
+
+                lastScrollTop = st;
+            }
+
+        }
+
+
+        setupStickyNav();
 
     }
 );

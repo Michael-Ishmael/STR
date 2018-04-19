@@ -2,37 +2,166 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcc23d7b-1968-4b4f-8228-ad72d23fa613" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_consultant_dropdown_box.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/img/ratio-place-holder-1.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/mailchimp.js" />
       <change beforePath="$PROJECT_DIR$/../str_html/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../str_html/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../str_html/article.html" afterPath="$PROJECT_DIR$/../str_html/article.html" />
-      <change beforePath="$PROJECT_DIR$/../str_html/index.html" afterPath="$PROJECT_DIR$/../str_html/index.html" />
+      <change beforePath="$PROJECT_DIR$/../str_html/css/main.css" afterPath="$PROJECT_DIR$/../str_html/css/main.css" />
+      <change beforePath="$PROJECT_DIR$/../str_html/css/main.css.map" afterPath="$PROJECT_DIR$/../str_html/css/main.css.map" />
+      <change beforePath="$PROJECT_DIR$/../str_html/js/app.js" afterPath="$PROJECT_DIR$/../str_html/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/../str_html/js/app.js.map" afterPath="$PROJECT_DIR$/../str_html/js/app.js.map" />
+      <change beforePath="$PROJECT_DIR$/../str_html/pug/services.pug" afterPath="$PROJECT_DIR$/../str_html/pug/services.pug" />
+      <change beforePath="$PROJECT_DIR$/../str_html/scss/_globals.scss" afterPath="$PROJECT_DIR$/../str_html/scss/_globals.scss" />
+      <change beforePath="$PROJECT_DIR$/../str_html/scss/_overlay.scss" afterPath="$PROJECT_DIR$/../str_html/scss/_overlay.scss" />
       <change beforePath="$PROJECT_DIR$/../str_html/services.html" afterPath="$PROJECT_DIR$/../str_html/services.html" />
+      <change beforePath="$PROJECT_DIR$/../str_html/ts/overlay.ts" afterPath="$PROJECT_DIR$/../str_html/ts/overlay.ts" />
+      <change beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-Custom-Page.php" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php" />
+      <change beforePath="$PROJECT_DIR$/readme.html" afterPath="$PROJECT_DIR$/readme.html" />
+      <change beforePath="$PROJECT_DIR$/wp-activate.php" afterPath="$PROJECT_DIR$/wp-activate.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/about.php" afterPath="$PROJECT_DIR$/wp-admin/about.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/about-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/about-rtl.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/about-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/about-rtl.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/about.css" afterPath="$PROJECT_DIR$/wp-admin/css/about.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/about.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/about.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/common-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/common-rtl.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/common-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/common-rtl.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/common.css" afterPath="$PROJECT_DIR$/wp-admin/css/common.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/common.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/common.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/forms-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms-rtl.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/forms-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms-rtl.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/forms.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/forms.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/forms.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/login-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/login-rtl.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/login.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/login.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus-rtl.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/css/nav-menus.min.css" afterPath="$PROJECT_DIR$/wp-admin/css/nav-menus.min.css" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/custom-header.php" afterPath="$PROJECT_DIR$/wp-admin/custom-header.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/customize.php" afterPath="$PROJECT_DIR$/wp-admin/customize.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/edit-comments.php" afterPath="$PROJECT_DIR$/wp-admin/edit-comments.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/edit-tags.php" afterPath="$PROJECT_DIR$/wp-admin/edit-tags.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/edit.php" afterPath="$PROJECT_DIR$/wp-admin/edit.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/bookmark.php" afterPath="$PROJECT_DIR$/wp-admin/includes/bookmark.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-users-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-ms-users-list-table.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/class-wp-users-list-table.php" afterPath="$PROJECT_DIR$/wp-admin/includes/class-wp-users-list-table.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/file.php" afterPath="$PROJECT_DIR$/wp-admin/includes/file.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/image.php" afterPath="$PROJECT_DIR$/wp-admin/includes/image.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/misc.php" afterPath="$PROJECT_DIR$/wp-admin/includes/misc.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/includes/theme.php" afterPath="$PROJECT_DIR$/wp-admin/includes/theme.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/customize-controls.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-controls.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/customize-controls.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-controls.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/customize-nav-menus.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/image-edit.js" afterPath="$PROJECT_DIR$/wp-admin/js/image-edit.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/js/image-edit.min.js" afterPath="$PROJECT_DIR$/wp-admin/js/image-edit.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/media-upload.php" afterPath="$PROJECT_DIR$/wp-admin/media-upload.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/nav-menus.php" afterPath="$PROJECT_DIR$/wp-admin/nav-menus.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/network/site-users.php" afterPath="$PROJECT_DIR$/wp-admin/network/site-users.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/options-media.php" afterPath="$PROJECT_DIR$/wp-admin/options-media.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/options.php" afterPath="$PROJECT_DIR$/wp-admin/options.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/post-new.php" afterPath="$PROJECT_DIR$/wp-admin/post-new.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/press-this.php" afterPath="$PROJECT_DIR$/wp-admin/press-this.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/term.php" afterPath="$PROJECT_DIR$/wp-admin/term.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/themes.php" afterPath="$PROJECT_DIR$/wp-admin/themes.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/user-new.php" afterPath="$PROJECT_DIR$/wp-admin/user-new.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/users.php" afterPath="$PROJECT_DIR$/wp-admin/users.php" />
+      <change beforePath="$PROJECT_DIR$/wp-admin/widgets.php" afterPath="$PROJECT_DIR$/wp-admin/widgets.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js" />
       <change beforePath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php" afterPath="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/css/main.css" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/css/main.css" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/css/main.css.map" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/css/main.css.map" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-trailer.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-trailer.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-services-trailer.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-services-trailer.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/app.js" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/app.js" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/app.js.map" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/app.js.map" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/screenshot.png" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/screenshot.png" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_globals.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_globals.scss" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_header.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_header.scss" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_overlay.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_overlay.scss" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php" />
-      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-insights-template.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-insights-template.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-private-equity-template.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-private-equity-template.php" />
       <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/app.ts" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/app.ts" />
+      <change beforePath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/overlay.ts" afterPath="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/overlay.ts" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/about-mark-s@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/about-mark-s@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/about-martin-d@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/about-martin-d@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-header-img@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-header-img@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-header-runner.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-header-runner.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-hero@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/article-hero@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/compass@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/compass@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/dhl-transport-plane@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/dhl-transport-plane@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/discovery@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/discovery@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/hero-kv@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/hero-kv@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/mapping@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/mapping@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/next-holder@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/next-holder@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-discovery@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-discovery@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dhl-express@3x-1.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dhl-express@3x-1.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dhl-express@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dhl-express@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dotmailer@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/overlay-success-dotmailer@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/pathfinder@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/pathfinder@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/pins-map@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/pins-map@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/portrait-garry-v@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/portrait-garry-v@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-1@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-1@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-2@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-2@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-3@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-3@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-4@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-4@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-5@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-5@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-6@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-6@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-7@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-7@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-8@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article-8@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/stripe-article@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-dotmailer@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-dotmailer@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-global@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-global@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-motorola@3x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/success-motorola@3x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-content/uploads/2018/03/up-next-services@2x.jpg" afterPath="$PROJECT_DIR$/wp-content/uploads/2018/03/up-next-services@2x.jpg" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/IXR/class-IXR-message.php" afterPath="$PROJECT_DIR$/wp-includes/IXR/class-IXR-message.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-customize-manager.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/class-wp-xmlrpc-server.php" afterPath="$PROJECT_DIR$/wp-includes/class-wp-xmlrpc-server.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/comment-template.php" afterPath="$PROJECT_DIR$/wp-includes/comment-template.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/functions.php" afterPath="$PROJECT_DIR$/wp-includes/functions.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/general-template.php" afterPath="$PROJECT_DIR$/wp-includes/general-template.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/http.php" afterPath="$PROJECT_DIR$/wp-includes/http.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/imgareaselect/jquery.imgareaselect.js" afterPath="$PROJECT_DIR$/wp-includes/js/imgareaselect/jquery.imgareaselect.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/imgareaselect/jquery.imgareaselect.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/imgareaselect/jquery.imgareaselect.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/media-models.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-models.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/media-models.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-models.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/media-views.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/media-views.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-ajax-response.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/wp-api.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-api.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/js/wp-api.min.js" afterPath="$PROJECT_DIR$/wp-includes/js/wp-api.min.js" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/kses.php" afterPath="$PROJECT_DIR$/wp-includes/kses.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/media.php" afterPath="$PROJECT_DIR$/wp-includes/media.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/script-loader.php" afterPath="$PROJECT_DIR$/wp-includes/script-loader.php" />
+      <change beforePath="$PROJECT_DIR$/wp-includes/version.php" afterPath="$PROJECT_DIR$/wp-includes/version.php" />
+      <change beforePath="$PROJECT_DIR$/wp-login.php" afterPath="$PROJECT_DIR$/wp-login.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,139 +171,185 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="strategy-to-revenue.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="str-home-page-template.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-67">
-              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-              <folding>
-                <element signature="e#6#84#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="str-home-page-grid.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="88" column="16" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="99" />
-              <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class-STR-CustomPostType-Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="332" column="21" lean-forward="true" selection-start-line="332" selection-start-column="21" selection-end-line="332" selection-end-column="21" />
-              <folding>
-                <element signature="n#STR_General_Post_Meta#0;n#!!top" expanded="false" />
-                <element signature="n#save_post#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-                <element signature="n#str_multi_image_metabox#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-                <element signature="n#move_before_meta#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-                <element signature="n#action_matches_str_page_type#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-                <element signature="n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-                <element signature="n#register_post_type#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-                <element signature="n#add_image_sizes#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-                <element signature="n#modify_query#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-                <element signature="n#save_post#0;n#STR_Success_Story_PagePostType#0;n#!!top" expanded="false" />
-                <element signature="n#STR_Expertise_PagePostType#0;n#!!top" expanded="false" />
-                <element signature="n#STR_Services_PagePostType#0;n#!!top" expanded="false" />
-                <element signature="n#add_meta_boxes#0;n#STR_Services_PagePostType#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="str_admin.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
-              <folding>
-                <marker date="1521763613589" expanded="true" signature="2620:2634" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="str_image_box.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="390">
+                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="38" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="str-home-page-template.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="636">
+                  <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#6491#6528#0#HTML" expanded="true" />
+                    <element signature="e#7032#7074#0#HTML" expanded="true" />
+                    <element signature="e#7585#7605#0#HTML" expanded="true" />
+                    <element signature="e#7685#7705#0#HTML" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="mailchimp.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/mailchimp.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="270">
+                  <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="29" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="203">
+                  <caret line="188" column="2" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="190" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="jquery.bcSwipe.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-128">
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_components.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-228">
+                  <caret line="481" column="9" lean-forward="true" selection-start-line="481" selection-start-column="9" selection-end-line="481" selection-end-column="9" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header-home.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="262">
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="30" selection-end-column="58" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="single.php" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="header-article.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="421">
+                  <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="mailchimp.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/mailchimp.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="528">
+                  <caret line="111" column="30" lean-forward="false" selection-start-line="111" selection-start-column="30" selection-end-line="111" selection-end-column="30" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="SCSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>enque</find>
-      <find>aif-ad</find>
-      <find>set cust</find>
-      <find>move_before_meta</find>
-      <find>'meta_story_tile_img_lr'</find>
-      <find>bootstrap_styles_and_scripts</find>
-      <find>allowed</find>
-      <find>wp_register_script</find>
-      <find>html5blank_header_scripts</find>
-      <find>wp_enqueue_scripts</find>
-      <find>conditionizr</find>
-      <find>str_st</find>
-      <find>menu</find>
-      <find>add_fil</find>
-      <find>nav_menu_link_attributes</find>
-      <find>str_add_menu_classes</find>
-      <find>logo</find>
-      <find>add_ac</find>
-      <find>str_add_menu_link_atts</find>
-      <find>forea</find>
-      <find>meta_key</find>
-      <find>src=&quot;img/icon-</find>
-      <find>img</find>
-      <find>src=&quot;img/</find>
-      <find>$item</find>
-      <find>str_body_class</find>
-      <find>body_class</find>
-      <find>home-mis</find>
-      <find>instr</find>
-      <find>mission-pic</find>
+      <find>full</find>
+      <find>$item_stripe_img_src</find>
+      <find>overflow</find>
+      <find>, 1s .+? linear;</find>
+      <find>picture-grid-tile-low-res</find>
+      <find>shadow</find>
+      <find>map</find>
+      <find>zendesk</find>
+      <find>article.</find>
+      <find>mobile-</find>
+      <find>mobile</find>
+      <find>mobile-img-con</find>
+      <find>mobile-img-container</find>
+      <find>mobile-menu-butt</find>
+      <find>mobile-menu-butto</find>
+      <find>img-pre-load-class</find>
+      <find>home-mi</find>
+      <find>img-pr</find>
+      <find>tweenma</find>
+      <find>img-pre-load</find>
+      <find>#mce-success-response</find>
+      <find>ajaxSubmit=function</find>
+      <find>newsletter</find>
+      <find>news</find>
+      <find>zen</find>
+      <find>str_scripts</find>
+      <find>newsl</find>
+      <find>$</find>
+      <find>.replace</find>
+      <find>newslet</find>
     </findStrings>
     <replaceStrings>
       <replace>$box_name</replace>
       <replace>src=&quot;&lt;?php echo get_template_directory_uri() ?&gt;/img/icon-</replace>
       <replace>src=&quot;&lt;?php echo get_template_directory_uri() ?&gt;/img/</replace>
       <replace>$cons</replace>
+      <replace>;</replace>
+      <replace>mc$</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/wp-content/themes/strategy-to-revenue</dir>
+      <dir>$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -183,57 +358,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/rollover.ts" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/overlay.ts" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-nav-menu.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/archive-str_success_story.php" />
-        <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_color_class_drop_down.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/success-story-overlays.php" />
-        <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_services_trailer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/success-stories-template.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php" />
         <option value="$PROJECT_DIR$/wp-config.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_general_editor_box.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-grid-mobile.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-grid.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-services-trailer.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-trailer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlays.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/app.ts" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/services-template.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-private-equity-template.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_field_set_box.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_expertise_check_list_box.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-about-us-template.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-Custom-Page.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_consultant_dropdown_box.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-insights-template.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php" />
         <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/overlay.ts" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_overlay.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php" />
+        <option value="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_header.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/app.ts" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-private-equity-template.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_globals.scss" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-services-trailer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-trailer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/mailchimp.js" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php" />
+        <option value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php" />
       </list>
     </option>
   </component>
@@ -257,7 +432,7 @@
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Mamp PHP" />
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="x" value="-1920" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
@@ -296,48 +471,14 @@
               <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
               <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
               <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="strategy-to-revenue" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="strategy-to-revenue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="strategy-to-revenue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="classes" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="strategy-to-revenue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="templates" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="str_wordpress" type="b2602c69:ProjectViewProjectNode" />
-              <item name="str_wordpress" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="wp-content" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="plugins" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="strategy-to-revenue" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -348,24 +489,24 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc" />
-      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue" />
-      <recent name="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts" />
       <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/img" />
       <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc" />
       <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue" />
       <recent name="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates" />
-      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/img/icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc" />
+      <recent name="$PROJECT_DIR$/wp-content/themes/strategy-to-revenue" />
+      <recent name="$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -399,36 +540,41 @@
       <workItem from="1518429400628" duration="6529000" />
       <workItem from="1521646079680" duration="53416000" />
       <workItem from="1522054877653" duration="17439000" />
-      <workItem from="1522089308227" duration="74364000" />
+      <workItem from="1522089308227" duration="84568000" />
+      <workItem from="1522498859024" duration="625000" />
+      <workItem from="1522566062589" duration="39735000" />
+      <workItem from="1523237454740" duration="196000" />
+      <workItem from="1523436548198" duration="11385000" />
+      <workItem from="1524042525706" duration="8124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156277000" />
+    <option name="totallyTimeSpent" value="226546000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24872057" sideWeight="0.52442" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41310823" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18669315" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4121152" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620266" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17571884" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23535253" sideWeight="0.47557998" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23336746" sideWeight="0.47557998" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620266" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2395087" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -460,12 +606,17 @@
           <option name="timeStamp" value="173" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php</url>
-          <line>8</line>
-          <option name="timeStamp" value="247" />
+          <url>file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php</url>
+          <line>45</line>
+          <option name="timeStamp" value="265" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js</url>
+          <line>63</line>
+          <option name="timeStamp" value="254" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="250" />
+      <option name="time" value="267" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
@@ -539,524 +690,394 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/rollover.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="61" />
-          <folding />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/l10n.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="246" column="9" lean-forward="false" selection-start-line="246" selection-start-column="9" selection-end-line="246" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_general_editor_box.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/meta.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1951">
-          <caret line="208" column="0" lean-forward="false" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
-          <folding>
-            <marker date="1509451250000" expanded="true" signature="2605:2669" ph="SELECT COUNT... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="6711:6777" ph="SELECT ${$id... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="12138:12187" ph="SELECT ${$id... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="12671:12742" ph="SELECT ${$ty... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="12834:12885" ph="SELECT ${$ty... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="13703:13778" ph="DELETE FROM ${$table}... " />
-            <marker date="1509451250000" expanded="true" signature="18885:18927" ph="SELECT * FRO... ${$table}" />
-            <marker date="1509451250000" expanded="true" signature="25668:25768" ph="SELECT ${$co... ${$table}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="1803" column="0" lean-forward="false" selection-start-line="1803" selection-start-column="0" selection-end-line="1803" selection-end-column="0" />
-          <folding>
-            <marker date="1516777960000" expanded="true" signature="58021:58037" ph="Insert into post... " />
-            <marker date="1516777960000" expanded="true" signature="58047:58063" ph="Insert into page... " />
-            <marker date="1516777960000" expanded="true" signature="84239:84323" ph="SELECT post_... $" />
-            <marker date="1516777960000" expanded="true" signature="86259:86410" ph="SELECT post_... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="86580:86673" ph="SELECT COUNT... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="92426:92466" ph="SELECT * FRO... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="93941:94009" ph="SELECT * FRO... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="94334:94411" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="94863:94928" ph="SELECT comme... wp_comments" />
-            <marker date="1516777960000" expanded="true" signature="95121:95175" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1516777960000" expanded="true" signature="100441:100524" ph="SELECT comme... wp_comments" />
-            <marker date="1516777960000" expanded="true" signature="102446:102529" ph="UPDATE wp_comments... " />
-            <marker date="1516777960000" expanded="true" signature="122940:122981" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="134480:134556" ph="SELECT post_... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="135629:135764" ph="SELECT post_... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="136882:136977" ph="SELECT post_... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="151132:151184" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="153784:153924" ph="SELECT ID, p... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="155741:155839" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="155900:155977" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="168071:168129" ph="SELECT * FRO... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="172555:172595" ph="SELECT * FRO... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="173777:173842" ph="SELECT comme... wp_comments" />
-            <marker date="1516777960000" expanded="true" signature="174036:174090" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1516777960000" expanded="true" signature="174661:174780" ph="SELECT meta_... wp_postmeta" />
-            <marker date="1516777960000" expanded="true" signature="198875:199020" ph="SELECT post_... " />
-            <marker date="1516777960000" expanded="true" signature="199076:199217" ph="SELECT post_... " />
-            <marker date="1516777960000" expanded="true" signature="199313:199507" ph="SELECT DATE_... " />
-            <marker date="1516777960000" expanded="true" signature="210282:210392" ph="SELECT ID FR... wp_posts" />
-            <marker date="1516777960000" expanded="true" signature="212913:212969" ph="SELECT wp_po... wp_posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_results_box.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/class-wp-query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="4060" column="0" lean-forward="false" selection-start-line="4060" selection-start-column="0" selection-end-line="4060" selection-end-column="0" />
-          <folding>
-            <element signature="e#49021#49498#0#PHP" expanded="false" />
-            <marker date="1516830282000" expanded="true" signature="78514:78609" ph="SELECT ${$di... " />
-            <marker date="1516830282000" expanded="true" signature="86838:86936" ph="SELECT ${$fo... $" />
-            <marker date="1516830282000" expanded="true" signature="89755:89863" ph="SELECT ${$fo... " />
-            <marker date="1516830282000" expanded="true" signature="92170:92255" ph="SELECT ${{$w... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_field_set_box.php">
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/overlay.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1522190998577" expanded="true" signature="183:505" ph="..." />
-          </folding>
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_overlay.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="358" column="0" lean-forward="true" selection-start-line="358" selection-start-column="0" selection-end-line="358" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-includes/theme.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="302" column="9" lean-forward="false" selection-start-line="302" selection-start-column="9" selection-end-line="302" selection-end-column="9" />
-          <folding>
-            <marker date="1508870148000" expanded="true" signature="94904:95051" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/plugin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="202" column="0" lean-forward="false" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/class-wp-hook.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="292" column="0" lean-forward="false" selection-start-line="292" selection-start-column="0" selection-end-line="292" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/class-walker-nav-menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-admin/includes/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="1007" column="9" lean-forward="false" selection-start-line="1007" selection-start-column="9" selection-end-line="1007" selection-end-column="9" />
-          <folding>
-            <marker date="1510353168000" expanded="false" signature="17550:17564" ph="..." />
-            <marker date="1510353168000" expanded="true" signature="17565:17776" ph="..." />
-            <marker date="1510353168000" expanded="true" signature="17574:17688" ph="..." />
-            <marker date="1510353168000" expanded="true" signature="17580:17678" ph="..." />
-            <marker date="1510353168000" expanded="true" signature="17737:17767" ph="..." />
-            <marker date="1510353168000" expanded="true" signature="21432:21587" ph="SELECT DISTI... wp_postmeta" />
-            <marker date="1510353168000" expanded="true" signature="29647:29765" ph="SELECT ID, p... wp_posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/_types.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="105" column="13" lean-forward="false" selection-start-line="105" selection-start-column="13" selection-end-line="105" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_expertise_check_list_box.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/link-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <marker date="1506294104000" expanded="true" signature="54179:54227" ph="SELECT p.ID wp_posts" />
-            <marker date="1506294104000" expanded="true" signature="83160:83247" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="1849" column="130" lean-forward="true" selection-start-line="1838" selection-start-column="2" selection-end-line="1849" selection-end-column="130" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_consultant_dropdown_box.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/post-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="554" column="19" lean-forward="false" selection-start-line="554" selection-start-column="9" selection-end-line="554" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2528">
-          <caret line="614" column="9" lean-forward="false" selection-start-line="614" selection-start-column="9" selection-end-line="614" selection-end-column="9" />
-          <folding>
-            <marker date="1516777960000" expanded="true" signature="22839:22976" ph="SELECT post_... wp_postmeta" />
-            <marker date="1516777960000" expanded="true" signature="24482:24629" ph="SELECT post_... wp_postmeta" />
-            <marker date="1516777960000" expanded="true" signature="24808:25066" ph="SELECT ID FR... wp_posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-includes/general-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="1411" column="40" lean-forward="false" selection-start-line="1411" selection-start-column="40" selection-end-line="1411" selection-end-column="40" />
-          <folding>
-            <marker date="1517437724000" expanded="true" signature="28736:28749" ph="..." />
-            <marker date="1517437724000" expanded="true" signature="56350:56532" ph="SELECT YEAR(... " />
-            <marker date="1517437724000" expanded="true" signature="57424:57559" ph="SELECT YEAR(... " />
-            <marker date="1517437724000" expanded="true" signature="58324:58568" ph="SELECT YEAR(... " />
-            <marker date="1517437724000" expanded="true" signature="59539:59777" ph="SELECT DISTI... " />
-            <marker date="1517437724000" expanded="true" signature="61181:61239" ph="SELECT * FRO... wp_posts" />
-            <marker date="1517437724000" expanded="true" signature="63544:63639" ph="SELECT 1 as wp_posts" />
-            <marker date="1517437724000" expanded="true" signature="64877:65091" ph="SELECT MONTH... " />
-            <marker date="1517437724000" expanded="true" signature="65120:65351" ph="SELECT MONTH... " />
-            <marker date="1517437724000" expanded="true" signature="65527:65668" ph="..." />
-            <marker date="1517437724000" expanded="true" signature="65662:65668" ph="..." />
-            <marker date="1517437724000" expanded="true" signature="66113:66119" ph="..." />
-            <marker date="1517437724000" expanded="true" signature="66922:66928" ph="..." />
-            <marker date="1517437724000" expanded="true" signature="67021:67256" ph="SELECT DISTI... wp_posts" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="21" lean-forward="true" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="219" column="1" lean-forward="true" selection-start-line="219" selection-start-column="1" selection-end-line="219" selection-end-column="1" />
-          <folding>
-            <marker date="1522327967916" expanded="true" signature="5129:5154" ph="..." />
-            <marker date="1522327967916" expanded="true" signature="17513:17560" ph="..." />
-            <marker date="1522327967916" expanded="true" signature="17631:17665" ph="..." />
-            <marker date="1522327967916" expanded="true" signature="17749:17808" ph="..." />
-            <marker date="1522327967916" expanded="true" signature="17890:17944" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-insights-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="5" lean-forward="true" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
-          <folding>
-            <element signature="e#6#65#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="77" column="13" lean-forward="true" selection-start-line="77" selection-start-column="13" selection-end-line="77" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="368" column="20" lean-forward="false" selection-start-line="368" selection-start-column="20" selection-end-line="368" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="446" column="3" lean-forward="true" selection-start-line="446" selection-start-column="3" selection-end-line="446" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-about-us-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="42" column="21" lean-forward="true" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="62" column="24" lean-forward="false" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="5" column="4" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="61" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-grid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="60" column="48" lean-forward="true" selection-start-line="60" selection-start-column="48" selection-end-line="60" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="73" lean-forward="true" selection-start-line="6" selection-start-column="73" selection-end-line="6" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="281" column="18" lean-forward="true" selection-start-line="281" selection-start-column="18" selection-end-line="281" selection-end-column="18" />
-          <folding>
-            <marker date="1522338298197" expanded="false" signature="8241:8966" ph="..." />
-            <marker date="1522338298197" expanded="false" signature="9029:9738" ph="..." />
-            <marker date="1522338298197" expanded="false" signature="9807:10512" ph="..." />
-            <marker date="1522338298197" expanded="false" signature="10575:11221" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="102" column="31" lean-forward="true" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="88" column="16" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="99" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="30" column="29" lean-forward="false" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding>
-            <element signature="e#6#84#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="232">
+          <caret line="578" column="9" lean-forward="false" selection-start-line="578" selection-start-column="9" selection-end-line="578" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/classes/class-STR-CustomPostType-Page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="332" column="21" lean-forward="true" selection-start-line="332" selection-start-column="21" selection-end-line="332" selection-end-column="21" />
-          <folding>
-            <element signature="n#STR_General_Post_Meta#0;n#!!top" expanded="false" />
-            <element signature="n#save_post#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-            <element signature="n#str_multi_image_metabox#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-            <element signature="n#move_before_meta#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-            <element signature="n#action_matches_str_page_type#0;n#STR_Home_Page_Meta#0;n#!!top" expanded="false" />
-            <element signature="n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-            <element signature="n#register_post_type#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-            <element signature="n#add_image_sizes#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-            <element signature="n#modify_query#0;n#STR_Custom_Post_Type_Admin_Page#0;n#!!top" expanded="false" />
-            <element signature="n#save_post#0;n#STR_Success_Story_PagePostType#0;n#!!top" expanded="false" />
-            <element signature="n#STR_Expertise_PagePostType#0;n#!!top" expanded="false" />
-            <element signature="n#STR_Services_PagePostType#0;n#!!top" expanded="false" />
-            <element signature="n#add_meta_boxes#0;n#STR_Services_PagePostType#0;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="297" column="20" lean-forward="false" selection-start-line="297" selection-start-column="20" selection-end-line="297" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/includes/templates/str_image_box.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        <state relative-caret-position="33">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/js/str_admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="55" column="66" lean-forward="true" selection-start-line="55" selection-start-column="66" selection-end-line="55" selection-end-column="66" />
+        <state relative-caret-position="402">
+          <caret line="110" column="35" lean-forward="true" selection-start-line="110" selection-start-column="35" selection-end-line="110" selection-end-column="35" />
           <folding>
-            <marker date="1521763613589" expanded="true" signature="2620:2634" ph="..." />
+            <marker date="1522880305332" expanded="true" signature="2766:2780" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_picture-grid.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="320" column="7" lean-forward="true" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/node_modules/bootstrap/scss/mixins/_box-shadow.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="false" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-private-equity-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="53" column="797" lean-forward="false" selection-start-line="53" selection-start-column="797" selection-end-line="53" selection-end-column="797" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="40" column="35" lean-forward="true" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_globals.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-includes/post-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="554" column="9" lean-forward="false" selection-start-line="554" selection-start-column="9" selection-end-line="554" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/ts/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="53" column="46" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_article.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="309" column="25" lean-forward="false" selection-start-line="309" selection-start-column="25" selection-end-line="309" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-overlays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="53" column="64" lean-forward="false" selection-start-line="53" selection-start-column="64" selection-end-line="53" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-home-page-grid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="56" column="14" lean-forward="true" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-overlays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-success-story-grid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="39" column="60" lean-forward="true" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-stripes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="46" column="85" lean-forward="true" selection-start-line="46" selection-start-column="85" selection-end-line="46" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-services-trailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-team-member-grid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-service-overlay-single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" column="29" lean-forward="true" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-nav-menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-trailer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-stripes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-insights-grid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="51" column="73" lean-forward="false" selection-start-line="51" selection-start-column="73" selection-end-line="51" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlays.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="771">
+          <caret line="53" column="13" lean-forward="true" selection-start-line="53" selection-start-column="13" selection-end-line="53" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-overlay-single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="91" lean-forward="true" selection-start-line="30" selection-start-column="91" selection-end-line="30" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-grid-mobile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-expertise-grid.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/inc/str-consultant-trio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="23" column="107" lean-forward="false" selection-start-line="23" selection-start-column="107" selection-end-line="23" selection-end-column="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-insights-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-services-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="72" column="48" lean-forward="true" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-success-stories-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-about-us-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="33" column="49" lean-forward="false" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/single.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/plugins/strategy-to-revenue/strategy-to-revenue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.bcSwipe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/jquery.ajaxSubmit.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="19" lean-forward="false" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/scss/_components.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-228">
+          <caret line="481" column="9" lean-forward="true" selection-start-line="481" selection-start-column="9" selection-end-line="481" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="188" column="2" lean-forward="false" selection-start-line="188" selection-start-column="0" selection-end-line="190" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/js/lib/mailchimp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="48" column="29" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/str-home-page-template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="636">
+          <caret line="198" column="0" lean-forward="true" selection-start-line="198" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
+          <folding>
+            <element signature="e#6491#6528#0#HTML" expanded="true" />
+            <element signature="e#7032#7074#0#HTML" expanded="true" />
+            <element signature="e#7585#7605#0#HTML" expanded="true" />
+            <element signature="e#7685#7705#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="38" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="30" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/strategy-to-revenue/header-article.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

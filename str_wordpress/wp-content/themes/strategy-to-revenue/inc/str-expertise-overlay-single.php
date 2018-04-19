@@ -40,13 +40,13 @@
                                                          data-overlay="overlay-expertise-<?php echo $next_post->ID ?>"><?php echo get_the_title($next_post) ?>   </a></h4>
                             </div>
 					    <?php  endif;  ?>
-					    <?php if($previous_post !== null):  ?>
+<!--					    <?php /*if($previous_post !== null):  */?>
                             <div class="overlay-footer bg-light-cream">
                                 <h6 class="text-uppercase">Previous Field of Expertise</h6>
-                                <h4 class="display-4"><a class="overlay-link" href="#overlay-expertise-<?php echo $previous_post->ID ?>"
-                                                         data-overlay="overlay-expertise-<?php echo $previous_post->ID ?>"><?php echo get_the_title($previous_post) ?>  </a></h4>
+                                <h4 class="display-4"><a class="overlay-link" href="#overlay-expertise-<?php /*echo $previous_post->ID */?>"
+                                                         data-overlay="overlay-expertise-<?php /*echo $previous_post->ID */?>"><?php /*echo get_the_title($previous_post) */?>  </a></h4>
                             </div>
-					    <?php  endif;  ?>
+					    --><?php /* endif;  */?>
                     </div>
                     <div class="close-button-bar bottom d-md-none">
                         <div class="close-button-container"><a class="close-button bg-blue" href="#">

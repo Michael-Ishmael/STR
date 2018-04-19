@@ -2,13 +2,25 @@
 import htmlString = JQuery.htmlString;
 
 
-// multiple overlay sections at bottom of the page
-// one or more triggers show a given overlay
+/*
 
-// overlay
+Open:
+
+* Overlay stack:
+*   count zero - do full animation
+*   other wise just show screen
+*
+*
+* Close
+*
+* Stack zero then close fully
+*
+*
+* */
 
 
 export class OverlayManager {
+
 
     //public tweens: IOverlayTween[];
     public jTriggerEl: JQuery<HTMLElement>;
@@ -30,6 +42,7 @@ export class OverlayManager {
 
     private static duration:number = .5;
 
+    private static _screenStack:Array<Overlay>;
 
     public constructor() {
         //this.tweens = [];
@@ -38,6 +51,7 @@ export class OverlayManager {
 
     public static init(overlayBgSelector:string, overlayClassName:string, overlayTriggersSelector:string){
 
+        this._screenStack = [];
         this._jBody = $('body');
         this._jBackGround = $(overlayBgSelector);
         let triggers = this.initTriggers(overlayTriggersSelector);
@@ -62,6 +76,7 @@ export class OverlayManager {
         });
     }
 
+
     private static initTriggers(overlayTriggersSelector:string):boolean{
 
         let jTriggers = $(overlayTriggersSelector);
@@ -74,8 +89,10 @@ export class OverlayManager {
             let jTrigger:JQuery<HTMLElement> = $(e.currentTarget);
             let link = this.getOverlayLinkFromTrigger(jTrigger);
             let overlayId = this.getOverlayIdFromTrigger(jTrigger);
+            let overlayIsSticky = this.getOverlayIdIsStickyFromTrigger(jTrigger);
+            let overlayClasses = this.getOverlayAddedClasses(jTrigger);
             if(link) window.location.hash = link;
-            if(overlayId) this.showOverlay(overlayId);
+            if(overlayId) this.showOverlay(overlayId, overlayIsSticky, overlayClasses);
 
         });
 
@@ -83,22 +100,37 @@ export class OverlayManager {
 
     }
 
-    public static showOverlay(overlayId:string){
+    public static showOverlay(overlayId: string, overlayIsSticky: boolean, overlayClasses: string){
 
        if(!this._initialized) return;
-       this._nextOverlay = $('#' + overlayId);
-       if(!this.isValidJElement(this._nextOverlay)) return;
-       let closeButton= this._nextOverlay.find('.close-button');
-       if(!this.isValidJElement(closeButton)) return;
-       this.registerCloseButton(closeButton);
+       let nextOverlayElement = $('#' + overlayId);
+       if(!this.isValidJElement(nextOverlayElement)) return;
+
        this.initTimeline();
        if(!this.BgVisible){
            this.setNoScroll(true);
            this.setBackgroundVisibility(true);
        }
-       this.showOverlayInternal();
+        let stackSize = this._screenStack.length + 1;
+        let newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayClasses);
+        this._screenStack.push(newItem);
+
+        newItem.show();
        this._timeline.play();
     }
+
+    public static overlayRemoved(overlay:Overlay) {
+        let partingOverlay = this._screenStack.pop();
+        partingOverlay.kill();
+        if(this._screenStack.length === 0){
+            this.hide();
+        }
+    }
+
+    public static overlayDone(overlay:Overlay) {
+        this.arrangeLayers();
+    }
+
 
     private static keepExisting():boolean{
         //TODO: Make more generic
@@ -117,46 +149,17 @@ export class OverlayManager {
         })
     }
 
-    private static showOverlayInternal(){
-
-        if(this._currentOverlay){
-            this._currentOverlay.css('z-index', this.Z_INDEX_1);
-            //this._currentOverlay.hide();
-            if(this.keepExisting()){
-                this._nextOverlay.addClass("second-level");
-            }
-        }
-
-        this._nextOverlay.show();
-
-        let oBody = this._nextOverlay.find('.overlay-content');
-        let oImg = this._nextOverlay.find('.overlay-image-container');
-        let width = oBody.width() + 10;
-        this._timeline.set(oBody[0],  {x: width}, 0);
-        this._timeline.set(oImg[0], {autoAlpha: 0}, 0);
-        this._timeline.addLabel("doors", 0);
-
-        this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
-        this._timeline.to(oImg[0], this.duration ,{autoAlpha: 1, ease: Linear.easeNone}, this.duration / 2);
-
-
-        this._nextOverlay.css('z-index', this.Z_INDEX_2);
-
-    }
 
     private static arrangeLayers(){
-        let keepExisting = this.keepExisting();
-        if(this._currentOverlay) {
-            if(keepExisting){
-                this._previousOverlay = this._currentOverlay;
-            } else {
-                this._currentOverlay.hide();
-                this._currentOverlay.css('z-index', null);
-            }
+        if(!this._screenStack) return;
+        let stackSize = this._screenStack.length;
+        if(stackSize <= 1) return;
+        let last = this._screenStack[stackSize-1];
+        if(last.isSticky) return;
 
-        }
-        this._currentOverlay = this._nextOverlay;
-        this._nextOverlay = null;
+        let first= this._screenStack.shift();
+        first.hide(true);
+
     }
 
     private static initTimeline(useSecond:boolean = false){
@@ -165,7 +168,7 @@ export class OverlayManager {
                 this._timeline2.kill()
             }
             this._timeline2 = new TimelineLite({
-                onComplete: () =>{ this.arrangeLayers() } ,
+                //onComplete: () =>{ this.arrangeLayers() } ,
                 onReverseComplete: () =>{ this.cleanUpHide() }
             });
         }
@@ -173,31 +176,28 @@ export class OverlayManager {
             this._timeline.kill()
         }
         this._timeline = new TimelineLite({
-            onComplete: () =>{ this.arrangeLayers() } ,
+           // onComplete: () =>{ this.arrangeLayers() } ,
             onReverseComplete: () =>{ this.cleanUpHide() }
         });
     }
 
-    private static isValidJElement(jElement:JQuery<HTMLElement>):boolean{
+    public static isValidJElement(jElement:JQuery<HTMLElement>):boolean{
         return jElement && jElement.length > 0;
     }
 
 
     public static hide(){
         if(!this._initialized) return;
-        if(this._timeline){
-            this._timeline.reverse();
-        } else {
-            if(this._currentOverlay) this._currentOverlay.hide();
-            if(this._nextOverlay) this._nextOverlay.hide();
-            this.setBackgroundVisibility(false, true);
-            this.setNoScroll(false);
-        }
+
+        this.setBackgroundVisibility(false, true);
+        this.setNoScroll(false);
+        return;
+
 
     }
 
     private static cleanUpHide(){
-        if(this._previousOverlay) {
+/*        if(this._previousOverlay) {
             this._previousOverlay.removeClass("second-level");
             this._previousOverlay.hide();
             this._previousOverlay.css('z-index', null);
@@ -212,7 +212,7 @@ export class OverlayManager {
             this._nextOverlay.removeClass("second-level");
             this._nextOverlay.hide();
             this._nextOverlay = null;
-        }
+        }*/
 
         this.setBackgroundVisibility(false, true);
         this.setNoScroll(false);
@@ -251,6 +251,30 @@ export class OverlayManager {
         return overlayId;
     }
 
+    private static getOverlayIdIsStickyFromTrigger(jTrigger:JQuery<HTMLElement>):boolean{
+        if(!(jTrigger && jTrigger.length > 0)) return false;
+        let overlaySticky = jTrigger.data('overlay-sticky');
+        return this.testForBoolean(overlaySticky);
+    }
+
+    private static getOverlayAddedClasses(jTrigger:JQuery<HTMLElement>):string{
+        if(!(jTrigger && jTrigger.length > 0)) return "";
+        let overlayClasses= jTrigger.data('overlay-classes');
+        return overlayClasses;
+    }
+
+    public static testForBoolean(testValue):boolean{
+        if(testValue === undefined || testValue == null) return false;
+        if(testValue === true) return true;
+        if(testValue === false) return false;
+        let string = testValue.toString();
+        switch(string.toLowerCase().trim()){
+            case "true": case "yes": case "1": return true;
+            case "false": case "no": case "0": case null: return false;
+            default: return Boolean(string);
+        }
+    }
+
     private static getOverlayLinkFromTrigger(jTrigger:JQuery<HTMLElement>):string{
         if(!(jTrigger && jTrigger.length > 0)) return null;
         if(jTrigger[0].localName === 'a'){
@@ -268,225 +292,80 @@ export class OverlayManager {
 }
 
 
-/*
-interface IOverlayBodyState {
-    init(): void;
-    setOverlayOn(): void;
-    setOverlayOff(): void;
-}
+class Overlay {
 
-export class OverlayBodyState implements IOverlayBodyState {
+    private _timeline:TimelineLite = null;
+    private _closeButton:JQuery<HTMLElement> = null;
 
-    private _body:JQuery<HTMLElement>;
-
-    init() {
-        this._body = $("body");
-    }
-
-    setOverlayOn() {
-        if (!this._body) return;
-        if (!this._body.hasClass('noscroll')) {
-            this._body.addClass('noscroll')
-        }
-    }
-
-    setOverlayOff() {
-        if (!this._body) return;
-        this._body.removeClass('noscroll');
-    }
-
-}
-
-export class SplitSwipeOverlay{
-
-
-    private _tweens:TweenLite[];
-
-    public constructor(private duration:number, private bodyState:IOverlayBodyState ){
+    public constructor(public screen:JQuery<HTMLElement>, public zIndex:number, public duration:number, public isSticky:boolean = false, public overlayClasses:string = ""){
 
     }
 
+    public show():void{
 
-    public registerTweens(){
-        //Fadebdody
-        //Swipe from left
-        //Swipe from right
-    }
+        this.registerCloseButton();
 
-    public show(){
-        let first:boolean;
-        for (let tween of this._tweens) {
+        this.screen.css("zIndex", this.zIndex.toString());
+        this.screen.addClass(this.overlayClasses);
+        this.screen.show();
 
-        }
-        //
-    }
-
-    public hide(){
-
-    }
-}
-
-export class OverlayManager {
-
-    public tweens:IOverlayTween[];
-    public jTriggerEl:JQuery<HTMLElement>;
-
-    public constructor(private triggerElement:string, private duration:number, private ease:Ease){
-        this.tweens = [];
-
-    }
-
-    public registerTweens(tweens: IOverlayTween[]):void {
-        if(!this.jTriggerEl) return;
-        this.tweens = this.tweens.concat(tweens);
-    }
-
-    public init():void{
-        if(this.triggerElement){
-            this.jTriggerEl = $(this.triggerElement);
-            if(this.jTriggerEl.length){
-                //find close button
-                //this.jTriggerEl.hover((e) => this.show(e.currentTarget), (e) => this.out(e.currentTarget))
-            }
-        }
-    }
-
-    private getLink(triggerElement:JQuery<HTMLElement>){
-
-    }
-
-    public show(currentTarget:HTMLElement):void {
-        if(!this.tweens)return;
-        for (let tween of this.tweens) {
-            tween.show(currentTarget, this.duration, this.ease);
-        }
-    }
-
-    public hide(currentTarget:HTMLElement):void {
-        if(!this.tweens)return;
-        for (let tween of this.tweens) {
-            tween.hide(currentTarget);
-        }
-    }
-
-
-}
-
-
-export interface IOverlayTween  {
-
-    show(currentTarget:HTMLElement, duration:number, ease:Ease):void;
-    hide(currentTarget:HTMLElement):void;
-
-}
-
-class StrOverlayTween {
-
-    public tween:TweenLite = null;
-    public jElement:JQuery<HTMLElement> = null;
-
-    public  constructor(public element:HTMLElement){
-
-    }
-
-}
-
-abstract class  OverlayTweenBase {
-
-    protected tweens:StrOverlayTween[] = [];
-
-
-    public constructor(protected selector:string){
-
-    }
-
-    hide(currentTarget:HTMLElement): void {
-        if(!this.tweens) return;
-        let matches = this.getTweensForElement(currentTarget);
-        matches.forEach( t => t.tween.reverse());
-        this.removeTweensForElement(currentTarget)
-    }
-
-    show(currentTarget:HTMLElement, duration: number, ease: Ease): void {
-        if(this.tweenForElementRunning(currentTarget)) return;
-        let strTween = new StrOverlayTween(currentTarget);
-        strTween.jElement = $(currentTarget).find(this.selector);
-        if(!(strTween.jElement && strTween.jElement.length > 0)) return;
-        this.overImpl(strTween, duration, ease);
-        this.tweens.push(strTween);
-    }
-
-    protected abstract overImpl(tweenContainer:StrOverlayTween, duration: number, ease: Ease);
-
-    protected tweenForElementRunning(currentTarget:HTMLElement):boolean{
-        return this.tweens.some(t => {
-            return t.element === currentTarget;
-        });
-    }
-
-    protected getTweensForElement(currentTarget:HTMLElement):StrOverlayTween[]{
-        return this.tweens.filter(t => {
-            return t.element === currentTarget;
+        this._timeline = new TimelineLite({
+            onComplete: () =>{ this.tweenDone() } ,
+            onReverseComplete: () =>{ this.cleanUpHide() }
         });
 
+        let oBody = this.screen.find('.overlay-content');
+        let oImg = this.screen.find('.overlay-image-container');
+        let width = oBody.width() + 10;
+        this._timeline.set(oBody[0],  {x: width}, 0);
+        this._timeline.set(oImg[0], {autoAlpha: 0}, 0);
+        this._timeline.addLabel("doors", 0);
+
+        this._timeline.to(oBody[0], this.duration, {x: 0}, "doors");
+        this._timeline.to(oImg[0], this.duration ,{autoAlpha: 1, ease: Linear.easeNone}, this.duration / 2);
     }
 
-    protected removeTweensForElement(currentTarget:HTMLElement):void{
-        this.tweens = this.tweens.filter( t => t.element !== currentTarget);
+    private registerCloseButton(){
+        let closeButton = this.screen.find('.close-button');
+        if(!OverlayManager.isValidJElement(closeButton)) return;
+        this._closeButton = closeButton;
+        this._closeButton.click((e) => {
+            e.preventDefault();
+            this.hide();
+        })
+
     }
-}
 
-export class SwipeFromOffScreenTween extends OverlayTweenBase implements IOverlayTween {
-
-    public constructor(protected selector:string, private propertyName:string, private toValue:any){
-        super(selector);
-    }
-
-    protected overImpl(tweenContainer:StrOverlayTween, duration: number, ease: Ease): void {
-
-        //find close button
-
-        let cssTransformObj = {};
-        cssTransformObj[this.propertyName] = this.toValue;
-        if(this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
-            if(this.toValue == 0) {
-                tweenContainer.jElement.css('visibility', 'hidden');
-            } else {
-                tweenContainer.jElement.css('visibility', 'visible');
-            }
+    public hide(immediate:boolean = false):void  {
+        if(immediate){
+            this.screen.hide();
+            this.screen.removeClass(this.overlayClasses);
+            this._timeline.seek(0);
+            return;
         }
-        tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, {
-            css: cssTransformObj, ease: ease,
-            onReverseComplete: () => {
-                if (this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
-                    if(this.toValue == 0) {
-                        tweenContainer.jElement.css('visibility', 'visible');
-                    } else {
-                        tweenContainer.jElement.css('visibility', 'hidden');
-                    }
-                }}
+        if(!this._timeline) return;
+        if(this._timeline.isActive()){
+            this._timeline.kill()
+        }
+        this._timeline.reverse();
+    }
 
-        });
+    public tweenDone():void{
+        OverlayManager.overlayDone(this);
+    }
+
+    public cleanUpHide():void {
+        this.screen.hide();
+        this.screen.removeClass(this.overlayClasses);
+        OverlayManager.overlayRemoved(this);
+    }
+
+    public kill():void  {
+        this._timeline.kill();
+        if(this._closeButton){
+            this._closeButton.off("click");
+        }
+        this.screen = null;
     }
 
 }
-
-/!*
-export class MovePercentageOfParent extends RolloverTweenBase implements IRolloverTween{
-
-    public constructor(protected selector:string, private direction:string, private percentage:number){
-        super(selector);
-    }
-
-    protected overImpl(tweenContainer:StrElementTween, duration: number, ease: Ease): void {
-
-        let parentDimension = this.direction.toLowerCase() === 'y' ? 'height' : 'width';
-        let to = tweenContainer.jElement.parent()[parentDimension]() * this.percentage;
-        to = to - (tweenContainer.jElement[parentDimension]() * this.percentage);
-        let vars = { ease: ease};
-        vars[this.direction] = to;
-        tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, vars);
-    }
-
-}*!/
-*/

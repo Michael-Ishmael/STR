@@ -294,16 +294,15 @@ html(lang="en")
                                             h2.display-2.text-center.text-md-left= service.title
                                             .clr-mid-blue
                                                 != service.fullText
-                                        if index < services.length - 1
-                                            .overlay-footer.bg-light-cream
-                                                h6.text-uppercase Next Service
-                                                h4.display-4.large
-                                                    a.overlay-link(href='#' + services[index + 1].overlayId, data-overlay=services[index + 1].overlayId)= services[index + 1].title
-                                        if index > 0
-                                            .overlay-footer.bg-light-cream
-                                                h6.text-uppercase Previous Service
-                                                h4.display-4.large
-                                                    a.overlay-link(href='#' + services[index - 1].overlayId, data-overlay=services[index - 1].overlayId)= services[index - 1].title
+
+                                            -
+                                                var nextIndex = (index === services.length - 1) ? 0 : index +1;
+
+                                        .overlay-footer.bg-light-cream
+                                            h6.text-uppercase Next Service
+                                            h4.display-4.large
+                                                a.overlay-link(href='#' + services[nextIndex].overlayId, data-overlay=services[nextIndex].overlayId)= services[nextIndex].title
+
                                     .close-button-bar.bottom.d-md-none
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
@@ -326,16 +325,15 @@ html(lang="en")
                                             h6.clr-dark-blue.text-uppercase.font-weight-bold.clr-mid-blue Our Expertise
                                             h2.display-2!= skill.title.replace("<br>", " ")
                                             p.clr-mid-blue= skill.fullText
-                                        if index < expertise.length - 1
-                                            .overlay-footer.bg-light-cream
-                                                h6.text-uppercase Next Field of Expertise
-                                                h4.display-4
-                                                    a.overlay-link(href='#' + expertise[index + 1].overlayId, data-overlay=expertise[index + 1].overlayId)!= expertise[index + 1].title.replace("<br>", " ")
-                                        if index > 0
-                                            .overlay-footer.bg-light-cream
-                                                h6.text-uppercase Previous Field of Expertise
-                                                h4.display-4
-                                                    a.overlay-link(href='#' + expertise[index - 1].overlayId, data-overlay=expertise[index - 1].overlayId)!= expertise[index - 1].title.replace("<br>", " ")
+
+                                        -
+                                            var nextIndex = (index === expertise.length - 1) ? 0 : index +1;
+
+                                        .overlay-footer.bg-light-cream
+                                            h6.text-uppercase Next Field of Expertise
+                                            h4.display-4
+                                                a.overlay-link(href='#' + expertise[nextIndex].overlayId, data-overlay=expertise[nextIndex].overlayId)!= expertise[nextIndex].title.replace("<br>", " ")
+
                                     .close-button-bar.bottom.d-md-none
                                         .close-button-container
                                             a.close-button(href="#").bg-blue
@@ -377,7 +375,8 @@ html(lang="en")
                                             .consultant-skill-box
                                                 each skill in consultant.skills
                                                     if expSkill = expertiseDict[skill]
-                                                        a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId)!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
+                                                        a.skill.overlay-link(href='#' + expSkill.overlayId, data-overlay=expSkill.overlayId, data-overlay-sticky="true",
+                                                            data-overlay-classes="hide-footers")!= expSkill.title.replace("<br>", " ").replace("<br>", " ")
                                                     else
                                                         a.skill(href="#")= skill
                                     .close-button-bar.bottom.d-md-none
