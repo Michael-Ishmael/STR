@@ -2,13 +2,13 @@
 
   //background-color: $light-gray;
 
-  header{
+  header {
 
     .article-nav-container {
 
       padding: 0 15px;
 
-      @include media-breakpoint-up(md){
+      @include media-breakpoint-up(md) {
         padding: 0;
         position: absolute;
         width: 100%;
@@ -36,8 +36,15 @@
     overflow: hidden;
   }
 
-}
+  .marketing-header-image {
+    height: 20rem;
+    overflow: hidden;
+    background-color: $dark-blue;
+  }
 
+
+
+}
 
 .str.article-template {
 
@@ -57,7 +64,7 @@
       background-color: $light-cream;
       padding-bottom: 3.2rem;
 
-      @include media-breakpoint-up(md){
+      @include media-breakpoint-up(md) {
         position: relative;
         margin: -12rem 6rem 0;
 
@@ -92,11 +99,7 @@
             }
           }
 
-
-
         }
-
-
 
         span {
           text-transform: uppercase;
@@ -108,11 +111,11 @@
 
         text-align: center;
 
-        .author{
+        .author {
 
           font-size: 1rem;
 
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(sm) {
             font-size: 1.4rem;
             margin-top: -5.8rem;
           }
@@ -147,7 +150,7 @@
         margin-top: 2.2rem;
         padding: 0 10.2rem;
 
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(sm) {
           margin-top: 0;
           padding: 0;
 
@@ -158,7 +161,7 @@
 
         }
 
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(sm) {
           .skills {
 
             margin: 0 2rem;
@@ -177,12 +180,67 @@
           }
         }
 
+      }
+
+      #newsletter {
+
+        margin: 1rem 10.2rem 0;
+        padding: 1.4em;
+        background-color: #f7f5ef;
+        border-top: solid 1px #eae7de;
+
+        .newsletter-content {
+
+          margin-top: 1em;
+          height: auto;
+
+          .flipee {
+            min-height: 0 !important;
+            position: relative;
+
+            .gdpr-content {
+              margin-bottom: 0;
+
+            }
+            .newsletter-inputs {
+              background-color: #eae7de;
+              padding: 1em;
+              border-radius: .28rem;
+
+              .btn-primary, input[type="email"] {
+                padding: .5rem 1rem;
+              }
+
+              .btn-container {
+                display: none !important;
+              }
+
+              .btn-container-mini {
+                display: inline-block !important;
+              }
+
+            }
+          }
+
+          text-align: center;
+
+          p {
+            display: none;
+
+            &.mini {
+              display: block !important;
+              color: $dark-blue;
+              font-weight: 500;
+            }
+
+          }
+        }
 
       }
 
       .article-body {
 
-        margin-top: 2.5rem;
+        margin-top: 1.5rem;
 
         p, ol, li {
           line-height: 1.67;
@@ -192,7 +250,6 @@
             font-size: 1.2rem;
             line-height: 1.36;
           }
-
 
         }
 
@@ -229,7 +286,7 @@
           padding: 0 0 0 1.6rem;
 
           li {
-            .number{
+            .number {
               float: left;
               display: inline-block;
               font-weight: 600;
@@ -244,8 +301,6 @@
           }
         }
 
-
-
         h4 {
           font-family: "Work Sans", sans-serif;
           font-size: 1.2rem;
@@ -256,7 +311,7 @@
           padding-bottom: .2rem;
           margin-bottom: 1.2rem;
 
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(sm) {
             font-size: 1.71rem;
             border-bottom: none;
             text-decoration: underline $corn-yellow;
@@ -267,13 +322,12 @@
         > * {
           margin: 0 2rem;
 
-          @include media-breakpoint-up(md){
+          @include media-breakpoint-up(md) {
             margin: 0 10.2rem;
           }
         }
 
-
-        img{
+        img {
           margin: 1rem 0 5rem;
           width: 100%;
         }
@@ -288,14 +342,13 @@
             float: right;
           }
 
-
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(sm) {
             margin: -4rem 2rem 3rem;
 
             .credit {
               float: none;
             }
-            &::after{
+            &::after {
               content: '';
               clear: both;
             }
@@ -339,7 +392,7 @@
             color: $dark-blue
           }
 
-          @include media-breakpoint-down(sm){
+          @include media-breakpoint-down(sm) {
 
             q {
               font-size: 2.57rem;
@@ -360,9 +413,8 @@
 
     }
 
-
     section.more-insights {
-      margin-top: 4rem;
+      //margin-top: 4rem;
       background-color: $light-cream;
       text-align: center;
 
@@ -377,7 +429,7 @@
         padding-bottom: .2rem;
         margin-bottom: 2.8rem;
 
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(sm) {
 
           border-bottom: none;
           text-decoration: underline $corn-yellow;
@@ -387,19 +439,16 @@
 
       }
 
-
-
-      > :nth-child(3){
+      > :nth-child(3) {
         border-top: 1px solid $light-gray;
       }
 
-      .str-insight-stripe{
+      .str-insight-stripe {
         font-size: 1.4rem;
 
-        @include media-breakpoint-down(sm){
+        @include media-breakpoint-down(sm) {
           font-size: 1.2rem;
         }
-
 
         h4 {
           font-size: 1.5rem;
@@ -409,6 +458,70 @@
 
   }
 
+}
+
+.str.article-template.marketing {
+
+  .pull-right {
+    float: right;
+    margin-left: 1.4rem !important;
+  }
+
+  .pull-left {
+    float: left;
+    margin-right: 1.4rem !important;
+  }
+
+  .clear-float{
+    clear: both;
+  }
+
+  .icon-container {
+
+    text-align: center;
+
+
+    img {
+      height: 3em;
+    }
+
+  }
+
+  article {
+
+    padding-bottom: 2.2rem;
+
+    h3 {
+      margin-top: 1em;
+      text-align: center;
+    }
+  }
+
+  .article-body {
+
+    section {
+
+      margin-top: 2rem !important;
+      border-top: 1px solid $dark-cream !important;
+      padding-top: 2rem !important;
+
+    }
+
+    img{
+      width: 60%;
+      margin: 0;
+    }
+
+  }
+
+  .title {
+    padding-bottom: 2rem;
+
+  }
+
+  .article-body {
+    margin-top: .6rem !important;
+  }
 
 }
 

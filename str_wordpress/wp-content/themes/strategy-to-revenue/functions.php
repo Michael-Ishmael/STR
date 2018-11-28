@@ -20,6 +20,22 @@ if (!isset($content_width))
     $content_width = 900;
 }
 
+add_action('init','str_rewrite_rules');
+function str_rewrite_rules(){
+
+    $overlay_pages = array("success-stories", "services", "about-us" );
+
+    foreach ( $overlay_pages as $overlay_page ) {
+	    $page = get_page_by_path($overlay_page);
+	    add_rewrite_rule('^'.$overlay_page.'/(.+?)$','index.php?page_id='.$page->ID,'top');
+    }
+
+	$page = get_page_by_path('services');
+	add_rewrite_rule('^expertise/(.+?)$','index.php?page_id='.$page->ID,'top');
+	add_rewrite_rule('^expertise$','index.php?page_id='.$page->ID,'top');
+
+}
+
 if (function_exists('add_theme_support'))
 {
     // Add Menu Support
@@ -120,13 +136,18 @@ function str_nav($str_location)
 function str_add_menu_classes($menu_list, $args){
 
     $home_key = null;
+    $privacy_key = null;
     foreach ( $menu_list as $key=>$menu_item ) {
         array_push($menu_item->classes, 'nav-item');
         if($args->theme_location=='header-menu' && $menu_item->post_name=='home'){
             $home_key = $key;
         }
+        if($menu_item->title=="Privacy Notice"){
+            $privacy_key = $key;
+        }
     }
     if($args->menu_id == 'header' && $home_key !== null) unset($menu_list[$home_key]);
+    if($args->menu_id != 'footer' && $privacy_key !== null) unset($menu_list[$privacy_key]);
 
 	return $menu_list;
 }
@@ -192,14 +213,17 @@ script(data-main="js/app" src="node_modules/systemjs/dist/system-production.js")
 
 	wp_enqueue_script('gsap-tween', get_template_directory_uri() . '/node_modules/gsap/TweenMax.js', array(), '1.0.0');
 	wp_enqueue_script('gsap-css', get_template_directory_uri() . '/node_modules/gsap/CSSPlugin.js', array(), '1.0.0');
+	wp_enqueue_script('navigo', get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js', array(), '1.0.0');
 	wp_enqueue_script('promise-fix', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js', array(), '1.0.0');
 	wp_enqueue_script('system-js', get_template_directory_uri() . '/node_modules/systemjs/dist/system-production.js', array(), '1.0.0');
 
 
-	wp_register_script('str-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0');
+	wp_register_script('str-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.2');
 	wp_enqueue_script('str-app');
 
-	wp_add_inline_script('str-app','SystemJS.import(\'app\')');
+	//
+
+	wp_add_inline_script('str-app','SystemJS.config({"paths": {"navigo": "' . get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js" }}); SystemJS.import(\'app\')');
 
 }
 
@@ -209,7 +233,7 @@ function str_styles()
 
 	wp_register_style('work_sans', 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700', array(), '1.0', 'all');
 
-	wp_register_style('str_main', get_template_directory_uri() . '/css/main.css', array('work_sans'), '1.0', 'all');
+	wp_register_style('str_main', get_template_directory_uri() . '/css/main.css', array('work_sans'), '1.0.1', 'all');
 	wp_enqueue_style('str_main'); // Enqueue it!
 }
 
@@ -220,6 +244,9 @@ function str_body_class($classes){
     if($post->post_type == "post"){
         $body_class_names .= ' article-template';
     }
+	if(isset($classes)  && count($classes) > 1 && strpos($classes[1], 'marketing') !== false){
+		$body_class_names .= ' article-template marketing';
+	}
 	return array_merge( $classes, array( $body_class_names ) );
 
 }

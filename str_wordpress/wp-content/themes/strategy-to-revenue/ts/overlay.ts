@@ -1,3 +1,4 @@
+import Navigo from "navigo";
 
 var $ = jQuery;
 
@@ -26,13 +27,16 @@ export class OverlayManager {
     private static duration:number = .5;
 
     private static _screenStack:Array<Overlay>;
+    private static _router: Navigo;
+    private static _currentArea: string;
 
     public constructor() {
         //this.tweens = [];
 
     }
 
-    public static init(overlayBgSelector:string, overlayClassName:string, overlayTriggersSelector:string){
+    public static init(overlayBgSelector:string, overlayClassName:string, overlayTriggersSelector:string, router:Navigo){
+        OverlayManager._router = router;
 
         this._screenStack = [];
         this._jBody = $('body');
@@ -70,36 +74,94 @@ export class OverlayManager {
             e.preventDefault();
 
             let jTrigger:JQuery<HTMLElement> = $(e.currentTarget);
-            let link = this.getOverlayLinkFromTrigger(jTrigger);
+            //let link = this.getOverlayLinkFromTrigger(jTrigger);
             let overlayId = this.getOverlayIdFromTrigger(jTrigger);
             let overlayIsSticky = this.getOverlayIdIsStickyFromTrigger(jTrigger);
             let overlayClasses = this.getOverlayAddedClasses(jTrigger);
-            if(link) window.location.hash = link;
-            if(overlayId) this.showOverlay(overlayId, overlayIsSticky, overlayClasses);
 
+            if(overlayId) {
+
+                if(OverlayManager._router) {
+                    let queryString = "";
+                    if(overlayIsSticky) queryString += "s=1";
+                    if(overlayClasses == "hide-footers") queryString += queryString ? "&hf=1" : "hf=1";
+                    if(queryString.length>0) queryString = "?" + queryString;
+                    OverlayManager._router.navigate(this._currentArea + '/' + overlayId + queryString);
+                    //OverlayManager._router.resume();
+                } else {
+                    this.showOverlay(overlayId, overlayIsSticky, overlayClasses);
+                }
+
+            }
         });
 
         return true;
 
     }
 
-    public static showOverlay(overlayId: string, overlayIsSticky: boolean, overlayClasses: string){
+    public static showOverlay(overlayId: string, overlayIsSticky: boolean, overlayClasses: string, showImmediately: boolean = false):boolean{
 
-       if(!this._initialized) return;
+       if(!this._initialized) return false;
        let nextOverlayElement = $('#' + overlayId);
-       if(!this.isValidJElement(nextOverlayElement)) return;
+       if(!this.isValidOverlayItem(nextOverlayElement)) return false;
+
+       if(this._screenStack){
+           const screenCount = this._screenStack.length;
+           if(screenCount === 1){
+               if(this._screenStack[0].overlaySlug === overlayId) return;
+           } else if(screenCount === 2){
+               if(this._screenStack[screenCount - 2].overlaySlug === overlayId){
+                   this.removeLastScreen();
+                   return;
+               }
+           } else if(screenCount > 2) {
+               //TODO:  Code for more layers if case arises - animate top away, hide others immediately
+           }
+
+
+       }
 
        this.initTimeline();
        if(!this.BgVisible){
            this.setNoScroll(true);
-           this.setBackgroundVisibility(true);
+           this.setBackgroundVisibility(true, showImmediately);
        }
         let stackSize = this._screenStack.length + 1;
-        let newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayClasses);
+        let newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayId, overlayClasses);
         this._screenStack.push(newItem);
 
         newItem.show();
        this._timeline.play();
+
+       return true;
+    }
+
+
+
+    public static setCurrentArea(siteArea: string){
+        OverlayManager._currentArea = siteArea ? siteArea :"";
+    }
+
+    public static setLoadedOverlay(siteArea: string, overlayId: string, overlayIsSticky: boolean, overlayClasses: string){
+        if(!this._initialized) return;
+        OverlayManager.setCurrentArea(siteArea);
+        let nextOverlayElement = $('#' + overlayId);
+        if(!this.isValidOverlayItem(nextOverlayElement)){
+            OverlayManager._router.pause();
+            OverlayManager._router.navigate(this._currentArea );
+            OverlayManager._router.resume();
+            return;
+        }
+
+
+        if(!this.BgVisible){
+            this.setNoScroll(true);
+            this.setBackgroundVisibility(true, true);
+        }
+        let stackSize = this._screenStack.length + 1;
+        let newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayId, overlayClasses);
+        this._screenStack.push(newItem);
+        newItem.setAlreadyShown();
     }
 
     public static overlayRemoved(overlay:Overlay) {
@@ -168,6 +230,11 @@ export class OverlayManager {
         return jElement && jElement.length > 0;
     }
 
+    public static isValidOverlayItem(jElement:JQuery<HTMLElement>):boolean{
+        if(!this.isValidJElement(jElement)) return false;
+        let oBody = jElement.find('.overlay-content');
+        return this.isValidJElement(oBody);
+    }
 
     public static hide(){
         if(!this._initialized) return;
@@ -179,30 +246,31 @@ export class OverlayManager {
 
     }
 
+    public static navigateToLastScreen(){
+        let newPath:string = OverlayManager._currentArea ? "/" + OverlayManager._currentArea : "";
+        if(this._screenStack.length > 1){
+            let lastScreen = this._screenStack[this._screenStack.length-2];
+            if(lastScreen && lastScreen.overlaySlug) newPath += "/" + lastScreen.overlaySlug;
+
+        }
+        OverlayManager._router.navigate(newPath);
+    }
+
+    public static removeLastScreen(){
+        if(this._screenStack.length === 0) return;
+        let lastScreen = this._screenStack[this._screenStack.length - 1];
+        lastScreen.hide();
+    }
+
     private static cleanUpHide(){
-/*        if(this._previousOverlay) {
-            this._previousOverlay.removeClass("second-level");
-            this._previousOverlay.hide();
-            this._previousOverlay.css('z-index', null);
-            this._previousOverlay = null;
-        }
-        if(this._currentOverlay) {
-            this._currentOverlay.removeClass("second-level");
-            this._currentOverlay.hide();
-            this._currentOverlay = null;
-        }
-        if(this._nextOverlay) {
-            this._nextOverlay.removeClass("second-level");
-            this._nextOverlay.hide();
-            this._nextOverlay = null;
-        }*/
+
 
         this.setBackgroundVisibility(false, true);
         this.setNoScroll(false);
     }
 
     private static setBackgroundVisibility(on:boolean, immediate:boolean = false){
-        let zProp = on ? '10' : '-1';
+        let zProp = on ? '100' : '-1';
         let oProp = on ? 1 : 0;
         let aHiddenProp = on ?'false' : 'true';
         this._jBackGround.css('z-index', zProp);
@@ -280,7 +348,7 @@ class Overlay {
     private _timeline:TimelineLite = null;
     private _closeButton:JQuery<HTMLElement> = null;
 
-    public constructor(public screen:JQuery<HTMLElement>, public zIndex:number, public duration:number, public isSticky:boolean = false, public overlayClasses:string = ""){
+    public constructor(public screen:JQuery<HTMLElement>, public zIndex:number, public duration:number, public isSticky:boolean = false, public overlaySlug:string, public overlayClasses:string = ""){
 
     }
 
@@ -308,22 +376,52 @@ class Overlay {
         this._timeline.to(oImg[0], this.duration ,{autoAlpha: 1, ease: Linear.easeNone}, this.duration / 2);
     }
 
+    public setAlreadyShown():void{
+        this.registerCloseButton();
+        this.screen.css("zIndex", this.zIndex.toString());
+        this.screen.addClass(this.overlayClasses);
+        this.screen.show();
+
+        this._timeline = new TimelineLite({
+            onComplete: () =>{ this.tweenDone() } ,
+            onReverseComplete: () =>{ this.cleanUpHide() }
+        });
+
+        let oBody = this.screen.find('.overlay-content');
+        let oImg = this.screen.find('.overlay-image-container');
+        let width = oBody.width() + 10;
+        this._timeline.set(oBody[0],  {x: width}, 0);
+        this._timeline.set(oImg[0], {autoAlpha: 0}, 0);
+        this._timeline.addLabel("doors", 0);
+
+        this._timeline.to(oBody[0], this.duration, {x: 0}, "doors")
+        this._timeline.to(oImg[0], this.duration ,{autoAlpha: 1, ease: Linear.easeNone}, this.duration / 2).progress(1);
+
+        //this._timeline.progress(1, false);
+    }
+
     private registerCloseButton(){
         let closeButton = this.screen.find('.close-button');
         if(!OverlayManager.isValidJElement(closeButton)) return;
         this._closeButton = closeButton;
         this._closeButton.click((e) => {
             e.preventDefault();
-            this.hide();
+            //window.history.back();
+            OverlayManager.navigateToLastScreen();
         })
 
     }
 
     public hide(immediate:boolean = false):void  {
+        if(!this._timeline) immediate =true;
         if(immediate){
             this.screen.hide();
             this.screen.removeClass(this.overlayClasses);
-            this._timeline.seek(0);
+            if(this._timeline){
+                this._timeline.seek(0);
+            } else {
+                this.cleanUpHide();
+            }
             return;
         }
         if(!this._timeline) return;
@@ -344,7 +442,7 @@ class Overlay {
     }
 
     public kill():void  {
-        this._timeline.kill();
+        if(this._timeline) this._timeline.kill();
         if(this._closeButton){
             this._closeButton.off("click");
         }

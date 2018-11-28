@@ -47,7 +47,7 @@ if ( $loop_query->have_posts() ) :
 		?>
 
 
-        <section class="overlay h-100" id="overlay-about-<?php echo $post->ID ?>">
+        <section class="overlay h-100" id="<?php echo $post->post_name ?>">
             <div class="row h-100 m-0">
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100">
                     <div class="overlay-image-container h-100">
@@ -108,8 +108,8 @@ if ( $loop_query->have_posts() ) :
                                             ?>
 
                                             <a class="skill overlay-link"
-                                               href="#overlay-expertise-<?php echo $area_post->ID ?>"
-                                               data-overlay="overlay-expertise-<?php echo $area_post->ID ?>"
+                                               href="/<?php echo $area_post->post_name ?>"
+                                               data-overlay="<?php echo $area_post->post_name ?>"
                                                data-overlay-sticky="true"
                                                data-overlay-classes="hide-footers"
                                             >

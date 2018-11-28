@@ -48,7 +48,7 @@ if ( $loop_query->have_posts() ) : ?>
 
                     <img class="h-align" src="<?php echo $item_tile_img_src ?>">
                     <img class="h-align gradient" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
-                    <img class="h-align overlay overlay-link" src="<?php echo $item_tile_img_blur_src ?>" data-overlay="overlay-about-<?php echo $post->ID ?>">
+                    <img class="h-align overlay overlay-link" src="<?php echo $item_tile_img_blur_src ?>" data-overlay="<?php echo $post->post_name ?>">
                     <div class="name-caption-container text-center">
                         <div class="buttons upper">
                             <?php if($twitter != null): ?>
@@ -67,7 +67,7 @@ if ( $loop_query->have_posts() ) : ?>
                         <div class="v-spacer"></div>
                         <h3 class="display-3 clr-white"><?php echo the_title() ?></h3>
                         <div class="buttons lower">
-                            <div class="btn btn-outline-light overlay-link" data-overlay="overlay-about-<?php echo $post->ID ?>">About <?php echo $first_name ?></div>
+                            <div class="btn btn-outline-light overlay-link" data-overlay="<?php echo $post->post_name ?>">About <?php echo $first_name ?></div>
                             <h6 class="title text-uppercase"><?php echo $job_title ?></h6>
                         </div>
                     </div>

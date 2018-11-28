@@ -16,7 +16,7 @@
 	    ?>
 
 
-        <section class="overlay h-100 p-0" id="overlay-<?php echo $this_post->ID ?>">
+        <section class="overlay h-100 p-0" id="<?php echo $this_post->post_name ?>">
             <div class="row h-100 m-0">
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
                     <div class="overlay-image-container h-100">
@@ -38,8 +38,8 @@
 	                    <?php if($next_post !== null):  ?>
                         <div class="overlay-footer bg-light-cream">
                             <h6 class="text-uppercase">Next Service</h6>
-                            <h4 class="display-4 large"><a class="overlay-link" href="#overlay-<?php echo $next_post->ID ?>"
-                                                           data-overlay="overlay-<?php echo $next_post->ID ?>"><?php echo get_the_title($next_post) ?></a></h4>
+                            <h4 class="display-4 large"><a class="overlay-link" href="/<?php echo $next_post->post_name ?>"
+                                                           data-overlay="<?php echo $next_post->post_name ?>"><?php echo get_the_title($next_post) ?></a></h4>
                         </div>
                         <?php endif; ?>
                     </div>

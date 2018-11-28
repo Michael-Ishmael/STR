@@ -37,20 +37,21 @@
 
 			?>
 
-
-            <div class="str-grid-pic">
-                <div class="success-image-tile overlay-link" data-overlay="overlay-success-<?php echo $post->ID ?>"
-                ">
-                <img class="h-align pic w-100 d-none d-sm-block" src="<?php echo $item_tile_img_src[0]; ?>">
-                <img class="h-align pic w-100 d-sm-none" src="<?php echo $item_tile_img_src[0]; ?>">
-                <img class="h-align gradient w-100" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
-                <div class="photo-caption text-left">
-                    <h3 class="display-3 <?php echo $caption_colour_class ?>"><?php echo the_title() ?></h3>
-                    <h5 class="display-5 <?php echo $caption_colour_class ?>"><a
-                                href="#overlay-success-<?php echo $post->ID ?>">read success story</a></h5>
+            <a href="/success-stories/<?php echo $post->post_name ?>">
+                <div class="str-grid-pic">
+                    <div class="success-image-tile">
+                        <img class="h-align pic w-100 d-none d-sm-block" src="<?php echo $item_tile_img_src[0]; ?>">
+                        <img class="h-align pic w-100 d-sm-none" src="<?php echo $item_tile_img_src[0]; ?>">
+                        <img class="h-align gradient w-100" src="<?php echo get_template_directory_uri() ?>/img/shadow.png">
+                        <div class="photo-caption text-left">
+                            <h3 class="display-3 <?php echo $caption_colour_class ?>"><?php echo the_title() ?></h3>
+                            <h5 class="display-5 <?php echo $caption_colour_class ?>"><a
+                                        href="/success-stories/<?php echo $post->post_name ?>">read success story</a></h5>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
+
 
 		<?php endwhile;
 

@@ -1,7 +1,7 @@
 <?php
 
 
-$loop_query = new WP_Query( array(
+/*$loop_query = new WP_Query( array(
 	'post_type' => 'str_success_story'
 ) );
 $loop_query->set( 'meta_key', 'meta_item_index' );
@@ -11,7 +11,27 @@ $meta_query = array(
 	'value'   => 'true',
 	'compare' => '==',
 );
-$loop_query->set( 'meta_query', $meta_query );
+$loop_query->set( 'meta_query', $meta_query );*/
+
+$args = array(
+	'post_type' => 'str_success_story',
+	'meta_key' => 'meta_item_index',
+	'orderby' => array( 'meta_value_num' => 'ASC', 'date' => 'DESC' ),
+	'meta_query' => array (
+		'relation' => 'AND',
+		array(
+			'key'     => 'meta_include_in_page',
+			'value'   => 'true',
+			'compare' => '==',
+		)
+	)
+);
+
+$loop_query = new WP_Query( $args );
+
+
+$page_slug = get_overlay_slug("success-stories");
+
 
 if ( $loop_query->have_posts() ) :
 
@@ -30,10 +50,15 @@ if ( $loop_query->have_posts() ) :
 		$result_meta = get_post_meta( $post->ID, 'meta_success_result' );
 		$results     = $result_meta[0];
 
+		if( $post->post_name == $page_slug ){
+			$visible_style ="style=\"z-index: 1; display: block;\"";
+        } else {
+		    $visible_style = null;
+        }
 
 		?>
 
-        <section class="overlay h-100" id="overlay-success-<?php echo $post->ID ?>">
+        <section class="overlay h-100" id="<?php echo $post->post_name ?>" <?php echo $visible_style ?>>
             <div class="row h-100 m-0">
 
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">

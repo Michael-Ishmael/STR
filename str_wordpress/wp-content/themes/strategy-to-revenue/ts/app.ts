@@ -1,9 +1,68 @@
 import {HexagonLayout} from "./hexagon";
 import {CssPropertyTween, MovePercentageOfParent, RolloverManager} from "./rollover";
 import {OverlayManager} from "./overlay";
+import Navigo from "navigo";
+
+let navFunction:Function = null;
+let router:Navigo;
+
+/*
+* Roll out
+*
+* Add navigo
+* Update system js
+*
+*
+* PHP
+*
+* Add new functions to plug-in
+*
+*
+* */
+
+
+(function(){
+
+    //router = new Navigo("https://strategytorevenue.com");
+    router = new Navigo("http://localhost:8888");
+    router.on('/:area', (params, query) => {
+
+        if(navFunction){
+            navFunction(params, query);
+        } else {
+            let intP = null;
+            intP = setInterval(function(){
+                if(navFunction){
+                    if(intP) clearInterval(intP);
+                    navFunction(params, query);
+                }
+            }, 100);
+        }
+
+
+    }).on('/:area/:storyId', (params, query) => {
+
+        if(navFunction){
+            navFunction(params, query);
+        } else {
+            let intP = null;
+            intP = setInterval(function(){
+                if(navFunction){
+                    if(intP) clearInterval(intP);
+                    navFunction(params, query);
+                }
+            }, 100);
+        }
+
+
+    }).resolve();
+
+})();
 
 
 jQuery(function ($) {
+
+
 
 
         let layout = new HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
@@ -80,6 +139,37 @@ jQuery(function ($) {
 
 
         });
+
+        function setupNewsletterFlip() {
+
+
+            let frontCard = $(".flipee.front"),
+                backCard = $(".flipee.back"),
+                tl = new TimelineMax({paused:true});
+
+            TweenLite.set(backCard, {rotationY:-180});
+            backCard.removeClass('d-none');
+
+            tl
+                .to(frontCard, .7, {rotationY:180})
+                .to(backCard, .7, {rotationY:0},0)
+            //.to(element, .5, {z:50},0)
+            //.to(element, .5, {z:0},.5);
+
+            $("#newsletter-trigger").click(function(){
+
+                tl.play();
+
+            });
+
+/*            $('#nl-rev-trigger').click(function () {
+                tl.reverse();
+            })*/
+
+        }
+
+        //setupNewsletterFlip();
+
     });
 
 
@@ -144,6 +234,8 @@ jQuery(function ($) {
             }
         }
 
+
+
         function initSuccesRollover(){
 
             if(auRoManager2){
@@ -170,7 +262,38 @@ jQuery(function ($) {
            }
         });
 
-        OverlayManager.init('#overlayBg', null, '.overlay-link');
+        OverlayManager.init('#overlayBg', null, '.overlay-link', router);
+
+        navFunction = function(params, query){
+
+                        if(params && OverlayManager){
+                            if(params.area && params.storyId ){
+                                OverlayManager.setLoadedOverlay(params.area, params.storyId, false, null);
+                            } else if(params.area){
+                                OverlayManager.setCurrentArea(params.area);
+                            }
+                        }
+
+                        navFunction = function(params, query){
+                            if(params && OverlayManager){
+                                if(params.area && params.storyId ){
+                                    let sticky = false, overlayClasses = null;
+                                    if(query){
+                                        const parsedQuery = JSON.parse('{"' + decodeURI(query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+                                        sticky =  parsedQuery.s === "1";
+                                        overlayClasses =  parsedQuery.hf === "1" ? "hide-footers"  : null;
+                                    }
+                                    OverlayManager.showOverlay( params.storyId, sticky, overlayClasses);
+                                } else if(params.area){
+                                    OverlayManager.setCurrentArea(params.area);
+                                    OverlayManager.removeLastScreen();
+                                }
+                            }
+
+                        };
+
+                    };
+
 
 
         $('.carousel').bcSwipe({ threshold: 50});

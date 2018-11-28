@@ -62,6 +62,32 @@ function get_attachment_src_by_slug( $slug , $size = 'full') {
 	return $header ? wp_get_attachment_image_src($header->ID, $size)[0] : '';
 }
 
+function get_overlay_is_on_page($site_area_slug, $post_types){
+
+	$page_slug = get_overlay_slug($site_area_slug);
+
+	if(isset($page_slug)){
+		foreach ($post_types as $post_type){
+			$q_page = get_page_by_path($page_slug, OBJECT, $post_type);
+			if(isset($q_page)){
+				$on_page = get_post_meta($q_page->ID, "meta_include_in_page" );
+				return $on_page[0] == "true";
+			}
+		}
+
+	}
+}
+
+function get_overlay_slug($site_area_slug){
+	global $wp;
+	$matches = [];
+	if(preg_match("/".$site_area_slug."\/(.+?)(\/.*)?$/", $wp->request, $matches)) {
+		$page_slug = $matches[1];
+		return$page_slug;
+	}
+	return null;
+}
+
 function mytheme_tinymce_settings( $tinymce_init_settings ) {
 	$tinymce_init_settings['forced_root_block'] = false;
 	return $tinymce_init_settings;

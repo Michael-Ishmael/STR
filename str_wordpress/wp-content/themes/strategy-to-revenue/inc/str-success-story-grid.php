@@ -25,11 +25,15 @@ if ( $loop_query->have_posts() ) : ?>
 
 		<?php
 
-		while ( $loop_query->have_posts() ) : $loop_query->the_post(); ?>
+		while ( $loop_query->have_posts() ) : $loop_query->the_post();
+
+
+
+		?>
 
 
             <div class="col-12 col-md-6 str-grid-pic">
-                <div class="success-image-tile overlay-link" data-overlay="overlay-success-<?php echo $post->ID ?>">
+                <div class="success-image-tile overlay-link" data-overlay="<?php echo $post->post_name ?>">
 					<?php
 
 					$item_tile_img_id = get_post_meta( $post->ID, "meta_success_tile_img", true );
@@ -46,7 +50,7 @@ if ( $loop_query->have_posts() ) : ?>
                     <div class="photo-caption text-left">
                         <h3 class="display-3 <?php echo $caption_colour_class ?>"><?php echo get_the_title(); ?></h3>
                         <h5 class="display-5 <?php echo $caption_colour_class ?>">
-                            <a class="overlay-link" href="#overlay-success-<?php echo $post->ID ?>">read success story</a></h5>
+                            <a class="overlay-link" href="/<?php echo $post->post_name ?>">read success story</a></h5>
                     </div>
                 </div>
             </div>

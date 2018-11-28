@@ -9,7 +9,7 @@
 	    ?>
 
 
-        <section class="overlay h-100" id="overlay-expertise-<?php echo $this_post->ID ?>">
+        <section class="overlay h-100" id="<?php echo $this_post->post_name ?>">
             <div class="row h-100 m-0">
 
                 <div class="d-none d-md-block col-md-6 p-0 overlay-column h-100 left">
@@ -36,8 +36,8 @@
 					    <?php if($next_post !== null):  ?>
                             <div class="overlay-footer bg-light-cream">
                                 <h6 class="text-uppercase">Next Field of Expertise</h6>
-                                <h4 class="display-4"><a class="overlay-link" href="#overlay-expertise-<?php echo $next_post->ID ?>"
-                                                         data-overlay="overlay-expertise-<?php echo $next_post->ID ?>"><?php echo get_the_title($next_post) ?>   </a></h4>
+                                <h4 class="display-4"><a class="overlay-link" href="/<?php echo $next_post->post_name ?>"
+                                                         data-overlay="<?php echo $next_post->post_name ?>"><?php echo get_the_title($next_post) ?>   </a></h4>
                             </div>
 					    <?php  endif;  ?>
 <!--					    <?php /*if($previous_post !== null):  */?>

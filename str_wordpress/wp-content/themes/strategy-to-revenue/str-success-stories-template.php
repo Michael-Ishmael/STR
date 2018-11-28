@@ -37,7 +37,26 @@ get_header(); ?>
 
 		</section>
 
-        <div class="overlay-background" id="overlayBg" aria-hidden="true">
+		<?php
+
+		$newsletter_template_path = get_template_directory() . '/inc/str-newsletter.php';
+		load_template( $newsletter_template_path, true );
+		?>
+
+
+        <?php
+
+
+
+        if(get_overlay_is_on_page('success-stories', ['str_success_story'])){
+	        $bg_visible_style = "aria-hidden=\"false\" style=\"z-index: 100; visibility: inherit; opacity: 1;\"";
+        } else {
+	        $bg_visible_style = "aria-hidden=\"true\"";
+        }
+
+        ?>
+
+        <div class="overlay-background" id="overlayBg" <?php echo $bg_visible_style ?>>
             <div class="container-fluid position-relative h-100 p-0">
 
 	            <?php

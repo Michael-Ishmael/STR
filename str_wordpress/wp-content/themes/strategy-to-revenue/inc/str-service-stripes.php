@@ -53,11 +53,11 @@ if ( $loop_query->have_posts() ) : ?>
             <div class="row d-sm-none">
                 <div class="col-12 p-0"><img class="w-100" src="<?php echo $item_mobile_img_src[0] ?>"></div>
             </div>
-            <div class="row str-pic-hero overlay-link" data-overlay="overlay-<?php echo $post->ID ?>">
+            <div class="row str-pic-hero overlay-link" data-overlay="<?php echo $post->post_name ?>">
                 <div class="col-12 col-md-6 heading">
                     <h2 class="display-2"><?php echo the_title() ?></h2>
                     <p><?php echo $item_intro ?></p>
-                    <a class="overlay-link" href="#overlay-<?php echo $post->ID ?>" role="button">Continue Reading</a>
+                    <a class="overlay-link"  href="/<?php echo $post->post_name ?>" role="button">Continue Reading</a>
                 </div>
             </div>
             </div>

@@ -9,8 +9,6 @@
 
 .mission {
 
-
-
   padding: 5rem 6rem 0 9rem;
 
   p.lead {
@@ -64,7 +62,7 @@
 
   }
 
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
     padding: 3rem 2rem;
     text-align: center;
 
@@ -73,7 +71,7 @@
 
         border-bottom: none;
 
-        img{
+        img {
           float: initial;
           width: 7.3rem;
           height: 7.3rem;
@@ -96,7 +94,6 @@
 
   }
 
-
 }
 
 .mission-pic-container {
@@ -118,12 +115,12 @@
     width: 22.3rem;
   }
 
-  @include media-breakpoint-down(sm){
+  @include media-breakpoint-down(sm) {
 
     text-align: center;
     padding: 3rem 2rem;
 
-    p.lead{
+    p.lead {
       font-size: 1.143rem;
       margin: 0 auto;
       padding: 0 1.2rem;
@@ -133,7 +130,6 @@
 
   }
 }
-
 
 .str-hero.jumbotron {
 
@@ -167,8 +163,6 @@
   }
 
 }
-
-
 
 .str-card-container {
   font-size: 0.8rem;
@@ -260,7 +254,6 @@
     font-size: 1.14rem;
   }
 
-
   @include media-breakpoint-up(md) {
     .heading {
       padding: 4rem 1rem 4rem 6rem;
@@ -308,7 +301,7 @@ section {
       height: 100%;
       text-align: center;
 
-      a.questionnaire-button  {
+      a.questionnaire-button {
         background-color: $bright-blue;
         color: white;
         display: table-cell;
@@ -338,7 +331,7 @@ section {
 
     }
 
-    @include media-breakpoint-down(sm){
+    @include media-breakpoint-down(sm) {
       padding: 3rem 2rem;
 
       p.sub {
@@ -357,10 +350,7 @@ section {
         }
       }
 
-
-
     }
-
 
   }
 
@@ -380,7 +370,7 @@ section {
         max-height: 7rem;
       }
 
-      @include media-breakpoint-up(md){
+      @include media-breakpoint-up(md) {
 
         padding: 2rem 0;
 
@@ -436,8 +426,32 @@ section {
     border-bottom: 1px solid $dark-cream-2;
 
     .newsletter-content {
+      position: relative;
+      height: 300px;
       margin: 0 auto;
-      max-width: 27.5rem;
+
+      .flipee {
+        position: absolute;
+        min-height: 300px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+
+        &.front{
+          max-width: 27.5rem;
+        }
+        &.back {
+          max-width: 35rem;
+        }
+      }
+
+
+
 
       h6.sub {
         padding: 0;
@@ -456,9 +470,18 @@ section {
         margin: .8rem 0 2.2rem;
         font-size: .8rem;
         line-height: 1.63;
+
+        &.mini{
+          display: none;
+        }
+
       }
 
-      @include media-breakpoint-down(sm){
+      .gdpr-content p {
+        margin: .8rem 0;
+      }
+
+      @include media-breakpoint-down(sm) {
 
         h6.sub {
           font-size: 1rem;
@@ -473,25 +496,60 @@ section {
           margin: .8em 0;
         }
 
-
       }
 
+    }
+
+    .btn-primary, input[type="email"] {
+      font-family: "Work Sans", sans-serif;
+      font-size: .9rem;
+      line-height: 1.67;
+      color: $white;
+      padding: .8rem 1.5rem;
+    }
+
+    .btn-container-mini {
+      display: none;
+    }
+
+    .su-btn-container {
+
+      .btn {
+        width: 40%;
+      }
+
+    }
+
+    .gdpr-content {
+      margin-top: -1rem;
+      text-align: center;
+      margin-bottom: 2.2rem;
+
+      a {
+        color: $dark-blue;
+        font-weight: 400;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
 
     }
 
     form {
 
       .input-container {
-        width: 60%;
+        width: 56%;
         padding-right: .3rem;
+        display: inline-block;
       }
 
       .btn-container {
-        width: 40%;
-        padding-left: .3rem;
+        width: 42%;
+        padding-right: .3rem;
+        display: inline-block;
       }
 
-      @include media-breakpoint-down(sm){
+      @include media-breakpoint-down(sm) {
 
         .input-container {
           width: 100%;
@@ -507,16 +565,9 @@ section {
           padding-left: 0;
           padding-top: 0.5rem;
           cursor: pointer;
+
         }
 
-      }
-
-      .btn-primary, input[type="email"] {
-        font-family: "Work Sans", sans-serif;
-        font-size: .9rem;
-        line-height: 1.67;
-        color: $white;
-        padding: .8rem 1.5rem;
       }
 
       #mce-responses {
@@ -527,14 +578,14 @@ section {
         padding: .4rem;
         width: 100%;
 
-        #mcd-success-response {
+        #mce-success-response {
           text-align: center;
+          font-style: italic;
         }
 
         #mce-error-response {
 
           color: red;
-
 
           a:hover {
             text-decoration: underline;
@@ -598,10 +649,9 @@ section {
 
   > div.up-next {
 
-
     background-size: cover;
 
-    @include media-breakpoint-up(sm){
+    @include media-breakpoint-up(sm) {
 
       background-size: auto 100%;
 
@@ -621,20 +671,15 @@ section {
       margin-bottom: 2rem;
     }
 
-    .btn-lg.btn-secondary{
+    .btn-lg.btn-secondary {
       font-size: 18px;
       min-width: 275px;
     }
 
-
     background-position: center center;
     @include transition() ;
 
-
-
   }
-
-
 
 }
 
@@ -838,14 +883,14 @@ section {
             @include transition();
             background-image: url('../img/plus.svg');
             background-size: contain;
-            background-repeat: no-repeat ;
+            background-repeat: no-repeat;
           }
         }
       }
 
       font-size: 20px;
 
-      @include media-breakpoint-down(xl){
+      @include media-breakpoint-down(xl) {
         font-size: 16px;
       }
 
@@ -871,7 +916,7 @@ section {
         i {
           background-image: url('../img/cross.svg');
           background-size: contain;
-          background-repeat: no-repeat ;
+          background-repeat: no-repeat;
           height: 20px;
           width: 20px;
           line-height: 20px;
@@ -923,12 +968,12 @@ section {
       max-width: 30rem;
       font-size: 18px;
 
-      @include media-breakpoint-up(md){
+      @include media-breakpoint-up(md) {
         font-size: .9rem;
       }
 
       a {
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -991,7 +1036,7 @@ section {
   margin: 0 .5rem;
   font-size: 1.4rem;
 
-  @include media-breakpoint-up(sm){
+  @include media-breakpoint-up(sm) {
     font-size: 1rem;
   }
 
@@ -1017,8 +1062,6 @@ section {
     }
 
     &.blue {
-
-
 
       &:hover {
         color: $corn-yellow;
@@ -1069,7 +1112,7 @@ section {
     }
   }
 
-  .bg-bright-blue .btn-secondary:hover{
+  .bg-bright-blue .btn-secondary:hover {
     background-color: $white;
     border-color: $white;
     color: $dark-blue;
@@ -1099,11 +1142,10 @@ section {
   font-size: 1.3rem;
   padding: 1.4rem 2.4rem;
 
-  @include media-breakpoint-up(md){
+  @include media-breakpoint-up(md) {
     font-size: .9rem;
     padding: 1rem 2rem;
   }
-
 
   &.btn-outline-secondary {
     color: $dark-gray;
@@ -1141,4 +1183,21 @@ section {
 
   }
 
+}
+
+#catapult-cookie-bar {
+  //opacity: .9 !important;
+  font-size: .7rem;
+  padding: 1rem;
+  text-align: center;
+  //z-index: 999999 !important;
+  //background-color: $dark-blue !important;
+
+  .ctcc-right-side {
+    margin-left: .4rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }

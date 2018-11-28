@@ -12,6 +12,8 @@ get_header(); ?>
 				<div class="str-hero jumbotron">
 					<h1 class="display-1">Expert <span class="clr-bright-blue">Insights</span></h1>
 
+
+
 					<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 						<!-- article -->
@@ -26,9 +28,17 @@ get_header(); ?>
 
 					<?php endif; ?>
 
+                </div>
 			</section>
 
-			<?php
+		<?php
+
+		$newsletter_template_path = get_template_directory() . '/inc/str-newsletter.php';
+		load_template( $newsletter_template_path, true );
+		?>
+
+
+        <?php
 
 				$grid_template_path = get_template_directory() . '/inc/str-insights-grid.php';
 				load_template($grid_template_path, true);

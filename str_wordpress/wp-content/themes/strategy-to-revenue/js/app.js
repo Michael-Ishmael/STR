@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -10,8 +13,8 @@ var __extends = (this && this.__extends) || (function () {
 })();
 System.register("hexagon", [], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var $, HexagonLayout;
+    var __moduleName = context_1 && context_1.id;
     return {
         setters: [],
         execute: function () {
@@ -104,8 +107,8 @@ System.register("hexagon", [], function (exports_1, context_1) {
 });
 System.register("rollover", [], function (exports_2, context_2) {
     "use strict";
-    var __moduleName = context_2 && context_2.id;
     var $, RolloverManager, StrElementTween, RolloverTweenBase, CssPropertyTween, MovePercentageOfParent;
+    var __moduleName = context_2 && context_2.id;
     return {
         setters: [],
         execute: function () {
@@ -266,8 +269,8 @@ System.register("rollover", [], function (exports_2, context_2) {
 });
 System.register("overlay", [], function (exports_3, context_3) {
     "use strict";
-    var __moduleName = context_3 && context_3.id;
     var $, OverlayManager, Overlay;
+    var __moduleName = context_3 && context_3.id;
     return {
         setters: [],
         execute: function () {
@@ -276,7 +279,8 @@ System.register("overlay", [], function (exports_3, context_3) {
                 function OverlayManager() {
                     //this.tweens = [];
                 }
-                OverlayManager.init = function (overlayBgSelector, overlayClassName, overlayTriggersSelector) {
+                OverlayManager.init = function (overlayBgSelector, overlayClassName, overlayTriggersSelector, router) {
+                    OverlayManager._router = router;
                     this._screenStack = [];
                     this._jBody = $('body');
                     this._jBackGround = $(overlayBgSelector);
@@ -310,33 +314,86 @@ System.register("overlay", [], function (exports_3, context_3) {
                     jTriggers.click(function (e) {
                         e.preventDefault();
                         var jTrigger = $(e.currentTarget);
-                        var link = _this.getOverlayLinkFromTrigger(jTrigger);
+                        //let link = this.getOverlayLinkFromTrigger(jTrigger);
                         var overlayId = _this.getOverlayIdFromTrigger(jTrigger);
                         var overlayIsSticky = _this.getOverlayIdIsStickyFromTrigger(jTrigger);
                         var overlayClasses = _this.getOverlayAddedClasses(jTrigger);
-                        if (link)
-                            window.location.hash = link;
-                        if (overlayId)
-                            _this.showOverlay(overlayId, overlayIsSticky, overlayClasses);
+                        if (overlayId) {
+                            if (OverlayManager._router) {
+                                var queryString = "";
+                                if (overlayIsSticky)
+                                    queryString += "s=1";
+                                if (overlayClasses == "hide-footers")
+                                    queryString += queryString ? "&hf=1" : "hf=1";
+                                if (queryString.length > 0)
+                                    queryString = "?" + queryString;
+                                OverlayManager._router.navigate(_this._currentArea + '/' + overlayId + queryString);
+                                //OverlayManager._router.resume();
+                            }
+                            else {
+                                _this.showOverlay(overlayId, overlayIsSticky, overlayClasses);
+                            }
+                        }
                     });
                     return true;
                 };
-                OverlayManager.showOverlay = function (overlayId, overlayIsSticky, overlayClasses) {
+                OverlayManager.showOverlay = function (overlayId, overlayIsSticky, overlayClasses, showImmediately) {
+                    if (showImmediately === void 0) { showImmediately = false; }
                     if (!this._initialized)
-                        return;
+                        return false;
                     var nextOverlayElement = $('#' + overlayId);
-                    if (!this.isValidJElement(nextOverlayElement))
-                        return;
+                    if (!this.isValidOverlayItem(nextOverlayElement))
+                        return false;
+                    if (this._screenStack) {
+                        var screenCount = this._screenStack.length;
+                        if (screenCount === 1) {
+                            if (this._screenStack[0].overlaySlug === overlayId)
+                                return;
+                        }
+                        else if (screenCount === 2) {
+                            if (this._screenStack[screenCount - 2].overlaySlug === overlayId) {
+                                this.removeLastScreen();
+                                return;
+                            }
+                        }
+                        else if (screenCount > 2) {
+                            //TODO:  Code for more layers if case arises - animate top away, hide others immediately
+                        }
+                    }
                     this.initTimeline();
                     if (!this.BgVisible) {
                         this.setNoScroll(true);
-                        this.setBackgroundVisibility(true);
+                        this.setBackgroundVisibility(true, showImmediately);
                     }
                     var stackSize = this._screenStack.length + 1;
-                    var newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayClasses);
+                    var newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayId, overlayClasses);
                     this._screenStack.push(newItem);
                     newItem.show();
                     this._timeline.play();
+                    return true;
+                };
+                OverlayManager.setCurrentArea = function (siteArea) {
+                    OverlayManager._currentArea = siteArea ? siteArea : "";
+                };
+                OverlayManager.setLoadedOverlay = function (siteArea, overlayId, overlayIsSticky, overlayClasses) {
+                    if (!this._initialized)
+                        return;
+                    OverlayManager.setCurrentArea(siteArea);
+                    var nextOverlayElement = $('#' + overlayId);
+                    if (!this.isValidOverlayItem(nextOverlayElement)) {
+                        OverlayManager._router.pause();
+                        OverlayManager._router.navigate(this._currentArea);
+                        OverlayManager._router.resume();
+                        return;
+                    }
+                    if (!this.BgVisible) {
+                        this.setNoScroll(true);
+                        this.setBackgroundVisibility(true, true);
+                    }
+                    var stackSize = this._screenStack.length + 1;
+                    var newItem = new Overlay(nextOverlayElement, stackSize, this.duration, overlayIsSticky, overlayId, overlayClasses);
+                    this._screenStack.push(newItem);
+                    newItem.setAlreadyShown();
                 };
                 OverlayManager.overlayRemoved = function (overlay) {
                     var partingOverlay = this._screenStack.pop();
@@ -399,6 +456,12 @@ System.register("overlay", [], function (exports_3, context_3) {
                 OverlayManager.isValidJElement = function (jElement) {
                     return jElement && jElement.length > 0;
                 };
+                OverlayManager.isValidOverlayItem = function (jElement) {
+                    if (!this.isValidJElement(jElement))
+                        return false;
+                    var oBody = jElement.find('.overlay-content');
+                    return this.isValidJElement(oBody);
+                };
                 OverlayManager.hide = function () {
                     if (!this._initialized)
                         return;
@@ -406,29 +469,28 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this.setNoScroll(false);
                     return;
                 };
+                OverlayManager.navigateToLastScreen = function () {
+                    var newPath = OverlayManager._currentArea ? "/" + OverlayManager._currentArea : "";
+                    if (this._screenStack.length > 1) {
+                        var lastScreen = this._screenStack[this._screenStack.length - 2];
+                        if (lastScreen && lastScreen.overlaySlug)
+                            newPath += "/" + lastScreen.overlaySlug;
+                    }
+                    OverlayManager._router.navigate(newPath);
+                };
+                OverlayManager.removeLastScreen = function () {
+                    if (this._screenStack.length === 0)
+                        return;
+                    var lastScreen = this._screenStack[this._screenStack.length - 1];
+                    lastScreen.hide();
+                };
                 OverlayManager.cleanUpHide = function () {
-                    /*        if(this._previousOverlay) {
-                                this._previousOverlay.removeClass("second-level");
-                                this._previousOverlay.hide();
-                                this._previousOverlay.css('z-index', null);
-                                this._previousOverlay = null;
-                            }
-                            if(this._currentOverlay) {
-                                this._currentOverlay.removeClass("second-level");
-                                this._currentOverlay.hide();
-                                this._currentOverlay = null;
-                            }
-                            if(this._nextOverlay) {
-                                this._nextOverlay.removeClass("second-level");
-                                this._nextOverlay.hide();
-                                this._nextOverlay = null;
-                            }*/
                     this.setBackgroundVisibility(false, true);
                     this.setNoScroll(false);
                 };
                 OverlayManager.setBackgroundVisibility = function (on, immediate) {
                     if (immediate === void 0) { immediate = false; }
-                    var zProp = on ? '10' : '-1';
+                    var zProp = on ? '100' : '-1';
                     var oProp = on ? 1 : 0;
                     var aHiddenProp = on ? 'false' : 'true';
                     this._jBackGround.css('z-index', zProp);
@@ -516,13 +578,14 @@ System.register("overlay", [], function (exports_3, context_3) {
             }());
             exports_3("OverlayManager", OverlayManager);
             Overlay = /** @class */ (function () {
-                function Overlay(screen, zIndex, duration, isSticky, overlayClasses) {
+                function Overlay(screen, zIndex, duration, isSticky, overlaySlug, overlayClasses) {
                     if (isSticky === void 0) { isSticky = false; }
                     if (overlayClasses === void 0) { overlayClasses = ""; }
                     this.screen = screen;
                     this.zIndex = zIndex;
                     this.duration = duration;
                     this.isSticky = isSticky;
+                    this.overlaySlug = overlaySlug;
                     this.overlayClasses = overlayClasses;
                     this._timeline = null;
                     this._closeButton = null;
@@ -546,23 +609,50 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
                     this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: Linear.easeNone }, this.duration / 2);
                 };
-                Overlay.prototype.registerCloseButton = function () {
+                Overlay.prototype.setAlreadyShown = function () {
                     var _this = this;
+                    this.registerCloseButton();
+                    this.screen.css("zIndex", this.zIndex.toString());
+                    this.screen.addClass(this.overlayClasses);
+                    this.screen.show();
+                    this._timeline = new TimelineLite({
+                        onComplete: function () { _this.tweenDone(); },
+                        onReverseComplete: function () { _this.cleanUpHide(); }
+                    });
+                    var oBody = this.screen.find('.overlay-content');
+                    var oImg = this.screen.find('.overlay-image-container');
+                    var width = oBody.width() + 10;
+                    this._timeline.set(oBody[0], { x: width }, 0);
+                    this._timeline.set(oImg[0], { autoAlpha: 0 }, 0);
+                    this._timeline.addLabel("doors", 0);
+                    this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
+                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: Linear.easeNone }, this.duration / 2).progress(1);
+                    //this._timeline.progress(1, false);
+                };
+                Overlay.prototype.registerCloseButton = function () {
                     var closeButton = this.screen.find('.close-button');
                     if (!OverlayManager.isValidJElement(closeButton))
                         return;
                     this._closeButton = closeButton;
                     this._closeButton.click(function (e) {
                         e.preventDefault();
-                        _this.hide();
+                        //window.history.back();
+                        OverlayManager.navigateToLastScreen();
                     });
                 };
                 Overlay.prototype.hide = function (immediate) {
                     if (immediate === void 0) { immediate = false; }
+                    if (!this._timeline)
+                        immediate = true;
                     if (immediate) {
                         this.screen.hide();
                         this.screen.removeClass(this.overlayClasses);
-                        this._timeline.seek(0);
+                        if (this._timeline) {
+                            this._timeline.seek(0);
+                        }
+                        else {
+                            this.cleanUpHide();
+                        }
                         return;
                     }
                     if (!this._timeline)
@@ -581,7 +671,8 @@ System.register("overlay", [], function (exports_3, context_3) {
                     OverlayManager.overlayRemoved(this);
                 };
                 Overlay.prototype.kill = function () {
-                    this._timeline.kill();
+                    if (this._timeline)
+                        this._timeline.kill();
                     if (this._closeButton) {
                         this._closeButton.off("click");
                     }
@@ -592,10 +683,10 @@ System.register("overlay", [], function (exports_3, context_3) {
         }
     };
 });
-System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, context_4) {
+System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (exports_4, context_4) {
     "use strict";
+    var hexagon_1, rollover_1, overlay_1, navigo_1, navFunction, router;
     var __moduleName = context_4 && context_4.id;
-    var hexagon_1, rollover_1, overlay_1;
     return {
         setters: [
             function (hexagon_1_1) {
@@ -606,9 +697,59 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
             },
             function (overlay_1_1) {
                 overlay_1 = overlay_1_1;
+            },
+            function (navigo_1_1) {
+                navigo_1 = navigo_1_1;
             }
         ],
         execute: function () {
+            navFunction = null;
+            /*
+            * Roll out
+            *
+            * Add navigo
+            * Update system js
+            *
+            *
+            * PHP
+            *
+            * Add new functions to plug-in
+            *
+            *
+            * */
+            (function () {
+                //router = new Navigo("https://strategytorevenue.com");
+                router = new navigo_1.default("http://localhost:8888");
+                router.on('/:area', function (params, query) {
+                    if (navFunction) {
+                        navFunction(params, query);
+                    }
+                    else {
+                        var intP_1 = null;
+                        intP_1 = setInterval(function () {
+                            if (navFunction) {
+                                if (intP_1)
+                                    clearInterval(intP_1);
+                                navFunction(params, query);
+                            }
+                        }, 100);
+                    }
+                }).on('/:area/:storyId', function (params, query) {
+                    if (navFunction) {
+                        navFunction(params, query);
+                    }
+                    else {
+                        var intP_2 = null;
+                        intP_2 = setInterval(function () {
+                            if (navFunction) {
+                                if (intP_2)
+                                    clearInterval(intP_2);
+                                navFunction(params, query);
+                            }
+                        }, 100);
+                    }
+                }).resolve();
+            })();
             jQuery(function ($) {
                 var layout = new hexagon_1.HexagonLayout("#hexLayout1", ".str-hex-tile", 220, 40);
                 var _jBody = $('body');
@@ -670,6 +811,23 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                             jImg.addClass('complete');
                         };
                     });
+                    function setupNewsletterFlip() {
+                        var frontCard = $(".flipee.front"), backCard = $(".flipee.back"), tl = new TimelineMax({ paused: true });
+                        TweenLite.set(backCard, { rotationY: -180 });
+                        backCard.removeClass('d-none');
+                        tl
+                            .to(frontCard, .7, { rotationY: 180 })
+                            .to(backCard, .7, { rotationY: 0 }, 0);
+                        //.to(element, .5, {z:50},0)
+                        //.to(element, .5, {z:0},.5);
+                        $("#newsletter-trigger").click(function () {
+                            tl.play();
+                        });
+                        /*            $('#nl-rev-trigger').click(function () {
+                                        tl.reverse();
+                                    })*/
+                    }
+                    //setupNewsletterFlip();
                 });
                 $('img').each(function (i) {
                     var src = $(this).attr('src');
@@ -738,7 +896,34 @@ System.register("app", ["hexagon", "rollover", "overlay"], function (exports_4, 
                         }
                     }
                 });
-                overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link');
+                overlay_1.OverlayManager.init('#overlayBg', null, '.overlay-link', router);
+                navFunction = function (params, query) {
+                    if (params && overlay_1.OverlayManager) {
+                        if (params.area && params.storyId) {
+                            overlay_1.OverlayManager.setLoadedOverlay(params.area, params.storyId, false, null);
+                        }
+                        else if (params.area) {
+                            overlay_1.OverlayManager.setCurrentArea(params.area);
+                        }
+                    }
+                    navFunction = function (params, query) {
+                        if (params && overlay_1.OverlayManager) {
+                            if (params.area && params.storyId) {
+                                var sticky = false, overlayClasses = null;
+                                if (query) {
+                                    var parsedQuery = JSON.parse('{"' + decodeURI(query).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}');
+                                    sticky = parsedQuery.s === "1";
+                                    overlayClasses = parsedQuery.hf === "1" ? "hide-footers" : null;
+                                }
+                                overlay_1.OverlayManager.showOverlay(params.storyId, sticky, overlayClasses);
+                            }
+                            else if (params.area) {
+                                overlay_1.OverlayManager.setCurrentArea(params.area);
+                                overlay_1.OverlayManager.removeLastScreen();
+                            }
+                        }
+                    };
+                };
                 $('.carousel').bcSwipe({ threshold: 50 });
                 //Sticky nav
                 function setupStickyNav() {

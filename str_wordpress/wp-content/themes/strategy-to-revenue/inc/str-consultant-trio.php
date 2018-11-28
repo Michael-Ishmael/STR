@@ -39,7 +39,7 @@ if ( $loop_query->have_posts() ) : ?>
 		?>
 
     <div class="col-12 col-md-4 str-feature-box bg-light-cream">
-        <a class="overlay-link" href="#overlay-about-<?php echo $post->ID ?>" data-overlay="overlay-about-<?php echo $post->ID ?>">
+        <a class="overlay-link" href="/<?php echo $post->post_name ?>" data-overlay="<?php echo $post->post_name ?>">
             <img class="str-feature-image img-pre-load" src="<?php echo $item_tile_img_src ?>"></a>
         <div class="str-feature-text text-center">
             <h3 class="display-3"><?php echo the_title() ?></h3>
@@ -59,8 +59,8 @@ if ( $loop_query->have_posts() ) : ?>
 			            ?>
 
                         <a class="overlay-link"
-                           href="#overlay-expertise-<?php echo $area_post->ID ?>"
-                           data-overlay="overlay-expertise-<?php echo $area_post->ID ?>"
+                           href="/<?php echo $area_post->post_name ?>"
+                           data-overlay="<?php echo $area_post->post_name ?>"
                            data-overlay-classes="hide-footers"
                         >
 				            <?php echo
@@ -78,7 +78,7 @@ if ( $loop_query->have_posts() ) : ?>
 
             </p>
             <div class="links"><a class="str-button btn btn-primary btn-lg" href="mailto:tony.wand@strategytorevenue.com">Get in Touch</a>
-                <a class="str-button btn btn-lg btn-outline-secondary overlay-link" href="#overlay-about-<?php echo $post->ID ?>" data-overlay="overlay-about-<?php echo $post->ID ?>">
+                <a class="str-button btn btn-lg btn-outline-secondary overlay-link" href="/<?php echo $post->post_name ?>" data-overlay="<?php echo $post->post_name ?>">
                 About <?php echo $first_name ?>
                 </a>
             </div>
