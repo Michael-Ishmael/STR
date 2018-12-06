@@ -1,0 +1,106 @@
+.str.article-template.marketing.d-form .article-body {
+  .download-band {
+
+    .download-form-container {
+      overflow: hidden;
+      position: relative;
+      margin: 1rem 10.2rem;
+    }
+
+    p {
+      color: #fff;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+
+    background-color: $dark-blue;
+    margin: 0;
+    position: relative;
+    overflow: auto;
+
+    .download-content {
+
+      &.secondary-screen {
+        position: absolute !important;
+      }
+
+      a:visited {
+        color: white;
+      }
+      margin: 0 !important;
+      top: 0;
+
+      .form-group {
+
+        //margin-bottom: .6rem;
+
+        .form-control-sm {
+          font-size: .72rem;
+          height: calc(1.4rem + 2px);
+        }
+
+        small {
+          position: absolute;
+          font-size: 60%;
+          display: none;
+
+          &.text-danger {
+            display: block;
+          }
+
+        }
+      }
+
+      /*    .form-group {
+            .form-control.form-control-sm.is-invalid {
+              display: inline-block;
+              width: 93%;
+            }
+
+            small {
+              position: absolute;
+              display: inline-block;
+              margin-left: 4px;
+              vertical-align: top;
+              line-height: 20px;
+            }
+
+          }*/
+
+      .download-image {
+        padding: 0;
+        width: 40%;
+        display: inline-block;
+        vertical-align: top;
+        button {
+          position: absolute;
+          left: 9%;
+          bottom: 20%;
+          font-size: .8em;
+          padding: .4em .8em;
+          cursor: pointer;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .download-text {
+        position: relative;
+        display: inline-block;
+        color: #fff;
+
+        width: 100%;
+
+        p {
+          font-size: 1em;
+          padding: 0;
+          font-weight: 500;
+        }
+
+      }
+
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+@import "downloadForm";
+
+div.app{
+
+  margin: 200px auto;
+  background-color: $dark-blue;
+  height: 500px;
+  width: 700px;
+  text-align: center;
+  color: white;
+  font-size: 2.2rem;
+
+}
