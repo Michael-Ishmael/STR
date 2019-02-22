@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="836px" height="520px" viewBox="0 0 836 520" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>E90A9132-ED8C-4042-B6CD-E7A6B4111EB6</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="50%" x2="58.0479601%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#111628" stop-opacity="0.8" offset="0%"></stop>
+            <stop stop-color="#1C2442" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="02-Services-V4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -2621.000000)">
+        <g id="Services-+-Introduction" transform="translate(0.000000, 1641.000000)" fill="url(#linearGradient-1)">
+            <g id="Mapping" transform="translate(0.000000, 980.000000)">
+                <rect id="Mask-Copy-2" x="0" y="0" width="1440" height="520"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

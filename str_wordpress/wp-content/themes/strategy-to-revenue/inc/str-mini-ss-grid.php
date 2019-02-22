@@ -2,6 +2,7 @@
 
 $args = array(
 	'post_type' => 'str_success_story',
+	'posts_per_page' => '9',
 	'meta_key' => 'meta_item_index',
 	'orderby' => array( 'meta_value_num' => 'ASC', 'date' => 'DESC' ),
 	'meta_query' => array (

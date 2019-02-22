@@ -33,7 +33,7 @@ if ( $loop_query->have_posts() ) : ?>
 
                     <div class="str-hex-tile overlay-link" id="expertise-<?php echo $post->ID ?>" data-overlay="<?php echo $post->post_name ?>">
                         <div class="hex-inner text-center align-middle clr-white">
-                            <a href="/<?php echo $post->post_name ?>">
+                            <a href="/services/<?php echo $post->post_name ?>">
                                 <?php echo $item_tile_title ?></a>
                             <span class="em-line"></span>
                         </div>

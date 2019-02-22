@@ -105,12 +105,16 @@ System.register("hexagon", [], function (exports_1, context_1) {
         }
     };
 });
-System.register("rollover", [], function (exports_2, context_2) {
+System.register("rollover", ["gsap"], function (exports_2, context_2) {
     "use strict";
-    var $, RolloverManager, StrElementTween, RolloverTweenBase, CssPropertyTween, MovePercentageOfParent;
+    var gsap_1, $, RolloverManager, StrElementTween, RolloverTweenBase, CssPropertyTween, MovePercentageOfParent;
     var __moduleName = context_2 && context_2.id;
     return {
-        setters: [],
+        setters: [
+            function (gsap_1_1) {
+                gsap_1 = gsap_1_1;
+            }
+        ],
         execute: function () {
             $ = jQuery;
             RolloverManager = /** @class */ (function () {
@@ -227,7 +231,7 @@ System.register("rollover", [], function (exports_2, context_2) {
                             tweenContainer.jElement.css('visibility', 'visible');
                         }
                     }
-                    tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, {
+                    tweenContainer.tween = gsap_1.TweenLite.to(tweenContainer.jElement[0], duration, {
                         css: cssTransformObj, ease: ease,
                         onReverseComplete: function () {
                             if (_this.propertyName.toLowerCase() === 'opacity' && tweenContainer.jElement) {
@@ -259,7 +263,7 @@ System.register("rollover", [], function (exports_2, context_2) {
                     to = to - (tweenContainer.jElement[parentDimension]() * this.percentage);
                     var vars = { ease: ease };
                     vars[this.direction] = to;
-                    tweenContainer.tween = TweenLite.to(tweenContainer.jElement[0], duration, vars);
+                    tweenContainer.tween = gsap_1.TweenLite.to(tweenContainer.jElement[0], duration, vars);
                 };
                 return MovePercentageOfParent;
             }(RolloverTweenBase));
@@ -267,12 +271,16 @@ System.register("rollover", [], function (exports_2, context_2) {
         }
     };
 });
-System.register("overlay", [], function (exports_3, context_3) {
+System.register("overlay", ["gsap"], function (exports_3, context_3) {
     "use strict";
-    var $, OverlayManager, Overlay;
+    var gsap_2, $, OverlayManager, Overlay;
     var __moduleName = context_3 && context_3.id;
     return {
-        setters: [],
+        setters: [
+            function (gsap_2_1) {
+                gsap_2 = gsap_2_1;
+            }
+        ],
         execute: function () {
             $ = jQuery;
             OverlayManager = /** @class */ (function () {
@@ -440,7 +448,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                         if (this._timeline2) {
                             this._timeline2.kill();
                         }
-                        this._timeline2 = new TimelineLite({
+                        this._timeline2 = new gsap_2.TimelineLite({
                             //onComplete: () =>{ this.arrangeLayers() } ,
                             onReverseComplete: function () { _this.cleanUpHide(); }
                         });
@@ -448,7 +456,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                     if (this._timeline) {
                         this._timeline.kill();
                     }
-                    this._timeline = new TimelineLite({
+                    this._timeline = new gsap_2.TimelineLite({
                         // onComplete: () =>{ this.arrangeLayers() } ,
                         onReverseComplete: function () { _this.cleanUpHide(); }
                     });
@@ -596,7 +604,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this.screen.css("zIndex", this.zIndex.toString());
                     this.screen.addClass(this.overlayClasses);
                     this.screen.show();
-                    this._timeline = new TimelineLite({
+                    this._timeline = new gsap_2.TimelineLite({
                         onComplete: function () { _this.tweenDone(); },
                         onReverseComplete: function () { _this.cleanUpHide(); }
                     });
@@ -607,7 +615,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this._timeline.set(oImg[0], { autoAlpha: 0 }, 0);
                     this._timeline.addLabel("doors", 0);
                     this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
-                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: Linear.easeNone }, this.duration / 2);
+                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: gsap_2.Linear.easeNone }, this.duration / 2);
                 };
                 Overlay.prototype.setAlreadyShown = function () {
                     var _this = this;
@@ -615,7 +623,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this.screen.css("zIndex", this.zIndex.toString());
                     this.screen.addClass(this.overlayClasses);
                     this.screen.show();
-                    this._timeline = new TimelineLite({
+                    this._timeline = new gsap_2.TimelineLite({
                         onComplete: function () { _this.tweenDone(); },
                         onReverseComplete: function () { _this.cleanUpHide(); }
                     });
@@ -626,7 +634,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                     this._timeline.set(oImg[0], { autoAlpha: 0 }, 0);
                     this._timeline.addLabel("doors", 0);
                     this._timeline.to(oBody[0], this.duration, { x: 0 }, "doors");
-                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: Linear.easeNone }, this.duration / 2).progress(1);
+                    this._timeline.to(oImg[0], this.duration, { autoAlpha: 1, ease: gsap_2.Linear.easeNone }, this.duration / 2).progress(1);
                     //this._timeline.progress(1, false);
                 };
                 Overlay.prototype.registerCloseButton = function () {
@@ -648,7 +656,7 @@ System.register("overlay", [], function (exports_3, context_3) {
                         this.screen.hide();
                         this.screen.removeClass(this.overlayClasses);
                         if (this._timeline) {
-                            this._timeline.seek(0);
+                            this._timeline.seek(0, true);
                         }
                         else {
                             this.cleanUpHide();
@@ -683,9 +691,9 @@ System.register("overlay", [], function (exports_3, context_3) {
         }
     };
 });
-System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (exports_4, context_4) {
+System.register("app", ["hexagon", "rollover", "overlay", "gsap", "navigo"], function (exports_4, context_4) {
     "use strict";
-    var hexagon_1, rollover_1, overlay_1, navigo_1, navFunction, router;
+    var hexagon_1, rollover_1, overlay_1, gsap_3, navigo_1, navFunction, router;
     var __moduleName = context_4 && context_4.id;
     return {
         setters: [
@@ -697,6 +705,9 @@ System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (e
             },
             function (overlay_1_1) {
                 overlay_1 = overlay_1_1;
+            },
+            function (gsap_3_1) {
+                gsap_3 = gsap_3_1;
             },
             function (navigo_1_1) {
                 navigo_1 = navigo_1_1;
@@ -812,8 +823,8 @@ System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (e
                         };
                     });
                     function setupNewsletterFlip() {
-                        var frontCard = $(".flipee.front"), backCard = $(".flipee.back"), tl = new TimelineMax({ paused: true });
-                        TweenLite.set(backCard, { rotationY: -180 });
+                        var frontCard = $(".flipee.front"), backCard = $(".flipee.back"), tl = new gsap_3.TimelineMax({ paused: true });
+                        gsap_3.TweenLite.set(backCard, { rotationY: -180 });
                         backCard.removeClass('d-none');
                         tl
                             .to(frontCard, .7, { rotationY: 180 })
@@ -861,7 +872,7 @@ System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (e
                     //$(this).toggleClass("is-active");
                 });
                 function initRollovers() {
-                    auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, Power3.easeOut);
+                    auRoManager = new rollover_1.RolloverManager(".about-us-image-tile", .5, gsap_3.Power3.easeOut);
                     var opacityTween = new rollover_1.CssPropertyTween("img.overlay", "opacity", 1);
                     var buttonsTween = new rollover_1.CssPropertyTween(".buttons", "opacity", .6);
                     var titleTween = new rollover_1.CssPropertyTween("h6.title", "opacity", 0);
@@ -879,7 +890,7 @@ System.register("app", ["hexagon", "rollover", "overlay", "navigo"], function (e
                         auRoManager2.init();
                         return;
                     }
-                    auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, Quint.easeInOut);
+                    auRoManager2 = new rollover_1.RolloverManager(".success-image-tile", .7, gsap_3.Quint.easeInOut);
                     var photoCaptionTween = new rollover_1.CssPropertyTween('.photo-caption', 'bottom', '+=2rem');
                     var readMoreTween = new rollover_1.CssPropertyTween(".photo-caption h5", "opacity", 1);
                     auRoManager2.init();

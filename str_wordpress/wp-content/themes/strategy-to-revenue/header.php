@@ -37,10 +37,31 @@
             };
         </script>-->
         <!-- End of strategytorevenue Zendesk Widget script-->
+        <script type="text/javascript" src="https://secure.leadforensics.com/js/121578.js" ></script>
+        <noscript><img src="https://secure.leadforensics.com/121578.png" style="display:none;" /></noscript>
+
+        <script type="text/javascript">
+            var _elqQ = _elqQ || [];
+            _elqQ.push(['elqSetSiteId', '1107488773']);
+            _elqQ.push(['elqTrackPageView']);
+            (function () {
+                function async_load() {
+                    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
+                    s.src = '//img04.en25.com/i/elqCfg.min.js';
+                    var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+                }
+                if (window.addEventListener) window.addEventListener('DOMContentLoaded', async_load, false);
+                else if (window.attachEvent) window.attachEvent('onload', async_load);
+            })();
+        </script>
+
+        <script src="https://ads.kwanzoo.com/embed-code/9625"></script>
+
+
 
 	</head>
 	<body <?php body_class(); ?>>
-
+    <img src="https://ad.ipredictive.com/d/rt/pixel?rtsite_id=27602&uuid=b82a84be-f137-4d55-8680-367fb2b42b0e&rr=CACHE_BUSTER" height="1" width="1" style="display:none"></img>
 
     <div class="nav-container" id="mobile-menu">
         <nav>

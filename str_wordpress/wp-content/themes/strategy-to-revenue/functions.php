@@ -23,7 +23,7 @@ if (!isset($content_width))
 add_action('init','str_rewrite_rules');
 function str_rewrite_rules(){
 
-    $overlay_pages = array("success-stories", "services", "about-us" );
+    $overlay_pages = array("success-stories", "services", "about-us", "core-training-programs", "tailored-programs" );
 
     foreach ( $overlay_pages as $overlay_page ) {
 	    $page = get_page_by_path($overlay_page);
@@ -128,9 +128,27 @@ function str_nav($str_location)
 			'link_after'      => '',
 			'items_wrap'      => '<ul class="' . $wrap_class_string .'">%3$s</ul>',
 			'depth'           => 0,
-			'walker'          => ''
+			'walker'          => new str_Walker_Nav_Menu()
 		)
 	);
+}
+
+class str_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+	var $db_fields = array(
+		'parent' => 'menu_item_parent',
+		'id'     => 'db_id'
+	);
+
+	function start_lvl(&$output, $depth = 0, $args = []) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul class=\"dropdown-menu dropdown-menu-left\">\n";
+	}
+
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
 }
 
 function str_add_menu_classes($menu_list, $args){
@@ -154,7 +172,21 @@ function str_add_menu_classes($menu_list, $args){
 
 function str_add_menu_link_atts($atts, $item) {
 	$att_class_names = "nav-link";
-	if($item->title == get_post()->post_title) $att_class_names .= ' active';
+	$post = get_post();
+	if(isset($post) && $item->title == $post->post_title) $att_class_names .= ' active';
+
+	if(in_array("menu-item-has-children", $item->classes)){
+		$att_class_names .= ' dropdown-toggle';
+		$atts['data-toggle'] = "dropdown";
+		$atts['role'] = "button";
+		$atts['aria-haspopup'] = "true";
+		$atts['aria-expanded'] = "false";
+	}
+
+	if($item->menu_item_parent != "0"){
+		$att_class_names .= ' dropdown-item';
+	}
+
 	$atts['class'] = $att_class_names;
 	return $atts;
 }
@@ -211,19 +243,17 @@ script(data-main="js/app" src="node_modules/systemjs/dist/system-production.js")
         wp_enqueue_script('mailchimp', '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js', array('jquery'), '1.0.0', true);
     }*/
 
-	wp_enqueue_script('gsap-tween', get_template_directory_uri() . '/node_modules/gsap/TweenMax.js', array(), '1.0.0');
-	wp_enqueue_script('gsap-css', get_template_directory_uri() . '/node_modules/gsap/CSSPlugin.js', array(), '1.0.0');
-	wp_enqueue_script('navigo', get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js', array(), '1.0.0');
-	wp_enqueue_script('promise-fix', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js', array(), '1.0.0');
-	wp_enqueue_script('system-js', get_template_directory_uri() . '/node_modules/systemjs/dist/system-production.js', array(), '1.0.0');
+	//wp_enqueue_script('gsap-tween', get_template_directory_uri() . '/node_modules/gsap/TweenMax.js', array(), '1.0.0');
+	//wp_enqueue_script('gsap-css', get_template_directory_uri() . '/node_modules/gsap/CSSPlugin.js', array(), '1.0.0');
+	//wp_enqueue_script('navigo', get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js', array(), '1.0.0');
+	//wp_enqueue_script('promise-fix', 'https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js', array(), '1.0.0');
+	//wp_enqueue_script('bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.js', array());
+	//wp_enqueue_script('system-js', get_template_directory_uri() . '/node_modules/systemjs/dist/system-production.js', array(), '1.0.0');
+
+	wp_enqueue_script('str-app', get_template_directory_uri() . '/dist/app.js', array('jquery'), filemtime(get_template_directory() . '/js/app.js'));
 
 
-	wp_register_script('str-app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.2');
-	wp_enqueue_script('str-app');
-
-	//
-
-	wp_add_inline_script('str-app','SystemJS.config({"paths": {"navigo": "' . get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js" }}); SystemJS.import(\'app\')');
+	//wp_add_inline_script('str-app','SystemJS.config({"paths": {"navigo": "' . get_template_directory_uri() . '/node_modules/navigo/lib/navigo.js" }}); SystemJS.import(\'app\')');
 
 }
 
@@ -233,8 +263,8 @@ function str_styles()
 
 	wp_register_style('work_sans', 'https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700', array(), '1.0', 'all');
 
-	wp_register_style('str_main', get_template_directory_uri() . '/css/main.css', array('work_sans'), '1.0.1', 'all');
-	wp_enqueue_style('str_main'); // Enqueue it!
+	wp_enqueue_style('str_main', get_template_directory_uri() . '/dist/app.css', array('work_sans'), filemtime(get_template_directory() . '/css/main.css'), 'all');
+
 }
 
 function str_body_class($classes){

@@ -13,8 +13,7 @@ $client_logo_ids = get_post_meta( $post->ID, "meta_client_logos", true );
 
     <main>
         <section class="container-fluid bg-light-cream">
-            <div class="row">
-                <div class="col-12 col-md-7 p-0">
+                <div class="text-center">
                     <div class="mission">
                         <h2 class="display-2">Our Mission</h2>
                         <p class="lead">
@@ -22,26 +21,40 @@ $client_logo_ids = get_post_meta( $post->ID, "meta_client_logos", true );
 							<?php echo $mission_text ?>
 
                         </p>
-                        <ul class="deliveries">
-                            <li><img src="<?php echo get_template_directory_uri() ?>/img/icon-time.svg">
-                                <div class="delivery">
-                                    <p class="item clr-dark-blue">20% reduction in time</p>
-                                    <p>to effectiveness for new recruits</p>
-                                </div>
-                            </li>
-                            <li class="last"><img src="<?php echo get_template_directory_uri() ?>/img/icon-succeed.svg">
-                                <div class="delivery">
-                                    <p class="item clr-dark-blue">10% minimum growth</p>
-                                    <p>in recurring revenue</p>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </div>
-                <div class="col-12 col-md-5 p-0 o-hidden mission-pic-container">
-                    <img class="mission-pic float-right" src="<?php echo get_attachment_src_by_slug( "home-mission", 'overlay-image-column-low-res' ) ?>">
+                <p class="lead clr-dark-blue text-center font-weight-bold" style="margin-top: 2rem">
+                    Let’s get to work. You’re looking for:
+                </p>
+                <div class="row mission-nav-panel d-none d-md-flex">
+                    <div class="col-12 col-md-6 text-right">
+                        <a class="btn  btn-primary" href="/services">
+                            Enterprise Professional Services
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-6 text-left">
+                        <a class="btn  btn-primary" href="/commercial-services">
+                            Sales & Sales Leadership Training
+                        </a>
+                    </div>
+
                 </div>
+
+            <div class="row mission-nav-panel-sm d-md-none">
+                <div class="col-12 col-sm-6  text-center">
+                    <a class="btn btn-primary" href="/services">
+                        Enterprise Professional Services
+                    </a>
+                </div>
+                <br>
+                <div class="col-12 col-sm-6 text-center">
+                    <a class="btn btn-primary" href="/commercial-services">
+                        Sales & Sales Leadership Training
+                    </a>
+                </div>
+
             </div>
+
         </section>
 
         <section class="container-fluid questionnaire bg-blue">

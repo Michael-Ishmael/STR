@@ -39,11 +39,6 @@ $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
             <div class="top-marker"></div>
             <div class="article-header clearfix">
 
-                <div class="icon-container"><img
-                            src="http://localhost:8888/wp-content/themes/strategy-to-revenue/img/icon-sustain.svg">
-                </div>
-
-
                 <h2 class="title display-2"><?php echo the_title() ?></h2>
 
             </div>
@@ -51,45 +46,51 @@ $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
 
             <div class="article-body">
 
+
 				<?php the_content(); // Dynamic Content
 				?>
 
 
-
             </div>
+    </div>
 
+    <section class="container-fluid four">
+        <div class="m-dent">
+            <h2 class="display-2">Making the Incredible a Reality</h2>
             <h3>
                 Read our award-winning success stories
             </h3>
 
+        </div>
+
+    </section>
+
+    </article>
+    <!-- /article -->
+
+	<?php endwhile; ?>
+
+	<?php else: ?>
+
+        <!-- article -->
+        <article>
+
+            <h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
+
         </article>
         <!-- /article -->
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-            <!-- article -->
-            <article>
-
-                <h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-
-            </article>
-            <!-- /article -->
-
-		<?php endif; ?>
-
-
+	<?php endif; ?>
 
 
     </div>
 
 
-    <section class="container-fluid">
+    <section class="container-fluid case-study-container">
 		<?php
 
 		$grid_template_path = get_template_directory() . '/inc/str-mini-ss-grid.php';
-		load_template($grid_template_path, true);
+		load_template( $grid_template_path, true );
 
 		?>
 
@@ -103,9 +104,9 @@ $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
 
 
 
-    <?php
+	<?php
 
-	if(get_overlay_is_on_page('success-stories', ['str_success_story'])){
+	if ( get_overlay_is_on_page( 'success-stories', [ 'str_success_story' ] ) ) {
 		$bg_visible_style = "aria-hidden=\"false\" style=\"z-index: 100; visibility: inherit; opacity: 1;\"";
 	} else {
 		$bg_visible_style = "aria-hidden=\"true\"";
@@ -119,7 +120,7 @@ $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
 			<?php
 
 			$overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
-			load_template($overlay_template_path, true);
+			load_template( $overlay_template_path, true );
 
 			?>
 
@@ -127,41 +128,9 @@ $expertise_areas = get_post_meta( $post->ID, 'meta_area_of_expertise', true );
     </div>
 
 
-
-<!--	<?php
-/*
-	$newsletter_template_path = get_template_directory() . '/inc/str-newsletter.php';
-	load_template( $newsletter_template_path, true );
-
-
-	$trailer_template_path = get_template_directory() . '/inc/str-insights-stripes.php';
-	load_template( $trailer_template_path, true );
-
-
-	$trailer_template_path = get_template_directory() . '/inc/str-services-trailer.php';
-	load_template( $trailer_template_path, true );
-	*/?>
-
-    <div class="overlay-background" id="overlayBg" aria-hidden="true">
-        <div class="container-fluid position-relative h-100 p-0">
-
-			<?php
-/*
-			$overlay_template_path = get_template_directory() . '/inc/str-team-member-overlays.php';
-			load_template( $overlay_template_path, true );
-
-			$expertise_overlay_template_path = get_template_directory() . '/inc/str-expertise-overlays.php';
-			load_template( $expertise_overlay_template_path, true );
-
-			$success_overlay_template_path = get_template_directory() . '/inc/str-success-story-overlays.php';
-			load_template( $success_overlay_template_path, true );
-
-			*/?>
-
-        </div>
-    </div>
--->
 </main>
+
+<script type="application/javascript" src="/webDev/wp-content/themes/strategy-to-revenue/js/react-app.js"></script>
 
 
 <?php get_footer(); ?>

@@ -24,6 +24,8 @@
         });
 
 	</script>
+    <script type="text/javascript" src="https://secure.leadforensics.com/js/121578.js" ></script>
+    <noscript><img src="https://secure.leadforensics.com/121578.png" style="display:none;" /></noscript>
 
 </head>
 <body <?php body_class(); ?>>
@@ -38,8 +40,10 @@
 	</nav>
 </div>
 
-<?php
 
+
+<?php
+/*
 
 if (have_posts()):
 	while (have_posts()) : the_post();
@@ -50,7 +54,7 @@ if (have_posts()):
 	endwhile;
 endif;
 
-?>
+*/?>
 
 <div id="sticky-nav" class="nav-up d-none d-md-block ">
 	<?php str_nav('sticky'); ?>
@@ -58,13 +62,13 @@ endif;
 
 <header class="home bg-blue container-fluid p-0">
 	<div class="marketing-header-image">
-		<img class="d-none d-md-block w-100" src="<?php echo $article_head_img_src ?>">
+		<img class="d-none d-md-block w-100" src="<?php echo get_template_directory_uri(); ?>/img/cloud_header.jpg">
 	</div>
 
 	<div class="article-nav-container">
 		<div class="row align-items-center justify-content-center">
 			<div class="col-8 col-md-2 col-lg-3 p-0 pl-3">
-				<div class="logo-container ml-2 ml-lg-3 pt-3 pt-lg-4 pb-2 pt-lg-4"><a href="<?php echo get_site_url() ?>">
+				<div class="logo-container ml-2 ml-lg-3 pt-3 pt-lg-4 pb-2 pt-lg-4"><a href="/">
 						<img class="logo" src="<?php echo get_template_directory_uri(); ?>/img/logo-strategy-to-revenue.svg"></a></div>
 			</div>
 			<div class="d-none d-md-block col-md-10 col-lg-9 p-0 pr-2">
